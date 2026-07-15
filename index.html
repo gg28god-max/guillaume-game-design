@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guillaume Goder — Concept Artist & UI/UX Designer</title>
+  <meta name="description" content="Portfolio of Guillaume Goder, Concept Artist and UI/UX Designer specializing in game UI, concept art, and immersive VR interfaces. Based in Montréal, Canada.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } } }</script>
+  <style>
+    * { font-family: 'Inter', system-ui, sans-serif; }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
+    .project-card img { transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    .project-card:hover img { transform: scale(1.05); }
+    .card-overlay { transition: background-color 0.35s ease; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.15) 50%, transparent 100%); }
+    .project-card:hover .card-overlay { background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.05) 100%); }
+    .card-meta { transition: transform 0.35s ease; }
+    .project-card:hover .card-meta { transform: translateY(-4px); }
+    .card-arrow { transition: transform 0.35s ease, opacity 0.35s ease; opacity: 0.55; transform: translateX(0); }
+    .project-card:hover .card-arrow { opacity: 1; transform: translateX(4px); }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-text { animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both; }
+    .hero-sub { animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both; }
+  </style>
+</head>
+<body class="bg-[#0a0a0a] text-neutral-100 min-h-screen">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 w-full z-50 border-b border-neutral-800" style="background-color:rgba(10,10,10,0.94);backdrop-filter:blur(16px);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="index.html" class="group flex items-center gap-3 text-sm font-semibold tracking-[0.2em] uppercase text-neutral-100 hover:text-amber-300 transition-colors duration-300">
+        <img src="Dodo%20logo%201.png" alt="Guillaume Goder dodo logo" class="h-9 w-9 object-contain shrink-0 group-hover:scale-105 transition-transform duration-300">
+        <span>Guillaume Goder</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <div class="relative group">
+          <a href="index.html" class="text-[11px] tracking-[0.15em] uppercase text-neutral-100 flex items-center gap-1">
+            Projects <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <div class="absolute top-full left-0 mt-3 w-60 border border-neutral-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-2xl" style="background:#111;">
+            <a href="outpost-red.html" class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all border-b border-neutral-800">Outpost Red <span class="text-neutral-700">2025</span></a>
+            <a href="tide-hollow.html" class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all border-b border-neutral-800">Tide Hollow <span class="text-neutral-700">2025</span></a>
+            <a href="wings-of-wanitu.html" class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all border-b border-neutral-800">Wings of Wanitu <span class="text-neutral-700">2025</span></a>
+            <a href="home-run-derby-vr.html" class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all border-b border-neutral-800">Home Run Derby VR <span class="text-neutral-700">2023</span></a>
+            <a href="starquest.html" class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all border-b border-neutral-800">Starquest <span class="text-neutral-700">2020</span></a>
+            <a href="diverse-creative-studies.html" class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all">Diverse Creative Studies <span class="text-neutral-700">2020</span></a>
+          </div>
+        </div>
+        <a href="illustrations.html" class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors">Illustrations</a>
+        <a href="paintings.html" class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors">Paintings</a>
+        <a href="resume.html" class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors">Resume</a>
+        <a href="about.html" class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors">About</a>
+      </div>
+      <div class="flex items-center gap-5">
+        <div class="hidden md:flex items-center gap-5">
+          <a href="https://www.instagram.com/guillaumegoderart" target="_blank" rel="noopener" class="text-[11px] tracking-wider text-neutral-600 hover:text-neutral-200 transition-colors">IG</a>
+          <a href="https://www.linkedin.com/in/guillaume-goder-50a611125" target="_blank" rel="noopener" class="text-[11px] tracking-wider text-neutral-600 hover:text-neutral-200 transition-colors">LI</a>
+          <a href="https://www.artstation.com/guillaumegoder" target="_blank" rel="noopener" class="text-[11px] tracking-wider text-neutral-600 hover:text-neutral-200 transition-colors">AS</a>
+        </div>
+        <button class="md:hidden flex flex-col gap-1.5 p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="Menu">
+          <span class="block w-5 h-px bg-neutral-400"></span>
+          <span class="block w-5 h-px bg-neutral-400"></span>
+          <span class="block w-3 h-px bg-neutral-400"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-neutral-800" style="background:#0f0f0f;">
+      <div class="px-6 py-6 space-y-1">
+        <p class="text-[10px] tracking-[0.2em] uppercase text-neutral-600 mb-3">Projects</p>
+        <a href="outpost-red.html" class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors">Outpost Red</a>
+        <a href="tide-hollow.html" class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors">Tide Hollow</a>
+        <a href="wings-of-wanitu.html" class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors">Wings of Wanitu</a>
+        <a href="home-run-derby-vr.html" class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors">Home Run Derby VR</a>
+        <a href="starquest.html" class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors">Starquest</a>
+        <a href="diverse-creative-studies.html" class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors">Diverse Creative Studies</a>
+        <div class="border-t border-neutral-800 my-4"></div>
+        <a href="illustrations.html" class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors">Illustrations</a>
+        <a href="paintings.html" class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors">Paintings</a>
+        <a href="resume.html" class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors">Resume</a>
+        <a href="about.html" class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors">About</a>
+        <div class="border-t border-neutral-800 mt-4 pt-4 flex gap-6">
+          <a href="https://www.instagram.com/guillaumegoderart" target="_blank" rel="noopener" class="text-xs text-neutral-500 hover:text-white transition-colors">Instagram</a>
+          <a href="https://www.linkedin.com/in/guillaume-goder-50a611125" target="_blank" rel="noopener" class="text-xs text-neutral-500 hover:text-white transition-colors">LinkedIn</a>
+          <a href="https://www.artstation.com/guillaumegoder" target="_blank" rel="noopener" class="text-xs text-neutral-500 hover:text-white transition-colors">ArtStation</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-28 md:pt-32 pb-8 px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="hero-text">
+      <p class="text-[11px] tracking-[0.35em] uppercase text-neutral-600 mb-4">Concept Artist &amp; UI/UX Designer · Montréal, Canada</p>
+      <h1 class="text-[clamp(1.5rem,3vw,2.25rem)] font-semibold tracking-tight text-neutral-300 leading-none">
+        Guillaume Goder
+      </h1>
+      <p class="hero-sub text-neutral-500 text-[11px] md:text-xs max-w-md leading-relaxed font-light mt-4">
+        Focused on real-time UI architecture, asset creation, and immersive spatial interfaces for games and VR experiences.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROJECTS GRID -->
+  <section class="px-6 lg:px-8 pb-32 max-w-7xl mx-auto">
+    <div class="flex items-center justify-between mb-10 border-t border-neutral-800 pt-8">
+      <h2 class="text-[11px] tracking-[0.3em] uppercase text-neutral-500">Selected Work</h2>
+      <span class="text-[11px] tracking-[0.2em] uppercase text-neutral-500">06 Projects</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-800">
+
+      <!-- Outpost Red -->
+      <a href="outpost-red.html" class="project-card relative overflow-hidden block" style="aspect-ratio:4/3; background:#0a0a0a;">
+        <img src="Projects%20cover/Main+Menu+Screen.webp" alt="Outpost Red — Game UI Interface" class="w-full h-full object-cover" loading="lazy">
+        <div class="card-overlay absolute inset-0">
+          <div class="absolute bottom-0 left-0 right-0 p-6 card-meta">
+            <p class="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mb-1.5">UI/UX · Unreal Engine · 2025</p>
+            <div class="flex items-center justify-between">
+              <h3 class="text-base font-semibold text-neutral-100">Outpost Red</h3>
+              <span class="card-arrow text-amber-300 text-lg">→</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Tide Hollow -->
+      <a href="tide-hollow.html" class="project-card relative overflow-hidden block" style="aspect-ratio:4/3; background:#0a0a0a;">
+        <img src="Tide%20Hollow/thumbnail-Tide%20Hollow.webp" alt="Tide Hollow — 3D Asset Creation" class="w-full h-full object-cover" loading="lazy">
+        <div class="card-overlay absolute inset-0">
+          <div class="absolute bottom-0 left-0 right-0 p-6 card-meta">
+            <p class="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mb-1.5">3D Asset Creation · UE5 · 2025</p>
+            <div class="flex items-center justify-between">
+              <h3 class="text-base font-semibold text-neutral-100">Tide Hollow</h3>
+              <span class="card-arrow text-amber-300 text-lg">→</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Wings of Wanitu -->
+      <a href="wings-of-wanitu.html" class="project-card relative overflow-hidden block" style="aspect-ratio:4/3; background:#0a0a0a;">
+        <img src="Wings%20of%20Wanitu/wings+illustration+background+2.webp" alt="Wings of Wanitu — VR UI Design" class="w-full h-full object-cover" loading="lazy">
+        <div class="card-overlay absolute inset-0">
+          <div class="absolute bottom-0 left-0 right-0 p-6 card-meta">
+            <p class="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mb-1.5">VR UI · Spatial Interfaces · 2025</p>
+            <div class="flex items-center justify-between">
+              <h3 class="text-base font-semibold text-neutral-100">Wings of Wanitu</h3>
+              <span class="card-arrow text-amber-300 text-lg">→</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Home Run Derby VR -->
+      <a href="home-run-derby-vr.html" class="project-card relative overflow-hidden block" style="aspect-ratio:4/3; background:#0a0a0a;">
+        <img src="thumbnail-%20Homerun%20derby%20vr.webp" alt="Home Run Derby VR — Sports VR UI" class="w-full h-full object-cover" loading="lazy">
+        <div class="card-overlay absolute inset-0">
+          <div class="absolute bottom-0 left-0 right-0 p-6 card-meta">
+            <p class="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mb-1.5">Sports · VR Design · 2023</p>
+            <div class="flex items-center justify-between">
+              <h3 class="text-base font-semibold text-neutral-100">Home Run Derby VR</h3>
+              <span class="card-arrow text-amber-300 text-lg">→</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Starquest -->
+      <a href="starquest.html" class="project-card relative overflow-hidden block" style="aspect-ratio:4/3; background:#0a0a0a;">
+        <img src="thumbnail-Starquest.webp" alt="Starquest — Sci-Fi Concept Art" class="w-full h-full object-cover" loading="lazy">
+        <div class="card-overlay absolute inset-0">
+          <div class="absolute bottom-0 left-0 right-0 p-6 card-meta">
+            <p class="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mb-1.5">Hard-Surface · Organic Design · 2020</p>
+            <div class="flex items-center justify-between">
+              <h3 class="text-base font-semibold text-neutral-100">Starquest</h3>
+              <span class="card-arrow text-amber-300 text-lg">→</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Diverse Creative Studies -->
+      <a href="diverse-creative-studies.html" class="project-card relative overflow-hidden block" style="aspect-ratio:4/3; background:#0a0a0a;">
+        <img src="Diverse%20Creative%20Studies/refine+aisketch+concept+art+submarine-gigapixel-recover-4x.webp" alt="Diverse Creative Studies — The Barracuda submarine vehicle design" class="w-full h-full object-cover" loading="lazy">
+        <div class="card-overlay absolute inset-0">
+          <div class="absolute bottom-0 left-0 right-0 p-6 card-meta">
+            <p class="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mb-1.5">Concept Art Showcase · 2020</p>
+            <div class="flex items-center justify-between">
+              <h3 class="text-base font-semibold text-neutral-100">Diverse Creative Studies</h3>
+              <span class="card-arrow text-amber-300 text-lg">→</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-neutral-800 py-12">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-[11px] text-neutral-700 tracking-wider">© 2025 Guillaume Goder. All rights reserved.</p>
+      <div class="flex flex-wrap gap-6 justify-center">
+        <a href="mailto:gg28.god@gmail.com" class="text-[11px] text-neutral-500 hover:text-neutral-200 transition-colors">gg28.god@gmail.com</a>
+        <a href="https://www.instagram.com/guillaumegoderart" target="_blank" rel="noopener" class="text-[11px] text-neutral-500 hover:text-neutral-200 transition-colors">Instagram</a>
+        <a href="https://www.linkedin.com/in/guillaume-goder-50a611125" target="_blank" rel="noopener" class="text-[11px] text-neutral-500 hover:text-neutral-200 transition-colors">LinkedIn</a>
+        <a href="https://www.artstation.com/guillaumegoder" target="_blank" rel="noopener" class="text-[11px] text-neutral-500 hover:text-neutral-200 transition-colors">ArtStation</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

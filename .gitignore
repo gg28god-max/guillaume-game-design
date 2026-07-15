@@ -1,0 +1,11 @@
+# Internal tooling — never publish
+.claude/
+
+# Unused reference material — not referenced by any page, large and unnecessary in the repo
+Screenshot 2026-07-09 at 11-29-42 Outpost Red — Guillaume- Concept Art and Illustration for Games.png
+Screenshot 2026-07-09 at 11-29-42 Outpost Red — Guillaume- Concept Art and Illustration for Games.zip
+screenshot_extract/
+
+# OS junk
+.DS_Store
+Thumbs.db
