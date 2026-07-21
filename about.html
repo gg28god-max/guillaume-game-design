@@ -88,13 +88,16 @@
 <h1 class="text-2xl md:text-3xl font-semibold tracking-tight text-neutral-300 leading-none mb-6"><span class="i18n" data-en="About" data-fr="À propos">About</span></h1>
 </div>
 <!-- Two-column layout -->
-<div class="grid grid-cols-1 md:grid-cols-[minmax(0,480px)_1fr] gap-12 lg:gap-20 mb-28 items-start">
+<div class="grid grid-cols-1 md:grid-cols-[minmax(0,580px)_1fr] md:grid-rows-[auto_auto] gap-x-12 lg:gap-x-20 gap-y-10 mb-28 items-start">
 <!-- LEFT COLUMN: Portrait, Expertise, Education -->
-<div class="space-y-10">
+<div class="md:col-start-1 md:row-start-1">
 <!-- Portrait -->
-<div class="overflow-hidden bg-neutral-900" style="max-width:520px;">
+<div class="overflow-hidden bg-neutral-900" style="max-width:580px;">
 <img alt="Guillaume Goder — Profile Photo" class="w-full h-auto block" src="about/Profile-Picture-01.webp"/>
 </div>
+</div>
+<!-- LEFT COLUMN ROW 2: Expertise, Education -->
+<div class="md:col-start-1 md:row-start-2 space-y-10">
 <!-- Skills -->
 <div class="border-t border-neutral-800 pt-10">
 <h3 class="text-[11px] tracking-[0.3em] uppercase text-neutral-500 mb-6"><span class="i18n" data-en="Expertise" data-fr="Expertise">Expertise</span></h3>
@@ -127,11 +130,15 @@
 <p class="text-sm font-medium text-neutral-200"><span class="i18n" data-en="UX and UI in Game Design" data-fr="UX et UI dans le game design">UX and UI in Game Design</span></p>
 <p class="text-sm text-neutral-500"><span class="i18n" data-en="Epic Games &amp; Coursera — Certification" data-fr="Epic Games et Coursera — Certification">Epic Games &amp; Coursera — Certification</span></p>
 </div>
+<div>
+<p class="text-sm font-medium text-neutral-200"><span class="i18n" data-en="Foundations of User Experience (UX) Design" data-fr="Notions fondamentales de la conception de l'expérience utilisateur (UX)">Foundations of User Experience (UX) Design</span></p>
+<p class="text-sm text-neutral-500"><span class="i18n" data-en="Google — Certificate" data-fr="Google — Certificat">Google — Certificate</span></p>
+</div>
 </div>
 </div>
 </div>
 <!-- RIGHT COLUMN: Bio, Connect -->
-<div class="space-y-10">
+<div class="md:col-start-2 md:row-start-1">
 <!-- Bio -->
 <div>
 <h2 class="text-2xl md:text-3xl font-bold text-neutral-100 mb-6 leading-tight">
@@ -149,8 +156,9 @@
             </p>
 </div>
 </div>
+</div>
 <!-- Contact links -->
-<div class="border-t border-neutral-800 pt-10">
+<div class="md:col-start-2 md:row-start-2 border-t border-neutral-800 pt-10">
 <h3 class="text-[11px] tracking-[0.3em] uppercase text-neutral-500 mb-6"><span class="i18n" data-en="Connect" data-fr="Contact">Connect</span></h3>
 <div class="space-y-3">
 <a class="flex items-center gap-3 text-sm text-neutral-400 hover:text-neutral-100 transition-colors group" href="mailto:gg28.god@gmail.com">
@@ -173,7 +181,6 @@
 <span class="text-[10px] tracking-wider uppercase text-neutral-700 w-20 shrink-0"><span class="i18n" data-en="ArtStation" data-fr="ArtStation">ArtStation</span></span>
 <span class="group-hover:underline"><span class="i18n" data-en="guillaumegoder" data-fr="guillaumegoder">guillaumegoder</span></span>
 </a>
-</div>
 </div>
 </div>
 </div>
