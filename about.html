@@ -181,8 +181,7 @@
 <div class="border-t border-neutral-800 pt-20 max-w-2xl">
 <p class="text-[11px] tracking-[0.35em] uppercase text-neutral-600 mb-4"><span class="i18n" data-en="Get in Touch" data-fr="Me contacter">Get in Touch</span></p>
 <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-neutral-100 mb-10"><span class="i18n" data-en="Send a Message" data-fr="Envoyer un message">Send a Message</span></h2>
-<form class="space-y-6" data-netlify="true" method="POST" name="contact">
-<input name="form-name" type="hidden" value="contact"/>
+<form action="https://formspree.io/f/mykrpkwl" class="space-y-6" id="contact-form" method="POST">
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 <div>
 <label class="block text-[11px] tracking-[0.2em] uppercase text-neutral-500 mb-2" for="name"><span class="i18n" data-en="Name" data-fr="Nom">Name</span></label>
@@ -201,10 +200,12 @@
 <label class="block text-[11px] tracking-[0.2em] uppercase text-neutral-500 mb-2" for="message"><span class="i18n" data-en="Message" data-fr="Message">Message</span></label>
 <textarea class="w-full bg-transparent border border-neutral-800 px-4 py-3 text-sm text-neutral-100 placeholder-neutral-700 focus:outline-none focus:border-neutral-500 transition-colors resize-none" id="message" name="message" placeholder="Tell me about your project..." required="" rows="6"></textarea>
 </div>
-<button class="inline-flex items-center gap-3 px-8 py-3 bg-neutral-100 text-neutral-950 text-[11px] tracking-[0.2em] uppercase font-semibold hover:bg-amber-300 transition-colors duration-300" type="submit">
-          <span class="i18n" data-en="Send Message" data-fr="Envoyer le message">Send Message</span>
+<button class="inline-flex items-center gap-3 px-8 py-3 bg-neutral-100 text-neutral-950 text-[11px] tracking-[0.2em] uppercase font-semibold hover:bg-amber-300 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed" id="contact-submit-btn" type="submit">
+          <span class="i18n" data-en="Send Message" data-fr="Envoyer le message" id="contact-submit-label">Send Message</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </button>
+<p class="hidden text-sm text-emerald-400 pt-1" id="contact-success"><span class="i18n" data-en="Thanks — your message is on its way. I&#39;ll get back to you soon." data-fr="Merci — votre message est envoyé. Je vous répondrai bientôt.">Thanks — your message is on its way. I&#39;ll get back to you soon.</span></p>
+<p class="hidden text-sm text-red-400 pt-1" id="contact-error"><span class="i18n" data-en="Something went wrong. Please try again, or email me directly." data-fr="Une erreur est survenue. Veuillez réessayer ou m&#39;écrire directement.">Something went wrong. Please try again, or email me directly.</span></p>
 </form>
 </div>
 </main>
@@ -220,5 +221,44 @@
 </div>
 </div>
 </footer>
+
+<script>
+(function () {
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+  var btn = document.getElementById('contact-submit-btn');
+  var label = document.getElementById('contact-submit-label');
+  var success = document.getElementById('contact-success');
+  var error = document.getElementById('contact-error');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    success.classList.add('hidden');
+    error.classList.add('hidden');
+    btn.disabled = true;
+    var sendingText = (document.documentElement.getAttribute('lang') === 'fr') ? 'Envoi\u2026' : 'Sending\u2026';
+    var originalText = label.textContent;
+    label.textContent = sendingText;
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function (response) {
+      if (response.ok) {
+        form.reset();
+        success.classList.remove('hidden');
+      } else {
+        error.classList.remove('hidden');
+      }
+    }).catch(function () {
+      error.classList.remove('hidden');
+    }).finally(function () {
+      btn.disabled = false;
+      label.textContent = originalText;
+    });
+  });
+})();
+</script>
 </body>
 </html>
