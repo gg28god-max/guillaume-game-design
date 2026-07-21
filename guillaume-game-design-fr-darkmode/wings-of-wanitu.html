@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head><script>(function(){try{var t=localStorage.getItem('theme')||'dark';var l=localStorage.getItem('lang')||'en';if(t==='light')document.documentElement.classList.add('light');document.documentElement.setAttribute('lang',l);document.documentElement.setAttribute('data-lang',l);}catch(e){}})();</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title data-en="Wings of Wanitu — Guillaume Goder" data-fr="Wings of Wanitu — Guillaume Goder">Wings of Wanitu — Guillaume Goder</title>
+<meta content="Wings of Wanitu — immersive VR UI design with diegetic cockpit interfaces, enemy creature design, and spatial interface architecture." data-en="Wings of Wanitu — immersive VR UI design with diegetic cockpit interfaces, enemy creature design, and spatial interface architecture." data-fr="Wings of Wanitu — design UI VR immersif avec interfaces de cockpit diégétiques, design de créatures ennemies et architecture d'interfaces spatiales." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } } }</script>
+<style>
+    * { font-family: 'Inter', system-ui, sans-serif; }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
+  </style>
+<link href="assets/theme.css" rel="stylesheet"/><script defer="" src="assets/site.js"></script></head>
+<body class="bg-[#0a0a0a] text-neutral-100 min-h-screen">
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 border-b border-neutral-800 nav-surface">
+<div class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16">
+<a class="group flex items-center gap-3 text-sm font-semibold tracking-[0.2em] uppercase text-neutral-100 hover:text-amber-300 transition-colors duration-300" href="index.html">
+<img alt="Guillaume Goder dodo logo" class="h-9 w-9 object-contain shrink-0 group-hover:scale-105 transition-transform duration-300" src="Dodo%20logo%201.png"/>
+<span><span class="i18n" data-en="Guillaume Goder" data-fr="Guillaume Goder">Guillaume Goder</span></span>
+</a>
+<div class="hidden md:flex items-center gap-8">
+<div class="relative group">
+<a class="text-[11px] tracking-[0.15em] uppercase text-neutral-100 flex items-center gap-1" href="index.html">
+            <span class="i18n" data-en="Projects" data-fr="Projets">Projects</span> <svg class="w-3 h-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+<div class="absolute top-full left-0 mt-3 w-60 border border-neutral-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-2xl dropdown-surface">
+<a class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all border-b border-neutral-800" href="outpost-red.html"><span class="i18n" data-en="Outpost Red" data-fr="Outpost Red">Outpost Red</span> <span class="text-neutral-700"><span class="i18n" data-en="2025" data-fr="2025">2025</span></span></a>
+<a class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all border-b border-neutral-800" href="tide-hollow.html"><span class="i18n" data-en="Tide Hollow" data-fr="Tide Hollow">Tide Hollow</span> <span class="text-neutral-700"><span class="i18n" data-en="2025" data-fr="2025">2025</span></span></a>
+<a class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-100 bg-neutral-800 border-b border-neutral-800" href="wings-of-wanitu.html"><span class="i18n" data-en="Wings of Wanitu" data-fr="Wings of Wanitu">Wings of Wanitu</span> <span class="text-neutral-500"><span class="i18n" data-en="2025" data-fr="2025">2025</span></span></a>
+<a class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all border-b border-neutral-800" href="home-run-derby-vr.html"><span class="i18n" data-en="Home Run Derby VR" data-fr="Home Run Derby VR">Home Run Derby VR</span> <span class="text-neutral-700"><span class="i18n" data-en="2023" data-fr="2023">2023</span></span></a>
+<a class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all border-b border-neutral-800" href="starquest.html"><span class="i18n" data-en="Starquest" data-fr="Starquest">Starquest</span> <span class="text-neutral-700"><span class="i18n" data-en="2020" data-fr="2020">2020</span></span></a>
+<a class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all" href="diverse-creative-studies.html"><span class="i18n" data-en="Diverse Creative Studies" data-fr="Diverse Creative Studies">Diverse Creative Studies</span> <span class="text-neutral-700"><span class="i18n" data-en="2020" data-fr="2020">2020</span></span></a>
+</div>
+</div>
+<a class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors" href="illustrations.html"><span class="i18n" data-en="Illustrations" data-fr="Illustrations">Illustrations</span></a>
+<a class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors" href="paintings.html"><span class="i18n" data-en="Paintings" data-fr="Peintures">Paintings</span></a>
+<a class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors" href="resume.html"><span class="i18n" data-en="Resume" data-fr="CV">Resume</span></a>
+<a class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors" href="about.html"><span class="i18n" data-en="About" data-fr="À propos">About</span></a>
+</div>
+<div class="flex items-center gap-5">
+<div class="site-toggles"><button aria-label="Passer en français" class="lang-toggle-btn" type="button">FR</button><button aria-label="Switch to light mode" class="theme-toggle-btn" type="button"><svg class="icon-moon" fill="currentColor" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg></button></div><div class="hidden md:flex items-center gap-5">
+<a class="text-[11px] tracking-wider text-neutral-600 hover:text-neutral-200 transition-colors" href="https://www.instagram.com/guillaumegoderart" rel="noopener" target="_blank"><span class="i18n" data-en="IG" data-fr="IG">IG</span></a>
+<a class="text-[11px] tracking-wider text-neutral-600 hover:text-neutral-200 transition-colors" href="https://www.linkedin.com/in/guillaume-goder-50a611125" rel="noopener" target="_blank"><span class="i18n" data-en="LI" data-fr="LI">LI</span></a>
+<a class="text-[11px] tracking-wider text-neutral-600 hover:text-neutral-200 transition-colors" href="https://www.artstation.com/guillaumegoder" rel="noopener" target="_blank"><span class="i18n" data-en="AS" data-fr="AS">AS</span></a>
+</div>
+<button aria-label="Menu" class="md:hidden flex flex-col gap-1.5 p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+<span class="block w-5 h-px bg-neutral-400"></span>
+<span class="block w-5 h-px bg-neutral-400"></span>
+<span class="block w-3 h-px bg-neutral-400"></span>
+</button>
+</div>
+</div>
+<div class="hidden md:hidden border-t border-neutral-800 mobile-surface" id="mobile-menu">
+<div class="px-6 py-6 space-y-1">
+<p class="text-[10px] tracking-[0.2em] uppercase text-neutral-600 mb-3"><span class="i18n" data-en="Projects" data-fr="Projets">Projects</span></p>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="outpost-red.html"><span class="i18n" data-en="Outpost Red" data-fr="Outpost Red">Outpost Red</span></a>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="tide-hollow.html"><span class="i18n" data-en="Tide Hollow" data-fr="Tide Hollow">Tide Hollow</span></a>
+<a class="block py-2 text-sm text-white font-medium" href="wings-of-wanitu.html"><span class="i18n" data-en="Wings of Wanitu" data-fr="Wings of Wanitu">Wings of Wanitu</span></a>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="home-run-derby-vr.html"><span class="i18n" data-en="Home Run Derby VR" data-fr="Home Run Derby VR">Home Run Derby VR</span></a>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="starquest.html"><span class="i18n" data-en="Starquest" data-fr="Starquest">Starquest</span></a>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="diverse-creative-studies.html"><span class="i18n" data-en="Diverse Creative Studies" data-fr="Diverse Creative Studies">Diverse Creative Studies</span></a>
+<div class="border-t border-neutral-800 my-4"></div>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="illustrations.html"><span class="i18n" data-en="Illustrations" data-fr="Illustrations">Illustrations</span></a>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="paintings.html"><span class="i18n" data-en="Paintings" data-fr="Peintures">Paintings</span></a>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="resume.html"><span class="i18n" data-en="Resume" data-fr="CV">Resume</span></a>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="about.html"><span class="i18n" data-en="About" data-fr="À propos">About</span></a>
+</div>
+</div>
+</nav>
+<!-- HERO IMAGE -->
+<div class="pt-16 w-full bg-neutral-950">
+<img alt="Wings of Wanitu — Project Overview" class="w-full" src="Wings%20of%20Wanitu/Project%2BOverview%2B%E2%80%94%2BWings%2Bof%2BWanitu.webp"/>
+</div>
+<!-- PROJECT INFO -->
+<div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 border-b border-neutral-800">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+<div class="lg:col-span-2">
+<p class="text-[11px] tracking-[0.3em] uppercase text-neutral-600 mb-4"><span class="i18n" data-en="VR UI · Spatial Interfaces · Concept Art · 2025" data-fr="UI VR · Interfaces spatiales · Art conceptuel · 2025">VR UI · Spatial Interfaces · Concept Art · 2025</span></p>
+<h1 class="text-4xl md:text-6xl font-black tracking-tight text-neutral-100 leading-none mb-8"><span class="i18n" data-en="Wings of Wanitu" data-fr="Wings of Wanitu">Wings of Wanitu</span></h1>
+<p class="text-neutral-400 text-lg leading-relaxed font-light max-w-2xl">
+          <span class="i18n" data-en="A deep dive into immersive, spatial user interfaces highlighting the unique design challenges of Virtual Reality. As Lead on UI architecture, this project explores diegetic cockpit interfaces and glider dashboard localization systems optimized for VR performance — alongside a full suite of enemy creature designs, from concept through behaviour sheets and final color passes." data-fr="Une exploration approfondie des interfaces utilisateur spatiales immersives, mettant en lumière les défis de design propres à la réalité virtuelle. En tant que responsable de l'architecture UI, ce projet explore des interfaces de cockpit diégétiques et des systèmes de localisation de tableau de bord de planeur optimisés pour la performance VR — ainsi qu'une suite complète de designs de créatures ennemies, du concept aux fiches de comportement jusqu'aux passes de couleur finales.">A deep dive into immersive, spatial user interfaces highlighting the unique design challenges of Virtual Reality. As Lead on UI architecture, this project explores diegetic cockpit interfaces and glider dashboard localization systems optimized for VR performance — alongside a full suite of enemy creature designs, from concept through behaviour sheets and final color passes.</span>
+        </p>
+</div>
+<div class="space-y-8 lg:pt-16">
+<div>
+<p class="text-[10px] tracking-[0.25em] uppercase text-neutral-600 mb-2"><span class="i18n" data-en="Year" data-fr="Année">Year</span></p>
+<p class="text-sm text-neutral-300"><span class="i18n" data-en="2025" data-fr="2025">2025</span></p>
+</div>
+<div>
+<p class="text-[10px] tracking-[0.25em] uppercase text-neutral-600 mb-2"><span class="i18n" data-en="Role" data-fr="Rôle">Role</span></p>
+<p class="text-sm text-neutral-300"><span class="i18n" data-en="Lead UI Architect &amp; Concept Artist" data-fr="Architecte UI principal et artiste conceptuel">Lead UI Architect &amp; Concept Artist</span></p>
+</div>
+<div>
+<p class="text-[10px] tracking-[0.25em] uppercase text-neutral-600 mb-2"><span class="i18n" data-en="Disciplines" data-fr="Disciplines">Disciplines</span></p>
+<p class="text-sm text-neutral-300"><span class="i18n" data-en="VR UI, Spatial Interfaces, Enemy Design, World-Building" data-fr="UI VR, interfaces spatiales, design d'ennemis, world-building">VR UI, Spatial Interfaces, Enemy Design, World-Building</span></p>
+</div>
+</div>
+</div>
+</div>
+<!-- GALLERY -->
+<div class="space-y-1 my-1">
+<img alt="Wings of Wanitu Overview" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Wings%2Bof%2Bwanitu%2Boverview.webp"/>
+<img alt="Wings UI" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Wings%2BUi.webp"/>
+<img alt="Wings UI 2" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Wings%2BUi-1.webp"/>
+<img alt="Wings UI 3" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Wings%2BUi%20(1).webp"/>
+<img alt="UI Glider Dashboard Localization System" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/UI%2BGlider%2BDashboard%2BLocalization%2Bsystem.webp"/>
+<img alt="Wings UI 4" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Wings%2BUi-2.webp"/>
+<img alt="Cockpit UI Design" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/cockpit%2Bui%2Bdesign.webp"/>
+<img alt="Cockpit UI Design 2" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/cockpit%2Bui%2Bdesign%20(1).webp"/>
+<img alt="UI Glider Dashboard Localization System 2" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/UI%2BGlider%2BDashboard%2BLocalization%2Bsystem%2B1.webp"/>
+<img alt="Enemy Design — Lurkers" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/enemie%2Bdesign%2Blurkers%2B1.webp"/>
+<img alt="Lurkers Design Concepts" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Lurkers%2BDesign%2Bconcepts%2B1.webp"/>
+<img alt="Deadzone Lurkers Concept Design" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Deadzone%2BLurkers%2Bconcept%2Bdesign%2B1.webp"/>
+<img alt="Lurkers Deadzone Behaviour" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Lurkers%2BDeadzone%2BBehaviour%2B1.webp"/>
+<img alt="Lurkers Color Pass" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/lurkers%2Bcolor%2Bpass%2Bdead%2Bzone%2B1.webp"/>
+<img alt="Bug Lurker Concept Render" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Bug%2BLurker%2Bconcept%2Brender%2B1.webp"/>
+<img alt="Interceptor Design Concept" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Interceptor%2BDesign%2Bconcept%2B1.webp"/>
+<img alt="Interceptor Enemy Behaviour" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Interceptor%2Benemy%2Bbehaviour%2B1.webp"/>
+<img alt="Interceptor Enemy Color Pass" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Interceptor%2Benemy%2Bcolor%2Bpass%2B1.webp"/>
+<img alt="Fighter Hunter Type Concept" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Fighter%2Bhunter%2Btype%2Bconcept%2Bvisualization%2B1.webp"/>
+<img alt="Hunters Fighter Type Behaviour" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Hunters%2Bfighter%2Btype%2BBehaviour%2B1.webp"/>
+<img alt="Fighter Enemy Color Pass" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Fighter%2Benemy%2Bcolor%2Bpass.webp"/>
+<img alt="Wings Illustration Background" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/wings%2Billustration%2Bbackground%2B2.webp"/>
+</div>
+<!-- PREV / NEXT -->
+<div class="border-t border-neutral-800 mt-16">
+<div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between py-10">
+<a class="group flex items-center gap-4" href="tide-hollow.html">
+<span class="text-amber-300 text-xl group-hover:-translate-x-1 transition-transform"><span class="i18n" data-en="←" data-fr="←">←</span></span>
+<div>
+<p class="text-[10px] tracking-[0.2em] uppercase text-neutral-600 mb-1"><span class="i18n" data-en="Previous Project" data-fr="Projet précédent">Previous Project</span></p>
+<p class="text-sm font-semibold text-neutral-300 group-hover:text-neutral-100 transition-colors"><span class="i18n" data-en="Tide Hollow" data-fr="Tide Hollow">Tide Hollow</span></p>
+</div>
+</a>
+<a class="group flex items-center gap-4 text-right" href="home-run-derby-vr.html">
+<div>
+<p class="text-[10px] tracking-[0.2em] uppercase text-neutral-600 mb-1"><span class="i18n" data-en="Next Project" data-fr="Projet suivant">Next Project</span></p>
+<p class="text-sm font-semibold text-neutral-300 group-hover:text-neutral-100 transition-colors"><span class="i18n" data-en="Home Run Derby VR" data-fr="Home Run Derby VR">Home Run Derby VR</span></p>
+</div>
+<span class="text-amber-300 text-xl group-hover:translate-x-1 transition-transform"><span class="i18n" data-en="→" data-fr="→">→</span></span>
+</a>
+</div>
+</div>
+<!-- FOOTER -->
+<footer class="border-t border-neutral-800 py-12">
+<div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+<p class="text-[11px] text-neutral-700 tracking-wider"><span class="i18n" data-en="© 2025 Guillaume Goder. All rights reserved." data-fr="© 2025 Guillaume Goder. Tous droits réservés.">© 2025 Guillaume Goder. All rights reserved.</span></p>
+<div class="flex flex-wrap gap-6 justify-center">
+<a class="text-[11px] text-neutral-500 hover:text-neutral-200 transition-colors" href="mailto:gg28.god@gmail.com"><span class="i18n" data-en="gg28.god@gmail.com" data-fr="gg28.god@gmail.com">gg28.god@gmail.com</span></a>
+<a class="text-[11px] text-neutral-500 hover:text-neutral-200 transition-colors" href="https://www.instagram.com/guillaumegoderart" rel="noopener" target="_blank"><span class="i18n" data-en="Instagram" data-fr="Instagram">Instagram</span></a>
+<a class="text-[11px] text-neutral-500 hover:text-neutral-200 transition-colors" href="https://www.linkedin.com/in/guillaume-goder-50a611125" rel="noopener" target="_blank"><span class="i18n" data-en="LinkedIn" data-fr="LinkedIn">LinkedIn</span></a>
+<a class="text-[11px] text-neutral-500 hover:text-neutral-200 transition-colors" href="https://www.artstation.com/guillaumegoder" rel="noopener" target="_blank"><span class="i18n" data-en="ArtStation" data-fr="ArtStation">ArtStation</span></a>
+</div>
+</div>
+</footer>
+</body>
+</html>

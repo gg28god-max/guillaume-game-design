@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head><script>(function(){try{var t=localStorage.getItem('theme')||'dark';var l=localStorage.getItem('lang')||'en';if(t==='light')document.documentElement.classList.add('light');document.documentElement.setAttribute('lang',l);document.documentElement.setAttribute('data-lang',l);}catch(e){}})();</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title data-en="Outpost Red — Guillaume Goder" data-fr="Outpost Red — Guillaume Goder">Outpost Red — Guillaume Goder</title>
+<meta content="Outpost Red — real-time UI architecture and production-ready sci-fi interface design for a Martian colony game. UI/UX, Unreal Engine 5, UMG." data-en="Outpost Red — real-time UI architecture and production-ready sci-fi interface design for a Martian colony game. UI/UX, Unreal Engine 5, UMG." data-fr="Outpost Red — architecture UI temps réel et design d'interface sci-fi prêt pour la production pour un jeu de colonie martienne. UI/UX, Unreal Engine 5, UMG." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } } }</script>
+<style>
+    * { font-family: 'Inter', system-ui, sans-serif; }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  </style>
+<link href="assets/theme.css" rel="stylesheet"/><script defer="" src="assets/site.js"></script></head>
+<body class="bg-[#0a0a0a] text-neutral-100 min-h-screen">
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 border-b border-neutral-800 nav-surface">
+<div class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16">
+<a class="group flex items-center gap-3 text-sm font-semibold tracking-[0.2em] uppercase text-neutral-100 hover:text-amber-300 transition-colors duration-300" href="index.html">
+<img alt="Guillaume Goder dodo logo" class="h-9 w-9 object-contain shrink-0 group-hover:scale-105 transition-transform duration-300" src="Dodo%20logo%201.png"/>
+<span><span class="i18n" data-en="Guillaume Goder" data-fr="Guillaume Goder">Guillaume Goder</span></span>
+</a>
+<div class="hidden md:flex items-center gap-8">
+<div class="relative group">
+<a class="text-[11px] tracking-[0.15em] uppercase text-neutral-100 flex items-center gap-1" href="index.html">
+            <span class="i18n" data-en="Projects" data-fr="Projets">Projects</span> <svg class="w-3 h-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+<div class="absolute top-full left-0 mt-3 w-60 border border-neutral-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-2xl dropdown-surface">
+<a class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-100 bg-neutral-800 border-b border-neutral-800" href="outpost-red.html"><span class="i18n" data-en="Outpost Red" data-fr="Outpost Red">Outpost Red</span> <span class="text-neutral-500"><span class="i18n" data-en="2025" data-fr="2025">2025</span></span></a>
+<a class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all border-b border-neutral-800" href="tide-hollow.html"><span class="i18n" data-en="Tide Hollow" data-fr="Tide Hollow">Tide Hollow</span> <span class="text-neutral-700"><span class="i18n" data-en="2025" data-fr="2025">2025</span></span></a>
+<a class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all border-b border-neutral-800" href="wings-of-wanitu.html"><span class="i18n" data-en="Wings of Wanitu" data-fr="Wings of Wanitu">Wings of Wanitu</span> <span class="text-neutral-700"><span class="i18n" data-en="2025" data-fr="2025">2025</span></span></a>
+<a class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all border-b border-neutral-800" href="home-run-derby-vr.html"><span class="i18n" data-en="Home Run Derby VR" data-fr="Home Run Derby VR">Home Run Derby VR</span> <span class="text-neutral-700"><span class="i18n" data-en="2023" data-fr="2023">2023</span></span></a>
+<a class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all border-b border-neutral-800" href="starquest.html"><span class="i18n" data-en="Starquest" data-fr="Starquest">Starquest</span> <span class="text-neutral-700"><span class="i18n" data-en="2020" data-fr="2020">2020</span></span></a>
+<a class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all" href="diverse-creative-studies.html"><span class="i18n" data-en="Diverse Creative Studies" data-fr="Diverse Creative Studies">Diverse Creative Studies</span> <span class="text-neutral-700"><span class="i18n" data-en="2020" data-fr="2020">2020</span></span></a>
+</div>
+</div>
+<a class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors" href="illustrations.html"><span class="i18n" data-en="Illustrations" data-fr="Illustrations">Illustrations</span></a>
+<a class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors" href="paintings.html"><span class="i18n" data-en="Paintings" data-fr="Peintures">Paintings</span></a>
+<a class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors" href="resume.html"><span class="i18n" data-en="Resume" data-fr="CV">Resume</span></a>
+<a class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors" href="about.html"><span class="i18n" data-en="About" data-fr="À propos">About</span></a>
+</div>
+<div class="flex items-center gap-5">
+<div class="site-toggles"><button aria-label="Passer en français" class="lang-toggle-btn" type="button">FR</button><button aria-label="Switch to light mode" class="theme-toggle-btn" type="button"><svg class="icon-moon" fill="currentColor" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg></button></div><div class="hidden md:flex items-center gap-5">
+<a class="text-[11px] tracking-wider text-neutral-600 hover:text-neutral-200 transition-colors" href="https://www.instagram.com/guillaumegoderart" rel="noopener" target="_blank"><span class="i18n" data-en="IG" data-fr="IG">IG</span></a>
+<a class="text-[11px] tracking-wider text-neutral-600 hover:text-neutral-200 transition-colors" href="https://www.linkedin.com/in/guillaume-goder-50a611125" rel="noopener" target="_blank"><span class="i18n" data-en="LI" data-fr="LI">LI</span></a>
+<a class="text-[11px] tracking-wider text-neutral-600 hover:text-neutral-200 transition-colors" href="https://www.artstation.com/guillaumegoder" rel="noopener" target="_blank"><span class="i18n" data-en="AS" data-fr="AS">AS</span></a>
+</div>
+<button aria-label="Menu" class="md:hidden flex flex-col gap-1.5 p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+<span class="block w-5 h-px bg-neutral-400"></span>
+<span class="block w-5 h-px bg-neutral-400"></span>
+<span class="block w-3 h-px bg-neutral-400"></span>
+</button>
+</div>
+</div>
+<div class="hidden md:hidden border-t border-neutral-800 mobile-surface" id="mobile-menu">
+<div class="px-6 py-6 space-y-1">
+<p class="text-[10px] tracking-[0.2em] uppercase text-neutral-600 mb-3"><span class="i18n" data-en="Projects" data-fr="Projets">Projects</span></p>
+<a class="block py-2 text-sm text-white font-medium" href="outpost-red.html"><span class="i18n" data-en="Outpost Red" data-fr="Outpost Red">Outpost Red</span></a>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="tide-hollow.html"><span class="i18n" data-en="Tide Hollow" data-fr="Tide Hollow">Tide Hollow</span></a>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="wings-of-wanitu.html"><span class="i18n" data-en="Wings of Wanitu" data-fr="Wings of Wanitu">Wings of Wanitu</span></a>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="home-run-derby-vr.html"><span class="i18n" data-en="Home Run Derby VR" data-fr="Home Run Derby VR">Home Run Derby VR</span></a>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="starquest.html"><span class="i18n" data-en="Starquest" data-fr="Starquest">Starquest</span></a>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="diverse-creative-studies.html"><span class="i18n" data-en="Diverse Creative Studies" data-fr="Diverse Creative Studies">Diverse Creative Studies</span></a>
+<div class="border-t border-neutral-800 my-4"></div>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="illustrations.html"><span class="i18n" data-en="Illustrations" data-fr="Illustrations">Illustrations</span></a>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="paintings.html"><span class="i18n" data-en="Paintings" data-fr="Peintures">Paintings</span></a>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="resume.html"><span class="i18n" data-en="Resume" data-fr="CV">Resume</span></a>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="about.html"><span class="i18n" data-en="About" data-fr="À propos">About</span></a>
+</div>
+</div>
+</nav>
+<!--
+    PAGE STRUCTURE — mirrors the Squarespace original exactly.
+    Every section title (UI GAME DEMO, INFORMATION ARCHITECTURE, USER FLOW, …)
+    is baked into the exported banner images. Never render an HTML heading
+    for a section that has a banner image — that is what caused the doubled titles.
+    Asset gotchas:
+      · "INFORMATION+ARCHITECTURE-1.webp"      = USER FLOW banner (misnamed export)
+      · "information+architecture (1).webp"    = IA tree diagram
+      · "Project+Overview+3.webp"              = Implementation Workflow phase cards
+  -->
+<main class="pt-16 space-y-2">
+<h1 class="sr-only"><span class="i18n" data-en="Outpost Red — UI/UX &amp; Concept Art Case Study" data-fr="Outpost Red — Étude de cas UI/UX et art conceptuel">Outpost Red — UI/UX &amp; Concept Art Case Study</span></h1>
+<!-- 1 · HERO — title, synopsis, astronaut + meta badges & tools (baked into images) -->
+<section aria-label="Project overview" class="space-y-2">
+<img alt="Outpost Red — project case study hero with astronaut and project synopsis" class="block w-full" fetchpriority="high" src="Outpost%20Red/Project%2BOverview%2B-%2BOutpost%2Bred.webp"/>
+<img alt="Role, genre and platform badges with tools and software stack" class="block w-full" loading="lazy" src="Outpost%20Red/Project%2BOverview%2B2.webp"/>
+</section>
+<!-- 2 · UI GAME DEMO — banner, video, index -->
+<section aria-label="UI game demo" class="space-y-2">
+<img alt="UI Game Demo — inventory system, HUD, Unreal Motion Graphics" class="block w-full" loading="lazy" src="Outpost%20Red/UI%2BGAME%2BDEMO.webp"/>
+<video class="block w-full bg-black" controls="" preload="metadata">
+<source src="Outpost%20Red/The%20Final%20Cut%20Reformate.mp4" type="video/mp4"/>
+        <span class="i18n" data-en="Your browser does not support the video tag." data-fr="Votre navigateur ne prend pas en charge la balise vidéo.">Your browser does not support the video tag.</span>
+      </video>
+<img alt="Index — ordered list of all case study sections" class="block w-full" loading="lazy" src="Outpost%20Red/index.webp"/>
+</section>
+<!-- 3 · INFORMATION ARCHITECTURE — banner, tree diagram -->
+<section aria-label="Information architecture" class="space-y-2">
+<img alt="Information Architecture — overview, technical specifications, UI, game systems, concept art" class="block w-full" loading="lazy" src="Outpost%20Red/information%2Barchitecture.webp"/>
+<img alt="Outpost Red project information architecture tree diagram" class="block w-full" loading="lazy" src="Outpost%20Red/information%2Barchitecture%20%281%29.webp"/>
+</section>
+<!-- 4 · USER FLOW — banner (misnamed file), combined player flow diagram -->
+<section aria-label="User flow" class="space-y-2">
+<img alt="User Flow — game launch, main menu decisions, loading, gameplay and inventory, in-game settings" class="block w-full" loading="lazy" src="Outpost%20Red/INFORMATION%2BARCHITECTURE-1.webp"/>
+<img alt="Combined player flow diagram from game launch through gameplay and settings" class="block w-full" loading="lazy" src="Outpost%20Red/Combined%2BPlayer%2BFlow.webp"/>
+</section>
+<!-- 5 · IMPLEMENTATION WORKFLOW — banner, Figma / UE5 phase cards -->
+<section aria-label="Implementation workflow" class="space-y-2">
+<img alt="Implementation Workflow — Figma and Unreal Engine" class="block w-full" loading="lazy" src="Outpost%20Red/Implementation%2Bworkflow.webp"/>
+<img alt="Phase 01 Figma UI/UX pipeline and Phase 02 Unreal Engine 5 implementation cards" class="block w-full" loading="lazy" src="Outpost%20Red/Project%2BOverview%2B3.webp"/>
+</section>
+<!-- 6 · FIGMA FILES — banner, live embed, external link -->
+<section aria-label="Figma files" class="space-y-2">
+<img alt="Figma Files — information architecture, user flow, wireframe, design system, high fidelity interface" class="block w-full" loading="lazy" src="Outpost%20Red/Figma%2Bfiles.webp"/>
+<div style="height:640px;">
+<iframe allowfullscreen="" src="https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FcJQNuWQ9L3U0nePMWP2HAh%2FOutpost-Red-UI-Project%3Fnode-id%3D0-1%26t%3DNI2VN1Wjqu4Ts4WT-1" style="width:100%;height:100%;border:none;" title="Outpost Red UI Project — Figma file"></iframe>
+</div>
+<div class="px-6 lg:px-8 py-6">
+<a class="inline-flex items-center gap-2 border border-neutral-700 px-5 py-2.5 text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:border-[#ff5500] hover:text-[#ff5500] transition-all" href="https://www.figma.com/design/cJQNuWQ9L3U0nePMWP2HAh/Outpost-Red-UI-Project?node-id=0-1&amp;t=nI2VN1Wjqu4Ts4WT-1" rel="noopener" target="_blank">
+          <span class="i18n" data-en="Open Full File in Figma  →" data-fr="Ouvrir le fichier complet dans Figma  →">Open Full File in Figma  →</span>
+        </a>
+</div>
+</section>
+<!-- 7 · CONCEPT ART — banner, framed vehicle & character design cards -->
+<section aria-label="Concept art" class="space-y-2">
+<img alt="Concept Art — vehicle design, character design" class="block w-full" loading="lazy" src="Outpost%20Red/Concept%2Bart.webp"/>
+<img alt="Vehicle design — space rover sketches" class="block w-full" loading="lazy" src="Outpost%20Red/VEHICLE%2BDESIGN.webp"/>
+<img alt="Vehicle design — space rover render views" class="block w-full" loading="lazy" src="Outpost%20Red/VEHICLE%2BDESIGN%20%281%29.webp"/>
+<img alt="Vehicle design — space rover render on Martian terrain" class="block w-full" loading="lazy" src="Outpost%20Red/VEHICLE%2BDESIGN%20%282%29.webp"/>
+<img alt="Character design — contaminated crew member" class="block w-full" loading="lazy" src="Outpost%20Red/VEHICLE%2BDESIGN%20%283%29.webp"/>
+</section>
+<!-- 8 · WIREFRAME — framed cards with baked "02 WIREFRAME" plates -->
+<section aria-label="Wireframe" class="space-y-2">
+<img alt="Wireframes — skill tree, gameplay HUD, crafting, in-game shops" class="block w-full" loading="lazy" src="Outpost%20Red/Wireframes%2B1.webp"/>
+<img alt="Wireframes — additional interface screens" class="block w-full" loading="lazy" src="Outpost%20Red/Wireframes%2B2.webp"/>
+<img alt="Wireframes — inventory system screens" class="block w-full" loading="lazy" src="Outpost%20Red/Wireframes%2B3.webp"/>
+</section>
+<!-- 9 · STYLE GUIDE — framed cards with baked "03 STYLE GUIDE" plates -->
+<section aria-label="Style guide" class="space-y-2">
+<img alt="Style guide — typography and color palette" class="block w-full" loading="lazy" src="Outpost%20Red/FONT.webp"/>
+<img alt="Style guide — buttons and progress bars" class="block w-full" loading="lazy" src="Outpost%20Red/02.%2BBUTTONS%2B%26%2BPROGRESS%2BBAR.webp"/>
+<img alt="Style guide — UI elements and icons" class="block w-full" loading="lazy" src="Outpost%20Red/ELEMENTS.webp"/>
+<img alt="Style guide — inventory items" class="block w-full" loading="lazy" src="Outpost%20Red/Style%2BGuide.webp"/>
+</section>
+<!-- 10 · HIGH FIDELITY INTERFACE -->
+<section aria-label="High fidelity interface" class="space-y-2">
+<img alt="High fidelity interface — inventory items" class="block w-full" loading="lazy" src="Outpost%20Red/HIGH%2BFIDELITY%2BINTERFACE%2B1.webp"/>
+<img alt="High fidelity interface — load game" class="block w-full" loading="lazy" src="Outpost%20Red/HIGH%2BFIDELITY%2BINTERFACE%2B2.webp"/>
+<img alt="High fidelity interface — final interface" class="block w-full" loading="lazy" src="Outpost%20Red/Final%2Binterface.webp"/>
+<img alt="High fidelity interface — select difficulty" class="block w-full" loading="lazy" src="Outpost%20Red/HIGH%2BFIDELITY%2BINTERFACE%2B4.webp"/>
+<img alt="High fidelity interface — additional screens" class="block w-full" loading="lazy" src="Outpost%20Red/HIGH%2BFIDELITY%2BINTERFACE%2B5.webp"/>
+</section>
+<!-- 11 · IN GAME HUD — framed card with baked "05 IN GAME HUD" plate -->
+<section aria-label="In-game HUD">
+<img alt="In-game HUD — minimap, life bar, objectives" class="block w-full" loading="lazy" src="Outpost%20Red/IN%2BGAME%2BHUD.webp"/>
+</section>
+<!-- 12 · UE5 — Unreal Motion Graphics implementation -->
+<section aria-label="UE5 implementation" class="space-y-2">
+<img alt="UE5 interface — Unreal Motion Graphics implementation" class="block w-full" loading="lazy" src="Outpost%20Red/UE5%2BINTERFACE.webp"/>
+<img alt="Outpost Red — closing footer artwork" class="block w-full" loading="lazy" src="Outpost%20Red/S7%2BFooter.webp"/>
+</section>
+</main>
+<!-- PREV / NEXT -->
+<div class="border-t border-neutral-800 mt-2">
+<div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-end py-10">
+<a class="group flex items-center gap-4 text-right" href="tide-hollow.html">
+<div>
+<p class="text-[10px] tracking-[0.2em] uppercase text-neutral-600 mb-1"><span class="i18n" data-en="Next Project" data-fr="Projet suivant">Next Project</span></p>
+<p class="text-sm font-semibold text-neutral-300 group-hover:text-neutral-100 transition-colors"><span class="i18n" data-en="Tide Hollow" data-fr="Tide Hollow">Tide Hollow</span></p>
+</div>
+<span class="text-amber-300 text-xl group-hover:translate-x-1 transition-transform"><span class="i18n" data-en="→" data-fr="→">→</span></span>
+</a>
+</div>
+</div>
+<!-- FOOTER -->
+<footer class="border-t border-neutral-800 py-12">
+<div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+<p class="text-[11px] text-neutral-700 tracking-wider"><span class="i18n" data-en="© 2025 Guillaume Goder. All rights reserved." data-fr="© 2025 Guillaume Goder. Tous droits réservés.">© 2025 Guillaume Goder. All rights reserved.</span></p>
+<div class="flex flex-wrap gap-6 justify-center">
+<a class="text-[11px] text-neutral-500 hover:text-neutral-200 transition-colors" href="mailto:gg28.god@gmail.com"><span class="i18n" data-en="gg28.god@gmail.com" data-fr="gg28.god@gmail.com">gg28.god@gmail.com</span></a>
+<a class="text-[11px] text-neutral-500 hover:text-neutral-200 transition-colors" href="https://www.instagram.com/guillaumegoderart" rel="noopener" target="_blank"><span class="i18n" data-en="Instagram" data-fr="Instagram">Instagram</span></a>
+<a class="text-[11px] text-neutral-500 hover:text-neutral-200 transition-colors" href="https://www.linkedin.com/in/guillaume-goder-50a611125" rel="noopener" target="_blank"><span class="i18n" data-en="LinkedIn" data-fr="LinkedIn">LinkedIn</span></a>
+<a class="text-[11px] text-neutral-500 hover:text-neutral-200 transition-colors" href="https://www.artstation.com/guillaumegoder" rel="noopener" target="_blank"><span class="i18n" data-en="ArtStation" data-fr="ArtStation">ArtStation</span></a>
+</div>
+</div>
+</footer>
+</body>
+</html>
