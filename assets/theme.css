@@ -101,3 +101,7 @@ html.light .lang-toggle-btn:hover,
 html.light .theme-toggle-btn:hover { color: #18181b; border-color: #a1a1aa; }
 html.light .theme-toggle-btn .icon-moon { display: none; }
 html.light .theme-toggle-btn .icon-sun { display: block; }
+
+/* Cross-site navigation pill — arrow slides on hover */
+.cross-pill .cross-arrow { transition: transform 0.3s ease; display: inline-block; }
+.cross-pill:hover .cross-arrow { transform: translateX(3px); }
