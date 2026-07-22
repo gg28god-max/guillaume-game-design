@@ -188,3 +188,39 @@ html.light .card-overlay .text-neutral-300 {
 html.light .card-overlay .text-neutral-400 {
   color: #d8d8dd !important;
 }
+
+/* ── LinkedIn pill (nav) ──────────────────────────────────────────────────
+   Replaces the faint "LI" text link. Neutral outline so it reads as a
+   secondary action next to the gold portfolio pill.                      */
+.li-pill {
+  color: #d4d4d8;
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.li-pill:hover {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #0a0a0a;
+}
+
+html.light .li-pill {
+  color: #3f3f46;
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+html.light .li-pill:hover {
+  background-color: #18181b;
+  border-color: #18181b;
+  color: #ffffff;
+}
+
+/* LinkedIn mark: optically centred against the uppercase label, and dialled
+   back so it reads as a quiet cue rather than competing with the text. */
+.li-pill .li-icon {
+  display: block;
+  opacity: 0.55;
+  margin-top: -1px;
+  transition: opacity 0.22s ease;
+}
+
+.li-pill:hover .li-icon { opacity: 0.85; }
