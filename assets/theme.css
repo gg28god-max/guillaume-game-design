@@ -55,10 +55,10 @@ html.light .bg-neutral-100.text-neutral-950 { border: 1px solid #d4d4d8; }
 
 /* ---- Card overlay gradient (project cards) stays legible in light mode ---- */
 html.light .card-overlay {
-  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.08) 55%, transparent 100%) !important;
+  background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.30) 50%, rgba(0,0,0,0.05) 100%) !important;
 }
 html.light .project-card:hover .card-overlay {
-  background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.2) 55%, rgba(0,0,0,0.02) 100%) !important;
+  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.40) 50%, rgba(0,0,0,0.10) 100%) !important;
 }
 
 /* ==========================================================================
@@ -171,4 +171,20 @@ html.light nav a.group:hover span {
 /* The dodo logo is a light silhouette — invert it so it reads on light */
 html.light nav img[alt*="dodo"] {
   filter: brightness(0);
+}
+
+/* Card text sits on a dark scrim over the artwork, so it must stay light in
+   both themes. Undo the global light-mode text inversion inside the overlay
+   (html.light .text-neutral-* would otherwise make it near-black on black). */
+html.light .card-overlay .text-neutral-100,
+html.light .card-overlay .text-white {
+  color: #fafafa !important;
+}
+
+html.light .card-overlay .text-neutral-300 {
+  color: #e4e4e7 !important;
+}
+
+html.light .card-overlay .text-neutral-400 {
+  color: #d8d8dd !important;
 }
