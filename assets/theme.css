@@ -224,3 +224,17 @@ html.light .li-pill:hover {
 }
 
 .li-pill:hover .li-icon { opacity: 0.85; }
+
+/* ── Phone nav ────────────────────────────────────────────────────────────
+   The portfolio pill stays visible at every width, so it is compacted on
+   phones to earn its space beside the toggles and the menu button.
+   !important is required to beat the Tailwind utilities on the element.  */
+@media (max-width: 639px) {
+  .cross-pill {
+    font-size: 9px !important;
+    letter-spacing: 0.04em !important;
+    padding: 5px 9px !important;
+    gap: 5px !important;
+  }
+  nav .site-toggles { gap: 0.75rem !important; }
+}
