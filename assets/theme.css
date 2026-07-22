@@ -105,3 +105,32 @@ html.light .theme-toggle-btn .icon-sun { display: block; }
 /* Cross-site navigation pill — arrow slides on hover */
 .cross-pill .cross-arrow { transition: transform 0.3s ease; display: inline-block; }
 .cross-pill:hover .cross-arrow { transform: translateX(3px); }
+
+/* ── Project cards (home grid) ────────────────────────────────────────────
+   Contained rounded cards. Hover matches the landing page and UX portfolio:
+   lift + slight scale + gold border + contained shadow.               */
+.project-card {
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-9px) scale(1.02);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.70), 0 4px 12px rgba(201, 168, 76, 0.18);
+  border-color: rgba(201, 168, 76, 0.75);
+}
+
+/* The card now scales too — soften the image zoom so it reads as one motion */
+.project-card:hover img { transform: scale(1.03); }
+
+html.light .project-card {
+  border-color: rgba(0, 0, 0, 0.10);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+html.light .project-card:hover {
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18), 0 4px 12px rgba(160, 120, 48, 0.18);
+  border-color: rgba(160, 120, 48, 0.65);
+}
