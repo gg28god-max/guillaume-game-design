@@ -51,12 +51,13 @@
   }
 
 
-  /* Cards rise into view as they are scrolled to. The observer is the primary
-     trigger because it re-measures whenever layout changes — a geometry sweep
-     at DOMContentLoaded would see every card stacked near the top, before the
-     images have any height, and fire them all at once. The sweep is kept only
-     as the fallback for when the observer never delivers, on a backgrounded or
-     prerendered tab, where a stranded card would sit invisible at opacity 0. */
+  /* Cards rise into view as they are scrolled to. Cards fix their height with
+     aspect-ratio, not the (lazy) image, so the layout is stable once the grid
+     applies — a rAF sweep after the first paint reveals whatever is already on
+     screen without waiting on the observer's first async callback, which was
+     leaving visible cards blank for a beat on a tablet. The observer and the
+     scroll listener then handle whatever starts below the fold; the load and
+     timeout sweeps are the last resort if the observer never delivers. */
   function revealCards() {
     var cards = Array.prototype.slice.call(document.querySelectorAll('.project-card'));
     if (!cards.length) return;
@@ -83,9 +84,12 @@
     }
 
     function sweep() {
+      // Any card with a pixel on screen counts — a card near the bottom edge is
+      // visible and must not read as empty. A tighter margin left a band of
+      // on-screen-but-unrevealed cards, most visible on a tablet's tall viewport.
       cards.forEach(function (c, i) {
         var r = c.getBoundingClientRect();
-        if (r.top < window.innerHeight * 0.88 && r.bottom > 0) show(c, i);
+        if (r.top < window.innerHeight && r.bottom > 0) show(c, i);
       });
     }
 
@@ -98,11 +102,16 @@
       : null;
 
     if (io) cards.forEach(function (c) { io.observe(c); });
+
+    // Reveal in-view cards on the first frame after layout, not on the
+    // observer's first callback. rAF (not DOMContentLoaded) so the grid has
+    // applied and cards are not still stacked full-width near the top.
+    if (window.requestAnimationFrame) window.requestAnimationFrame(sweep);
     else sweep();
 
     window.addEventListener('scroll', sweep, { passive: true });
-    window.addEventListener('load', sweep);   // images have settled the layout
-    setTimeout(sweep, 1500);                  // in case load already fired
+    window.addEventListener('load', sweep);   // belt-and-braces once everything settles
+    setTimeout(sweep, 1500);                  // final fallback if the observer stays silent
   }
 
   /* A touchstart is the only reliable signal that a finger is on the card:
