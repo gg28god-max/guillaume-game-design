@@ -252,10 +252,12 @@ html.light .li-pill:hover {
 .project-card.pre-reveal { opacity: 0; }
 .project-card.revealing  { animation: cardIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
 
-/* No hover to lean on, so a tap gets its own feedback. */
-@media (hover: none) {
-  .project-card:active { transform: scale(0.985); }
-}
+/* No hover to lean on, so a tap gets its own feedback. Driven by a class
+   rather than :active inside a touch media query: iOS only applies :active to
+   elements it treats as tappable, and some Android browsers report
+   (hover: hover) on a phone, so the query never matches there. A touchstart
+   is ground truth. Placed after the :hover rule so it wins on a tap. */
+.project-card.is-pressed { transform: scale(0.985); }
 
 @media (prefers-reduced-motion: reduce) {
   .project-card.pre-reveal { opacity: 1; }

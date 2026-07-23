@@ -105,10 +105,26 @@
     setTimeout(sweep, 1500);                  // in case load already fired
   }
 
+  /* A touchstart is the only reliable signal that a finger is on the card:
+     media queries misreport on some Android browsers, and iOS restricts
+     :active. Releasing on touchmove matters — otherwise a card stays squeezed
+     while the page is scrolled with a finger resting on it. */
+  function pressFeedback() {
+    Array.prototype.forEach.call(document.querySelectorAll('.project-card'), function (card) {
+      function press()   { card.classList.add('is-pressed'); }
+      function release() { card.classList.remove('is-pressed'); }
+      card.addEventListener('touchstart',  press,   { passive: true });
+      card.addEventListener('touchmove',   release, { passive: true });
+      card.addEventListener('touchend',    release);
+      card.addEventListener('touchcancel', release);
+    });
+  }
+
   function init() {
     applyTheme(getTheme());
     applyLang(getLang());
     revealCards();
+    pressFeedback();
 
     document.querySelectorAll('.theme-toggle-btn').forEach(function (b) {
       b.addEventListener('click', function () {
