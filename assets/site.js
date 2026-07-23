@@ -50,9 +50,65 @@
     });
   }
 
+
+  /* Cards rise into view as they are scrolled to. The observer is the primary
+     trigger because it re-measures whenever layout changes — a geometry sweep
+     at DOMContentLoaded would see every card stacked near the top, before the
+     images have any height, and fire them all at once. The sweep is kept only
+     as the fallback for when the observer never delivers, on a backgrounded or
+     prerendered tab, where a stranded card would sit invisible at opacity 0. */
+  function revealCards() {
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.project-card'));
+    if (!cards.length) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    cards.forEach(function (c) { c.classList.add('pre-reveal'); });
+
+    function settle(card) {
+      card.classList.remove('revealing');
+      card.style.animationDelay = '';
+    }
+
+    function show(card, i) {
+      if (!card.classList.contains('pre-reveal')) return;
+      card.classList.remove('pre-reveal');
+      card.style.animationDelay = (i % 3) * 0.07 + 's';
+      card.classList.add('revealing');
+      card.addEventListener('animationend', function once() {
+        card.removeEventListener('animationend', once);
+        settle(card);
+      });
+      // If the animation never runs the fill would hold the card at opacity 0.
+      setTimeout(function () { settle(card); }, 1400);
+    }
+
+    function sweep() {
+      cards.forEach(function (c, i) {
+        var r = c.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.88 && r.bottom > 0) show(c, i);
+      });
+    }
+
+    var io = window.IntersectionObserver
+      ? new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) show(e.target, cards.indexOf(e.target));
+          });
+        }, { threshold: 0.15 })
+      : null;
+
+    if (io) cards.forEach(function (c) { io.observe(c); });
+    else sweep();
+
+    window.addEventListener('scroll', sweep, { passive: true });
+    window.addEventListener('load', sweep);   // images have settled the layout
+    setTimeout(sweep, 1500);                  // in case load already fired
+  }
+
   function init() {
     applyTheme(getTheme());
     applyLang(getLang());
+    revealCards();
 
     document.querySelectorAll('.theme-toggle-btn').forEach(function (b) {
       b.addEventListener('click', function () {

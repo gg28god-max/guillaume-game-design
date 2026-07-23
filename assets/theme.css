@@ -238,3 +238,26 @@ html.light .li-pill:hover {
   }
   nav .site-toggles { gap: 0.75rem !important; }
 }
+
+/* ── Card entrance + touch feedback ───────────────────────────────────────
+   Every card state above is a :hover state, so a phone never sees a card
+   move at all. Each card now rises as it scrolls into view, and presses in
+   when tapped. The class is stripped once the animation ends, otherwise the
+   animation's fill would sit on top of the hover transform and freeze it. */
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.project-card.pre-reveal { opacity: 0; }
+.project-card.revealing  { animation: cardIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+/* No hover to lean on, so a tap gets its own feedback. */
+@media (hover: none) {
+  .project-card:active { transform: scale(0.985); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card.pre-reveal { opacity: 1; }
+  .project-card.revealing  { animation: none; }
+}
