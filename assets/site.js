@@ -129,11 +129,51 @@
     });
   }
 
+  /* A poster alone does not read as playable, so overlay a central play button
+     that pulses when the video scrolls into view. Progressive enhancement: the
+     button is injected here, and the native controls stay on the <video> as the
+     no-JS fallback until this runs and takes over. Works for any .video-embed. */
+  function setupVideoEmbeds() {
+    var PLAY_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+    Array.prototype.forEach.call(document.querySelectorAll('.video-embed'), function (embed) {
+      var video = embed.querySelector('video');
+      if (!video || embed.querySelector('.video-play-btn')) return;
+
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'video-play-btn';
+      btn.setAttribute('aria-label', getLang() === 'fr' ? 'Lire la vidéo' : 'Play video');
+      btn.innerHTML = PLAY_SVG;
+      embed.appendChild(btn);
+
+      video.removeAttribute('controls');           // our button is the only control until play
+
+      function start() {
+        embed.classList.add('playing');
+        video.setAttribute('controls', '');
+        var p = video.play();
+        if (p && p.catch) p.catch(function () {});
+      }
+      btn.addEventListener('click', start);
+      video.addEventListener('play', function () { embed.classList.add('playing'); });
+
+      // Pulse only while the video is on screen — start it as it scrolls in.
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { embed.classList.toggle('in-view', e.isIntersecting); });
+        }, { threshold: 0.4 }).observe(embed);
+      } else {
+        embed.classList.add('in-view');
+      }
+    });
+  }
+
   function init() {
     applyTheme(getTheme());
     applyLang(getLang());
     revealCards();
     pressFeedback();
+    setupVideoEmbeds();
 
     document.querySelectorAll('.theme-toggle-btn').forEach(function (b) {
       b.addEventListener('click', function () {
