@@ -346,3 +346,108 @@ html.light .li-pill:hover {
   .video-play-btn::before,
   .video-play-btn::after { animation: none !important; transition: opacity 0.3s ease; }
 }
+
+/* ── Figma embed: click-to-activate façade + lock/unlock shield ────────────
+   The live Figma iframe pulls Figma's whole app and, on touch, traps scroll on
+   its infinite canvas. So the iframe is not in the page at all until asked for:
+   a static preview loads first (fast), the iframe is injected on "Load canvas",
+   and even then it stays behind an inert shield so the page scrolls past it —
+   only an explicit Unlock hands touch gestures to Figma. site.js wires it. */
+.figma-embed {
+  position: relative;
+  height: 640px;
+  overflow: hidden;
+  background: #0a0a0a;
+  border-radius: 2px;
+}
+.figma-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; display: block; }
+
+/* Static preview */
+.figma-facade-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  filter: brightness(0.46) saturate(0.92);
+}
+
+/* Onboarding overlay */
+.figma-cta {
+  position: absolute; inset: 0; z-index: 2;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 8px; text-align: center; padding: 24px; cursor: pointer;
+  background: radial-gradient(120% 100% at 50% 45%, rgba(0,0,0,0.25), rgba(0,0,0,0.74));
+  transition: background-color 0.25s ease;
+}
+.figma-cta:hover { background: radial-gradient(120% 100% at 50% 45%, rgba(0,0,0,0.18), rgba(0,0,0,0.66)); }
+.figma-gesture { color: #ff5500; width: 46px; height: 46px; margin-bottom: 4px; }
+.figma-gesture svg { width: 100%; height: 100%; display: block; animation: figmaPan 3.4s ease-in-out infinite; }
+@keyframes figmaPan {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-3px, 2px); }
+  50% { transform: translate(2px, -2px); }
+  75% { transform: translate(2px, 3px); }
+}
+.figma-cta-title { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 21px; color: #fff; margin: 0; letter-spacing: -0.01em; }
+.figma-cta-sub { font-family: 'Inter', sans-serif; font-size: 13px; line-height: 1.5; color: rgba(255,255,255,0.72); margin: 0; max-width: 34ch; }
+.figma-load-btn {
+  margin-top: 10px;
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Inter', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: #0a0a0a; background: #ff5500; border: none; border-radius: 999px;
+  padding: 11px 22px; cursor: pointer;
+  transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1), background-color 0.22s ease;
+}
+.figma-load-btn:hover { transform: translateY(-1px) scale(1.03); background: #ff6a24; }
+.figma-cta:focus-visible, .figma-load-btn:focus-visible { outline: 2px solid #ff5500; outline-offset: 3px; }
+
+/* Once loaded, hide the façade */
+.figma-embed.loaded .figma-facade-img,
+.figma-embed.loaded .figma-cta { display: none; }
+
+/* Interaction shield — covers the iframe while LOCKED. A plain button, so a
+   drag scrolls the page (default touch-action) and a tap unlocks. */
+.figma-shield {
+  position: absolute; inset: 0; z-index: 3;
+  display: none;
+  align-items: flex-end; justify-content: center;
+  padding: 0 0 16px; margin: 0;
+  border: none; background: linear-gradient(to top, rgba(0,0,0,0.4), transparent 26%);
+  cursor: pointer; font: inherit;
+}
+.figma-embed.loaded:not(.unlocked) .figma-shield { display: flex; }
+.figma-shield-hint {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 600; color: #fff;
+  background: rgba(12,12,12,0.82); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.16); border-radius: 999px; padding: 9px 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
+.figma-shield-hint svg { width: 15px; height: 15px; color: #ff5500; }
+.figma-shield:hover .figma-shield-hint { border-color: rgba(255,85,0,0.6); }
+
+/* Lock pill — floats above the iframe while UNLOCKED so it stays clickable. */
+.figma-lock-pill {
+  position: absolute; top: 12px; right: 12px; z-index: 4;
+  display: none; align-items: center; gap: 7px;
+  font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  color: #fff; background: rgba(12,12,12,0.85); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.18); border-radius: 999px; padding: 8px 14px; cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4); transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.figma-embed.loaded.unlocked .figma-lock-pill { display: inline-flex; }
+.figma-lock-pill:hover { border-color: rgba(255,85,0,0.7); background: rgba(20,20,20,0.9); }
+.figma-lock-pill:focus-visible { outline: 2px solid #ff5500; outline-offset: 2px; }
+.figma-lock-pill svg { width: 13px; height: 13px; }
+
+html.light .figma-shield-hint,
+html.light .figma-lock-pill { color: #fff; }   /* the embed area is always dark */
+
+@media (max-width: 640px) {
+  .figma-embed { height: 440px; }
+  .figma-cta-title { font-size: 18px; }
+  .figma-cta-sub { font-size: 12.5px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .figma-gesture svg { animation: none; }
+}

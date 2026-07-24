@@ -168,12 +168,68 @@
     });
   }
 
+  /* Figma embed: façade → load on demand → lock/unlock. The iframe is never in
+     the page until "Load canvas" is tapped, so initial load stays light and the
+     infinite canvas cannot trap touch scroll. Once loaded it sits behind an
+     inert shield (page scrolls past it); an explicit Unlock hands touch to
+     Figma, and Lock hands it back. */
+  function setupFigmaEmbeds() {
+    var MOVE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5v17M3.5 12h17"/><path d="M12 3.5 9.6 6M12 3.5 14.4 6M12 20.5 9.6 18M12 20.5 14.4 18M3.5 12 6 9.6M3.5 12 6 14.4M20.5 12 18 9.6M20.5 12 18 14.4"/></svg>';
+    var LOCK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>';
+
+    Array.prototype.forEach.call(document.querySelectorAll('.figma-embed'), function (embed) {
+      var src = embed.getAttribute('data-figma-src');
+      var cta = embed.querySelector('.figma-cta');
+      var loadBtn = embed.querySelector('.figma-load-btn');
+      if (!src || !cta) return;
+      var loaded = false;
+
+      function load() {
+        if (loaded) return;
+        loaded = true;
+        var fr = getLang() === 'fr';
+
+        var iframe = document.createElement('iframe');
+        iframe.src = src;
+        iframe.title = 'Outpost Red UI Project — Figma file';
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.setAttribute('loading', 'lazy');
+        embed.insertBefore(iframe, embed.firstChild);
+
+        var shield = document.createElement('button');
+        shield.type = 'button';
+        shield.className = 'figma-shield';
+        shield.setAttribute('aria-label', fr ? 'Déverrouiller le canevas' : 'Unlock the canvas');
+        shield.innerHTML = '<span class="figma-shield-hint">' + MOVE +
+          '<span class="i18n" data-en="Unlock to pan &amp; zoom" data-fr="Déverrouiller pour explorer">' +
+          (fr ? 'Déverrouiller pour explorer' : 'Unlock to pan & zoom') + '</span></span>';
+        embed.appendChild(shield);
+
+        var pill = document.createElement('button');
+        pill.type = 'button';
+        pill.className = 'figma-lock-pill';
+        pill.innerHTML = LOCK +
+          '<span class="i18n" data-en="Lock" data-fr="Verrouiller">' + (fr ? 'Verrouiller' : 'Lock') + '</span>';
+        embed.appendChild(pill);
+
+        shield.addEventListener('click', function () { embed.classList.add('unlocked'); });
+        pill.addEventListener('click', function () { embed.classList.remove('unlocked'); });
+
+        embed.classList.add('loaded');
+      }
+
+      cta.addEventListener('click', load);
+      if (loadBtn) loadBtn.addEventListener('click', function (e) { e.stopPropagation(); load(); });
+    });
+  }
+
   function init() {
     applyTheme(getTheme());
     applyLang(getLang());
     revealCards();
     pressFeedback();
     setupVideoEmbeds();
+    setupFigmaEmbeds();
 
     document.querySelectorAll('.theme-toggle-btn').forEach(function (b) {
       b.addEventListener('click', function () {
