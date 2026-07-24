@@ -134,7 +134,7 @@
      button is injected here, and the native controls stay on the <video> as the
      no-JS fallback until this runs and takes over. Works for any .video-embed. */
   function setupVideoEmbeds() {
-    var PLAY_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+    var PLAY_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5 L8 19 L20 12 Z"/></svg>';
     Array.prototype.forEach.call(document.querySelectorAll('.video-embed'), function (embed) {
       var video = embed.querySelector('video');
       if (!video || embed.querySelector('.video-play-btn')) return;

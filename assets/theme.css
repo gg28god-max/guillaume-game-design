@@ -283,24 +283,26 @@ html.light .li-pill:hover {
   justify-content: center;
   border: none;
   border-radius: 999px;
-  background: rgba(10, 10, 10, 0.5);
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
-  color: #ffffff;
+  background: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
   cursor: pointer;
   transform: translate(-50%, -50%);
-  transition: background-color 0.25s ease, color 0.25s ease,
+  transition: background-color 0.25s ease,
               transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
   z-index: 2;
 }
 
-.video-play-btn svg { width: 30px; height: 30px; margin-left: 4px; } /* nudge triangle to the optical centre */
+/* Centroid of "M8 5 L8 19 L20 12 Z" is ((8+8+20)/3, (5+19+12)/3) = (12,12), the
+   exact viewBox centre — flex-centring the svg lands it on the circle centre
+   with no margin nudge or sub-pixel offset. */
+.video-play-btn svg { width: 34px; height: 34px; display: block; }
+.video-play-btn svg path { fill: #0d0d0f; }
 
 .video-play-btn:hover,
 .video-play-btn:focus-visible {
-  background: rgba(201, 168, 76, 0.95);
-  color: #0a0a0a;
-  transform: translate(-50%, -50%) scale(1.07);
+  background: rgba(255, 255, 255, 0.8);
+  transform: translate(-50%, -50%) scale(1.06);
   outline: none;
 }
 
@@ -311,7 +313,7 @@ html.light .li-pill:hover {
   position: absolute;
   inset: 0;
   border-radius: 999px;
-  border: 2px solid rgba(201, 168, 76, 0.85);
+  border: 2px solid rgba(255, 255, 255, 0.9);
   opacity: 0;
   pointer-events: none;
 }
