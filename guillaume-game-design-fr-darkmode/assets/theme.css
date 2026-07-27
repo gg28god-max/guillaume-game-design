@@ -6,7 +6,7 @@
 
 /* ---- Elements that used to carry inline background styles ---- */
 .nav-surface { background-color: rgba(10, 10, 10, 0.94); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
-.dropdown-surface { background: #111111; }
+.dropdown-surface { background: #111111; border-radius: 14px; overflow: hidden; }
 .mobile-surface { background: #0f0f0f; }
 
 html.light .nav-surface { background-color: rgba(250, 250, 248, 0.88); }
