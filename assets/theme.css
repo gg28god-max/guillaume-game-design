@@ -451,3 +451,31 @@ html.light .figma-lock-pill { color: #fff; }   /* the embed area is always dark 
 @media (prefers-reduced-motion: reduce) {
   .figma-gesture svg { animation: none; }
 }
+
+/* ── Animated dodo logo (nav) ──────────────────────────────────────────────
+   Injected by site.js in place of the static nav logo. Same layered animation
+   as the other sites; theme follows the html.light class. */
+.dodo-logo {
+  position: relative; display: inline-block; overflow: hidden; flex: 0 0 auto;
+  width: 52px; height: 52px;
+  --logo: url(dodo-body-dark.png);
+  --pen: url(dodo-pen.png);
+  --lid: #000000;
+  --s: 0.08667; /* 52 / 600 */
+}
+html.light .dodo-logo { --logo: url(dodo-body-light.png); --lid: #ffffff; }
+.dodo-logo .stg { position: absolute; top: 0; left: 0; width: 600px; height: 600px; transform-origin: top left; transform: scale(var(--s)); }
+.dodo-logo .dl { position: absolute; background-image: var(--logo); background-repeat: no-repeat; background-size: 600px 600px; }
+.dodo-logo .base { left: 0; top: 0; width: 600px; height: 600px; background-position: 0 0; }
+.dodo-logo .tail { left: 60px; top: 255px; width: 145px; height: 128px; background-position: -60px -255px; transform-origin: 125px 63px; animation: dodoTail 3.8s ease-in-out infinite; }
+.dodo-logo .pen  { left: 0; top: 0; width: 600px; height: 600px; background-image: var(--pen); transform-origin: 483px 430px; animation: dodoPen 3.6s ease-in-out infinite; }
+.dodo-logo .head { left: 205px; top: 0; width: 300px; height: 215px; background-position: -205px 0; transform-origin: 95px 215px; animation: dodoHead 5s ease-in-out infinite; }
+.dodo-logo .lid  { position: absolute; left: 92px; top: 89px; width: 48px; height: 48px; border-radius: 50%; background: var(--lid); transform-origin: 50% 0%; transform: scaleY(0); animation: dodoWink 3.4s ease-in-out infinite; }
+@keyframes dodoPen  { 0%,100%{transform:rotate(0)} 25%{transform:rotate(3.2deg)} 50%{transform:rotate(0)} 75%{transform:rotate(-2.6deg)} }
+@keyframes dodoTail { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-5.2deg)} 50%{transform:rotate(0)} 75%{transform:rotate(4.6deg)} }
+@keyframes dodoHead { 0%,100%{transform:rotate(0)} 30%{transform:rotate(1.9deg)} 65%{transform:rotate(-1.6deg)} }
+@keyframes dodoWink { 0%,66%{transform:scaleY(0)} 77%{transform:scaleY(1)} 88%{transform:scaleY(0)} 100%{transform:scaleY(0)} }
+@media (prefers-reduced-motion: reduce) {
+  .dodo-logo .tail, .dodo-logo .pen, .dodo-logo .head, .dodo-logo .lid { animation: none; }
+  .dodo-logo .lid { transform: scaleY(0); }
+}

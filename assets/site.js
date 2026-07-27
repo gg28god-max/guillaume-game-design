@@ -223,6 +223,27 @@
     });
   }
 
+  /* Swap the static nav logo for the animated dodo (head tilt, wink, pen pivot,
+     tail fan). Injected here so it lives in one place across every page; the
+     static <img> stays as the no-JS fallback until this runs. Theme follows the
+     html.light class via CSS. */
+  function setupDodoLogo() {
+    Array.prototype.forEach.call(document.querySelectorAll('nav a[href="index.html"] img'), function (img) {
+      if (!img.parentNode) return;
+      var wrap = document.createElement('span');
+      wrap.className = 'dodo-logo shrink-0';
+      wrap.setAttribute('aria-hidden', 'true');
+      wrap.innerHTML =
+        '<span class="stg">' +
+          '<span class="dl base"></span>' +
+          '<span class="dl tail"></span>' +
+          '<span class="dl pen"></span>' +
+          '<span class="dl head"><span class="lid"></span></span>' +
+        '</span>';
+      img.parentNode.replaceChild(wrap, img);
+    });
+  }
+
   function init() {
     applyTheme(getTheme());
     applyLang(getLang());
@@ -230,6 +251,7 @@
     pressFeedback();
     setupVideoEmbeds();
     setupFigmaEmbeds();
+    setupDodoLogo();
 
     document.querySelectorAll('.theme-toggle-btn').forEach(function (b) {
       b.addEventListener('click', function () {
