@@ -9,6 +9,16 @@
 .dropdown-surface { background: #111111; border-radius: 14px; overflow: hidden; }
 .mobile-surface { background: #0f0f0f; }
 
+/* ---- Expertise: tool-stack pill glyphs (theme-adaptive monochrome) ---- */
+.tool-glyph { display:inline-flex; width:16px; height:16px; flex:0 0 auto; align-items:center; justify-content:center; color:inherit; }
+.tool-glyph svg { display:block; }
+.tool-mask {
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  -webkit-mask-position: center;  mask-position: center;
+  -webkit-mask-size: contain;     mask-size: contain;
+}
+
 /* ---- Rounded corners: contact form fields + submit button (about page) ---- */
 #contact-form #name,
 #contact-form #email,
