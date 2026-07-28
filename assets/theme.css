@@ -17,13 +17,51 @@
 .tool-glyph.glyph-softer { opacity: .6; }   /* Photoshop (solid tile) */
 
 /* Home hero toolkit row: decorative, so it sits well back from the headline.
-   Never wraps — the icons shrink instead, so it stays one horizontal line. */
+   Never wraps — the icons shrink instead, so it stays one horizontal line.
+   Dimmed via colour rather than opacity, so the hover label stays crisp. */
 .hero-tools { flex-wrap: nowrap; }
-.hero-tools > span { opacity: .38; }
-.hero-tools > span:hover { opacity: .8; }
+.hero-tools .tool-chip {
+  position: relative;
+  color: #4a4a4d;
+  transition: color .3s ease, border-color .3s ease;
+}
+.hero-tools .tool-chip:hover { color: #b4b4b8; border-color: #3a3a3a; }
 .hero-tools .tool-glyph { width: 13px; height: 13px; }
 .hero-tools .tool-glyph svg { width: 100%; height: 100%; }
 @media (min-width: 640px) { .hero-tools .tool-glyph { width: 15px; height: 15px; } }
+
+html.light .hero-tools .tool-chip { color: #b0b0b8; }
+html.light .hero-tools .tool-chip:hover { color: #52525b; border-color: #c4c4cb; }
+
+/* Hover label — a rounded pill above the icon. Hover-capable pointers only:
+   a tap has no hover state, and a wide label could push past a phone's edge. */
+@media (hover: hover) {
+  .hero-tools .tool-chip::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(3px);
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid #262626;
+    background: #131313;
+    color: #e5e5e5;
+    font-size: 10px;
+    line-height: 1.4;
+    letter-spacing: .06em;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease, transform .2s ease;
+    z-index: 30;
+  }
+  .hero-tools .tool-chip:hover::after { opacity: 1; transform: translateX(-50%) translateY(0); }
+  /* The row is right-aligned, so the last label would run past the edge. */
+  .hero-tools .tool-chip:last-child::after { left: auto; right: 0; transform: translateX(0) translateY(3px); }
+  .hero-tools .tool-chip:last-child:hover::after { transform: translateX(0) translateY(0); }
+  html.light .hero-tools .tool-chip::after { background: #ffffff; border-color: #e4e4e7; color: #27272a; }
+}
 .tool-mask {
   background-color: currentColor;
   -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
