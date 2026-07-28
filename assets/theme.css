@@ -21,8 +21,8 @@
    Dimmed via colour rather than opacity, so the hover label stays crisp. */
 .hero-tools { flex-wrap: nowrap; }
 /* Eyebrow over the toolkit row — deliberately fainter than the icons themselves */
-.hero-tools-label { color: #46464a; transition: color .3s ease; }
-html.light .hero-tools-label { color: #a0a0a6; }
+.hero-tools-label { color: #6e6e75; transition: color .3s ease; }
+html.light .hero-tools-label { color: #7b7b83; }
 .hero-tools .tool-chip {
   position: relative;
   color: #555558;
