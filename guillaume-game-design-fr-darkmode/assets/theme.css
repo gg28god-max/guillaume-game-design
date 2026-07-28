@@ -29,7 +29,7 @@ html.light .hero-tools-label { color: #7b7b83; }
   transition: color .3s ease, border-color .3s ease;
 }
 .hero-tools .tool-chip:hover { color: #cfcfd4; border-color: #434343; }
-.hero-tools .tool-glyph { width: 13px; height: 13px; }
+.hero-tools .tool-glyph { width: 12px; height: 12px; }
 .hero-tools .tool-glyph svg { width: 100%; height: 100%; }
 @media (min-width: 640px) { .hero-tools .tool-glyph { width: 15px; height: 15px; } }
 
