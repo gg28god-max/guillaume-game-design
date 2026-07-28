@@ -19,6 +19,9 @@
    Never wraps — the icons shrink instead, so it stays one horizontal line.
    Dimmed via colour rather than opacity, so the hover label stays crisp. */
 .hero-tools { flex-wrap: nowrap; }
+/* Eyebrow over the toolkit row — deliberately fainter than the icons themselves */
+.hero-tools-label { color: #3d3d40; transition: color .3s ease; }
+html.light .hero-tools-label { color: #bcbcc3; }
 .hero-tools .tool-chip {
   position: relative;
   color: #4a4a4d;
