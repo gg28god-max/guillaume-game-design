@@ -16,6 +16,9 @@
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: #0a0a0a; }
     ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
+    /* kept per-page rather than in theme.css since only these case-study pages use it so far */
+    .brief-eyebrow { color: #fcd34d; font-family: 'Courier New', ui-monospace, monospace; }
+    html.light .brief-eyebrow { color: #a07830; }
   </style>
 <link href="assets/theme.css" rel="stylesheet"/><script defer="" src="assets/site.js"></script>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
@@ -132,6 +135,55 @@
 <div>
 <p class="text-[10px] tracking-[0.25em] uppercase text-neutral-600 mb-2"><span class="i18n" data-en="Disciplines" data-fr="Disciplines">Disciplines</span></p>
 <p class="text-sm text-neutral-300"><span class="i18n" data-en="Game UI, VR Design, Brand Identity, UX" data-fr="UI de jeu, design VR, identité de marque, UX">Game UI, VR Design, Brand Identity, UX</span></p>
+</div>
+</div>
+</div>
+</div>
+<!-- ART BRIEF & PROBLEM — like wings-of-wanitu.html, this project's gallery
+     has no numbering gap: the hero's "01 — Overview" and the first gallery
+     image's "02 — Pipeline" are both already baked in, so these live
+     sections continue the sequence at 03/04 as real, bilingual, coded HTML. -->
+<div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 border-b border-neutral-800 space-y-16">
+<div>
+<p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="03 — Art Brief" data-fr="03 — Brief créatif">03 — Art Brief</span></p>
+<h2 class="text-3xl md:text-5xl font-black tracking-tight text-neutral-100 leading-none mb-6"><span class="i18n" data-en="The Brief" data-fr="Le Brief">The Brief</span></h2>
+<p class="text-neutral-400 text-lg leading-relaxed font-light max-w-2xl mb-10">
+        <span class="i18n" data-en="Home Run Derby VR needed a UI that could carry a licensed MLB property into a headset without losing what makes it feel official, while still working as a genuinely usable VR interface. The brief below is what I held the whole system to." data-fr="Home Run Derby VR avait besoin d'une UI capable de porter une licence MLB officielle dans un casque sans perdre ce qui la rend crédible, tout en restant une interface VR réellement utilisable. Le brief ci-dessous est celui auquel j'ai tenu l'ensemble du système.">Home Run Derby VR needed a UI that could carry a licensed MLB property into a headset without losing what makes it feel official, while still working as a genuinely usable VR interface. The brief below is what I held the whole system to.</span>
+      </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="Premise" data-fr="Prémisse">Premise</span></p>
+<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="A licensed MLB VR title for Meta Quest and SteamVR, developed at Little Guy Games in partnership with Major League Baseball for the All-Star Game Championship — arcade home run gameplay wrapped in a full live-service structure of prestige progression and seasonal tournaments." data-fr="Un titre VR sous licence MLB pour Meta Quest et SteamVR, développé chez Little Guy Games en partenariat avec la Ligue majeure de baseball pour le championnat du match des étoiles — un gameplay de home run arcade enveloppé dans une structure de type live-service complète, avec progression de prestige et tournois saisonniers.">A licensed MLB VR title for Meta Quest and SteamVR, developed at Little Guy Games in partnership with Major League Baseball for the All-Star Game Championship — arcade home run gameplay wrapped in a full live-service structure of prestige progression and seasonal tournaments.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="Mood &amp; Tone" data-fr="Ambiance et ton">Mood &amp; Tone</span></p>
+<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="Broadcast-sports energy — bold blues, gold, and red pulled straight from MLB's own brand system, built to read as a premium licensed product rather than an indie VR experiment." data-fr="Une énergie de diffusion sportive — des bleus, ors et rouges affirmés, tirés directement du système de marque de la MLB, conçus pour se lire comme un produit sous licence haut de gamme plutôt qu'une expérience VR indépendante.">Broadcast-sports energy — bold blues, gold, and red pulled straight from MLB's own brand system, built to read as a premium licensed product rather than an indie VR experiment.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="Deliverables" data-fr="Livrables">Deliverables</span></p>
+<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="As Lead UI Architect: typography and color system, button components, first-time user experience (controller onboarding and stance selection), the full tournament creation, lobby, and bracket flow, profile progression, and a Season 3 interface update to keep the system alive past launch." data-fr="En tant qu'architecte UI principal : système typographique et de couleurs, composants de boutons, parcours de première utilisation (prise en main de la manette et sélection de la position), le flux complet de création de tournoi, de lobby et de tableau, la progression du profil, et une mise à jour d'interface pour la saison 3 afin de garder le système vivant après le lancement.">As Lead UI Architect: typography and color system, button components, first-time user experience (controller onboarding and stance selection), the full tournament creation, lobby, and bracket flow, profile progression, and a Season 3 interface update to keep the system alive past launch.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="Pipeline &amp; Constraints" data-fr="Pipeline et contraintes">Pipeline &amp; Constraints</span></p>
+<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="Figma for the design system, Photoshop for vector-based icons and text effects, every screen tested in-headset for readability and scale. Nothing could ship as a flat overlay — the whole system had to work as a floating 2D/3D spatial UI viewed at arm's length." data-fr="Figma pour le système de design, Photoshop pour les icônes vectorielles et les effets de texte, chaque écran testé dans le casque pour la lisibilité et l'échelle. Rien ne pouvait être livré comme une simple superposition plate — tout le système devait fonctionner comme une UI spatiale flottante en 2D/3D, vue à bout de bras.">Figma for the design system, Photoshop for vector-based icons and text effects, every screen tested in-headset for readability and scale. Nothing could ship as a flat overlay — the whole system had to work as a floating 2D/3D spatial UI viewed at arm's length.</span></p>
+</div>
+</div>
+</div>
+<div>
+<p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="04 — The Problem" data-fr="04 — Le problème">04 — The Problem</span></p>
+<h2 class="text-3xl md:text-5xl font-black tracking-tight text-neutral-100 leading-none mb-10"><span class="i18n" data-en="The Problem I Set Out to Solve" data-fr="Le problème que je voulais résoudre">The Problem I Set Out to Solve</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="Designing for a controller, not a cursor" data-fr="Concevoir pour une manette, pas un curseur">Designing for a controller, not a cursor</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="The first-time user flow has to teach a totally unfamiliar input method — point a laser at a graphic, pull a trigger — before the player has even swung a bat. The stance-selection screens show three distinct states (default, laser hovering, selected) because in VR, if the player doesn't know what's clickable, they're stuck before the game even starts." data-fr="Le parcours de première utilisation doit enseigner une méthode de saisie totalement inconnue — pointer un laser vers un graphique, presser une gâchette — avant même que le joueur n'ait donné un seul coup de bâton. Les écrans de sélection de position montrent trois états distincts (par défaut, survol laser, sélectionné) car en VR, si le joueur ne sait pas ce qui est cliquable, il reste bloqué avant même que le jeu ne commence." >The first-time user flow has to teach a totally unfamiliar input method — point a laser at a graphic, pull a trigger — before the player has even swung a bat. The stance-selection screens show three distinct states (default, laser hovering, selected) because in VR, if the player doesn't know what's clickable, they're stuck before the game even starts.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="A UI that still reads as MLB at arm's length" data-fr="Une UI qui reste lisible comme MLB à bout de bras">A UI that still reads as MLB at arm's length</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="This is a licensed property, so brand fidelity to MLB's visual identity wasn't optional — but flat brand assets don't automatically hold up at VR viewing distance. Every typeface size and color choice was tested in-headset rather than on a monitor, so the interface would stay legible without diluting the license it was built to represent." data-fr="Il s'agit d'une propriété sous licence, donc la fidélité à l'identité visuelle de la MLB n'était pas négociable — mais des éléments de marque plats ne tiennent pas automatiquement à la distance de vision propre à la VR. Chaque taille de police et chaque choix de couleur a été testé dans le casque plutôt que sur un moniteur, afin que l'interface reste lisible sans diluer la licence qu'elle était censée représenter.">This is a licensed property, so brand fidelity to MLB's visual identity wasn't optional — but flat brand assets don't automatically hold up at VR viewing distance. Every typeface size and color choice was tested in-headset rather than on a monitor, so the interface would stay legible without diluting the license it was built to represent.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="Building for a season, not a launch" data-fr="Concevoir pour une saison, pas un lancement">Building for a season, not a launch</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Live player stats, ready-checks, and multi-round brackets meant the tournament UI had to handle real-time state, not just display static art. And a Season 3 interface update after launch meant the original design system had to be built extensible from day one, not patched together after the fact." data-fr="Les statistiques des joueurs en direct, les vérifications de disponibilité et les tableaux à plusieurs tours signifiaient que l'UI de tournoi devait gérer un état en temps réel, et non simplement afficher un visuel statique. Et une mise à jour d'interface pour la saison 3 après le lancement signifiait que le système de design original devait être conçu comme extensible dès le premier jour, et non rafistolé après coup.">Live player stats, ready-checks, and multi-round brackets meant the tournament UI had to handle real-time state, not just display static art. And a Season 3 interface update after launch meant the original design system had to be built extensible from day one, not patched together after the fact.</span></p>
 </div>
 </div>
 </div>
