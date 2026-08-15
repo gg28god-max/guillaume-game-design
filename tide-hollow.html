@@ -16,6 +16,13 @@
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: #0a0a0a; }
     ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
+    /* Section eyebrow (the "02 — ART BRIEF" / "03 — THE PROBLEM" labels) —
+       not the bare text-amber-300 utility, which the rest of this file
+       already documents as failing contrast in light mode (~1.3:1). Same
+       bronze substitute already used for that reason elsewhere (~5.9:1,
+       matches the rgba(160,120,48) tone in the cross-pill hover state). */
+    .brief-eyebrow { color: #fcd34d; font-family: 'Courier New', ui-monospace, monospace; }
+    html.light .brief-eyebrow { color: #a07830; }
   </style>
 <link href="assets/theme.css" rel="stylesheet"/><script defer="" src="assets/site.js"></script>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
@@ -128,6 +135,56 @@
 <div>
 <p class="text-[10px] tracking-[0.25em] uppercase text-neutral-600 mb-2"><span class="i18n" data-en="Disciplines" data-fr="Disciplines">Disciplines</span></p>
 <p class="text-sm text-neutral-300"><span class="i18n" data-en="3D Modelling, PBR Texturing, World-Building, Scene Assembly" data-fr="Modélisation 3D, texturation PBR, world-building, assemblage de scènes">3D Modelling, PBR Texturing, World-Building, Scene Assembly</span></p>
+</div>
+</div>
+</div>
+</div>
+<!-- ART BRIEF & PROBLEM — the missing "02" between the Overview slide (01)
+     and the Technical Stack slide (03, further down in the gallery as a
+     pre-rendered image). Coded live rather than exported as a graphic, so
+     it stays bilingual and editable, but matches that same numbered-slide
+     language: monospace eyebrow, bold heading, dark cards. -->
+<div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 border-b border-neutral-800 space-y-16">
+<div>
+<p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="02 — Art Brief" data-fr="02 — Brief créatif">02 — Art Brief</span></p>
+<h2 class="text-3xl md:text-5xl font-black tracking-tight text-neutral-100 leading-none mb-6"><span class="i18n" data-en="The Brief" data-fr="Le Brief">The Brief</span></h2>
+<p class="text-neutral-400 text-lg leading-relaxed font-light max-w-2xl mb-10">
+        <span class="i18n" data-en="Tidehollow started from a single question: what does architecture look like when a culture designs around the tide instead of against it? The brief below is the one I set for myself before opening ZBrush — the parameters everything downstream had to answer to." data-fr="Tidehollow est parti d'une seule question : à quoi ressemble une architecture quand une culture se conçoit autour de la marée plutôt que contre elle ? Le brief ci-dessous est celui que je me suis fixé avant même d'ouvrir ZBrush — les paramètres auxquels tout ce qui a suivi devait répondre.">Tidehollow started from a single question: what does architecture look like when a culture designs around the tide instead of against it? The brief below is the one I set for myself before opening ZBrush — the parameters everything downstream had to answer to.</span>
+      </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="Premise" data-fr="Prémisse">Premise</span></p>
+<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="A self-sustaining coastal fishing settlement built in harmony with tidal rhythms — maritime eco-fantasy, adventure/exploration tone, an original concept with no existing IP to reference." data-fr="Une colonie de pêcheurs côtière autosuffisante construite en harmonie avec les rythmes des marées — éco-fantaisie maritime, ton aventure/exploration, un concept original sans IP existante à référencer.">A self-sustaining coastal fishing settlement built in harmony with tidal rhythms — maritime eco-fantasy, adventure/exploration tone, an original concept with no existing IP to reference.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="Mood &amp; Tone" data-fr="Ambiance et ton">Mood &amp; Tone</span></p>
+<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="Cultural resilience over crisis. Weathered, salt-crusted, fog-laden — the sea as a constant presence, not a threat. Warm firelight against a cool night palette." data-fr="La résilience culturelle plutôt que la crise. Usé par le sel, embrumé — la mer comme présence constante, pas une menace. Lumière chaude du feu contre une palette nocturne froide.">Cultural resilience over crisis. Weathered, salt-crusted, fog-laden — the sea as a constant presence, not a threat. Warm firelight against a cool night palette.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="Deliverables" data-fr="Livrables">Deliverables</span></p>
+<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="One hero environment (the stilted settlement), a modular architecture kit (the Silt Pod dwelling, built to read at multiple scales), and a character/prop breakdown (the Tide Fisher) proving the world's objects have function, not just silhouette." data-fr="Un environnement vedette (la colonie sur pilotis), un kit d'architecture modulaire (l'habitation Silt Pod, conçue pour se lire à plusieurs échelles), et une décomposition personnage/accessoire (le Pêcheur de marée) prouvant que les objets du monde ont une fonction, pas seulement une silhouette.">One hero environment (the stilted settlement), a modular architecture kit (the Silt Pod dwelling, built to read at multiple scales), and a character/prop breakdown (the Tide Fisher) proving the world's objects have function, not just silhouette.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="Pipeline &amp; Constraints" data-fr="Pipeline et contraintes">Pipeline &amp; Constraints</span></p>
+<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="Full high-to-low production pipeline, solo: ZBrush sculpt → retopology → UV → Substance Painter PBR texturing → Unreal Engine 5 scene assembly and lighting. Every asset had to survive that whole chain, not just look good as a sculpt." data-fr="Pipeline de production complet du high-poly au low-poly, en solo : sculpture ZBrush → retopologie → dépliage UV → texturation PBR dans Substance Painter → assemblage de scène et éclairage dans Unreal Engine 5. Chaque actif devait survivre à toute cette chaîne, pas seulement bien paraître en sculpture.">Full high-to-low production pipeline, solo: ZBrush sculpt → retopology → UV → Substance Painter PBR texturing → Unreal Engine 5 scene assembly and lighting. Every asset had to survive that whole chain, not just look good as a sculpt.</span></p>
+</div>
+</div>
+</div>
+<div>
+<p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="03 — The Problem" data-fr="03 — Le problème">03 — The Problem</span></p>
+<h2 class="text-3xl md:text-5xl font-black tracking-tight text-neutral-100 leading-none mb-10"><span class="i18n" data-en="The Problem I Set Out to Solve" data-fr="Le problème que je voulais résoudre">The Problem I Set Out to Solve</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="Making an invented culture feel lived-in, not decorative" data-fr="Rendre une culture inventée vivante, pas décorative">Making an invented culture feel lived-in, not decorative</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Concept art can get away with a beautiful silhouette. A production-ready asset can't — the conical hat has to actually shed rain, the shoulder guard has to actually cushion a net's weight. Every design decision on the Tide Fisher and the Silt Pod dwelling had to answer &quot;why does this exist&quot; before it answered &quot;does this look interesting.&quot;" data-fr="L'art conceptuel peut se permettre une belle silhouette. Un actif prêt pour la production, non — le chapeau conique doit vraiment dévier la pluie, la protection d'épaule doit vraiment amortir le poids d'un filet. Chaque décision de design sur le Pêcheur de marée et l'habitation Silt Pod devait répondre à « pourquoi cela existe-t-il » avant de répondre à « est-ce que ça a l'air intéressant ».">Concept art can get away with a beautiful silhouette. A production-ready asset can't — the conical hat has to actually shed rain, the shoulder guard has to actually cushion a net's weight. Every design decision on the Tide Fisher and the Silt Pod dwelling had to answer "why does this exist" before it answered "does this look interesting."</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="Solo, full-pipeline execution" data-fr="Exécution solo, pipeline complet">Solo, full-pipeline execution</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Nobody hands off between departments here. The same hands that sculpted high-resolution detail in ZBrush had to retopologize it clean enough to texture, texture it accurately enough to read as PBR materials, and light it well enough to hold up in a real-time engine. A weak link anywhere in that chain shows up in the final render." data-fr="Personne ne fait de passation entre départements ici. Les mêmes mains qui ont sculpté le détail haute résolution dans ZBrush devaient le retopologiser assez proprement pour le texturer, le texturer assez précisément pour qu'il se lise comme des matériaux PBR, et l'éclairer assez bien pour tenir dans un moteur temps réel. Un maillon faible n'importe où dans cette chaîne se voit dans le rendu final.">Nobody hands off between departments here. The same hands that sculpted high-resolution detail in ZBrush had to retopologize it clean enough to texture, texture it accurately enough to read as PBR materials, and light it well enough to hold up in a real-time engine. A weak link anywhere in that chain shows up in the final render.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="Communicating adaptation without a single line of dialogue" data-fr="Communiquer l'adaptation sans une seule ligne de dialogue">Communicating adaptation without a single line of dialogue</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="The brief called for &quot;cultural resilience and ecological adaptation&quot; — but this is an environment project, not a narrative one. No cutscene, no text, no NPC explaining the lore. The stilted foundations, the salt-crusted adobe, and the fish drying in open air all had to carry that theme on their own, through material choices and construction logic a viewer could read at a glance." data-fr="Le brief demandait de la « résilience culturelle et de l'adaptation écologique » — mais c'est un projet d'environnement, pas un projet narratif. Pas de cinématique, pas de texte, pas de PNJ pour expliquer le lore. Les fondations sur pilotis, l'adobe cristallisé de sel et les poissons qui sèchent à l'air libre devaient porter ce thème seuls, à travers des choix de matériaux et une logique de construction qu'un visiteur pouvait lire d'un coup d'œil.">The brief called for "cultural resilience and ecological adaptation" — but this is an environment project, not a narrative one. No cutscene, no text, no NPC explaining the lore. The stilted foundations, the salt-crusted adobe, and the fish drying in open air all had to carry that theme on their own, through material choices and construction logic a viewer could read at a glance.</span></p>
 </div>
 </div>
 </div>
