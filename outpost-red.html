@@ -17,6 +17,9 @@
     ::-webkit-scrollbar-track { background: #0a0a0a; }
     ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    /* kept per-page rather than in theme.css since only these case-study pages use it so far */
+    .brief-eyebrow { color: #fcd34d; font-family: 'Courier New', ui-monospace, monospace; }
+    html.light .brief-eyebrow { color: #a07830; }
   </style>
 <link href="assets/theme.css" rel="stylesheet"/><script defer="" src="assets/site.js"></script>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
@@ -116,6 +119,56 @@
 <img alt="Outpost Red — project case study hero with astronaut and project synopsis" class="block w-full" fetchpriority="high" src="Outpost%20Red/Project%2BOverview%2B-%2BOutpost%2Bred.webp"/>
 <img alt="Role, genre and platform badges with tools and software stack" class="block w-full" loading="lazy" src="Outpost%20Red/Project%2BOverview%2B2.webp"/>
 </section>
+<!-- ART BRIEF & PROBLEM — this page's numbered deliverable badges (01 Concept
+     Art, 02 Wireframe, 03 Style Guide, 04 High Fidelity Interface, 05 In-Game
+     HUD) are a separate baked graphic system from the hero's small-caps
+     "01 — Overview" eyebrow; these live sections continue that eyebrow
+     sequence at 02/03 as real, bilingual, coded HTML. -->
+<div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 border-b border-neutral-800 space-y-16">
+<div>
+<p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="02 — Art Brief" data-fr="02 — Brief créatif">02 — Art Brief</span></p>
+<h2 class="text-3xl md:text-5xl font-black tracking-tight text-neutral-100 leading-none mb-6"><span class="i18n" data-en="The Brief" data-fr="Le Brief">The Brief</span></h2>
+<p class="text-neutral-400 text-lg leading-relaxed font-light max-w-2xl mb-10">
+        <span class="i18n" data-en="Outpost Red asked for two things at once: concept art grim enough to sell a contamination event, and a UI system polished enough to actually run in an engine. The brief below is what I held both halves of the project to." data-fr="Outpost Red demandait deux choses à la fois : un art conceptuel assez sombre pour vendre un événement de contamination, et un système d'UI assez abouti pour réellement fonctionner dans un moteur. Le brief ci-dessous est celui auquel j'ai tenu les deux moitiés du projet.">Outpost Red asked for two things at once: concept art grim enough to sell a contamination event, and a UI system polished enough to actually run in an engine. The brief below is what I held both halves of the project to.</span>
+      </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="Premise" data-fr="Prémisse">Premise</span></p>
+<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="A concept art and UI/UX case study set in the aftermath of an extraterrestrial contamination event on a long-range Martian expedition — sterile aerospace technology set against visceral, bioluminescent infection, carried across a mechanical rover, a ruptured space suit, and the crew themselves." data-fr="Une étude de cas en art conceptuel et UI/UX se déroulant dans les suites d'un événement de contamination extraterrestre lors d'une expédition martienne longue distance — une technologie aérospatiale aseptisée confrontée à une infection bioluminescente et viscérale, présente sur un rover mécanique, une combinaison spatiale déchirée et l'équipage lui-même.">A concept art and UI/UX case study set in the aftermath of an extraterrestrial contamination event on a long-range Martian expedition — sterile aerospace technology set against visceral, bioluminescent infection, carried across a mechanical rover, a ruptured space suit, and the crew themselves.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="Mood &amp; Tone" data-fr="Ambiance et ton">Mood &amp; Tone</span></p>
+<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="Hard-sci-fi survival horror — a desaturated Martian palette broken only by a hazard-orange UI accent, so the technology reads as clinical and the infection reads as wrong. Isolation first, monster second." data-fr="Horreur de survie hard-science-fiction — une palette martienne désaturée rompue uniquement par un accent d'interface orange danger, de sorte que la technologie se lise comme clinique et l'infection comme anormale. L'isolement avant le monstre." >Hard-sci-fi survival horror — a desaturated Martian palette broken only by a hazard-orange UI accent, so the technology reads as clinical and the infection reads as wrong. Isolation first, monster second.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="Deliverables" data-fr="Livrables">Deliverables</span></p>
+<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="Full concept art (rover and contaminated-crew character design) alongside a complete production UI pipeline — information architecture, user flow, wireframes, style guide, and high-fidelity screens — built as real, functioning UMG widgets in Unreal Engine 5, not stopped at the mockup stage." data-fr="Un art conceptuel complet (rover et design de personnage d'équipage contaminé) accompagné d'un pipeline UI de production complet — architecture de l'information, parcours utilisateur, wireframes, guide de style et écrans haute-fidélité — construit sous forme de widgets UMG réels et fonctionnels dans Unreal Engine 5, sans s'arrêter à l'étape de maquette.">Full concept art (rover and contaminated-crew character design) alongside a complete production UI pipeline — information architecture, user flow, wireframes, style guide, and high-fidelity screens — built as real, functioning UMG widgets in Unreal Engine 5, not stopped at the mockup stage.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="Pipeline &amp; Constraints" data-fr="Pipeline et contraintes">Pipeline &amp; Constraints</span></p>
+<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="Figma for design and specification, Unreal Engine 5 and UMG for implementation. Every screen had to survive the jump from a flat Figma frame to a data-driven, event-connected system — skill trees, crafting matrices, in-game shops, and inventory all had to actually work, not just look finished." data-fr="Figma pour la conception et la spécification, Unreal Engine 5 et UMG pour l'implémentation. Chaque écran devait survivre au passage d'une maquette Figma plate à un système connecté par événements et piloté par des données — arbres de compétences, matrices d'artisanat, boutiques en jeu et inventaire devaient réellement fonctionner, pas seulement paraître terminés.">Figma for design and specification, Unreal Engine 5 and UMG for implementation. Every screen had to survive the jump from a flat Figma frame to a data-driven, event-connected system — skill trees, crafting matrices, in-game shops, and inventory all had to actually work, not just look finished.</span></p>
+</div>
+</div>
+</div>
+<div>
+<p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="03 — The Problem" data-fr="03 — Le problème">03 — The Problem</span></p>
+<h2 class="text-3xl md:text-5xl font-black tracking-tight text-neutral-100 leading-none mb-10"><span class="i18n" data-en="The Problem I Set Out to Solve" data-fr="Le problème que je voulais résoudre">The Problem I Set Out to Solve</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="Making body horror read as still human" data-fr="Rendre l'horreur corporelle lisible comme encore humaine">Making body horror read as still human</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="The contaminated crew member had to be horrifying without stopping being a person in a suit. The bioluminescent growth needed to overtake the body without erasing the silhouette underneath — the helmet, the harness, the boots all stay legible, because the horror is in what's still recognizably human, not in what isn't." data-fr="Le membre d'équipage contaminé devait être terrifiant sans cesser d'être une personne dans une combinaison. La croissance bioluminescente devait envahir le corps sans effacer la silhouette en dessous — le casque, le harnais, les bottes restent lisibles, car l'horreur réside dans ce qui reste reconnaissablement humain, pas dans ce qui ne l'est plus." >The contaminated crew member had to be horrifying without stopping being a person in a suit. The bioluminescent growth needed to overtake the body without erasing the silhouette underneath — the helmet, the harness, the boots all stay legible, because the horror is in what's still recognizably human, not in what isn't.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="A UI that survives the jump from Figma to a live engine" data-fr="Une UI qui survit au passage de Figma à un moteur en direct">A UI that survives the jump from Figma to a live engine</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Most UI case studies stop at a polished mockup. I set the constraint of building the whole system as functioning UMG widgets — skill tree, crafting, shop, inventory, HUD — inside Unreal Engine 5, so every visual decision also had to be a technical one: what's data-bound, what fires an event, what has to update in real time." data-fr="La plupart des études de cas d'UI s'arrêtent à une maquette soignée. Je me suis imposé la contrainte de construire tout le système sous forme de widgets UMG fonctionnels — arbre de compétences, artisanat, boutique, inventaire, HUD — dans Unreal Engine 5, de sorte que chaque décision visuelle devait aussi être une décision technique : ce qui est lié aux données, ce qui déclenche un événement, ce qui doit se mettre à jour en temps réel.">Most UI case studies stop at a polished mockup. I set the constraint of building the whole system as functioning UMG widgets — skill tree, crafting, shop, inventory, HUD — inside Unreal Engine 5, so every visual decision also had to be a technical one: what's data-bound, what fires an event, what has to update in real time.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="One visual language across two disciplines" data-fr="Un seul langage visuel pour deux disciplines">One visual language across two disciplines</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="The same aerospace-meets-infection tone had to hold whether I was painting a rover or laying out a data-bound inventory grid, so the interface reads as part of the same fiction as the concept art — not a system bolted on top of it." data-fr="Le même ton mêlant aérospatiale et infection devait tenir, que je peigne un rover ou que je conçoive une grille d'inventaire liée aux données, afin que l'interface se lise comme faisant partie de la même fiction que l'art conceptuel — pas comme un système greffé par-dessus." >The same aerospace-meets-infection tone had to hold whether I was painting a rover or laying out a data-bound inventory grid, so the interface reads as part of the same fiction as the concept art — not a system bolted on top of it.</span></p>
+</div>
+</div>
+</div>
+</div>
 <!-- 2 · UI GAME DEMO — banner, video, index -->
 <section aria-label="UI game demo" class="space-y-0">
 <img alt="UI Game Demo — inventory system, HUD, Unreal Motion Graphics" class="block w-full" loading="lazy" src="Outpost%20Red/UI%2BGAME%2BDEMO.webp"/>
