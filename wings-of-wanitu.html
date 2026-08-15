@@ -16,6 +16,15 @@
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: #0a0a0a; }
     ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
+    /* Section eyebrow (the "02 — ART BRIEF" / "03 — THE PROBLEM" labels) —
+       not the bare text-amber-300 utility, which this site already
+       documents as failing contrast in light mode (~1.3:1). Same bronze
+       substitute used for that reason elsewhere (~5.9:1, matches the
+       rgba(160,120,48) tone in the cross-pill hover state). Same class as
+       tide-hollow.html's copy — kept per-page rather than in theme.css
+       since only these case-study pages use it so far. */
+    .brief-eyebrow { color: #fcd34d; font-family: 'Courier New', ui-monospace, monospace; }
+    html.light .brief-eyebrow { color: #a07830; }
   </style>
 <link href="assets/theme.css" rel="stylesheet"/><script defer="" src="assets/site.js"></script>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
@@ -124,6 +133,56 @@
 <div>
 <p class="text-[10px] tracking-[0.25em] uppercase text-neutral-600 mb-2"><span class="i18n" data-en="Disciplines" data-fr="Disciplines">Disciplines</span></p>
 <p class="text-sm text-neutral-300"><span class="i18n" data-en="VR UI, Spatial Interfaces, Enemy Design, World-Building" data-fr="UI VR, interfaces spatiales, design d'ennemis, world-building">VR UI, Spatial Interfaces, Enemy Design, World-Building</span></p>
+</div>
+</div>
+</div>
+</div>
+<!-- ART BRIEF & PROBLEM — unlike tide-hollow.html, this project's gallery
+     has no numbering gap: "01 — Overview" and "02 — Pipeline" are both
+     already pre-rendered slides, so these live sections continue the
+     sequence at 03/04 as real, bilingual, coded HTML rather than another
+     exported graphic. -->
+<div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 border-b border-neutral-800 space-y-16">
+<div>
+<p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="03 — Art Brief" data-fr="03 — Brief créatif">03 — Art Brief</span></p>
+<h2 class="text-3xl md:text-5xl font-black tracking-tight text-neutral-100 leading-none mb-6"><span class="i18n" data-en="The Brief" data-fr="Le Brief">The Brief</span></h2>
+<p class="text-neutral-400 text-lg leading-relaxed font-light max-w-2xl mb-10">
+        <span class="i18n" data-en="Wings of Wanitu asked me to solve two different design problems that happened to share a cockpit: an enemy needs to read as a threat before the player consciously processes it, and a HUD needs to disappear into peripheral vision until the moment it's needed. The brief below is what I held both halves of the project to." data-fr="Wings of Wanitu m'a demandé de résoudre deux problèmes de design différents qui se trouvaient partager un même cockpit : un ennemi doit se lire comme une menace avant que le joueur ne le traite consciemment, et un HUD doit disparaître dans la vision périphérique jusqu'au moment où il est nécessaire. Le brief ci-dessous est celui auquel j'ai tenu les deux moitiés du projet.">Wings of Wanitu asked me to solve two different design problems that happened to share a cockpit: an enemy needs to read as a threat before the player consciously processes it, and a HUD needs to disappear into peripheral vision until the moment it's needed. The brief below is what I held both halves of the project to.</span>
+      </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="Premise" data-fr="Prémisse">Premise</span></p>
+<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="A VR aerial rogue-like for Meta Quest and SteamVR — high-speed flight combat across floating island biomes, against a bestiary of organic and automated adversaries. Built at Little Guy Games; my brief covered both the enemy cast and the cockpit itself." data-fr="Un rogue-like aérien VR pour Meta Quest et SteamVR — combat de vol à haute vitesse à travers des biomes d'îles flottantes, contre un bestiaire d'adversaires organiques et automatisés. Développé chez Little Guy Games ; mon brief couvrait à la fois le casting d'ennemis et le cockpit lui-même.">A VR aerial rogue-like for Meta Quest and SteamVR — high-speed flight combat across floating island biomes, against a bestiary of organic and automated adversaries. Built at Little Guy Games; my brief covered both the enemy cast and the cockpit itself.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="Mood &amp; Tone" data-fr="Ambiance et ton">Mood &amp; Tone</span></p>
+<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="Stylized over photoreal — painterly skies and creature silhouettes that read like concept art, not simulation. The cockpit stays high-contrast and diegetic-adjacent rather than screen-accurate, since clarity at speed matters more than realism." data-fr="Stylisé plutôt que photoréaliste — des ciels peints et des silhouettes de créatures qui se lisent comme de l'art conceptuel, pas une simulation. Le cockpit reste à contraste élevé et proche du diégétique plutôt que fidèle à un écran réel, car la clarté à grande vitesse compte plus que le réalisme.">Stylized over photoreal — painterly skies and creature silhouettes that read like concept art, not simulation. The cockpit stays high-contrast and diegetic-adjacent rather than screen-accurate, since clarity at speed matters more than realism.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="Deliverables" data-fr="Livrables">Deliverables</span></p>
+<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="A full enemy roster (Lurkers, Interceptors, Fighters) taken from silhouette through behaviour sheets to final color pass, plus the hero glider's cockpit dashboard: a 360-degree spherical radar, health/energy rings, and mission/currency HUD panels." data-fr="Un bestiaire complet (Lurkers, Interceptors, Fighters) de la silhouette aux fiches de comportement jusqu'à la passe de couleur finale, plus le tableau de bord du planeur héros : un radar sphérique à 360 degrés, des anneaux de vie/énergie et des panneaux HUD de mission/monnaie.">A full enemy roster (Lurkers, Interceptors, Fighters) taken from silhouette through behaviour sheets to final color pass, plus the hero glider's cockpit dashboard: a 360-degree spherical radar, health/energy rings, and mission/currency HUD panels.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="Design Constraints" data-fr="Contraintes de design">Design Constraints</span></p>
+<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="Every enemy design had to double as a gameplay signal — flying pattern, attack telegraph, and scale all had to read correctly before a full rig existed. Every UI element had to hold up in a stereoscopic headset at arm's length, where flat contrast and fine text simply don't work." data-fr="Chaque design d'ennemi devait aussi servir de signal de gameplay — le motif de vol, le télégraphe d'attaque et l'échelle devaient tous se lire correctement avant même qu'un rig complet existe. Chaque élément d'UI devait tenir dans un casque stéréoscopique à bout de bras, où un contraste plat et un texte fin ne fonctionnent tout simplement pas.">Every enemy design had to double as a gameplay signal — flying pattern, attack telegraph, and scale all had to read correctly before a full rig existed. Every UI element had to hold up in a stereoscopic headset at arm's length, where flat contrast and fine text simply don't work.</span></p>
+</div>
+</div>
+</div>
+<div>
+<p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="04 — The Problem" data-fr="04 — Le problème">04 — The Problem</span></p>
+<h2 class="text-3xl md:text-5xl font-black tracking-tight text-neutral-100 leading-none mb-10"><span class="i18n" data-en="The Problem I Set Out to Solve" data-fr="Le problème que je voulais résoudre">The Problem I Set Out to Solve</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="Making a threat readable before it's understood" data-fr="Rendre une menace lisible avant qu'elle ne soit comprise">Making a threat readable before it's understood</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="In VR, there's no pause to study an enemy. The Interceptor's attack telegraph — wings and fins physically collapsing before it charges its electric blast — had to be legible from a glance and from any angle, because a player's reaction window in a headset is shorter than on a flat screen. The behaviour sheets exist because the silhouette alone had to carry that information." data-fr="En VR, il n'y a pas de pause pour étudier un ennemi. Le télégraphe d'attaque de l'Interceptor — les ailes et les ailerons qui se replient physiquement avant qu'il ne charge son tir électrique — devait être lisible d'un coup d'œil et sous n'importe quel angle, car la fenêtre de réaction d'un joueur en casque est plus courte que sur un écran plat. Les fiches de comportement existent parce que la silhouette seule devait porter cette information.">In VR, there's no pause to study an enemy. The Interceptor's attack telegraph — wings and fins physically collapsing before it charges its electric blast — had to be legible from a glance and from any angle, because a player's reaction window in a headset is shorter than on a flat screen. The behaviour sheets exist because the silhouette alone had to carry that information.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="A HUD that works when the whole world is the screen" data-fr="Un HUD qui fonctionne quand le monde entier est l'écran">A HUD that works when the whole world is the screen</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="A traditional 2D HUD doesn't work in VR — there's no fixed frame to anchor it to, and stacking flat panels in 3D space breaks immersion fast. The spherical radar and ring-based health/energy display went through several visual passes (the dashboard sheet shows three) before landing on a version legible in peripheral vision without pulling focus from flight." data-fr="Un HUD 2D traditionnel ne fonctionne pas en VR — il n'y a pas de cadre fixe où l'ancrer, et empiler des panneaux plats dans un espace 3D brise vite l'immersion. Le radar sphérique et l'affichage de vie/énergie en anneaux sont passés par plusieurs versions visuelles (la fiche du tableau de bord en montre trois) avant d'arriver à une version lisible en vision périphérique sans détourner l'attention du vol.">A traditional 2D HUD doesn't work in VR — there's no fixed frame to anchor it to, and stacking flat panels in 3D space breaks immersion fast. The spherical radar and ring-based health/energy display went through several visual passes (the dashboard sheet shows three) before landing on a version legible in peripheral vision without pulling focus from flight.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="Two disciplines, one deadline, no handoff" data-fr="Deux disciplines, une échéance, aucune passation">Two disciplines, one deadline, no handoff</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Leading both the creature art and the UI architecture meant neither could be treated as the &quot;other&quot; team's problem. A cockpit redesign had to account for what the enemies needed to communicate, and an enemy repaint had to stay readable against whatever the HUD was doing in the same frame — there was no wall between the two halves of the brief." data-fr="Diriger à la fois l'art des créatures et l'architecture UI signifiait qu'aucune des deux ne pouvait être traitée comme le problème de « l'autre » équipe. Une refonte du cockpit devait tenir compte de ce que les ennemis avaient besoin de communiquer, et une nouvelle passe de couleur sur un ennemi devait rester lisible face à ce que faisait le HUD dans la même image — il n'y avait pas de mur entre les deux moitiés du brief.">Leading both the creature art and the UI architecture meant neither could be treated as the "other" team's problem. A cockpit redesign had to account for what the enemies needed to communicate, and an enemy repaint had to stay readable against whatever the HUD was doing in the same frame — there was no wall between the two halves of the brief.</span></p>
 </div>
 </div>
 </div>
