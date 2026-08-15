@@ -4,8 +4,8 @@
 <head><script>(function(){try{var t=localStorage.getItem('theme')||'dark';var l=localStorage.getItem('lang')||'en';if(t==='light')document.documentElement.classList.add('light');document.documentElement.setAttribute('lang',l);document.documentElement.setAttribute('data-lang',l);}catch(e){}})();</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title data-en="Paintings — Guillaume Goder" data-fr="Peintures — Guillaume Goder">Paintings — Guillaume Goder</title>
-<meta content="Paintings by Guillaume Goder — portrait studies, life paintings, and conceptual works." data-en="Paintings by Guillaume Goder — portrait studies, life paintings, and conceptual works." data-fr="Peintures de Guillaume Goder — études de portraits, peintures d'après nature et œuvres conceptuelles." name="description"/>
+<title data-en="Hire Me — Guillaume Goder" data-fr="Me engager — Guillaume Goder">Hire Me — Guillaume Goder</title>
+<meta content="Guillaume Goder — available for freelance and contract work in concept art, character and creature design, and production-ready game UI for Unreal Engine 5." data-en="Guillaume Goder — available for freelance and contract work in concept art, character and creature design, and production-ready game UI for Unreal Engine 5." data-fr="Guillaume Goder — disponible pour du travail freelance et contractuel en art conceptuel, design de personnages et de créatures, et UI de jeu prête pour la production sous Unreal Engine 5." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
@@ -16,37 +16,28 @@
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: #0a0a0a; }
     ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
-    .masonry { columns: 3; column-gap: 3px; }
-    @media (max-width: 900px) { .masonry { columns: 2; } }
-    @media (max-width: 500px) { .masonry { columns: 1; } }
-    .masonry-item { break-inside: avoid; margin-bottom: 3px; display: block; position: relative; overflow: hidden; }
-    .masonry-item img { display: block; width: 100%; transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); cursor: zoom-in; }
-    .masonry-item:hover img { transform: scale(1.03); }
-    .masonry-item .hover-label { position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 14px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); opacity: 0; transition: opacity 0.3s; pointer-events: none; }
-    .masonry-item:hover .hover-label { opacity: 1; }
-    #lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,0.96); display: flex; align-items: center; justify-content: center; padding: 1rem; }
-    #lightbox img { max-width: 100%; max-height: 90vh; object-fit: contain; }
-    #lightbox-close { position: absolute; top: 1rem; right: 1.5rem; color: #aaa; font-size: 2rem; font-weight: 300; cursor: pointer; line-height: 1; background: none; border: none; }
-    #lightbox-close:hover { color: white; }
+    /* kept per-page rather than in theme.css since only these case-study pages use it so far */
+    .brief-eyebrow { color: #fcd34d; font-family: 'Courier New', ui-monospace, monospace; }
+    html.light .brief-eyebrow { color: #a07830; }
   </style>
 <link href="assets/theme.css" rel="stylesheet"/><script defer="" src="assets/site.js"></script>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png"/>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
-<link rel="canonical" href="https://game.guillaumedesign.ca/paintings.html"/>
+<link rel="canonical" href="https://game.guillaumedesign.ca/hire-me.html"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Guillaume Goder"/>
 <meta property="og:locale" content="en_CA"/>
-<meta property="og:title" content="Paintings — Guillaume Goder"/>
-<meta property="og:description" content="Paintings by Guillaume Goder — portrait studies, life paintings, and conceptual works."/>
-<meta property="og:url" content="https://game.guillaumedesign.ca/paintings.html"/>
+<meta property="og:title" content="Hire Me — Guillaume Goder"/>
+<meta property="og:description" content="Guillaume Goder — available for freelance and contract work in concept art, character and creature design, and production-ready game UI for Unreal Engine 5."/>
+<meta property="og:url" content="https://game.guillaumedesign.ca/hire-me.html"/>
 <meta property="og:image" content="https://game.guillaumedesign.ca/og-image.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:image:alt" content="Guillaume Goder — Concept Artist and UI/UX Designer"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Paintings — Guillaume Goder"/>
-<meta name="twitter:description" content="Paintings by Guillaume Goder — portrait studies, life paintings, and conceptual works."/>
+<meta name="twitter:title" content="Hire Me — Guillaume Goder"/>
+<meta name="twitter:description" content="Guillaume Goder — available for freelance and contract work in concept art, character and creature design, and production-ready game UI for Unreal Engine 5."/>
 <meta name="twitter:image" content="https://game.guillaumedesign.ca/og-image.png"/>
 </head>
 <body class="bg-[#0a0a0a] text-neutral-100 min-h-screen">
@@ -72,10 +63,10 @@
 </div>
 </div>
 <a class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors" href="illustrations.html"><span class="i18n" data-en="Illustrations" data-fr="Illustrations">Illustrations</span></a>
-<a class="text-[11px] tracking-[0.15em] uppercase text-neutral-100" href="paintings.html"><span class="i18n" data-en="Paintings" data-fr="Peintures">Paintings</span></a>
+<a class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors" href="paintings.html"><span class="i18n" data-en="Paintings" data-fr="Peintures">Paintings</span></a>
 <a class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors" href="resume.html"><span class="i18n" data-en="Resume" data-fr="CV">Resume</span></a>
 <a class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors" href="about.html"><span class="i18n" data-en="About" data-fr="À propos">About</span></a>
-<a class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors whitespace-nowrap" href="hire-me.html"><span class="i18n" data-en="Hire Me" data-fr="Me engager">Hire Me</span></a>
+<a class="text-[11px] tracking-[0.15em] uppercase text-amber-300 whitespace-nowrap" href="hire-me.html"><span class="i18n" data-en="Hire Me" data-fr="Me engager">Hire Me</span></a>
 
 </div>
 <div class="flex items-center gap-3 sm:gap-5">
@@ -104,10 +95,10 @@
 <a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="diverse-creative-studies.html"><span class="i18n" data-en="Diverse Creative Studies" data-fr="Diverse Creative Studies">Diverse Creative Studies</span></a>
 <div class="border-t border-neutral-800 my-4"></div>
 <a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="illustrations.html"><span class="i18n" data-en="Illustrations" data-fr="Illustrations">Illustrations</span></a>
-<a class="block py-2 text-sm text-white font-medium" href="paintings.html"><span class="i18n" data-en="Paintings" data-fr="Peintures">Paintings</span></a>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="paintings.html"><span class="i18n" data-en="Paintings" data-fr="Peintures">Paintings</span></a>
 <a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="resume.html"><span class="i18n" data-en="Resume" data-fr="CV">Resume</span></a>
 <a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="about.html"><span class="i18n" data-en="About" data-fr="À propos">About</span></a>
-<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="hire-me.html"><span class="i18n" data-en="Hire Me" data-fr="Me engager">Hire Me</span></a>
+<a class="block py-2 text-sm text-white font-medium" href="hire-me.html"><span class="i18n" data-en="Hire Me" data-fr="Me engager">Hire Me</span></a>
 <a class="cross-pill mt-3 text-xs tracking-[0.15em] uppercase border rounded-full px-4 py-2 transition-all duration-300 inline-flex items-center gap-2" href="https://uiux.guillaumedesign.ca/"><span class="i18n" data-en="UI UX Portfolio" data-fr="UI UX Portfolio">UI UX Portfolio</span> <span class="cross-arrow" aria-hidden="true">→</span></a>
 <div class="border-t border-neutral-800 mt-4 pt-4 flex gap-6">
 
@@ -117,97 +108,72 @@
 </div>
 </div>
 </nav>
-<!-- PAGE HEADER -->
-<header class="pt-24 pb-6 px-6 lg:px-8 max-w-7xl mx-auto">
-<p class="text-[11px] tracking-[0.35em] uppercase text-neutral-600 mb-4"><span class="i18n" data-en="Gallery" data-fr="Galerie">Gallery</span></p>
-<h1 class="text-2xl md:text-3xl font-semibold tracking-tight text-neutral-300 leading-none mb-6"><span class="i18n" data-en="Paintings" data-fr="Peintures">Paintings</span></h1>
-</header>
-<!-- MASONRY GALLERY -->
-<main class="px-3 pb-32">
-<div class="masonry">
-<div class="masonry-item" onclick="openLightbox('paintings/final.webp','Painting Study')">
-<img alt="Painting Study" loading="lazy" src="paintings/final.webp"/>
-<div class="hover-label"><p class="text-xs text-neutral-300 font-medium"><span class="i18n" data-en="Painting Study" data-fr="Painting Study">Painting Study</span></p></div>
+<!-- HIRE ME CONTENT -->
+<main class="pt-24 pb-32 px-6 lg:px-8 max-w-7xl mx-auto">
+<!-- Header -->
+<div class="mb-16 max-w-3xl">
+<p class="brief-eyebrow text-[11px] tracking-[0.35em] uppercase mb-4"><span class="i18n" data-en="Freelance · Contract" data-fr="Freelance · Contrat">Freelance · Contract</span></p>
+<h1 class="text-4xl md:text-6xl font-black tracking-tight text-neutral-100 leading-none mb-6"><span class="i18n" data-en="Concept Art &amp; Game UI, For Hire." data-fr="Art conceptuel et UI de jeu, disponible en freelance.">Concept Art &amp; Game UI, For Hire.</span></h1>
+<p class="text-neutral-400 text-lg leading-relaxed font-light">
+        <span class="i18n" data-en="I'm open to freelance and contract work — concept art, character and creature design, and production-ready game UI, from the first sketch to a shipped build. See the case studies above for what that's looked like on real projects." data-fr="Je suis disponible pour du travail freelance et contractuel — art conceptuel, design de personnages et de créatures, et UI de jeu prête pour la production, du premier croquis jusqu'à une version livrée. Consultez les études de cas ci-dessus pour voir à quoi ça ressemble sur de vrais projets.">I'm open to freelance and contract work — concept art, character and creature design, and production-ready game UI, from the first sketch to a shipped build. See the case studies above for what that's looked like on real projects.</span>
+      </p>
 </div>
-<div class="masonry-item" onclick="openLightbox('paintings/breche_1.webp','Brèche')">
-<img alt="Brèche" loading="lazy" src="paintings/breche_1.webp"/>
-<div class="hover-label"><p class="text-xs text-neutral-300 font-medium"><span class="i18n" data-en="Brèche" data-fr="Brèche">Brèche</span></p></div>
+<!-- Services -->
+<div class="border-t border-neutral-800 pt-16 mb-16">
+<p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="Services" data-fr="Services">Services</span></p>
+<h2 class="text-2xl md:text-3xl font-bold tracking-tight text-neutral-100 mb-10"><span class="i18n" data-en="What I Can Take On" data-fr="Ce que je peux prendre en charge">What I Can Take On</span></h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-2"><span class="i18n" data-en="Concept Art &amp; Illustration" data-fr="Art conceptuel et illustration">Concept Art &amp; Illustration</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Vehicles, environments, key art, and chapter-spanning world-building sheets — from blue-sky ideation to production-ready final render." data-fr="Véhicules, environnements, key art et fiches de world-building couvrant plusieurs chapitres — de l'idéation libre au rendu final prêt pour la production.">Vehicles, environments, key art, and chapter-spanning world-building sheets — from blue-sky ideation to production-ready final render.</span></p>
 </div>
-<div class="masonry-item" onclick="openLightbox('paintings/white_hair_model.webp','White Hair Model')">
-<img alt="White Hair Model" loading="lazy" src="paintings/white_hair_model.webp"/>
-<div class="hover-label"><p class="text-xs text-neutral-300 font-medium"><span class="i18n" data-en="White Hair Model" data-fr="White Hair Model">White Hair Model</span></p></div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-2"><span class="i18n" data-en="Character &amp; Creature Design" data-fr="Design de personnages et de créatures">Character &amp; Creature Design</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Silhouette-first design carried through costume or material iterations, built so a design reads correctly before a full rig or model exists." data-fr="Un design centré sur la silhouette, décliné à travers des itérations de costume ou de matière, conçu pour se lire correctement avant même qu'un rig ou un modèle complet n'existe.">Silhouette-first design carried through costume or material iterations, built so a design reads correctly before a full rig or model exists.</span></p>
 </div>
-<div class="masonry-item" onclick="openLightbox('paintings/MODEL_WITH_RED_PLANT.webp','Model with Red Plant')">
-<img alt="Model with Red Plant" loading="lazy" src="paintings/MODEL_WITH_RED_PLANT.webp"/>
-<div class="hover-label"><p class="text-xs text-neutral-300 font-medium"><span class="i18n" data-en="Model with Red Plant" data-fr="Model with Red Plant">Model with Red Plant</span></p></div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-2"><span class="i18n" data-en="Hard-Surface &amp; Organic Design" data-fr="Design hard-surface et organique">Hard-Surface &amp; Organic Design</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Weapons, mechs, props, and vehicles, grounded in functional engineering logic rather than pure aesthetics." data-fr="Armes, mechs, accessoires et véhicules, ancrés dans une logique d'ingénierie fonctionnelle plutôt que purement esthétique.">Weapons, mechs, props, and vehicles, grounded in functional engineering logic rather than pure aesthetics.</span></p>
 </div>
-<div class="masonry-item" onclick="openLightbox('paintings/IMG_0103_copy.webp','Life Painting')">
-<img alt="Life Painting" loading="lazy" src="paintings/IMG_0103_copy.webp"/>
-<div class="hover-label"><p class="text-xs text-neutral-300 font-medium"><span class="i18n" data-en="Life Painting" data-fr="Life Painting">Life Painting</span></p></div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-2"><span class="i18n" data-en="Game &amp; VR UI Systems" data-fr="Systèmes UI de jeu et VR">Game &amp; VR UI Systems</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Wireframe through high-fidelity interface, implemented for real as functioning widgets in Unreal Engine 5 / UMG — not just a static mockup." data-fr="Du wireframe à l'interface haute fidélité, implémentée pour de vrai sous forme de widgets fonctionnels dans Unreal Engine 5 / UMG — pas seulement une maquette statique.">Wireframe through high-fidelity interface, implemented for real as functioning widgets in Unreal Engine 5 / UMG — not just a static mockup.</span></p>
 </div>
-<div class="masonry-item" onclick="openLightbox('paintings/me_me_praying.webp','Me Praying')">
-<img alt="Me Praying" loading="lazy" src="paintings/me_me_praying.webp"/>
-<div class="hover-label"><p class="text-xs text-neutral-300 font-medium"><span class="i18n" data-en="Me Praying" data-fr="Me Praying">Me Praying</span></p></div>
 </div>
-<div class="masonry-item" onclick="openLightbox('paintings/Blue%2BPortrait%2Blow.webp','Blue Portrait')">
-<img alt="Blue Portrait" loading="lazy" src="paintings/Blue%2BPortrait%2Blow.webp"/>
-<div class="hover-label"><p class="text-xs text-neutral-300 font-medium"><span class="i18n" data-en="Blue Portrait" data-fr="Blue Portrait">Blue Portrait</span></p></div>
 </div>
-<div class="masonry-item" onclick="openLightbox('paintings/life_painting_portrait_instag.webp','Life Painting Portrait')">
-<img alt="Life Painting Portrait" loading="lazy" src="paintings/life_painting_portrait_instag.webp"/>
-<div class="hover-label"><p class="text-xs text-neutral-300 font-medium"><span class="i18n" data-en="Life Painting Portrait" data-fr="Life Painting Portrait">Life Painting Portrait</span></p></div>
+<!-- How I Work -->
+<div class="border-t border-neutral-800 pt-16 mb-16">
+<p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="Process" data-fr="Processus">Process</span></p>
+<h2 class="text-2xl md:text-3xl font-bold tracking-tight text-neutral-100 mb-10"><span class="i18n" data-en="How I Work" data-fr="Ma façon de travailler">How I Work</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div>
+<p class="text-[10px] tracking-[0.25em] uppercase text-neutral-600 mb-3"><span class="i18n" data-en="01 — Brief &amp; References" data-fr="01 — Brief et références">01 — Brief &amp; References</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="We align on scope, references, and constraints up front — platform, engine, deadline, and what 'done' looks like." data-fr="On s'aligne d'abord sur la portée, les références et les contraintes — plateforme, moteur, délai et ce à quoi ressemble un travail « terminé ».">We align on scope, references, and constraints up front — platform, engine, deadline, and what 'done' looks like.</span></p>
 </div>
-<div class="masonry-item" onclick="openLightbox('paintings/20170123_141309.webp','Life Drawing')">
-<img alt="Life Drawing" loading="lazy" src="paintings/20170123_141309.webp"/>
-<div class="hover-label"><p class="text-xs text-neutral-300 font-medium"><span class="i18n" data-en="Life Drawing" data-fr="Life Drawing">Life Drawing</span></p></div>
+<div>
+<p class="text-[10px] tracking-[0.25em] uppercase text-neutral-600 mb-3"><span class="i18n" data-en="02 — Exploration &amp; Iteration" data-fr="02 — Exploration et itération">02 — Exploration &amp; Iteration</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Thumbnails or wireframes first, narrowed through feedback before any piece goes to final render or high-fidelity pass." data-fr="D'abord des miniatures ou des wireframes, affinés grâce aux retours avant qu'une pièce ne passe au rendu final ou à la passe haute-fidélité.">Thumbnails or wireframes first, narrowed through feedback before any piece goes to final render or high-fidelity pass.</span></p>
 </div>
-<div class="masonry-item" onclick="openLightbox('paintings/scan_life_painting_instagram.webp','Life Painting Scan')">
-<img alt="Life Painting Scan" loading="lazy" src="paintings/scan_life_painting_instagram.webp"/>
-<div class="hover-label"><p class="text-xs text-neutral-300 font-medium"><span class="i18n" data-en="Life Painting Scan" data-fr="Life Painting Scan">Life Painting Scan</span></p></div>
+<div>
+<p class="text-[10px] tracking-[0.25em] uppercase text-neutral-600 mb-3"><span class="i18n" data-en="03 — Production-Ready Delivery" data-fr="03 — Livraison prête pour la production">03 — Production-Ready Delivery</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Final files handed off clean and organized — with in-engine implementation available for UI work, not just source art." data-fr="Fichiers finaux livrés propres et organisés — avec une implémentation dans le moteur disponible pour le travail d'UI, pas seulement l'art source.">Final files handed off clean and organized — with in-engine implementation available for UI work, not just source art.</span></p>
 </div>
-<div class="masonry-item" onclick="openLightbox('paintings/20190214_181502.webp','Figure Study')">
-<img alt="Figure Study" loading="lazy" src="paintings/20190214_181502.webp"/>
-<div class="hover-label"><p class="text-xs text-neutral-300 font-medium"><span class="i18n" data-en="Figure Study" data-fr="Figure Study">Figure Study</span></p></div>
 </div>
-<div class="masonry-item" onclick="openLightbox('paintings/guillaume-goder-lift.webp','Lift')">
-<img alt="Lift" loading="lazy" src="paintings/guillaume-goder-lift.webp"/>
-<div class="hover-label"><p class="text-xs text-neutral-300 font-medium"><span class="i18n" data-en="Lift" data-fr="Lift">Lift</span></p></div>
 </div>
-<div class="masonry-item" onclick="openLightbox('paintings/le_repos_final.webp','Le Repos')">
-<img alt="Le Repos" loading="lazy" src="paintings/le_repos_final.webp"/>
-<div class="hover-label"><p class="text-xs text-neutral-300 font-medium"><span class="i18n" data-en="Le Repos" data-fr="Le Repos">Le Repos</span></p></div>
-</div>
-<div class="masonry-item" onclick="openLightbox('paintings/Battle_of_God_3.webp','Battle of God 3')">
-<img alt="Battle of God 3" loading="lazy" src="paintings/Battle_of_God_3.webp"/>
-<div class="hover-label"><p class="text-xs text-neutral-300 font-medium"><span class="i18n" data-en="Battle of God 3" data-fr="Battle of God 3">Battle of God 3</span></p></div>
-</div>
-<div class="masonry-item" onclick="openLightbox('paintings/guillaume-goder-remission.webp','Remission')">
-<img alt="Remission" loading="lazy" src="paintings/guillaume-goder-remission.webp"/>
-<div class="hover-label"><p class="text-xs text-neutral-300 font-medium"><span class="i18n" data-en="Remission" data-fr="Remission">Remission</span></p></div>
-</div>
-<div class="masonry-item" onclick="openLightbox('paintings/guillaume-goder-conceal-toxic-relationship-copy.webp','Conceal Toxic Relationship')">
-<img alt="Conceal Toxic Relationship" loading="lazy" src="paintings/guillaume-goder-conceal-toxic-relationship-copy.webp"/>
-<div class="hover-label"><p class="text-xs text-neutral-300 font-medium"><span class="i18n" data-en="Conceal Toxic Relationship" data-fr="Conceal Toxic Relationship">Conceal Toxic Relationship</span></p></div>
-</div>
-<div class="masonry-item" onclick="openLightbox('paintings/guillaume-goder-running-agaisnt-the-clock.webp','Running Against the Clock')">
-<img alt="Running Against the Clock" loading="lazy" src="paintings/guillaume-goder-running-agaisnt-the-clock.webp"/>
-<div class="hover-label"><p class="text-xs text-neutral-300 font-medium"><span class="i18n" data-en="Running Against the Clock" data-fr="Running Against the Clock">Running Against the Clock</span></p></div>
-</div>
-<div class="masonry-item" onclick="openLightbox('paintings/guillaume-goder-drive-running-against-the-clock.webp','Drive — Running Against the Clock')">
-<img alt="Drive — Running Against the Clock" loading="lazy" src="paintings/guillaume-goder-drive-running-against-the-clock.webp"/>
-<div class="hover-label"><p class="text-xs text-neutral-300 font-medium"><span class="i18n" data-en="Drive" data-fr="Drive">Drive</span></p></div>
-</div>
-<div class="masonry-item" onclick="openLightbox('paintings/img_1823905x695.webp','Portrait Study')">
-<img alt="Portrait Study" loading="lazy" src="paintings/img_1823905x695.webp"/>
-<div class="hover-label"><p class="text-xs text-neutral-300 font-medium"><span class="i18n" data-en="Portrait Study" data-fr="Portrait Study">Portrait Study</span></p></div>
-</div>
+<!-- Get in Touch -->
+<div class="border-t border-neutral-800 pt-16 max-w-2xl">
+<p class="brief-eyebrow text-[11px] tracking-[0.35em] uppercase mb-4"><span class="i18n" data-en="Get in Touch" data-fr="Me contacter">Get in Touch</span></p>
+<h2 class="text-3xl md:text-4xl font-bold tracking-tight text-neutral-100 mb-6"><span class="i18n" data-en="Tell Me About Your Project" data-fr="Parlez-moi de votre projet">Tell Me About Your Project</span></h2>
+<p class="text-neutral-400 leading-relaxed font-light mb-10 max-w-xl">
+        <span class="i18n" data-en="The fastest way to reach me is email — include a short brief, timeline, and platform/engine if you have one, and I'll get back to you." data-fr="Le moyen le plus rapide de me joindre est le courriel — incluez un court brief, un échéancier et la plateforme/le moteur si vous en avez un, et je vous répondrai.">The fastest way to reach me is email — include a short brief, timeline, and platform/engine if you have one, and I'll get back to you.</span>
+      </p>
+<a class="inline-flex items-center gap-3 px-8 py-3 bg-neutral-100 text-neutral-950 text-[11px] tracking-[0.2em] uppercase font-semibold hover:bg-amber-300 transition-colors duration-300" href="mailto:gg28.god@gmail.com?subject=Freelance%20Inquiry">
+        <span class="i18n" data-en="Email Me" data-fr="M'écrire">Email Me</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+      </a>
+<p class="text-sm text-neutral-500 mt-6"><span class="i18n" data-en="gg28.god@gmail.com" data-fr="gg28.god@gmail.com">gg28.god@gmail.com</span></p>
 </div>
 </main>
-<!-- LIGHTBOX -->
-<div id="lightbox" onclick="if(event.target===this)closeLightbox()" style="display:none;">
-<button aria-label="Close" id="lightbox-close" onclick="closeLightbox()"><span class="i18n" data-en="×" data-fr="×">×</span></button>
-<img alt="" id="lightbox-img" src=""/>
-</div>
 <!-- FOOTER -->
 <footer class="border-t border-neutral-800 py-12">
 <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -221,21 +187,5 @@
 </div>
 </div>
 </footer>
-<script>
-    function openLightbox(src, alt) {
-      document.getElementById('lightbox-img').src = src;
-      document.getElementById('lightbox-img').alt = alt || '';
-      document.getElementById('lightbox').style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-      document.addEventListener('keydown', escHandler);
-    }
-    function closeLightbox() {
-      document.getElementById('lightbox').style.display = 'none';
-      document.getElementById('lightbox-img').src = '';
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', escHandler);
-    }
-    function escHandler(e) { if (e.key === 'Escape') closeLightbox(); }
-  </script>
 </body>
 </html>
