@@ -191,24 +191,194 @@
 </div>
 </div>
 </div>
-<!-- GALLERY -->
-<div class="space-y-0 my-0">
+<!-- THE APPROACH -->
+<div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 border-b border-neutral-800 space-y-16">
+<div>
+<p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="05 — The Approach" data-fr="05 — La démarche">05 — The Approach</span></p>
+<h2 class="text-3xl md:text-5xl font-black tracking-tight text-neutral-100 leading-none mb-6"><span class="i18n" data-en="Designing Without a Cursor" data-fr="Concevoir sans curseur">Designing Without a Cursor</span></h2>
+<p class="text-neutral-400 text-lg leading-relaxed font-light max-w-2xl">
+        <span class="i18n" data-en="Every flat-screen UX habit had to be re-examined for a headset: no hover, no right-click, no mouse precision — just a laser pointer, a trigger, and a player who can't see a menu bar because there isn't one. The process below is how I got from that constraint to a shipped, licensed MLB interface." data-fr="Chaque réflexe UX pensé pour un écran plat devait être remis en question pour un casque : pas de survol, pas de clic droit, pas de précision de souris — seulement un pointeur laser, une gâchette, et un joueur qui ne peut pas voir de barre de menu puisqu'il n'y en a pas. Le processus ci-dessous est celui qui m'a mené de cette contrainte à une interface MLB sous licence, livrée en production.">Every flat-screen UX habit had to be re-examined for a headset: no hover, no right-click, no mouse precision — just a laser pointer, a trigger, and a player who can't see a menu bar because there isn't one. The process below is how I got from that constraint to a shipped, licensed MLB interface.</span>
+      </p>
+</div>
+<!-- Process overview -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="1. Empathize" data-fr="1. Empathie">1. Empathize</span></p>
+<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="In-headset walkthroughs with new VR players surfaced where a laser-and-trigger input model breaks down — mainly the moment before the player has learned what's clickable." data-fr="Des essais en casque avec des joueurs novices en VR ont révélé où le modèle de saisie laser-et-gâchette flanche — surtout au moment où le joueur n'a pas encore appris ce qui est cliquable.">In-headset walkthroughs with new VR players surfaced where a laser-and-trigger input model breaks down — mainly the moment before the player has learned what's clickable.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="2. Define" data-fr="2. Définir">2. Define</span></p>
+<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="Two constraints, in tension: MLB brand fidelity, and legibility at arm's length. Every subsequent design decision had to satisfy both at once, not trade one for the other." data-fr="Deux contraintes, en tension : la fidélité à la marque MLB, et la lisibilité à bout de bras. Chaque décision de design suivante devait satisfaire les deux à la fois, sans sacrifier l'une pour l'autre.">Two constraints, in tension: MLB brand fidelity, and legibility at arm's length. Every subsequent design decision had to satisfy both at once, not trade one for the other.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="3. Ideate" data-fr="3. Idéation">3. Ideate</span></p>
+<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="Built the design system directly in Figma as component states rather than static frames — every button, card, and icon exists as default, hovered, and selected from the start." data-fr="Le système de design a été construit directement dans Figma sous forme d'états de composants plutôt que de trames statiques — chaque bouton, carte et icône existe dès le départ en version par défaut, survolée et sélectionnée.">Built the design system directly in Figma as component states rather than static frames — every button, card, and icon exists as default, hovered, and selected from the start.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="4. Prototype" data-fr="4. Prototype">4. Prototype</span></p>
+<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="Every screen went through multiple visible iteration passes — previous design kept side-by-side with the current pass and what actually shipped in-game, so regressions were obvious." data-fr="Chaque écran est passé par plusieurs cycles d'itération visibles — la version précédente conservée côte à côte avec la version en cours et ce qui a réellement été livré en jeu, pour que toute régression soit immédiatement visible.">Every screen went through multiple visible iteration passes — previous design kept side-by-side with the current pass and what actually shipped in-game, so regressions were obvious.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="5. Test" data-fr="5. Test">5. Test</span></p>
+<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="Nothing was approved from a monitor. Every color, type size, and target size was reviewed in-headset, at the actual viewing distance a player would use it at." data-fr="Rien n'était approuvé depuis un moniteur. Chaque couleur, taille de police et cible interactive était revue dans le casque, à la distance de vision réelle qu'un joueur utiliserait.">Nothing was approved from a monitor. Every color, type size, and target size was reviewed in-headset, at the actual viewing distance a player would use it at.</span></p>
+</div>
+</div>
+<!-- VR spatial UI challenges -->
+<div>
+<h3 class="text-xl font-bold text-neutral-100 mb-6"><span class="i18n" data-en="VR Spatial UI Challenges" data-fr="Défis d'UI spatiale en VR">VR Spatial UI Challenges</span></h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="No hover, so state has to do the work" data-fr="Pas de survol, donc l'état doit tout porter">No hover, so state has to do the work</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="A cursor gives free feedback the moment it touches something. A VR laser gives none unless the UI builds it in — so every interactive element needed an explicit hover state distinct enough to read from across a room, not just up close." data-fr="Un curseur donne un retour visuel gratuit dès qu'il touche quelque chose. Un laser VR n'en donne aucun à moins que l'UI ne le construise elle-même — chaque élément interactif avait donc besoin d'un état de survol explicite, suffisamment distinct pour se lire à distance, pas seulement de près.">A cursor gives free feedback the moment it touches something. A VR laser gives none unless the UI builds it in — so every interactive element needed an explicit hover state distinct enough to read from across a room, not just up close.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="Target size for a shaking hand, not a steady mouse" data-fr="Une cible pensée pour une main qui tremble, pas une souris stable">Target size for a shaking hand, not a steady mouse</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Hand tracking drifts. Buttons, cards, and mode-select tiles were sized and spaced with generous margin for aim error, especially in the first-time flow where the player is still learning to point at all." data-fr="Le suivi des mains dérive. Les boutons, cartes et tuiles de sélection de mode ont été dimensionnés et espacés avec une marge généreuse pour l'erreur de visée, surtout dans le parcours de première utilisation où le joueur apprend encore à simplement pointer.">Hand tracking drifts. Buttons, cards, and mode-select tiles were sized and spaced with generous margin for aim error, especially in the first-time flow where the player is still learning to point at all.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="Depth as a design constraint" data-fr="La profondeur comme contrainte de design">Depth as a design constraint</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Menus float in 3D space at a fixed distance from the player, so type sizes that work on a monitor can be unreadable in-headset and vice versa. Every panel was scaled and tested against the actual viewing distance, not a print-style hierarchy." data-fr="Les menus flottent dans l'espace 3D à une distance fixe du joueur, donc des tailles de police qui fonctionnent sur un moniteur peuvent devenir illisibles dans le casque, et inversement. Chaque panneau a été mis à l'échelle et testé selon la distance de vision réelle, plutôt que selon une hiérarchie de type impression.">Menus float in 3D space at a fixed distance from the player, so type sizes that work on a monitor can be unreadable in-headset and vice versa. Every panel was scaled and tested against the actual viewing distance, not a print-style hierarchy.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="Color has to carry meaning, not just brand" data-fr="La couleur doit porter du sens, pas seulement la marque">Color has to carry meaning, not just brand</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Team colors, ready/not-ready states, and difficulty tiers all live in the same MLB blue-gold-red palette. Saturation and contrast had to separate 'this is a brand color' from 'this is a state you need to notice' without adding a second color language." data-fr="Les couleurs d'équipe, les états prêt/pas prêt et les niveaux de difficulté vivent tous dans la même palette bleu-or-rouge de la MLB. La saturation et le contraste devaient distinguer « ceci est une couleur de marque » de « ceci est un état à remarquer », sans ajouter un second langage de couleur.">Team colors, ready/not-ready states, and difficulty tiers all live in the same MLB blue-gold-red palette. Saturation and contrast had to separate 'this is a brand color' from 'this is a state you need to notice' without adding a second color language.</span></p>
+</div>
+</div>
+</div>
+<!-- User journey -->
+<div>
+<h3 class="text-xl font-bold text-neutral-100 mb-6"><span class="i18n" data-en="The First-Time User Journey" data-fr="Le parcours de première utilisation">The First-Time User Journey</span></h3>
+<p class="text-neutral-400 leading-relaxed font-light max-w-2xl mb-8"><span class="i18n" data-en="The FTUI flow is the highest-stakes screen sequence in the game: it's the only place a player is taught how to use VR input at all, before a single pitch is thrown." data-fr="Le flux FTUI est la séquence d'écrans la plus critique du jeu : c'est le seul endroit où le joueur apprend à utiliser la saisie VR, avant même le premier lancer.">The FTUI flow is the highest-stakes screen sequence in the game: it's the only place a player is taught how to use VR input at all, before a single pitch is thrown.</span></p>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+<div class="bg-neutral-900 border border-neutral-800 rounded-xl p-4 text-center">
+<p class="text-2xl font-black text-amber-300 mb-1">1</p>
+<p class="text-xs text-neutral-300"><span class="i18n" data-en="Boot &amp; Sign-In" data-fr="Démarrage et connexion">Boot &amp; Sign-In</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-xl p-4 text-center">
+<p class="text-2xl font-black text-amber-300 mb-1">2</p>
+<p class="text-xs text-neutral-300"><span class="i18n" data-en="Mode Select" data-fr="Sélection du mode">Mode Select</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-xl p-4 text-center">
+<p class="text-2xl font-black text-amber-300 mb-1">3</p>
+<p class="text-xs text-neutral-300"><span class="i18n" data-en="Controller Onboarding" data-fr="Prise en main de la manette">Controller Onboarding</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-xl p-4 text-center">
+<p class="text-2xl font-black text-amber-300 mb-1">4</p>
+<p class="text-xs text-neutral-300"><span class="i18n" data-en="Stance Selection" data-fr="Sélection de la position">Stance Selection</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-xl p-4 text-center">
+<p class="text-2xl font-black text-amber-300 mb-1">5</p>
+<p class="text-xs text-neutral-300"><span class="i18n" data-en="Match Setup" data-fr="Configuration du match">Match Setup</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-xl p-4 text-center">
+<p class="text-2xl font-black text-amber-300 mb-1">6</p>
+<p class="text-xs text-neutral-300"><span class="i18n" data-en="In-Match HUD" data-fr="HUD en jeu">In-Match HUD</span></p>
+</div>
+</div>
+</div>
+</div>
+<!-- PROTOTYPE -->
+<div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 border-b border-neutral-800 space-y-12">
+<div>
+<p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="06 — Prototype" data-fr="06 — Prototype">06 — Prototype</span></p>
+<h2 class="text-3xl md:text-5xl font-black tracking-tight text-neutral-100 leading-none mb-6"><span class="i18n" data-en="The System, in Layers" data-fr="Le système, par couches">The System, in Layers</span></h2>
+<p class="text-neutral-400 text-lg leading-relaxed font-light max-w-2xl">
+        <span class="i18n" data-en="Grouped the way the system was actually built: foundational design tokens first, then the onboarding flow that teaches the input model, then the core gameplay and progression screens that live on top of both." data-fr="Regroupé de la façon dont le système a réellement été construit : les tokens de design fondamentaux en premier, puis le parcours d'intégration qui enseigne le modèle de saisie, puis les écrans de gameplay et de progression qui reposent sur les deux." >Grouped the way the system was actually built: foundational design tokens first, then the onboarding flow that teaches the input model, then the core gameplay and progression screens that live on top of both.</span>
+      </p>
+</div>
+<!-- Design System -->
+<div>
+<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-2"><span class="i18n" data-en="Design System" data-fr="Système de design">Design System</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed max-w-2xl mb-6"><span class="i18n" data-en="Typography, color, and button components — the tokens every other screen in the game inherits from." data-fr="Typographie, couleur et composants de boutons — les tokens dont hérite chaque autre écran du jeu.">Typography, color, and button components — the tokens every other screen in the game inherits from.</span></p>
+<div class="space-y-0">
 <img alt="Homerun Derby Overview" class="w-full" loading="lazy" src="Home%20Run%20Derby%20Vr/Homerun%2Bderby%2Boverview.webp"/>
 <img alt="Typography and Colors" class="w-full" loading="lazy" src="Home%20Run%20Derby%20Vr/Typo%2Band%2BColors.webp"/>
+<img alt="Font System" class="w-full" loading="lazy" src="Home%20Run%20Derby%20Vr/Font.webp"/>
 <img alt="Button System" class="w-full" loading="lazy" src="Home%20Run%20Derby%20Vr/Buttons.webp"/>
-<img alt="Interface Frame 489" class="w-full" loading="lazy" src="Home%20Run%20Derby%20Vr/Frame%2B489.webp"/>
-<img alt="Tournament UI" class="w-full" loading="lazy" src="Home%20Run%20Derby%20Vr/Touirnament%2Bui.webp"/>
+</div>
+</div>
+<!-- Onboarding -->
+<div>
+<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-2"><span class="i18n" data-en="Onboarding" data-fr="Intégration">Onboarding</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed max-w-2xl mb-6"><span class="i18n" data-en="The first-time user experience — teaching controller input and stance selection before the player ever swings." data-fr="Le parcours de première utilisation — enseigner la saisie par manette et la sélection de position avant même que le joueur ne frappe.">The first-time user experience — teaching controller input and stance selection before the player ever swings.</span></p>
+<div class="space-y-0">
 <img alt="First Time User Interface" class="w-full" loading="lazy" src="Home%20Run%20Derby%20Vr/FTUI.webp"/>
 <img alt="FTUI Design" class="w-full" loading="lazy" src="Home%20Run%20Derby%20Vr/ftui%2BDESIGN.webp"/>
-<img alt="Frame 490" class="w-full" loading="lazy" src="Home%20Run%20Derby%20Vr/Frame%2B490.webp"/>
-<img alt="Frame 488" class="w-full" loading="lazy" src="Home%20Run%20Derby%20Vr/Frame%2B488.webp"/>
+</div>
+</div>
+<!-- Core Gameplay UI -->
+<div>
+<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-2"><span class="i18n" data-en="Core Gameplay UI" data-fr="UI de gameplay principale">Core Gameplay UI</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed max-w-2xl mb-6"><span class="i18n" data-en="Tournament creation, lobby, bracket, and in-match HUD — the screens that carry live game state, not just static art." data-fr="Création de tournoi, lobby, tableau et HUD en jeu — les écrans qui portent l'état de jeu en direct, pas seulement un visuel statique.">Tournament creation, lobby, bracket, and in-match HUD — the screens that carry live game state, not just static art.</span></p>
+<div class="space-y-0">
+<img alt="Tournament UI" class="w-full" loading="lazy" src="Home%20Run%20Derby%20Vr/Touirnament%2Bui.webp"/>
 <img alt="Frame 487" class="w-full" loading="lazy" src="Home%20Run%20Derby%20Vr/Frame%2B487.webp"/>
-<img alt="Frame 493" class="w-full" loading="lazy" src="Home%20Run%20Derby%20Vr/Frame%2B493.webp"/>
-<img alt="Frame 492" class="w-full" loading="lazy" src="Home%20Run%20Derby%20Vr/Frame%2B492.webp"/>
+<img alt="Frame 488" class="w-full" loading="lazy" src="Home%20Run%20Derby%20Vr/Frame%2B488.webp"/>
+<img alt="Frame 489" class="w-full" loading="lazy" src="Home%20Run%20Derby%20Vr/Frame%2B489.webp"/>
+<img alt="Frame 490" class="w-full" loading="lazy" src="Home%20Run%20Derby%20Vr/Frame%2B490.webp"/>
 <img alt="Frame 491" class="w-full" loading="lazy" src="Home%20Run%20Derby%20Vr/Frame%2B491.webp"/>
+<img alt="Frame 492" class="w-full" loading="lazy" src="Home%20Run%20Derby%20Vr/Frame%2B492.webp"/>
+<img alt="Frame 493" class="w-full" loading="lazy" src="Home%20Run%20Derby%20Vr/Frame%2B493.webp"/>
+</div>
+</div>
+<!-- Progression & Season 3 -->
+<div>
+<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-2"><span class="i18n" data-en="Progression &amp; Season 3" data-fr="Progression et saison 3">Progression &amp; Season 3</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed max-w-2xl mb-6"><span class="i18n" data-en="Player profile and prestige progression, plus the Season 3 interface update — proof the system was built to extend past its own launch." data-fr="Profil du joueur et progression de prestige, ainsi que la mise à jour d'interface de la saison 3 — la preuve que le système a été conçu pour évoluer au-delà de son propre lancement.">Player profile and prestige progression, plus the Season 3 interface update — proof the system was built to extend past its own launch.</span></p>
+<div class="space-y-0">
 <img alt="Progression for Profile Player Icon" class="w-full" loading="lazy" src="Home%20Run%20Derby%20Vr/Progression%2Bfor%2BProfile%2BPlayer%2Bicon.webp"/>
 <img alt="Season 3 UI" class="w-full" loading="lazy" src="Home%20Run%20Derby%20Vr/Season%2B3%2Bui.webp"/>
-<img alt="Font System" class="w-full" loading="lazy" src="Home%20Run%20Derby%20Vr/Font.webp"/>
+</div>
+</div>
+</div>
+<!-- TEST -->
+<div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 border-b border-neutral-800">
+<p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="07 — Test" data-fr="07 — Test">07 — Test</span></p>
+<h2 class="text-3xl md:text-5xl font-black tracking-tight text-neutral-100 leading-none mb-6"><span class="i18n" data-en="Reviewed In-Headset, Not On a Monitor" data-fr="Révisé dans le casque, pas sur un moniteur">Reviewed In-Headset, Not On a Monitor</span></h2>
+<p class="text-neutral-400 text-lg leading-relaxed font-light max-w-2xl mb-10">
+      <span class="i18n" data-en="This shipped as a live, MLB-partnered product rather than going through a formal external usability study — so validation took the form of a running heuristic review against VR-specific constraints, repeated at every iteration pass shown above." data-fr="Ce projet a été livré en tant que produit en direct, en partenariat avec la MLB, plutôt que de passer par une étude d'utilisabilité externe formelle — la validation a donc pris la forme d'une revue heuristique continue face à des contraintes propres à la VR, répétée à chaque passe d'itération montrée ci-dessus.">This shipped as a live, MLB-partnered product rather than going through a formal external usability study — so validation took the form of a running heuristic review against VR-specific constraints, repeated at every iteration pass shown above.</span>
+    </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="Can you find it without hovering?" data-fr="Peut-on le trouver sans survoler ?">Can you find it without hovering?</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Every interactive element checked for a hover state that reads at laser-pointer distance, not just up close on a design file." data-fr="Chaque élément interactif vérifié pour un état de survol lisible à la distance du pointeur laser, pas seulement de près sur un fichier de design.">Every interactive element checked for a hover state that reads at laser-pointer distance, not just up close on a design file.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="Can you hit it with a shaking hand?" data-fr="Peut-on l'atteindre avec une main qui tremble ?">Can you hit it with a shaking hand?</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Target sizes and spacing reviewed against realistic hand-tracking drift, especially in the first-time onboarding flow." data-fr="Tailles de cibles et espacement révisés en fonction de la dérive réaliste du suivi des mains, surtout dans le parcours d'intégration initial.">Target sizes and spacing reviewed against realistic hand-tracking drift, especially in the first-time onboarding flow.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="Does it still read as MLB, at distance?" data-fr="Se lit-il toujours comme MLB, à distance ?">Does it still read as MLB, at distance?</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Brand color and type checked in-headset for contrast and legibility, not approved from a flat monitor comp." data-fr="Couleur de marque et typographie vérifiées dans le casque pour le contraste et la lisibilité, jamais approuvées depuis une maquette sur moniteur plat.">Brand color and type checked in-headset for contrast and legibility, not approved from a flat monitor comp.</span></p>
+</div>
+</div>
+</div>
+<!-- OUTCOME -->
+<div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 border-b border-neutral-800">
+<p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="08 — Outcome" data-fr="08 — Résultat">08 — Outcome</span></p>
+<h2 class="text-3xl md:text-5xl font-black tracking-tight text-neutral-100 leading-none mb-10"><span class="i18n" data-en="What Shipped, and What Held Up" data-fr="Ce qui a été livré, et ce qui a tenu">What Shipped, and What Held Up</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="Shipped for the All-Star Game" data-fr="Livré pour le match des étoiles">Shipped for the All-Star Game</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="The full UI system launched as a licensed MLB product for the All-Star Game Championship on Meta Quest — brand-approved, not a fan project." data-fr="Le système UI complet a été lancé en tant que produit MLB sous licence pour le championnat du match des étoiles sur Meta Quest — approuvé par la marque, pas un projet de fan.">The full UI system launched as a licensed MLB product for the All-Star Game Championship on Meta Quest — brand-approved, not a fan project.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="Extensible past launch" data-fr="Extensible après le lancement">Extensible past launch</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="The Season 3 interface update reused the original design tokens and component states rather than requiring a rebuild — proof the system was architected to extend, not just to ship once." data-fr="La mise à jour d'interface de la saison 3 a réutilisé les tokens de design et les états de composants d'origine plutôt que d'exiger une reconstruction — la preuve que le système a été architecturé pour évoluer, pas seulement pour être livré une fois.">The Season 3 interface update reused the original design tokens and component states rather than requiring a rebuild — proof the system was architected to extend, not just to ship once.</span></p>
+</div>
+<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="A reusable VR UI language" data-fr="Un langage UI VR réutilisable">A reusable VR UI language</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Default, hover, and selected states, target sizing for hand-tracking drift, and distance-tested type became a system, not one-off screens — reusable for every mode added after launch." data-fr="Les états par défaut, survol et sélectionné, le dimensionnement des cibles pour la dérive du suivi des mains, et la typographie testée à distance sont devenus un système, pas des écrans isolés — réutilisable pour chaque mode ajouté après le lancement.">Default, hover, and selected states, target sizing for hand-tracking drift, and distance-tested type became a system, not one-off screens — reusable for every mode added after launch.</span></p>
+</div>
+</div>
+</div>
+<!-- REFLECTION -->
+<div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 border-b border-neutral-800">
+<p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="09 — Reflection" data-fr="09 — Réflexion">09 — Reflection</span></p>
+<h2 class="text-3xl md:text-5xl font-black tracking-tight text-neutral-100 leading-none mb-6"><span class="i18n" data-en="What VR Taught Me About Flat UI" data-fr="Ce que la VR m'a appris sur l'UI plate">What VR Taught Me About Flat UI</span></h2>
+<p class="text-neutral-400 text-lg leading-relaxed font-light max-w-2xl">
+      <span class="i18n" data-en="Designing without a cursor forces a kind of honesty that flat-screen UI can hide from: if a state isn't obvious without hovering, it isn't obvious. That constraint didn't just shape Home Run Derby VR — it's changed how I evaluate every interface I design since, VR or not." data-fr="Concevoir sans curseur impose une forme d'honnêteté à laquelle l'UI plate peut échapper : si un état n'est pas évident sans survol, il n'est pas évident. Cette contrainte n'a pas seulement façonné Home Run Derby VR — elle a changé la façon dont j'évalue chaque interface que je conçois depuis, VR ou non.">Designing without a cursor forces a kind of honesty that flat-screen UI can hide from: if a state isn't obvious without hovering, it isn't obvious. That constraint didn't just shape Home Run Derby VR — it's changed how I evaluate every interface I design since, VR or not.</span>
+    </p>
 </div>
 <!-- PREV / NEXT -->
 <div class="border-t border-neutral-800 mt-16">
