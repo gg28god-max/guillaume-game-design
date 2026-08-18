@@ -20,6 +20,18 @@
     /* kept per-page rather than in theme.css since only these case-study pages use it so far */
     .brief-eyebrow { color: #fcd34d; font-family: 'Courier New', ui-monospace, monospace; }
     html.light .brief-eyebrow { color: #a07830; }
+    /* Cross-link banner: a slow breathing glow so it reads as noticeable at
+       rest, not only on hover — the whole point is that a visitor who never
+       hovers anything should still register "this links somewhere else". */
+    @keyframes crossLinkGlow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255,85,0,0); }
+      50%      { box-shadow: 0 0 28px 2px rgba(255,85,0,0.22); }
+    }
+    .cross-link-card { animation: crossLinkGlow 3.2s ease-in-out infinite; }
+    .cross-link-card:hover { animation-play-state: paused; box-shadow: 0 0 28px 4px rgba(255,85,0,0.32); }
+    @media (prefers-reduced-motion: reduce) {
+      .cross-link-card { animation: none; }
+    }
   </style>
 <link href="assets/theme.css" rel="stylesheet"/><script defer="" src="assets/site.js"></script>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
@@ -125,15 +137,21 @@
      system (wireframes, style guide, production screens in UE5) now lives on
      the UI/UX portfolio as its own case study. Kept as a prominent in-page
      banner, not just the sitewide nav pill, so it reads as "the other half of
-     this project" rather than a generic site link. -->
+     this project" rather than a generic site link. The thumbnail is hosted
+     cross-origin on the UI/UX site — that's fine for a plain <img>, only
+     canvas pixel-reads need CORS. The glow keeps the banner noticeable at
+     rest, not just on hover. -->
 <section aria-label="UI/UX case study cross-link" class="border-b border-neutral-800">
 <div class="max-w-7xl mx-auto px-6 lg:px-8 py-8">
-<a class="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6 bg-neutral-900 border border-neutral-800 hover:border-[#ff5500] rounded-2xl px-6 py-5 sm:px-8 sm:py-6 transition-all duration-300" href="https://uiux.guillaumedesign.ca/work/outpost-red">
+<a class="cross-link-card group flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-6 bg-neutral-900 border border-[#ff5500]/40 hover:border-[#ff5500] rounded-2xl p-3 sm:p-4 transition-all duration-300" href="https://uiux.guillaumedesign.ca/work/outpost-red">
+<img alt="Outpost Red UI/UX case study preview" class="w-full sm:w-32 h-32 sm:h-24 rounded-xl object-cover shrink-0" loading="lazy" src="https://uiux.guillaumedesign.ca/case-studies/outpost-red/hi-fi/select-difficulty.jpg"/>
+<div class="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6 sm:pr-2">
 <div>
 <p class="text-[10px] tracking-[0.25em] uppercase text-[#ff5500] mb-2"><span class="i18n" data-en="The Other Half of This Project" data-fr="L'autre moitié de ce projet">The Other Half of This Project</span></p>
 <p class="text-base sm:text-lg font-semibold text-neutral-100 leading-snug"><span class="i18n" data-en="This page covers the concept art. The full UI/UX system — wireframes, style guide, and production screens built as real widgets in Unreal Engine 5 — lives on the UI/UX portfolio." data-fr="Cette page couvre l'art conceptuel. Le système UI/UX complet — wireframes, guide de style et écrans de production construits comme de vrais widgets dans Unreal Engine 5 — se trouve sur le portfolio UI/UX.">This page covers the concept art. The full UI/UX system — wireframes, style guide, and production screens built as real widgets in Unreal Engine 5 — lives on the UI/UX portfolio.</span></p>
 </div>
 <span class="shrink-0 inline-flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase text-[#ff5500] group-hover:translate-x-1 transition-transform duration-300"><span class="i18n" data-en="View the UI/UX Case Study" data-fr="Voir l'étude de cas UI/UX">View the UI/UX Case Study</span> →</span>
+</div>
 </a>
 </div>
 </section>
