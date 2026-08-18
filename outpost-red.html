@@ -29,8 +29,16 @@
       0%, 100% { transform: translateX(0); }
       50%      { transform: translateX(5px); }
     }
+    /* The solid-orange CTA pill breathes at rest so it reads as a live
+       button, not just an accent-colored label. */
+    .cross-link-cta { animation: crossLinkPulse 1.8s ease-in-out infinite; }
+    .cross-link-card:hover .cross-link-cta { animation-play-state: paused; transform: scale(1.06); }
+    @keyframes crossLinkPulse {
+      0%, 100% { transform: scale(1); }
+      50%      { transform: scale(1.045); }
+    }
     @media (prefers-reduced-motion: reduce) {
-      .cross-link-arrow { animation: none; }
+      .cross-link-arrow, .cross-link-cta { animation: none; }
     }
   </style>
 <link href="assets/theme.css" rel="stylesheet"/><script defer="" src="assets/site.js"></script>
@@ -150,7 +158,7 @@
 <p class="text-[10px] tracking-[0.25em] uppercase text-[#ff5500] mb-2"><span class="i18n" data-en="The Other Half of This Project" data-fr="L'autre moitié de ce projet">The Other Half of This Project</span></p>
 <p class="text-base sm:text-lg font-semibold text-neutral-100 leading-snug"><span class="i18n" data-en="Concept art only. The UI/UX system lives on the UI/UX portfolio." data-fr="Art conceptuel seulement. Le système UI/UX se trouve sur le portfolio UI/UX.">Concept art only. The UI/UX system lives on the UI/UX portfolio.</span></p>
 </div>
-<span class="shrink-0 inline-flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase text-[#ff5500]"><span class="i18n" data-en="View the UI/UX Case Study" data-fr="Voir l'étude de cas UI/UX">View the UI/UX Case Study</span> <span class="cross-link-arrow" aria-hidden="true">→</span></span>
+<span class="cross-link-cta shrink-0 inline-flex items-center gap-2.5 rounded-full px-7 py-4 text-[12px] tracking-[0.2em] uppercase text-white" style="background-color:#ff5500"><span class="i18n" data-en="View the UI/UX Case Study" data-fr="Voir l'étude de cas UI/UX">View the UI/UX Case Study</span> <span class="cross-link-arrow" aria-hidden="true">→</span></span>
 </div>
 </a>
 </div>
