@@ -20,8 +20,12 @@
     /* kept per-page rather than in theme.css since only these case-study pages use it so far */
     .brief-eyebrow { color: #fcd34d; font-family: 'Courier New', ui-monospace, monospace; }
     html.light .brief-eyebrow { color: #a07830; }
-    /* Cross-link banner: no ambient animation — a plain lift + tint on hover. */
-    .cross-link-card:hover { transform: translateY(-2px); background-color: rgba(255,85,0,0.06); }
+    /* Cross-link banner: no ambient animation — a plain lift + lighten on
+       hover. A low-alpha rgba() background-color replaces the card's own
+       bg-neutral-800 outright rather than blending with it, so it let the
+       page's near-black backdrop show through and read as darker, not
+       lighter — a solid, slightly lighter grey fixes that. */
+    .cross-link-card:hover { transform: translateY(-2px); background-color: #333333 !important; }
   </style>
 <link href="assets/theme.css" rel="stylesheet"/><script defer="" src="assets/site.js"></script>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
@@ -132,11 +136,12 @@
      canvas pixel-reads need CORS. The glow keeps the banner noticeable at
      rest, not just on hover. -->
 <section aria-label="UI/UX case study cross-link" class="border-b border-neutral-800">
-<!-- No max-w-7xl/px-6 wrapper here on purpose — the hero images above are
-     flush edge-to-edge (plain w-full, no container), and this banner needs
-     to align with them exactly, not with the page's normal reading margins
-     used everywhere else. -->
-<div class="py-8">
+<!-- No max-w-7xl wrapper here on purpose — the hero images above are flush
+     edge-to-edge (plain w-full, no container), so this banner drops the
+     page's normal max-w-7xl/mx-auto reading-column constraint to roughly
+     match. It keeps a small px gap of its own, though, rather than touching
+     the viewport edge the way the plain hero image does. -->
+<div class="py-8 px-4 sm:px-6">
 <a class="cross-link-card flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-6 bg-neutral-800 rounded-2xl p-5 transition-all duration-300" href="https://uiux.guillaumedesign.ca/work/outpost-red">
 <img alt="Outpost Red UI/UX case study preview" class="w-full sm:w-32 h-32 sm:h-24 rounded-xl object-cover shrink-0" loading="lazy" src="https://uiux.guillaumedesign.ca/case-studies/outpost-red/hi-fi/select-difficulty.jpg"/>
 <div class="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6 sm:pr-2">
