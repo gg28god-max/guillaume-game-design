@@ -19,6 +19,12 @@
     /* kept per-page rather than in theme.css since only these case-study pages use it so far */
     .brief-eyebrow { color: #fcd34d; font-family: 'Courier New', ui-monospace, monospace; }
     html.light .brief-eyebrow { color: #a07830; }
+    /* Recent-work rail: native scroll-snap rather than a JS carousel — the
+       site has no per-page carousel script, and this doesn't need one. */
+    .work-rail { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; margin: 0 -6px; padding-left: 6px; padding-right: 6px; }
+    .work-rail::-webkit-scrollbar { height: 6px; }
+    .work-card { scroll-snap-align: start; flex: 0 0 auto; width: 280px; }
+    @media (min-width: 640px) { .work-card { width: 320px; } }
   </style>
 <link href="assets/theme.css" rel="stylesheet"/><script defer="" src="assets/site.js"></script>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
@@ -116,8 +122,47 @@
 <p class="brief-eyebrow text-[11px] tracking-[0.35em] uppercase mb-4"><span class="i18n" data-en="Freelance · Contract" data-fr="Freelance · Contrat">Freelance · Contract</span></p>
 <h1 class="text-4xl md:text-6xl font-black tracking-tight text-neutral-100 leading-none mb-6"><span class="i18n" data-en="Concept Art &amp; Game UI, For Hire." data-fr="Art conceptuel et UI de jeu, disponible en freelance.">Concept Art &amp; Game UI, For Hire.</span></h1>
 <p class="text-neutral-400 text-lg leading-relaxed font-light">
-        <span class="i18n" data-en="I'm open to freelance and contract work — concept art, character and creature design, and production-ready game UI, from the first sketch to a shipped build. See the case studies above for what that's looked like on real projects." data-fr="Je suis disponible pour du travail freelance et contractuel — art conceptuel, design de personnages et de créatures, et UI de jeu prête pour la production, du premier croquis jusqu'à une version livrée. Consultez les études de cas ci-dessus pour voir à quoi ça ressemble sur de vrais projets.">I'm open to freelance and contract work — concept art, character and creature design, and production-ready game UI, from the first sketch to a shipped build. See the case studies above for what that's looked like on real projects.</span>
+        <span class="i18n" data-en="I'm open to freelance and contract work — concept art, character and creature design, and production-ready game UI, from the first sketch to a shipped build. See the case studies below for what that's looked like on real projects." data-fr="Je suis disponible pour du travail freelance et contractuel — art conceptuel, design de personnages et de créatures, et UI de jeu prête pour la production, du premier croquis jusqu'à une version livrée. Consultez les études de cas ci-dessous pour voir à quoi ça ressemble sur de vrais projets.">I'm open to freelance and contract work — concept art, character and creature design, and production-ready game UI, from the first sketch to a shipped build. See the case studies below for what that's looked like on real projects.</span>
       </p>
+<p class="inline-flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase text-neutral-500 mt-6">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+<span class="i18n" data-en="Currently open to new freelance projects" data-fr="Présentement disponible pour de nouveaux projets freelance">Currently open to new freelance projects</span>
+</p>
+</div>
+<!-- Recent Work -->
+<div class="border-t border-neutral-800 pt-16 mb-16">
+<p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="Recent Work" data-fr="Travaux récents">Recent Work</span></p>
+<h2 class="text-2xl md:text-3xl font-bold tracking-tight text-neutral-100 mb-10"><span class="i18n" data-en="See It In Action" data-fr="À voir en action">See It In Action</span></h2>
+<div class="work-rail">
+<a class="work-card group" href="outpost-red.html">
+<div class="relative overflow-hidden rounded-2xl" style="aspect-ratio:4/3; background:#0a0a0a;">
+<img alt="Outpost Red — Game UI Interface" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style="object-position: right center;" loading="lazy" src="thumbs/outpost-red.webp"/>
+</div>
+<p class="text-base font-semibold text-neutral-100 mt-4 mb-1"><span class="i18n" data-en="Outpost Red" data-fr="Outpost Red">Outpost Red</span></p>
+<p class="text-sm text-neutral-400"><span class="i18n" data-en="Data-bound inventory UI, built as a real UMG widget in Unreal Engine 5." data-fr="UI d'inventaire connectée à des données, construite comme un vrai widget UMG dans Unreal Engine 5.">Data-bound inventory UI, built as a real UMG widget in Unreal Engine 5.</span></p>
+</a>
+<a class="work-card group" href="home-run-derby-vr.html">
+<div class="relative overflow-hidden rounded-2xl" style="aspect-ratio:4/3; background:#0a0a0a;">
+<img alt="Home Run Derby VR — Sports VR UI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" src="thumbs/home-run-derby-vr.webp"/>
+</div>
+<p class="text-base font-semibold text-neutral-100 mt-4 mb-1"><span class="i18n" data-en="Home Run Derby VR" data-fr="Home Run Derby VR">Home Run Derby VR</span></p>
+<p class="text-sm text-neutral-400"><span class="i18n" data-en="Licensed MLB VR sports UI, shipped for PlayStation VR and HTC Vive." data-fr="UI sportive VR sous licence MLB, livrée pour PlayStation VR et HTC Vive.">Licensed MLB VR sports UI, shipped for PlayStation VR and HTC Vive.</span></p>
+</a>
+<a class="work-card group" href="wings-of-wanitu.html">
+<div class="relative overflow-hidden rounded-2xl" style="aspect-ratio:4/3; background:#0a0a0a;">
+<img alt="Wings of Wanitu — VR UI Design" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" src="thumbs/wings-of-wanitu.webp"/>
+</div>
+<p class="text-base font-semibold text-neutral-100 mt-4 mb-1"><span class="i18n" data-en="Wings of Wanitu" data-fr="Wings of Wanitu">Wings of Wanitu</span></p>
+<p class="text-sm text-neutral-400"><span class="i18n" data-en="VR UI design for an original narrative adventure." data-fr="Design d'UI VR pour une aventure narrative originale.">VR UI design for an original narrative adventure.</span></p>
+</a>
+<a class="work-card group" href="tide-hollow.html">
+<div class="relative overflow-hidden rounded-2xl" style="aspect-ratio:4/3; background:#0a0a0a;">
+<img alt="Tide Hollow — 3D Asset Creation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" src="thumbs/tide-hollow.webp"/>
+</div>
+<p class="text-base font-semibold text-neutral-100 mt-4 mb-1"><span class="i18n" data-en="Tide Hollow" data-fr="Tide Hollow">Tide Hollow</span></p>
+<p class="text-sm text-neutral-400"><span class="i18n" data-en="Concept art and 3D asset creation for an original world." data-fr="Art conceptuel et création d'assets 3D pour un univers original.">Concept art and 3D asset creation for an original world.</span></p>
+</a>
+</div>
 </div>
 <!-- Services -->
 <div class="border-t border-neutral-800 pt-16 mb-16">
@@ -138,7 +183,7 @@
 </div>
 <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
 <p class="text-base font-semibold text-neutral-100 mb-2"><span class="i18n" data-en="Game &amp; VR UI Systems" data-fr="Systèmes UI de jeu et VR">Game &amp; VR UI Systems</span></p>
-<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Wireframe through high-fidelity interface, implemented for real as functioning widgets in Unreal Engine 5 / UMG — not just a static mockup." data-fr="Du wireframe à l'interface haute fidélité, implémentée pour de vrai sous forme de widgets fonctionnels dans Unreal Engine 5 / UMG — pas seulement une maquette statique.">Wireframe through high-fidelity interface, implemented for real as functioning widgets in Unreal Engine 5 / UMG — not just a static mockup.</span></p>
+<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Wireframe through high-fidelity interface, with real UMG implementation in Unreal Engine 5 available for the screens that need to prove out data binding and interaction, not just read as a static comp." data-fr="Du wireframe à l'interface haute fidélité, avec une implémentation UMG réelle dans Unreal Engine 5 disponible pour les écrans qui doivent prouver la connexion aux données et l'interaction, pas seulement se lire comme une maquette statique.">Wireframe through high-fidelity interface, with real UMG implementation in Unreal Engine 5 available for the screens that need to prove out data binding and interaction, not just read as a static comp.</span></p>
 </div>
 </div>
 </div>
