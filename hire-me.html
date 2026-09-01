@@ -19,12 +19,19 @@
     /* kept per-page rather than in theme.css since only these case-study pages use it so far */
     .brief-eyebrow { color: #fcd34d; font-family: 'Courier New', ui-monospace, monospace; }
     html.light .brief-eyebrow { color: #a07830; }
-    /* Recent-work rail: native scroll-snap rather than a JS carousel — the
-       site has no per-page carousel script, and this doesn't need one. */
+    /* Recent-work / services rail: native scroll-snap, arrow buttons drive
+       it with scrollBy rather than a full JS carousel library — the site
+       has no per-page carousel script, and this doesn't need one. */
     .work-rail { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; margin: 0 -6px; padding-left: 6px; padding-right: 6px; }
-    .work-rail::-webkit-scrollbar { height: 6px; }
+    .work-rail { scrollbar-width: none; -ms-overflow-style: none; }
+    .work-rail::-webkit-scrollbar { display: none; }
     .work-card { scroll-snap-align: start; flex: 0 0 auto; width: 280px; }
     @media (min-width: 640px) { .work-card { width: 320px; } }
+    .rail-nav-btn { width: 40px; height: 40px; border-radius: 100%; display: inline-flex; align-items: center; justify-content: center; background: #1a1a1a; color: #a3a3a3; border: 1px solid #262626; transition: background-color 0.2s, color 0.2s; }
+    .rail-nav-btn:hover:not(:disabled) { background: #262626; color: #f5f5f5; }
+    .rail-nav-btn:disabled { opacity: 0.35; cursor: default; }
+    html.light .rail-nav-btn { background: #e5e5e5; color: #525252; border-color: #d4d4d4; }
+    html.light .rail-nav-btn:hover:not(:disabled) { background: #d4d4d4; color: #171717; }
   </style>
 <link href="assets/theme.css" rel="stylesheet"/><script defer="" src="assets/site.js"></script>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
@@ -132,8 +139,18 @@
 <!-- Services -->
 <div class="border-t border-neutral-800 pt-16 mb-16">
 <p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="Services" data-fr="Services">Services</span></p>
-<h2 class="text-2xl md:text-3xl font-bold tracking-tight text-neutral-100 mb-10"><span class="i18n" data-en="What I Can Take On" data-fr="Ce que je peux prendre en charge">What I Can Take On</span></h2>
-<div class="work-rail">
+<div class="flex items-end justify-between mb-10 gap-4">
+<h2 class="text-2xl md:text-3xl font-bold tracking-tight text-neutral-100"><span class="i18n" data-en="What I Can Take On" data-fr="Ce que je peux prendre en charge">What I Can Take On</span></h2>
+<div class="flex items-center gap-3 shrink-0">
+<button type="button" class="rail-nav-btn" aria-label="Scroll left" onclick="railScroll('services-rail', -1)">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+</button>
+<button type="button" class="rail-nav-btn" aria-label="Scroll right" onclick="railScroll('services-rail', 1)">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+</button>
+</div>
+</div>
+<div class="work-rail" id="services-rail">
 <div class="work-card">
 <div class="relative overflow-hidden rounded-2xl" style="aspect-ratio:4/3; background:#0a0a0a;">
 <img alt="Concept Art &amp; Illustration — world illustration" class="w-full h-full object-cover" loading="lazy" src="illustrations/wings+illustration+background+2.webp"/>
