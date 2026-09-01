@@ -19,19 +19,21 @@
     /* kept per-page rather than in theme.css since only these case-study pages use it so far */
     .brief-eyebrow { color: #fcd34d; font-family: 'Courier New', ui-monospace, monospace; }
     html.light .brief-eyebrow { color: #a07830; }
-    /* Recent-work / services rail: native scroll-snap, arrow buttons drive
-       it with scrollBy rather than a full JS carousel library — the site
-       has no per-page carousel script, and this doesn't need one. */
+    /* Recent-work / services rail: native scroll-snap, a dot-pill indicator
+       (Apple's iPhone lineup style) drives and reflects position rather
+       than a full JS carousel library — the site has no per-page carousel
+       script, and this doesn't need one. */
     .work-rail { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; margin: 0 -6px; padding-left: 6px; padding-right: 6px; }
     .work-rail { scrollbar-width: none; -ms-overflow-style: none; }
     .work-rail::-webkit-scrollbar { display: none; }
     .work-card { scroll-snap-align: start; flex: 0 0 auto; width: 280px; }
     @media (min-width: 640px) { .work-card { width: 320px; } }
-    .rail-nav-btn { width: 40px; height: 40px; border-radius: 100%; display: inline-flex; align-items: center; justify-content: center; background: #1a1a1a; color: #a3a3a3; border: 1px solid #262626; transition: background-color 0.2s, color 0.2s; }
-    .rail-nav-btn:hover:not(:disabled) { background: #262626; color: #f5f5f5; }
-    .rail-nav-btn:disabled { opacity: 0.35; cursor: default; }
-    html.light .rail-nav-btn { background: #e5e5e5; color: #525252; border-color: #d4d4d4; }
-    html.light .rail-nav-btn:hover:not(:disabled) { background: #d4d4d4; color: #171717; }
+    .rail-dots { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 100px; background: #1a1a1a; }
+    .rail-dot { width: 6px; height: 6px; padding: 0; border: none; border-radius: 100px; background: #525252; cursor: pointer; transition: width 0.25s ease, background-color 0.25s ease; }
+    .rail-dot[aria-current="true"] { width: 20px; background: #e5e5e5; }
+    html.light .rail-dots { background: #e5e5e5; }
+    html.light .rail-dot { background: #a3a3a3; }
+    html.light .rail-dot[aria-current="true"] { background: #404040; }
   </style>
 <link href="assets/theme.css" rel="stylesheet"/><script defer="" src="assets/site.js"></script>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
@@ -139,17 +141,7 @@
 <!-- Services -->
 <div class="border-t border-neutral-800 pt-16 mb-16">
 <p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="Services" data-fr="Services">Services</span></p>
-<div class="flex items-end justify-between mb-10 gap-4">
-<h2 class="text-2xl md:text-3xl font-bold tracking-tight text-neutral-100"><span class="i18n" data-en="What I Can Take On" data-fr="Ce que je peux prendre en charge">What I Can Take On</span></h2>
-<div class="flex items-center gap-3 shrink-0">
-<button type="button" class="rail-nav-btn" aria-label="Scroll left" onclick="railScroll('services-rail', -1)">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-</button>
-<button type="button" class="rail-nav-btn" aria-label="Scroll right" onclick="railScroll('services-rail', 1)">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-</button>
-</div>
-</div>
+<h2 class="text-2xl md:text-3xl font-bold tracking-tight text-neutral-100 mb-10"><span class="i18n" data-en="What I Can Take On" data-fr="Ce que je peux prendre en charge">What I Can Take On</span></h2>
 <div class="work-rail" id="services-rail">
 <div class="work-card">
 <div class="relative overflow-hidden rounded-2xl" style="aspect-ratio:4/3; background:#0a0a0a;">
@@ -179,6 +171,9 @@
 <p class="text-base font-semibold text-neutral-100 mt-4 mb-1"><span class="i18n" data-en="Game &amp; VR UI Systems" data-fr="Systèmes UI de jeu et VR">Game &amp; VR UI Systems</span></p>
 <p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Wireframe through high-fidelity interface, with real UMG implementation in Unreal Engine 5 available for the screens that need to prove out data binding and interaction, not just read as a static comp." data-fr="Du wireframe à l'interface haute fidélité, avec une implémentation UMG réelle dans Unreal Engine 5 disponible pour les écrans qui doivent prouver la connexion aux données et l'interaction, pas seulement se lire comme une maquette statique.">Wireframe through high-fidelity interface, with real UMG implementation in Unreal Engine 5 available for the screens that need to prove out data binding and interaction, not just read as a static comp.</span></p>
 </div>
+</div>
+<div class="flex justify-center mt-6">
+<div class="rail-dots" id="services-dots"></div>
 </div>
 </div>
 <!-- How I Work -->
@@ -216,17 +211,7 @@
 <!-- Recent Work -->
 <div class="border-t border-neutral-800 pt-16 mt-16">
 <p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="Recent Work" data-fr="Travaux récents">Recent Work</span></p>
-<div class="flex items-end justify-between mb-10 gap-4">
-<h2 class="text-2xl md:text-3xl font-bold tracking-tight text-neutral-100"><span class="i18n" data-en="See It In Action" data-fr="À voir en action">See It In Action</span></h2>
-<div class="flex items-center gap-3 shrink-0">
-<button type="button" class="rail-nav-btn" aria-label="Scroll left" onclick="railScroll('recent-work-rail', -1)">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-</button>
-<button type="button" class="rail-nav-btn" aria-label="Scroll right" onclick="railScroll('recent-work-rail', 1)">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-</button>
-</div>
-</div>
+<h2 class="text-2xl md:text-3xl font-bold tracking-tight text-neutral-100 mb-10"><span class="i18n" data-en="See It In Action" data-fr="À voir en action">See It In Action</span></h2>
 <div class="work-rail" id="recent-work-rail">
 <a class="work-card group" href="outpost-red.html">
 <div class="relative overflow-hidden rounded-2xl" style="aspect-ratio:4/3; background:#0a0a0a;">
@@ -257,6 +242,9 @@
 <p class="text-sm text-neutral-400"><span class="i18n" data-en="Concept art and 3D asset creation for an original world." data-fr="Art conceptuel et création d'assets 3D pour un univers original.">Concept art and 3D asset creation for an original world.</span></p>
 </a>
 </div>
+<div class="flex justify-center mt-6">
+<div class="rail-dots" id="recent-work-dots"></div>
+</div>
 </div>
 </main>
 <!-- FOOTER -->
@@ -273,40 +261,53 @@
 </div>
 </footer>
 <script>
-  // Apple's lineup carousel scrolls one card per arrow tap rather than a
-  // fixed pixel amount, so it stays correct whether the card is 280px or
-  // 320px (the sm: breakpoint). Buttons disable at each end instead of
-  // wrapping, matching that same reference.
-  function railScroll(id, dir) {
-    var rail = document.getElementById(id);
-    if (!rail) return;
-    var card = rail.querySelector('.work-card');
-    if (!card) return;
-    var style = getComputedStyle(rail);
-    var gap = parseFloat(style.columnGap || style.gap || '0') || 0;
-    rail.scrollBy({ left: dir * (card.getBoundingClientRect().width + gap), behavior: 'smooth' });
+  // Apple's iPhone lineup page uses a dot-pill indicator rather than arrow
+  // buttons: one dot per card, the active one stretched into a pill,
+  // clicking any dot scrolls straight to that card. Built from the actual
+  // .work-card count rather than hardcoded, so it stays correct if cards
+  // are added or removed later.
+  function buildRailDots(railId, dotsId) {
+    var rail = document.getElementById(railId);
+    var dotsWrap = document.getElementById(dotsId);
+    if (!rail || !dotsWrap) return;
+    var cards = rail.querySelectorAll('.work-card');
+    dotsWrap.innerHTML = '';
+    cards.forEach(function (card, i) {
+      var dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'rail-dot';
+      dot.setAttribute('aria-label', 'Go to item ' + (i + 1) + ' of ' + cards.length);
+      dot.addEventListener('click', function () {
+        rail.scrollTo({ left: card.offsetLeft - rail.offsetLeft, behavior: 'smooth' });
+      });
+      dotsWrap.appendChild(dot);
+    });
+    updateRailDots(railId, dotsId);
   }
-  function updateRailNav(id) {
-    var rail = document.getElementById(id);
-    if (!rail) return;
-    var headerRow = rail.previousElementSibling;
-    var btns = headerRow ? headerRow.querySelectorAll('.rail-nav-btn') : [];
-    if (btns.length < 2) return;
-    // The rail's own padding/negative-margin trick (so the first/last card
-    // isn't flush with the section edge) leaves a few px of scrollable slack
-    // at both ends even when "fully" scrolled, so the edge check needs a
-    // tolerance rather than comparing against exactly 0 / max.
-    var max = rail.scrollWidth - rail.clientWidth;
-    var tolerance = 8;
-    btns[0].disabled = rail.scrollLeft <= tolerance;
-    btns[1].disabled = rail.scrollLeft >= max - tolerance;
+  function updateRailDots(railId, dotsId) {
+    var rail = document.getElementById(railId);
+    var dotsWrap = document.getElementById(dotsId);
+    if (!rail || !dotsWrap) return;
+    var cards = rail.querySelectorAll('.work-card');
+    var dots = dotsWrap.querySelectorAll('.rail-dot');
+    // Whichever card sits closest to the rail's own left edge is treated as
+    // "current" — matches scroll-snap-align: start, so the active dot lines
+    // up with the card that's actually snapped into place.
+    var railLeft = rail.getBoundingClientRect().left;
+    var current = 0, closestDist = Infinity;
+    cards.forEach(function (card, i) {
+      var dist = Math.abs(card.getBoundingClientRect().left - railLeft);
+      if (dist < closestDist) { closestDist = dist; current = i; }
+    });
+    dots.forEach(function (dot, i) { dot.setAttribute('aria-current', i === current ? 'true' : 'false'); });
   }
-  ['services-rail', 'recent-work-rail'].forEach(function (id) {
-    var rail = document.getElementById(id);
+  [['services-rail', 'services-dots'], ['recent-work-rail', 'recent-work-dots']].forEach(function (pair) {
+    var railId = pair[0], dotsId = pair[1];
+    var rail = document.getElementById(railId);
     if (!rail) return;
-    updateRailNav(id);
-    rail.addEventListener('scroll', function () { updateRailNav(id); }, { passive: true });
-    window.addEventListener('resize', function () { updateRailNav(id); });
+    buildRailDots(railId, dotsId);
+    rail.addEventListener('scroll', function () { updateRailDots(railId, dotsId); }, { passive: true });
+    window.addEventListener('resize', function () { updateRailDots(railId, dotsId); });
   });
 </script>
 </body>
