@@ -550,3 +550,57 @@ html.light .dodo-logo { --logo: url(dodo-body-light.png); --lid: #ffffff; }
   .dodo-logo .tail, .dodo-logo .pen, .dodo-logo .head, .dodo-logo .lid { animation: none; }
   .dodo-logo .lid { transform: scaleY(0); }
 }
+
+/* ---- Service intake flow (shared across all service-*.html pages) ----
+   An Apple-buy-flow-style stepper: pick a scope, fill in a brief, leave
+   contact details, review, then send as a plain mailto — there is no
+   backend, so "send" is exactly what it looks like. */
+.flow-progress { display: flex; align-items: center; margin-bottom: 48px; }
+.flow-progress-step { display: flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: .15em; text-transform: uppercase; color: #525252; white-space: nowrap; transition: color .25s ease; }
+.flow-progress-num { width: 24px; height: 24px; border-radius: 999px; border: 1px solid #404040; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #737373; transition: border-color .25s ease, color .25s ease, background-color .25s ease; flex: 0 0 auto; }
+.flow-progress-step.is-active { color: #e5e5e5; }
+.flow-progress-step.is-active .flow-progress-num { border-color: #fcd34d; color: #fcd34d; }
+.flow-progress-step.is-done .flow-progress-num { background: #fcd34d; border-color: #fcd34d; color: #0a0a0a; }
+.flow-progress-line { flex: 1 1 auto; height: 1px; background: #262626; margin: 0 14px; transition: background-color .25s ease; }
+.flow-progress-line.is-done { background: #fcd34d; }
+html.light .flow-progress-step { color: #a3a3a3; }
+html.light .flow-progress-num { border-color: #d4d4d4; color: #737373; }
+html.light .flow-progress-step.is-active { color: #171717; }
+html.light .flow-progress-step.is-active .flow-progress-num { border-color: #a07830; color: #a07830; }
+html.light .flow-progress-step.is-done .flow-progress-num { background: #a07830; border-color: #a07830; color: #fff; }
+html.light .flow-progress-line { background: #e5e5e5; }
+html.light .flow-progress-line.is-done { background: #a07830; }
+
+.flow-step { display: none; }
+.flow-step.is-current { display: block; animation: flowFadeIn .35s ease; }
+@keyframes flowFadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .flow-step.is-current { animation: none; } }
+
+.option-card { display: block; border: 1px solid #262626; border-radius: 18px; padding: 22px 24px; cursor: pointer; background: #0a0a0a; transition: border-color .2s ease, background-color .2s ease; }
+.option-card + .option-card { margin-top: 14px; }
+.option-card:hover { border-color: #404040; }
+.option-card.is-selected { border-color: #fcd34d; background: rgba(252, 211, 77, 0.06); }
+.option-check { width: 20px; height: 20px; border-radius: 999px; border: 1px solid #404040; flex: 0 0 auto; position: relative; transition: border-color .2s ease; }
+.option-card.is-selected .option-check { border-color: #fcd34d; }
+.option-card.is-selected .option-check::after { content: ''; position: absolute; inset: 4px; border-radius: 999px; background: #fcd34d; }
+html.light .option-card { background: #fff; border-color: #e5e5e5; }
+html.light .option-card:hover { border-color: #a3a3a3; }
+html.light .option-card.is-selected { border-color: #a07830; background: rgba(160, 120, 48, 0.07); }
+html.light .option-check { border-color: #a3a3a3; }
+html.light .option-card.is-selected .option-check { border-color: #a07830; }
+html.light .option-card.is-selected .option-check::after { background: #a07830; }
+
+.flow-label { display: block; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #737373; margin-bottom: 8px; }
+html.light .flow-label { color: #71717a; }
+.flow-input, .flow-textarea { width: 100%; background: transparent; border: 1px solid #262626; border-radius: 10px; padding: 12px 16px; font-size: 14px; line-height: 1.5; color: #e5e5e5; outline: none; transition: border-color .2s ease; font-family: inherit; }
+.flow-textarea { resize: vertical; min-height: 96px; }
+.flow-input::placeholder, .flow-textarea::placeholder { color: #525252; }
+.flow-input:focus, .flow-textarea:focus { border-color: #fcd34d; }
+html.light .flow-input, html.light .flow-textarea { border-color: #d4d4d4; color: #171717; }
+html.light .flow-input::placeholder, html.light .flow-textarea::placeholder { color: #a3a3a3; }
+html.light .flow-input:focus, html.light .flow-textarea:focus { border-color: #a07830; }
+
+.flow-summary { border: 1px solid #262626; border-radius: 18px; padding: 24px; background: #0d0d0d; }
+html.light .flow-summary { background: #f7f7f7; border-color: #e5e5e5; }
+.flow-summary-row { border-bottom: 1px solid rgba(115, 115, 115, 0.2); }
+.flow-summary-row:last-child { border-bottom: none; }
