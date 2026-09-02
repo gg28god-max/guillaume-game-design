@@ -164,13 +164,24 @@
 <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-2"><span class="i18n" data-en="Production Constraints." data-fr="Contraintes de production.">Production Constraints.</span> <span class="text-neutral-500 font-normal i18n" data-en="Engine &amp; handoff specs." data-fr="Spécifications moteur &amp; livraison.">Engine &amp; handoff specs.</span></h2>
 <p class="text-neutral-400 text-sm mb-8"><span class="i18n" data-en="Define coverage, target engine, and polygon/texture budgets." data-fr="Définissez la couverture, le moteur cible et les budgets polygones/textures.">Define coverage, target engine, and polygon/texture budgets.</span></p>
 
-<div class="space-y-6">
-<div>
+<div class="space-y-8">
+    <!-- 01. PROJECT OVERVIEW -->
+    <div class="space-y-5">
+      <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-amber-300 block">
+        01. <span class="i18n" data-en="PROJECT OVERVIEW" data-fr="APERÇU DU PROJET">PROJECT OVERVIEW</span>
+      </span>
+      <div>
   <label class="flow-label"><span class="i18n" data-en="Project Name" data-fr="Nom du projet">Project Name</span> *</label>
   <input class="flow-input" name="project" placeholder="e.g. Neon Horizon — UE5 Action Game" required="" type="text"/>
 </div>
+    </div>
 
-<div>
+    <!-- 02. ESTIMATED BUDGET BRACKET -->
+    <div class="pt-6 border-t border-neutral-800/80 space-y-4">
+      <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-amber-300 block">
+        02. <span class="i18n" data-en="ESTIMATED BUDGET BRACKET" data-fr="FOURCHETTE BUDGÉTAIRE ESTIMÉE">ESTIMATED BUDGET BRACKET</span>
+      </span>
+      <div>
   <label class="flow-label mb-2.5">
     <span class="i18n" data-en="Budget Bracket" data-fr="Fourchette de budget">Budget Bracket</span>
   </label>
@@ -182,8 +193,14 @@
     <label class="chip-option"><input class="sr-only" name="budget" type="radio" value="Flexible / Day Rate"/> <span>Flexible / Day Rate</span></label>
   </div>
 </div>
+    </div>
 
-<!-- Visual References & Attachments (Upload Images + Cloud Link) -->
+    <!-- 03. VISUAL REFERENCES & MOOD BOARDS -->
+    <div class="pt-6 border-t border-neutral-800/80 space-y-4">
+      <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-amber-300 block">
+        03. <span class="i18n" data-en="VISUAL REFERENCES &amp; MOOD BOARDS" data-fr="RÉFÉRENCES VISUELLES &amp; MOOD BOARDS">VISUAL REFERENCES &amp; MOOD BOARDS</span>
+      </span>
+      <!-- Visual References & Attachments (Upload Images + Cloud Link) -->
 <div>
   <label class="flow-label mb-2"><span class="i18n" data-en="Visual References &amp; Mood Boards" data-fr="Références visuelles &amp; Mood boards">Visual References &amp; Mood Boards</span></label>
   
@@ -211,14 +228,21 @@
   <div class="file-preview-list flex flex-wrap gap-2 empty:hidden" data-flow-file-previews></div>
   <p class="text-[11px] text-neutral-500 mt-2 font-light"><span class="i18n" data-en="Upload images from your computer or phone, or paste a cloud reference link." data-fr="Téléversez des images depuis votre appareil ou collez un lien de référence cloud.">Upload images from your computer or phone, or paste a cloud reference link.</span></p>
 </div>
+    </div>
 
-<div>
+    <!-- 04. BRIEF DETAILS & NOTES -->
+    <div class="pt-6 border-t border-neutral-800/80 space-y-4">
+      <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-amber-300 block">
+        04. <span class="i18n" data-en="BRIEF DETAILS &amp; NOTES" data-fr="DÉTAILS DU BRIEF &amp; NOTES">BRIEF DETAILS &amp; NOTES</span>
+      </span>
+      <div>
   <label class="flow-label"><span class="i18n" data-en="Polycount &amp; Technical Notes" data-fr="Polycount &amp; Notes techniques">Polycount &amp; Technical Notes</span></label>
   <textarea class="flow-textarea" name="notes" placeholder="Specific polycount constraints, texture resolution (2K/4K), and rigging requirements."></textarea>
 </div>
-</div>
+    </div>
+  </div>
 
-<div class="flex justify-between mt-10">
+  <div class="flex justify-between mt-10">
   <button class="flow-btn-secondary inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full border border-neutral-800 bg-neutral-900/80 text-[11px] tracking-[0.2em] uppercase font-semibold text-neutral-300 hover:text-white hover:bg-neutral-800 hover:border-neutral-600 transition-all duration-300 shadow-sm" data-flow-back type="button"><span aria-hidden="true">←</span> <span class="i18n" data-en="Back" data-fr="Retour">Back</span></button>
   <button class="inline-flex items-center gap-3 px-8 py-3 rounded-full bg-neutral-100 text-neutral-950 text-[11px] tracking-[0.2em] uppercase font-semibold hover:bg-amber-300 transition-colors duration-300 opacity-40 pointer-events-none" data-flow-next disabled="" type="button"><span class="i18n" data-en="Continue" data-fr="Continuer">Continue</span></button>
 </div>
