@@ -26,15 +26,18 @@
     .work-rail { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; margin: 0 -6px; padding-left: 6px; padding-right: 6px; }
     .work-rail { scrollbar-width: none; -ms-overflow-style: none; }
     .work-rail::-webkit-scrollbar { display: none; }
-    .work-card { scroll-snap-align: start; flex: 0 0 auto; width: 280px; }
+    .work-card { scroll-snap-align: start; flex: 0 0 auto; width: 280px; transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
     @media (min-width: 640px) { .work-card { width: 320px; } }
+    .work-card:hover { transform: translateY(-4px) scale(1.02); }
+    .work-card img { transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+    .work-card:hover img { transform: scale(1.05); }
     /* Services cards have different description lengths, so the rail's
        default align-items:stretch equalizes card height but leaves the
        Get Started button at wherever the text happens to end. Making the
        card a column and pinning the button with margin-top:auto keeps
        every button flush with the bottom of the row instead. */
     #services-rail .work-card { display: flex; flex-direction: column; }
-    #services-rail .work-card a.cross-pill { align-self: flex-start; margin-top: auto; }
+    #services-rail .work-card .cross-pill { align-self: flex-start; margin-top: auto; }
     .rail-dots { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 100px; background: #1a1a1a; }
     .rail-dot { width: 6px; height: 6px; padding: 0; border: none; border-radius: 100px; background: #525252; cursor: pointer; transition: width 0.25s ease, background-color 0.25s ease; }
     .rail-dot[aria-current="true"] { width: 20px; background: #e5e5e5; }
@@ -150,62 +153,62 @@
 <p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="Services" data-fr="Services">Services</span></p>
 <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-neutral-100 mb-10"><span class="i18n" data-en="What I Can Take On" data-fr="Ce que je peux prendre en charge">What I Can Take On</span></h2>
 <div class="work-rail" id="services-rail">
-<div class="work-card">
+<a class="work-card group block text-left text-neutral-100 no-underline cursor-pointer" href="service-concept-art.html">
 <div class="relative overflow-hidden rounded-2xl" style="aspect-ratio:4/3; background:#0a0a0a;">
-<img alt="Concept Art — Destroyer spaceship exploration sheet" class="w-full h-full object-cover" style="object-position: 15% 35%;" loading="lazy" src="Starquest/Destroyer-ship.webp"/>
+<img alt="Concept Art — Destroyer spaceship exploration sheet" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style="object-position: 15% 35%;" loading="lazy" src="Starquest/Destroyer-ship.webp"/>
 </div>
 <p class="text-base font-semibold text-neutral-100 mt-4 mb-1"><span class="i18n" data-en="Concept Art" data-fr="Art conceptuel">Concept Art</span></p>
 <p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Fast, blue-sky exploration used to lock a shape, mood, or story beat before any other pipeline stage begins." data-fr="Une exploration rapide et libre pour fixer une forme, une ambiance ou un moment narratif avant toute autre étape du pipeline.">Fast, blue-sky exploration used to lock a shape, mood, or story beat before any other pipeline stage begins.</span></p>
-<a class="cross-pill inline-flex items-center gap-2 mt-4 text-[11px] tracking-[0.15em] uppercase border rounded-full px-4 py-1.5 font-semibold transition-all duration-300" href="service-concept-art.html"><span class="i18n" data-en="Get Started" data-fr="Commencer">Get Started</span> <span class="cross-arrow" aria-hidden="true">→</span></a>
-</div>
-<div class="work-card">
+<span class="cross-pill inline-flex items-center gap-2 mt-4 text-[11px] tracking-[0.15em] uppercase border rounded-full px-4 py-1.5 font-semibold transition-all duration-300 group-hover:border-amber-300 group-hover:text-amber-300"><span class="i18n" data-en="Get Started" data-fr="Commencer">Get Started</span> <span class="cross-arrow" aria-hidden="true">→</span></span>
+</a>
+<a class="work-card group block text-left text-neutral-100 no-underline cursor-pointer" href="service-illustration.html">
 <div class="relative overflow-hidden rounded-2xl" style="aspect-ratio:4/3; background:#0a0a0a;">
-<img alt="Illustration — world-building environment illustration" class="w-full h-full object-cover" loading="lazy" src="illustrations/wings-illustration-background-2.webp"/>
+<img alt="Illustration — world-building environment illustration" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" src="illustrations/wings-illustration-background-2.webp"/>
 </div>
 <p class="text-base font-semibold text-neutral-100 mt-4 mb-1"><span class="i18n" data-en="Illustration" data-fr="Illustration">Illustration</span></p>
 <p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Environments, key art, and chapter-spanning world-building sheets carried to a finished, production-ready render." data-fr="Environnements, key art et fiches de world-building couvrant plusieurs chapitres, menés jusqu'à un rendu final prêt pour la production.">Environments, key art, and chapter-spanning world-building sheets carried to a finished, production-ready render.</span></p>
-<a class="cross-pill inline-flex items-center gap-2 mt-4 text-[11px] tracking-[0.15em] uppercase border rounded-full px-4 py-1.5 font-semibold transition-all duration-300" href="service-illustration.html"><span class="i18n" data-en="Get Started" data-fr="Commencer">Get Started</span> <span class="cross-arrow" aria-hidden="true">→</span></a>
-</div>
-<div class="work-card">
+<span class="cross-pill inline-flex items-center gap-2 mt-4 text-[11px] tracking-[0.15em] uppercase border rounded-full px-4 py-1.5 font-semibold transition-all duration-300 group-hover:border-amber-300 group-hover:text-amber-300"><span class="i18n" data-en="Get Started" data-fr="Commencer">Get Started</span> <span class="cross-arrow" aria-hidden="true">→</span></span>
+</a>
+<a class="work-card group block text-left text-neutral-100 no-underline cursor-pointer" href="service-character-design.html">
 <div class="relative overflow-hidden rounded-2xl" style="aspect-ratio:4/3; background:#0a0a0a;">
-<img alt="Character Design — costume iteration sheet" class="w-full h-full object-cover" style="object-position: 15% center;" loading="lazy" src="Diverse%20Creative%20Studies/Custer-wings-concept-art.webp"/>
+<img alt="Character Design — costume iteration sheet" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style="object-position: 15% center;" loading="lazy" src="Diverse%20Creative%20Studies/Custer-wings-concept-art.webp"/>
 </div>
 <p class="text-base font-semibold text-neutral-100 mt-4 mb-1"><span class="i18n" data-en="Character Design" data-fr="Design de personnages">Character Design</span></p>
 <p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Silhouette-first design carried through costume or material iterations, built so a character reads correctly before a full rig exists." data-fr="Un design centré sur la silhouette, décliné à travers des itérations de costume ou de matière, conçu pour se lire correctement avant même qu'un rig complet n'existe.">Silhouette-first design carried through costume or material iterations, built so a character reads correctly before a full rig exists.</span></p>
-<a class="cross-pill inline-flex items-center gap-2 mt-4 text-[11px] tracking-[0.15em] uppercase border rounded-full px-4 py-1.5 font-semibold transition-all duration-300" href="service-character-design.html"><span class="i18n" data-en="Get Started" data-fr="Commencer">Get Started</span> <span class="cross-arrow" aria-hidden="true">→</span></a>
-</div>
-<div class="work-card">
+<span class="cross-pill inline-flex items-center gap-2 mt-4 text-[11px] tracking-[0.15em] uppercase border rounded-full px-4 py-1.5 font-semibold transition-all duration-300 group-hover:border-amber-300 group-hover:text-amber-300"><span class="i18n" data-en="Get Started" data-fr="Commencer">Get Started</span> <span class="cross-arrow" aria-hidden="true">→</span></span>
+</a>
+<a class="work-card group block text-left text-neutral-100 no-underline cursor-pointer" href="service-creature-design.html">
 <div class="relative overflow-hidden rounded-2xl" style="aspect-ratio:4/3; background:#0a0a0a;">
-<img alt="Creature Design — Kalta creature turnaround and render" class="w-full h-full object-cover" style="object-position: 50% 75%;" loading="lazy" src="Diverse%20Creative%20Studies/dino-creature-concept-art.webp"/>
+<img alt="Creature Design — Kalta creature turnaround and render" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style="object-position: 50% 75%;" loading="lazy" src="Diverse%20Creative%20Studies/dino-creature-concept-art.webp"/>
 </div>
 <p class="text-base font-semibold text-neutral-100 mt-4 mb-1"><span class="i18n" data-en="Creature Design" data-fr="Design de créatures">Creature Design</span></p>
 <p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Original creatures built from turnaround and anatomy studies so a design reads correctly before a full model or rig exists." data-fr="Des créatures originales construites à partir d'études de rotation et d'anatomie, conçues pour se lire correctement avant même qu'un modèle ou un rig complet n'existe.">Original creatures built from turnaround and anatomy studies so a design reads correctly before a full model or rig exists.</span></p>
-<a class="cross-pill inline-flex items-center gap-2 mt-4 text-[11px] tracking-[0.15em] uppercase border rounded-full px-4 py-1.5 font-semibold transition-all duration-300" href="service-creature-design.html"><span class="i18n" data-en="Get Started" data-fr="Commencer">Get Started</span> <span class="cross-arrow" aria-hidden="true">→</span></a>
-</div>
-<div class="work-card">
+<span class="cross-pill inline-flex items-center gap-2 mt-4 text-[11px] tracking-[0.15em] uppercase border rounded-full px-4 py-1.5 font-semibold transition-all duration-300 group-hover:border-amber-300 group-hover:text-amber-300"><span class="i18n" data-en="Get Started" data-fr="Commencer">Get Started</span> <span class="cross-arrow" aria-hidden="true">→</span></span>
+</a>
+<a class="work-card group block text-left text-neutral-100 no-underline cursor-pointer" href="service-hard-surface-design.html">
 <div class="relative overflow-hidden rounded-2xl" style="aspect-ratio:4/3; background:#0a0a0a;">
-<img alt="Hard-Surface Design — Phantom Mecha 74" class="w-full h-full object-cover" style="object-position: 80% 65%;" loading="lazy" src="Diverse%20Creative%20Studies/Mech-design-bush-concept-art-for-portfolio.webp"/>
+<img alt="Hard-Surface Design — Phantom Mecha 74" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style="object-position: 80% 65%;" loading="lazy" src="Diverse%20Creative%20Studies/Mech-design-bush-concept-art-for-portfolio.webp"/>
 </div>
 <p class="text-base font-semibold text-neutral-100 mt-4 mb-1"><span class="i18n" data-en="Hard-Surface Design" data-fr="Design hard-surface">Hard-Surface Design</span></p>
 <p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Mechs, weapons, props, and vehicles, grounded in functional engineering logic rather than pure aesthetics." data-fr="Mechs, armes, accessoires et véhicules, ancrés dans une logique d'ingénierie fonctionnelle plutôt que purement esthétique.">Mechs, weapons, props, and vehicles, grounded in functional engineering logic rather than pure aesthetics.</span></p>
-<a class="cross-pill inline-flex items-center gap-2 mt-4 text-[11px] tracking-[0.15em] uppercase border rounded-full px-4 py-1.5 font-semibold transition-all duration-300" href="service-hard-surface-design.html"><span class="i18n" data-en="Get Started" data-fr="Commencer">Get Started</span> <span class="cross-arrow" aria-hidden="true">→</span></a>
-</div>
-<div class="work-card">
+<span class="cross-pill inline-flex items-center gap-2 mt-4 text-[11px] tracking-[0.15em] uppercase border rounded-full px-4 py-1.5 font-semibold transition-all duration-300 group-hover:border-amber-300 group-hover:text-amber-300"><span class="i18n" data-en="Get Started" data-fr="Commencer">Get Started</span> <span class="cross-arrow" aria-hidden="true">→</span></span>
+</a>
+<a class="work-card group block text-left text-neutral-100 no-underline cursor-pointer" href="service-organic-design.html">
 <div class="relative overflow-hidden rounded-2xl" style="aspect-ratio:4/3; background:#0a0a0a;">
-<img alt="Organic Design — original alien creature concept" class="w-full h-full object-cover" style="object-position: center 28%;" loading="lazy" src="illustrations/space_rat_2_cmyk_version.webp"/>
+<img alt="Organic Design — original alien creature concept" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style="object-position: center 28%;" loading="lazy" src="illustrations/space_rat_2_cmyk_version.webp"/>
 </div>
 <p class="text-base font-semibold text-neutral-100 mt-4 mb-1"><span class="i18n" data-en="Organic Design" data-fr="Design organique">Organic Design</span></p>
 <p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Biological and alien forms explored through material, texture, and anatomy so they feel grounded rather than arbitrary." data-fr="Des formes biologiques et extraterrestres explorées à travers la matière, la texture et l'anatomie pour qu'elles paraissent fondées plutôt qu'arbitraires.">Biological and alien forms explored through material, texture, and anatomy so they feel grounded rather than arbitrary.</span></p>
-<a class="cross-pill inline-flex items-center gap-2 mt-4 text-[11px] tracking-[0.15em] uppercase border rounded-full px-4 py-1.5 font-semibold transition-all duration-300" href="service-organic-design.html"><span class="i18n" data-en="Get Started" data-fr="Commencer">Get Started</span> <span class="cross-arrow" aria-hidden="true">→</span></a>
-</div>
-<div class="work-card">
+<span class="cross-pill inline-flex items-center gap-2 mt-4 text-[11px] tracking-[0.15em] uppercase border rounded-full px-4 py-1.5 font-semibold transition-all duration-300 group-hover:border-amber-300 group-hover:text-amber-300"><span class="i18n" data-en="Get Started" data-fr="Commencer">Get Started</span> <span class="cross-arrow" aria-hidden="true">→</span></span>
+</a>
+<a class="work-card group block text-left text-neutral-100 no-underline cursor-pointer" href="service-game-ui-systems.html">
 <div class="relative overflow-hidden rounded-2xl" style="aspect-ratio:4/3; background:#0a0a0a;">
-<img alt="Game UI Systems — Outpost Red interface" class="w-full h-full object-cover" style="object-position: right center;" loading="lazy" src="thumbs/outpost-red.webp"/>
+<img alt="Game UI Systems — Outpost Red interface" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style="object-position: right center;" loading="lazy" src="thumbs/outpost-red.webp"/>
 </div>
 <p class="text-base font-semibold text-neutral-100 mt-4 mb-1"><span class="i18n" data-en="Game UI Systems" data-fr="Systèmes UI de jeu">Game UI Systems</span></p>
 <p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Wireframe through high-fidelity interface, with real UMG implementation in Unreal Engine 5 available for the screens that need to prove out data binding and interaction, not just read as a static comp." data-fr="Du wireframe à l'interface haute fidélité, avec une implémentation UMG réelle dans Unreal Engine 5 disponible pour les écrans qui doivent prouver la connexion aux données et l'interaction, pas seulement se lire comme une maquette statique.">Wireframe through high-fidelity interface, with real UMG implementation in Unreal Engine 5 available for the screens that need to prove out data binding and interaction, not just read as a static comp.</span></p>
-<a class="cross-pill inline-flex items-center gap-2 mt-4 text-[11px] tracking-[0.15em] uppercase border rounded-full px-4 py-1.5 font-semibold transition-all duration-300" href="service-game-ui-systems.html"><span class="i18n" data-en="Get Started" data-fr="Commencer">Get Started</span> <span class="cross-arrow" aria-hidden="true">→</span></a>
-</div>
+<span class="cross-pill inline-flex items-center gap-2 mt-4 text-[11px] tracking-[0.15em] uppercase border rounded-full px-4 py-1.5 font-semibold transition-all duration-300 group-hover:border-amber-300 group-hover:text-amber-300"><span class="i18n" data-en="Get Started" data-fr="Commencer">Get Started</span> <span class="cross-arrow" aria-hidden="true">→</span></span>
+</a>
 </div>
 <div class="flex justify-center mt-6">
 <div class="rail-dots" id="services-dots"></div>
