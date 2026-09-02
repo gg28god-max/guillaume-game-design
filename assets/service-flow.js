@@ -289,7 +289,7 @@
 
       html += '<div class="sm:text-right flex flex-col sm:items-end">';
       html += '<div class="text-[10px] font-bold tracking-[0.2em] uppercase text-neutral-400 mb-1">' + (lang === 'fr' ? 'INVESTISSEMENT ESTIMÉ' : 'ESTIMATED INVESTMENT') + '</div>';
-      html += '<div class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-300 font-mono font-bold text-xs tracking-wide">' + escapeHtml(userBudget || (lang === 'fr' ? 'Flexible' : 'Flexible')) + '</div>';
+      html += '<div class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-amber-400/10 text-amber-300 font-mono font-bold text-xs tracking-wide">' + escapeHtml(userBudget || (lang === 'fr' ? 'Flexible' : 'Flexible')) + '</div>';
       html += '</div>';
       html += '</div>';
 
