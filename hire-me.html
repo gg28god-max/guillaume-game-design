@@ -136,207 +136,664 @@
 </nav>
 <!-- HIRE ME CONTENT -->
 <main class="pt-24 pb-32 px-6 lg:px-8 max-w-7xl mx-auto">
+
 <!-- Header -->
 <div class="mb-16 max-w-3xl">
-<p class="brief-eyebrow text-[11px] tracking-[0.35em] uppercase mb-4"><span class="i18n" data-en="Services · Contract" data-fr="Services · Contrat">Services · Contract</span></p>
-<h1 class="text-4xl md:text-6xl font-black tracking-tight text-neutral-100 leading-none mb-6"><span class="i18n" data-en="Design &amp; Visual Art Services, For Hire." data-fr="Services de design et d'art visuel, disponible.">Design &amp; Visual Art Services, For Hire.</span></h1>
-<p class="text-neutral-400 text-lg leading-relaxed font-light">
-        <span class="i18n" data-en="I'm open to client services and contract work — concept art, illustration, character, creature, and hard-surface design, to production-ready game &amp; VR UI systems." data-fr="Je suis disponible pour des services et du travail contractuel — art conceptuel, illustration, design de personnages, créatures et hard-surface, jusqu'aux systèmes UI de jeu et VR.">I'm open to client services and contract work — concept art, illustration, character, creature, and hard-surface design, to production-ready game &amp; VR UI systems.</span>
-      </p>
-<p class="inline-flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase text-neutral-500 mt-6">
-<span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-<span class="i18n" data-en="Currently open to new client projects" data-fr="Présentement disponible pour de nouveaux projets">Currently open to new client projects</span>
-</p>
+  <p class="brief-eyebrow text-[11px] tracking-[0.35em] uppercase mb-4">
+    <span class="i18n" data-en="Services · Contract" data-fr="Services · Contrat">Services · Contract</span>
+  </p>
+  <h1 class="text-4xl md:text-6xl font-black tracking-tight text-neutral-100 leading-none mb-6">
+    <span class="i18n" data-en="Design &amp; Visual Art Services, For Hire." data-fr="Services de design et d'art visuel, disponible.">Design &amp; Visual Art Services, For Hire.</span>
+  </h1>
+  <p class="text-neutral-400 text-lg leading-relaxed font-light">
+    <span class="i18n" data-en="Organized by production stage and client deliverable — tailored for Art Directors, Game Producers, and Product Leads." data-fr="Organisé par étape de production et livrable client — conçu pour les directeurs artistiques, producteurs de jeux et chefs de produit.">Organized by production stage and client deliverable — tailored for Art Directors, Game Producers, and Product Leads.</span>
+  </p>
+  <p class="inline-flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase text-neutral-500 mt-6">
+    <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+    <span class="i18n" data-en="Currently open to new client projects" data-fr="Présentement disponible pour de nouveaux projets">Currently open to new client projects</span>
+  </p>
 </div>
-<!-- Services -->
+
+<!-- 1. Featured Core Services Rail -->
 <div class="border-t border-neutral-800 pt-16 mb-16">
-<p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="Services" data-fr="Services">Services</span></p>
-<h2 class="text-2xl md:text-3xl font-bold tracking-tight text-neutral-100 mb-10"><span class="i18n" data-en="What I Can Take On" data-fr="Ce que je peux prendre en charge">What I Can Take On</span></h2>
-<div class="work-rail" id="services-rail">
-<a class="work-card group flex flex-col justify-between text-left text-neutral-100 no-underline cursor-pointer bg-neutral-900/60 rounded-3xl p-4 sm:p-5 transition-all duration-300 hover:bg-neutral-900/90" href="service-concept-art.html">
-  <div>
-    <div class="relative overflow-hidden rounded-2xl mb-4" style="aspect-ratio:4/3; background:#0a0a0a;">
-      <img alt="Concept Art — Destroyer spaceship exploration sheet" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style="object-position: 15% 35%;" loading="lazy" src="Starquest/Destroyer-ship.webp"/>
-    </div>
-    <p class="text-base font-semibold text-neutral-100 mb-1.5"><span class="i18n" data-en="Concept Art" data-fr="Art conceptuel">Concept Art</span></p>
-    <p class="text-sm text-neutral-400 leading-relaxed mb-4"><span class="i18n" data-en="Fast, blue-sky exploration used to lock a shape, mood, or story beat before any other pipeline stage begins." data-fr="Une exploration rapide et libre pour fixer une forme, une ambiance ou un moment narratif avant toute autre étape du pipeline.">Fast, blue-sky exploration used to lock a shape, mood, or story beat before any other pipeline stage begins.</span></p>
-  </div>
-  <span class="cross-pill inline-flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase border border-neutral-700/80 rounded-full px-4 py-1.5 font-semibold text-neutral-300 transition-all duration-300 group-hover:bg-amber-300 group-hover:border-amber-300 group-hover:text-neutral-950"><span class="i18n" data-en="Get Started" data-fr="Commencer">Get Started</span> <span class="cross-arrow" aria-hidden="true">→</span></span>
-</a>
+  <p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4">
+    <span class="i18n" data-en="Services" data-fr="Services">Services</span>
+  </p>
+  <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-neutral-100 mb-10">
+    <span class="i18n" data-en="What I Can Take On" data-fr="Ce que je peux prendre en charge">What I Can Take On</span>
+  </h2>
+  <div class="work-rail" id="services-rail">
+    
+    <a class="work-card group flex flex-col justify-between text-left text-neutral-100 no-underline cursor-pointer bg-neutral-900/60 rounded-3xl p-4 sm:p-5 transition-all duration-300 hover:bg-neutral-900/90" href="service-concept-art.html">
+      <div>
+        <div class="relative overflow-hidden rounded-2xl mb-4" style="aspect-ratio:4/3; background:#0a0a0a;">
+          <img alt="Concept Art — Destroyer spaceship exploration sheet" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style="object-position: 15% 35%;" loading="lazy" src="Starquest/Destroyer-ship.webp"/>
+        </div>
+        <p class="text-base font-semibold text-neutral-100 mb-1.5">
+          <span class="i18n" data-en="Concept Art &amp; Visual Dev" data-fr="Art conceptuel &amp; VisDev">Concept Art &amp; Visual Dev</span>
+        </p>
+        <p class="text-sm text-neutral-400 leading-relaxed mb-4">
+          <span class="i18n" data-en="Pre-production mood, character turnarounds, environment paintings, hard surface callout sheets, and keyframe color scripts." data-fr="Pré-production, ambiance, rotations de personnages, peintures d'environnement, fiches de callout et color scripts.">Pre-production mood, character turnarounds, environment paintings, hard surface callout sheets, and keyframe color scripts.</span>
+        </p>
+      </div>
+      <span class="cross-pill inline-flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase border border-neutral-700/80 rounded-full px-4 py-1.5 font-semibold text-neutral-300 transition-all duration-300 group-hover:bg-amber-300 group-hover:border-amber-300 group-hover:text-neutral-950">
+        <span class="i18n" data-en="Get Started" data-fr="Commencer">Get Started</span> <span class="cross-arrow" aria-hidden="true">→</span>
+      </span>
+    </a>
 
-<a class="work-card group flex flex-col justify-between text-left text-neutral-100 no-underline cursor-pointer bg-neutral-900/60 rounded-3xl p-4 sm:p-5 transition-all duration-300 hover:bg-neutral-900/90" href="service-illustration.html">
-  <div>
-    <div class="relative overflow-hidden rounded-2xl mb-4" style="aspect-ratio:4/3; background:#0a0a0a;">
-      <img alt="Illustration — world-building environment illustration" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" src="illustrations/wings-illustration-background-2.webp"/>
-    </div>
-    <p class="text-base font-semibold text-neutral-100 mb-1.5"><span class="i18n" data-en="Illustration" data-fr="Illustration">Illustration</span></p>
-    <p class="text-sm text-neutral-400 leading-relaxed mb-4"><span class="i18n" data-en="Environments, key art, and chapter-spanning world-building sheets carried to a finished, production-ready render." data-fr="Environnements, key art et fiches de world-building couvrant plusieurs chapitres, menés jusqu'à un rendu final prêt pour la production.">Environments, key art, and chapter-spanning world-building sheets carried to a finished, production-ready render.</span></p>
-  </div>
-  <span class="cross-pill inline-flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase border border-neutral-700/80 rounded-full px-4 py-1.5 font-semibold text-neutral-300 transition-all duration-300 group-hover:bg-amber-300 group-hover:border-amber-300 group-hover:text-neutral-950"><span class="i18n" data-en="Get Started" data-fr="Commencer">Get Started</span> <span class="cross-arrow" aria-hidden="true">→</span></span>
-</a>
+    <a class="work-card group flex flex-col justify-between text-left text-neutral-100 no-underline cursor-pointer bg-neutral-900/60 rounded-3xl p-4 sm:p-5 transition-all duration-300 hover:bg-neutral-900/90" href="service-hard-surface-design.html">
+      <div>
+        <div class="relative overflow-hidden rounded-2xl mb-4" style="aspect-ratio:4/3; background:#0a0a0a;">
+          <img alt="3D Modeling — Tide Hollow asset creation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" src="thumbs/tide-hollow.webp"/>
+        </div>
+        <p class="text-base font-semibold text-neutral-100 mb-1.5">
+          <span class="i18n" data-en="3D Modeling &amp; Sculpting" data-fr="Modélisation 3D &amp; Sculpture">3D Modeling &amp; Sculpting</span>
+        </p>
+        <p class="text-sm text-neutral-400 leading-relaxed mb-4">
+          <span class="i18n" data-en="Organic ZBrush sculpts, hard-surface mechanical props, retopology, UV unwrapping, and engine-ready PBR textures." data-fr="Sculptures organiques ZBrush, props mécaniques hard-surface, rétopologie, dépliage UV et textures PBR.">Organic ZBrush sculpts, hard-surface mechanical props, retopology, UV unwrapping, and engine-ready PBR textures.</span>
+        </p>
+      </div>
+      <span class="cross-pill inline-flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase border border-neutral-700/80 rounded-full px-4 py-1.5 font-semibold text-neutral-300 transition-all duration-300 group-hover:bg-amber-300 group-hover:border-amber-300 group-hover:text-neutral-950">
+        <span class="i18n" data-en="Get Started" data-fr="Commencer">Get Started</span> <span class="cross-arrow" aria-hidden="true">→</span>
+      </span>
+    </a>
 
-<a class="work-card group flex flex-col justify-between text-left text-neutral-100 no-underline cursor-pointer bg-neutral-900/60 rounded-3xl p-4 sm:p-5 transition-all duration-300 hover:bg-neutral-900/90" href="service-character-design.html">
-  <div>
-    <div class="relative overflow-hidden rounded-2xl mb-4" style="aspect-ratio:4/3; background:#0a0a0a;">
-      <img alt="Character Design — costume iteration sheet" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style="object-position: 15% center;" loading="lazy" src="Diverse%20Creative%20Studies/Custer-wings-concept-art.webp"/>
-    </div>
-    <p class="text-base font-semibold text-neutral-100 mb-1.5"><span class="i18n" data-en="Character Design" data-fr="Design de personnages">Character Design</span></p>
-    <p class="text-sm text-neutral-400 leading-relaxed mb-4"><span class="i18n" data-en="Silhouette-first design carried through costume or material iterations, built so a character reads correctly before a full rig exists." data-fr="Un design centré sur la silhouette, décliné à travers des itérations de costume ou de matière, conçu pour se lire correctement avant même qu'un rig complet n'existe.">Silhouette-first design carried through costume or material iterations, built so a character reads correctly before a full rig exists.</span></p>
-  </div>
-  <span class="cross-pill inline-flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase border border-neutral-700/80 rounded-full px-4 py-1.5 font-semibold text-neutral-300 transition-all duration-300 group-hover:bg-amber-300 group-hover:border-amber-300 group-hover:text-neutral-950"><span class="i18n" data-en="Get Started" data-fr="Commencer">Get Started</span> <span class="cross-arrow" aria-hidden="true">→</span></span>
-</a>
+    <a class="work-card group flex flex-col justify-between text-left text-neutral-100 no-underline cursor-pointer bg-neutral-900/60 rounded-3xl p-4 sm:p-5 transition-all duration-300 hover:bg-neutral-900/90" href="service-game-ui-systems.html">
+      <div>
+        <div class="relative overflow-hidden rounded-2xl mb-4" style="aspect-ratio:4/3; background:#0a0a0a;">
+          <img alt="Game UI Systems — Outpost Red interface" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style="object-position: right center;" loading="lazy" src="thumbs/outpost-red.webp"/>
+        </div>
+        <p class="text-base font-semibold text-neutral-100 mb-1.5">
+          <span class="i18n" data-en="UI/UX &amp; Game Interface" data-fr="UI/UX &amp; Interface de jeu">UI/UX &amp; Game Interface</span>
+        </p>
+        <p class="text-sm text-neutral-400 leading-relaxed mb-4">
+          <span class="i18n" data-en="In-game HUDs, interactive Figma wireframes, iconography asset kits, scalable design systems, and real UMG Unreal Engine integration." data-fr="HUDs en jeu, wireframes interactifs Figma, kits d'icônes, design systems évolutifs et intégration UMG Unreal Engine.">In-game HUDs, interactive Figma wireframes, iconography asset kits, scalable design systems, and real UMG Unreal Engine integration.</span>
+        </p>
+      </div>
+      <span class="cross-pill inline-flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase border border-neutral-700/80 rounded-full px-4 py-1.5 font-semibold text-neutral-300 transition-all duration-300 group-hover:bg-amber-300 group-hover:border-amber-300 group-hover:text-neutral-950">
+        <span class="i18n" data-en="Get Started" data-fr="Commencer">Get Started</span> <span class="cross-arrow" aria-hidden="true">→</span>
+      </span>
+    </a>
 
-<a class="work-card group flex flex-col justify-between text-left text-neutral-100 no-underline cursor-pointer bg-neutral-900/60 rounded-3xl p-4 sm:p-5 transition-all duration-300 hover:bg-neutral-900/90" href="service-creature-design.html">
-  <div>
-    <div class="relative overflow-hidden rounded-2xl mb-4" style="aspect-ratio:4/3; background:#0a0a0a;">
-      <img alt="Creature Design — Kalta creature turnaround and render" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style="object-position: 50% 75%;" loading="lazy" src="Diverse%20Creative%20Studies/dino-creature-concept-art.webp"/>
-    </div>
-    <p class="text-base font-semibold text-neutral-100 mb-1.5"><span class="i18n" data-en="Creature Design" data-fr="Design de créatures">Creature Design</span></p>
-    <p class="text-sm text-neutral-400 leading-relaxed mb-4"><span class="i18n" data-en="Original creatures built from turnaround and anatomy studies so a design reads correctly before a full model or rig exists." data-fr="Des créatures originales construites à partir d'études de rotation et d'anatomie, conçues pour se lire correctement avant même qu'un modèle ou un rig complet n'existe.">Original creatures built from turnaround and anatomy studies so a design reads correctly before a full model or rig exists.</span></p>
-  </div>
-  <span class="cross-pill inline-flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase border border-neutral-700/80 rounded-full px-4 py-1.5 font-semibold text-neutral-300 transition-all duration-300 group-hover:bg-amber-300 group-hover:border-amber-300 group-hover:text-neutral-950"><span class="i18n" data-en="Get Started" data-fr="Commencer">Get Started</span> <span class="cross-arrow" aria-hidden="true">→</span></span>
-</a>
+    <a class="work-card group flex flex-col justify-between text-left text-neutral-100 no-underline cursor-pointer bg-neutral-900/60 rounded-3xl p-4 sm:p-5 transition-all duration-300 hover:bg-neutral-900/90" href="service-illustration.html">
+      <div>
+        <div class="relative overflow-hidden rounded-2xl mb-4" style="aspect-ratio:4/3; background:#0a0a0a;">
+          <img alt="Illustration — world-building environment illustration" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" src="illustrations/wings-illustration-background-2.webp"/>
+        </div>
+        <p class="text-base font-semibold text-neutral-100 mb-1.5">
+          <span class="i18n" data-en="Illustration &amp; Key Art" data-fr="Illustration &amp; Key Art">Illustration &amp; Key Art</span>
+        </p>
+        <p class="text-sm text-neutral-400 leading-relaxed mb-4">
+          <span class="i18n" data-en="High-end marketing splash art, pitch deck visuals, Steam capsule storefront art, covers, posters, and card game artwork." data-fr="Splash art marketing, visuels de pitch decks, art de capsule Steam, couvertures, affiches et cartes à collectionner.">High-end marketing splash art, pitch deck visuals, Steam capsule storefront art, covers, posters, and card game artwork.</span>
+        </p>
+      </div>
+      <span class="cross-pill inline-flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase border border-neutral-700/80 rounded-full px-4 py-1.5 font-semibold text-neutral-300 transition-all duration-300 group-hover:bg-amber-300 group-hover:border-amber-300 group-hover:text-neutral-950">
+        <span class="i18n" data-en="Get Started" data-fr="Commencer">Get Started</span> <span class="cross-arrow" aria-hidden="true">→</span>
+      </span>
+    </a>
 
-<a class="work-card group flex flex-col justify-between text-left text-neutral-100 no-underline cursor-pointer bg-neutral-900/60 rounded-3xl p-4 sm:p-5 transition-all duration-300 hover:bg-neutral-900/90" href="service-hard-surface-design.html">
-  <div>
-    <div class="relative overflow-hidden rounded-2xl mb-4" style="aspect-ratio:4/3; background:#0a0a0a;">
-      <img alt="Hard-Surface Design — Phantom Mecha 74" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style="object-position: 80% 65%;" loading="lazy" src="Diverse%20Creative%20Studies/Mech-design-bush-concept-art-for-portfolio.webp"/>
-    </div>
-    <p class="text-base font-semibold text-neutral-100 mb-1.5"><span class="i18n" data-en="Hard-Surface Design" data-fr="Design hard-surface">Hard-Surface Design</span></p>
-    <p class="text-sm text-neutral-400 leading-relaxed mb-4"><span class="i18n" data-en="Mechs, weapons, props, and vehicles, grounded in functional engineering logic rather than pure aesthetics." data-fr="Mechs, armes, accessoires et véhicules, ancrés dans une logique d'ingénierie fonctionnelle plutôt que purement esthétique.">Mechs, weapons, props, and vehicles, grounded in functional engineering logic rather than pure aesthetics.</span></p>
   </div>
-  <span class="cross-pill inline-flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase border border-neutral-700/80 rounded-full px-4 py-1.5 font-semibold text-neutral-300 transition-all duration-300 group-hover:bg-amber-300 group-hover:border-amber-300 group-hover:text-neutral-950"><span class="i18n" data-en="Get Started" data-fr="Commencer">Get Started</span> <span class="cross-arrow" aria-hidden="true">→</span></span>
-</a>
-
-<a class="work-card group flex flex-col justify-between text-left text-neutral-100 no-underline cursor-pointer bg-neutral-900/60 rounded-3xl p-4 sm:p-5 transition-all duration-300 hover:bg-neutral-900/90" href="service-organic-design.html">
-  <div>
-    <div class="relative overflow-hidden rounded-2xl mb-4" style="aspect-ratio:4/3; background:#0a0a0a;">
-      <img alt="Organic Design — original alien creature concept" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style="object-position: center 28%;" loading="lazy" src="illustrations/space_rat_2_cmyk_version.webp"/>
-    </div>
-    <p class="text-base font-semibold text-neutral-100 mb-1.5"><span class="i18n" data-en="Organic Design" data-fr="Design organique">Organic Design</span></p>
-    <p class="text-sm text-neutral-400 leading-relaxed mb-4"><span class="i18n" data-en="Biological and alien forms explored through material, texture, and anatomy so they feel grounded rather than arbitrary." data-fr="Des formes biologiques et extraterrestres explorées à travers la matière, la texture et l'anatomie pour qu'elles paraissent fondées plutôt qu'arbitraires.">Biological and alien forms explored through material, texture, and anatomy so they feel grounded rather than arbitrary.</span></p>
+  <div class="flex justify-center mt-6">
+    <div class="rail-dots" id="services-dots"></div>
   </div>
-  <span class="cross-pill inline-flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase border border-neutral-700/80 rounded-full px-4 py-1.5 font-semibold text-neutral-300 transition-all duration-300 group-hover:bg-amber-300 group-hover:border-amber-300 group-hover:text-neutral-950"><span class="i18n" data-en="Get Started" data-fr="Commencer">Get Started</span> <span class="cross-arrow" aria-hidden="true">→</span></span>
-</a>
-
-<a class="work-card group flex flex-col justify-between text-left text-neutral-100 no-underline cursor-pointer bg-neutral-900/60 rounded-3xl p-4 sm:p-5 transition-all duration-300 hover:bg-neutral-900/90" href="service-game-ui-systems.html">
-  <div>
-    <div class="relative overflow-hidden rounded-2xl mb-4" style="aspect-ratio:4/3; background:#0a0a0a;">
-      <img alt="Game UI Systems — Outpost Red interface" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style="object-position: right center;" loading="lazy" src="thumbs/outpost-red.webp"/>
-    </div>
-    <p class="text-base font-semibold text-neutral-100 mb-1.5"><span class="i18n" data-en="Game UI Systems" data-fr="Systèmes UI de jeu">Game UI Systems</span></p>
-    <p class="text-sm text-neutral-400 leading-relaxed mb-4"><span class="i18n" data-en="Wireframe through high-fidelity interface, with real UMG implementation in Unreal Engine 5 available for the screens that need to prove out data binding and interaction, not just read as a static comp." data-fr="Du wireframe à l'interface haute fidélité, avec une implémentation UMG réelle dans Unreal Engine 5 disponible pour les écrans qui doivent prouver la connexion aux données et l'interaction, pas seulement se lire comme une maquette statique.">Wireframe through high-fidelity interface, with real UMG implementation in Unreal Engine 5 available for the screens that need to prove out data binding and interaction, not just read as a static comp.</span></p>
-  </div>
-  <span class="cross-pill inline-flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase border border-neutral-700/80 rounded-full px-4 py-1.5 font-semibold text-neutral-300 transition-all duration-300 group-hover:bg-amber-300 group-hover:border-amber-300 group-hover:text-neutral-950"><span class="i18n" data-en="Get Started" data-fr="Commencer">Get Started</span> <span class="cross-arrow" aria-hidden="true">→</span></span>
-</a>
-
 </div>
-<div class="flex justify-center mt-6">
-<div class="rail-dots" id="services-dots"></div>
-</div>
-</div>
-<!-- How I Work -->
+
+<!-- 2. Recommended Information Architecture Breakdown -->
 <div class="border-t border-neutral-800 pt-16 mb-16">
-<p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="Process" data-fr="Processus">Process</span></p>
-<h2 class="text-2xl md:text-3xl font-bold tracking-tight text-neutral-100 mb-10"><span class="i18n" data-en="How I Work" data-fr="Ma façon de travailler">How I Work</span></h2>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+  <p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4">
+    <span class="i18n" data-en="Information Architecture" data-fr="Architecture de l'information">Information Architecture</span>
+  </p>
+  <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-neutral-100 mb-4">
+    <span class="i18n" data-en="Detailed Service Offerings" data-fr="Offres de services détaillées">Detailed Service Offerings</span>
+  </h2>
+  <p class="text-neutral-400 text-sm leading-relaxed mb-10 max-w-2xl font-light">
+    <span class="i18n" data-en="Structured directly by production stage and client deliverable for seamless pipeline integration." data-fr="Structuré directement par étape de production et livrable client pour une intégration fluide au pipeline.">Structured directly by production stage and client deliverable for seamless pipeline integration.</span>
+  </p>
 
-<div class="bg-neutral-900/60 rounded-2xl p-7 flex flex-col justify-between">
-  <div>
-    <div class="mb-5">
-      <span class="inline-flex items-center rounded-full px-3 py-1 text-[11px] font-bold tracking-wider text-amber-300 bg-amber-400/10">STEP 01</span>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+    
+    <!-- 1. Concept Art & Visual Development -->
+    <div class="bg-neutral-900/60 rounded-3xl p-7 flex flex-col justify-between">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+          <h3 class="text-lg font-bold text-neutral-100">
+            <span class="i18n" data-en="1. Concept Art &amp; Visual Development" data-fr="1. Art conceptuel &amp; Développement visuel">1. Concept Art &amp; Visual Development</span>
+          </h3>
+        </div>
+        <p class="text-xs text-amber-300/90 font-medium mb-6">
+          <span class="i18n" data-en="Focused on pre-production, mood, and worldbuilding." data-fr="Axé sur la pré-production, l'ambiance et le worldbuilding.">Focused on pre-production, mood, and worldbuilding.</span>
+        </p>
+        <ul class="space-y-4 text-sm text-neutral-300 leading-relaxed">
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 text-xs mt-1">▸</span>
+            <div>
+              <strong class="text-neutral-100"><span class="i18n" data-en="Character &amp; Creature Design:" data-fr="Design de personnages &amp; créatures :">Character &amp; Creature Design:</span></strong>
+              <span class="text-neutral-400 ml-1"><span class="i18n" data-en="Turnarounds, costume variations, and expression sheets." data-fr="Rotations, variations de costumes et fiches d'expression.">Turnarounds, costume variations, and expression sheets.</span></span>
+            </div>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 text-xs mt-1">▸</span>
+            <div>
+              <strong class="text-neutral-100"><span class="i18n" data-en="Environment &amp; Architecture:" data-fr="Environnement &amp; Architecture :">Environment &amp; Architecture:</span></strong>
+              <span class="text-neutral-400 ml-1"><span class="i18n" data-en="Mood exploration, set design, and panoramic exterior/interior paintings." data-fr="Exploration d'ambiance, design de décor et peintures panoramiques.">Mood exploration, set design, and panoramic exterior/interior paintings.</span></span>
+            </div>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 text-xs mt-1">▸</span>
+            <div>
+              <strong class="text-neutral-100"><span class="i18n" data-en="Hard Surface &amp; Props:" data-fr="Hard Surface &amp; Accessoires :">Hard Surface &amp; Props:</span></strong>
+              <span class="text-neutral-400 ml-1"><span class="i18n" data-en="Weapons, vehicles, sci-fi/industrial equipment, and production callout sheets." data-fr="Armes, véhicules, équipements sci-fi/industriels et fiches de callout.">Weapons, vehicles, sci-fi/industrial equipment, and production callout sheets.</span></span>
+            </div>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 text-xs mt-1">▸</span>
+            <div>
+              <strong class="text-neutral-100"><span class="i18n" data-en="Keyframes &amp; Color Scripts:" data-fr="Keyframes &amp; Scripts de couleur :">Keyframes &amp; Color Scripts:</span></strong>
+              <span class="text-neutral-400 ml-1"><span class="i18n" data-en="Cinematic storytelling moments, lighting studies, and atmosphere exploration." data-fr="Moments cinématiques narratifs, études de lumière et d'atmosphère.">Cinematic storytelling moments, lighting studies, and atmosphere exploration.</span></span>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
-    <h3 class="text-lg font-bold text-neutral-100 mb-3"><span class="i18n" data-en="Brief &amp; References" data-fr="Brief et références">Brief &amp; References</span></h3>
-    <p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="We align on scope, references, and constraints up front — platform, engine, deadline, and what 'done' looks like." data-fr="On s'aligne d'abord sur la portée, les références et les contraintes — plateforme, moteur, délai et ce à quoi ressemble un travail « terminé ».">We align on scope, references, and constraints up front — platform, engine, deadline, and what 'done' looks like.</span></p>
+
+    <!-- 2. 3D Modeling & Digital Sculpting -->
+    <div class="bg-neutral-900/60 rounded-3xl p-7 flex flex-col justify-between">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+          <h3 class="text-lg font-bold text-neutral-100">
+            <span class="i18n" data-en="2. 3D Modeling &amp; Digital Sculpting" data-fr="2. Modélisation 3D &amp; Sculpture numérique">2. 3D Modeling &amp; Digital Sculpting</span>
+          </h3>
+        </div>
+        <p class="text-xs text-amber-300/90 font-medium mb-6">
+          <span class="i18n" data-en="Focused on dimensional assets for production or visual concepting." data-fr="Axé sur les assets tridimensionnels pour la production ou la conception.">Focused on dimensional assets for production or visual concepting.</span>
+        </p>
+        <ul class="space-y-4 text-sm text-neutral-300 leading-relaxed">
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 text-xs mt-1">▸</span>
+            <div>
+              <strong class="text-neutral-100"><span class="i18n" data-en="Organic Digital Sculpting:" data-fr="Sculpture numérique organique :">Organic Digital Sculpting:</span></strong>
+              <span class="text-neutral-400 ml-1"><span class="i18n" data-en="Anatomical sculpting for creatures, characters, and organic assets." data-fr="Sculpture anatomique pour créatures, personnages et assets organiques.">Anatomical sculpting for creatures, characters, and organic assets.</span></span>
+            </div>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 text-xs mt-1">▸</span>
+            <div>
+              <strong class="text-neutral-100"><span class="i18n" data-en="Hard Surface 3D Modeling:" data-fr="Modélisation 3D Hard Surface :">Hard Surface 3D Modeling:</span></strong>
+              <span class="text-neutral-400 ml-1"><span class="i18n" data-en="Mechanical props, vehicles, weapons, and architectural blockouts." data-fr="Props mécaniques, véhicules, armes et blockouts architecturaux.">Mechanical props, vehicles, weapons, and architectural blockouts.</span></span>
+            </div>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 text-xs mt-1">▸</span>
+            <div>
+              <strong class="text-neutral-100"><span class="i18n" data-en="Game-Ready Asset Creation:" data-fr="Création d'assets prêts pour le jeu :">Game-Ready Asset Creation:</span></strong>
+              <span class="text-neutral-400 ml-1"><span class="i18n" data-en="Retopology, clean UV unwrapping, and low-poly optimization." data-fr="Rétopologie, dépliage UV propre et optimisation low-poly.">Retopology, clean UV unwrapping, and low-poly optimization.</span></span>
+            </div>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 text-xs mt-1">▸</span>
+            <div>
+              <strong class="text-neutral-100"><span class="i18n" data-en="PBR Texturing &amp; Shading:" data-fr="Texturage PBR &amp; Shading :">PBR Texturing &amp; Shading:</span></strong>
+              <span class="text-neutral-400 ml-1"><span class="i18n" data-en="Realistic and stylized material creation for modern game engines." data-fr="Création de matériaux réalistes et stylisés pour moteurs de jeux modernes.">Realistic and stylized material creation for modern game engines.</span></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3. UI/UX & Game Interface Design -->
+    <div class="bg-neutral-900/60 rounded-3xl p-7 flex flex-col justify-between">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+          <h3 class="text-lg font-bold text-neutral-100">
+            <span class="i18n" data-en="3. UI/UX &amp; Game Interface Design" data-fr="3. UI/UX &amp; Design d'interface de jeu">3. UI/UX &amp; Game Interface Design</span>
+          </h3>
+        </div>
+        <p class="text-xs text-amber-300/90 font-medium mb-6">
+          <span class="i18n" data-en="Focused on usability, interaction, and visual feedback." data-fr="Axé sur l'ergonomie, l'interaction et le retour visuel.">Focused on usability, interaction, and visual feedback.</span>
+        </p>
+        <ul class="space-y-4 text-sm text-neutral-300 leading-relaxed">
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 text-xs mt-1">▸</span>
+            <div>
+              <strong class="text-neutral-100"><span class="i18n" data-en="In-Game HUD &amp; Interface Design:" data-fr="HUD en jeu &amp; Design d'interface :">In-Game HUD &amp; Interface Design:</span></strong>
+              <span class="text-neutral-400 ml-1"><span class="i18n" data-en="Health bars, menus, inventories, mini-maps, and contextual prompts." data-fr="Jauges de vie, menus, inventaires, cartes et invites contextuelles.">Health bars, menus, inventories, mini-maps, and contextual prompts.</span></span>
+            </div>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 text-xs mt-1">▸</span>
+            <div>
+              <strong class="text-neutral-100"><span class="i18n" data-en="UX Wireframing &amp; User Flows:" data-fr="Wireframes UX &amp; Flux utilisateurs :">UX Wireframing &amp; User Flows:</span></strong>
+              <span class="text-neutral-400 ml-1"><span class="i18n" data-en="Wireframes, menu navigation maps, and accessibility planning." data-fr="Wireframes, arborescences de navigation et planification d'accessibilité.">Wireframes, menu navigation maps, and accessibility planning.</span></span>
+            </div>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 text-xs mt-1">▸</span>
+            <div>
+              <strong class="text-neutral-100"><span class="i18n" data-en="Iconography &amp; Asset Kits:" data-fr="Iconographie &amp; Kits d'assets :">Iconography &amp; Asset Kits:</span></strong>
+              <span class="text-neutral-400 ml-1"><span class="i18n" data-en="Badges, skill icons, currency tokens, and inventory graphics." data-fr="Badges, icônes de compétences, jetons de monnaie et graphismes d'inventaire.">Badges, skill icons, currency tokens, and inventory graphics.</span></span>
+            </div>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 text-xs mt-1">▸</span>
+            <div>
+              <strong class="text-neutral-100"><span class="i18n" data-en="Design Systems &amp; Libraries:" data-fr="Design Systems &amp; Bibliothèques :">Design Systems &amp; Libraries:</span></strong>
+              <span class="text-neutral-400 ml-1"><span class="i18n" data-en="Scalable button states, typography scales, and modular UI kits." data-fr="États de boutons évolutifs, échelles typographiques et kits UI modulaires.">Scalable button states, typography scales, and modular UI kits.</span></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4. Illustration & Key Art -->
+    <div class="bg-neutral-900/60 rounded-3xl p-7 flex flex-col justify-between">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+          <h3 class="text-lg font-bold text-neutral-100">
+            <span class="i18n" data-en="4. Illustration &amp; Key Art" data-fr="4. Illustration &amp; Key Art">4. Illustration &amp; Key Art</span>
+          </h3>
+        </div>
+        <p class="text-xs text-amber-300/90 font-medium mb-6">
+          <span class="i18n" data-en="Focused on polished, client-facing, and promotional imagery." data-fr="Axé sur l'imagerie promotionnelle et commerciale de haute finition.">Focused on polished, client-facing, and promotional imagery.</span>
+        </p>
+        <ul class="space-y-4 text-sm text-neutral-300 leading-relaxed">
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 text-xs mt-1">▸</span>
+            <div>
+              <strong class="text-neutral-100"><span class="i18n" data-en="Splash Art &amp; Key Art:" data-fr="Splash Art &amp; Key Art :">Splash Art &amp; Key Art:</span></strong>
+              <span class="text-neutral-400 ml-1"><span class="i18n" data-en="Highly rendered hero illustrations for marketing, pitch decks, and storefronts." data-fr="Illustrations héroïques hautement rendues pour le marketing et les storefronts.">Highly rendered hero illustrations for marketing, pitch decks, and storefronts.</span></span>
+            </div>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 text-xs mt-1">▸</span>
+            <div>
+              <strong class="text-neutral-100"><span class="i18n" data-en="Cover &amp; Poster Art:" data-fr="Art de couverture &amp; Affiche :">Cover &amp; Poster Art:</span></strong>
+              <span class="text-neutral-400 ml-1"><span class="i18n" data-en="Editorial, album, novel, or capsule storefront art." data-fr="Éditorial, album, roman ou visuels de capsules storefront.">Editorial, album, novel, or capsule storefront art.</span></span>
+            </div>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 text-xs mt-1">▸</span>
+            <div>
+              <strong class="text-neutral-100"><span class="i18n" data-en="Trading Card &amp; Board Game Art:" data-fr="Art pour jeux de cartes &amp; société :">Trading Card &amp; Board Game Art:</span></strong>
+              <span class="text-neutral-400 ml-1"><span class="i18n" data-en="Standalone stylized or realistic character/scene vignettes." data-fr="Vignettes de personnages et scènes stylisées ou réalistes.">Standalone stylized or realistic character/scene vignettes.</span></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- High-Impact Callout Pills -->
+  <div class="bg-neutral-900/40 rounded-2xl p-6 border border-neutral-800/60 flex flex-wrap items-center justify-between gap-4">
+    <span class="text-xs font-semibold uppercase tracking-wider text-amber-300">
+      <span class="i18n" data-en="High-Impact Production Additions:" data-fr="Spécialisations à fort impact :">High-Impact Production Additions:</span>
+    </span>
+    <div class="flex flex-wrap gap-2 sm:gap-3">
+      <span class="px-3.5 py-1.5 rounded-full text-xs font-medium bg-neutral-800 text-neutral-200">
+        <span class="i18n" data-en="Production Callout Sheets" data-fr="Fiches de callout de production">Production Callout Sheets</span>
+      </span>
+      <span class="px-3.5 py-1.5 rounded-full text-xs font-medium bg-neutral-800 text-neutral-200">
+        <span class="i18n" data-en="Look Development &amp; Art Bibles" data-fr="LookDev &amp; Bibles artistiques">Look Development &amp; Art Bibles</span>
+      </span>
+      <span class="px-3.5 py-1.5 rounded-full text-xs font-medium bg-neutral-800 text-neutral-200">
+        <span class="i18n" data-en="Interactive UI Prototyping (Figma / UMG)" data-fr="Prototypage UI interactif (Figma / UMG)">Interactive UI Prototyping (Figma / UMG)</span>
+      </span>
+    </div>
   </div>
 </div>
 
-<div class="bg-neutral-900/60 rounded-2xl p-7 flex flex-col justify-between">
-  <div>
-    <div class="mb-5">
-      <span class="inline-flex items-center rounded-full px-3 py-1 text-[11px] font-bold tracking-wider text-amber-300 bg-amber-400/10">STEP 02</span>
+<!-- 3. Production Packages & Tiers -->
+<div class="border-t border-neutral-800 pt-16 mb-16">
+  <p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4">
+    <span class="i18n" data-en="Production Packages" data-fr="Forfaits de production">Production Packages</span>
+  </p>
+  <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-neutral-100 mb-4">
+    <span class="i18n" data-en="Structured Service Packages" data-fr="Forfaits de services structurés">Structured Service Packages</span>
+  </h2>
+  <p class="text-neutral-400 text-sm leading-relaxed mb-12 max-w-2xl font-light">
+    <span class="i18n" data-en="Structuring services into clear tiers helps clients match production budgets and timelines to concrete outputs without scope ambiguity." data-fr="La structuration en niveaux clairs permet d'aligner les budgets et échéanciers sur des livrables concrets sans ambiguïté.">Structuring services into clear tiers helps clients match production budgets and timelines to concrete outputs without scope ambiguity.</span>
+  </p>
+
+  <!-- Tier 1: Indie Studio Packages -->
+  <div class="mb-14">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-amber-400/10 text-amber-300">TIER 01</span>
+      <h3 class="text-xl font-bold text-neutral-100">
+        <span class="i18n" data-en="Indie Studio Packages" data-fr="Forfaits Studio Indépendant">Indie Studio Packages</span>
+      </h3>
+      <span class="text-xs text-neutral-500 hidden sm:inline">— <span class="i18n" data-en="Optimized for rapid visual direction, foundational asset kits, &amp; vertical slices." data-fr="Optimisé pour la direction visuelle rapide, les kits d'assets &amp; vertical slices.">Optimized for rapid visual direction, foundational asset kits, &amp; vertical slices.</span></span>
     </div>
-    <h3 class="text-lg font-bold text-neutral-100 mb-3"><span class="i18n" data-en="Exploration &amp; Iteration" data-fr="Exploration et itération">Exploration &amp; Iteration</span></h3>
-    <p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Thumbnails or wireframes first, narrowed through feedback before any piece goes to final render or high-fidelity pass." data-fr="D'abord des miniatures ou des wireframes, affinés grâce aux retours avant qu'une pièce ne passe au rendu final ou à la passe haute-fidélité.">Thumbnails or wireframes first, narrowed through feedback before any piece goes to final render or high-fidelity pass.</span></p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Package 1: VisDev & Worldbuilding Kit -->
+      <div class="bg-neutral-900/60 rounded-3xl p-7 flex flex-col justify-between border border-neutral-800/40">
+        <div>
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <h4 class="text-lg font-bold text-neutral-100">
+              <span class="i18n" data-en="Visual Development &amp; Worldbuilding Kit" data-fr="Kit VisDev &amp; Worldbuilding">Visual Development &amp; Worldbuilding Kit</span>
+            </h4>
+            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-neutral-800 text-amber-300 whitespace-nowrap">2–3 weeks</span>
+          </div>
+          <p class="text-xs text-neutral-400 mb-6">
+            <strong class="text-neutral-300"><span class="i18n" data-en="Best for:" data-fr="Idéal pour :">Best for:</span></strong>
+            <span class="i18n" data-en="Pre-production pitch decks, vertical slices, and establishing art direction." data-fr="Pitch decks de pré-production, vertical slices et direction artistique.">Pre-production pitch decks, vertical slices, and establishing art direction.</span>
+          </p>
+          
+          <p class="text-xs font-bold uppercase tracking-wider text-neutral-400 mb-3"><span class="i18n" data-en="Scope &amp; Deliverables:" data-fr="Portée &amp; Livrables :">Scope &amp; Deliverables:</span></p>
+          <ul class="space-y-2.5 text-xs text-neutral-300 leading-relaxed">
+            <li class="flex items-start gap-2"><span class="text-amber-400">✓</span> <span class="i18n" data-en="1 Hero visual target / keyframe illustration (lighting, tone, scale)." data-fr="1 Illustration cible / keyframe héroïque (lumière, ton, échelle).">1 Hero visual target / keyframe illustration (lighting, tone, scale).</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-400">✓</span> <span class="i18n" data-en="3 Character/creature concepts with 1 final locked turnaround." data-fr="3 Concepts de personnages/créatures avec 1 rotation finale verrouillée.">3 Character/creature concepts with 1 final locked turnaround.</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-400">✓</span> <span class="i18n" data-en="2 Environment mood paintings with lighting variations." data-fr="2 Peintures d'ambiance d'environnement avec variations d'éclairage.">2 Environment mood paintings with lighting variations.</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-400">✓</span> <span class="i18n" data-en="Curated art guide sheet (color script, material palette, design rules)." data-fr="Guide artistique (script couleur, palette de matériaux, règles de design).">Curated art guide sheet (color script, material palette, design rules).</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Package 2: Indie Game UI Starter Kit -->
+      <div class="bg-neutral-900/60 rounded-3xl p-7 flex flex-col justify-between border border-neutral-800/40">
+        <div>
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <h4 class="text-lg font-bold text-neutral-100">
+              <span class="i18n" data-en="Indie Game UI Starter Kit" data-fr="Kit de démarrage UI Jeu Indépendant">Indie Game UI Starter Kit</span>
+            </h4>
+            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-neutral-800 text-amber-300 whitespace-nowrap">1–2 weeks</span>
+          </div>
+          <p class="text-xs text-neutral-400 mb-6">
+            <strong class="text-neutral-300"><span class="i18n" data-en="Best for:" data-fr="Idéal pour :">Best for:</span></strong>
+            <span class="i18n" data-en="Early Access launches, playable demos, and indie vertical slices." data-fr="Lancements Early Access, démos jouables et vertical slices indés.">Early Access launches, playable demos, and indie vertical slices.</span>
+          </p>
+
+          <p class="text-xs font-bold uppercase tracking-wider text-neutral-400 mb-3"><span class="i18n" data-en="Scope &amp; Deliverables:" data-fr="Portée &amp; Livrables :">Scope &amp; Deliverables:</span></p>
+          <ul class="space-y-2.5 text-xs text-neutral-300 leading-relaxed">
+            <li class="flex items-start gap-2"><span class="text-amber-400">✓</span> <span class="i18n" data-en="UX flow diagram &amp; low-fi wireframes for 4 core screens (Main Menu, HUD, Settings, Inventory)." data-fr="Schéma de flux UX &amp; wireframes basse fidélité pour 4 écrans clés (Menu principal, HUD, Options, Inventaire).">UX flow diagram &amp; low-fi wireframes for 4 core screens (Main Menu, HUD, Settings, Inventory).</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-400">✓</span> <span class="i18n" data-en="High-fidelity skinned mockups for all 4 screens in your game's visual style." data-fr="Maquettes haute fidélité habillées dans le style visuel de votre jeu.">High-fidelity skinned mockups for all 4 screens in your game's visual style.</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-400">✓</span> <span class="i18n" data-en="Icon pack of 15 essential game icons (abilities, currencies, or slots)." data-fr="Pack de 15 icônes de jeu essentielles (compétences, monnaies, inventaires).">Icon pack of 15 essential game icons (abilities, currencies, or slots).</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-400">✓</span> <span class="i18n" data-en="Organized Figma handoff file with engine-ready PNG/SVG assets &amp; typography specs." data-fr="Fichier Figma organisé avec assets PNG/SVG prêts pour le moteur &amp; spécifications.">Organized Figma handoff file with engine-ready PNG/SVG assets &amp; typography specs.</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Tier 2: Commercial & Studio Production Packages -->
+  <div>
+    <div class="flex items-center gap-3 mb-6">
+      <span class="px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-amber-400/10 text-amber-300">TIER 02</span>
+      <h3 class="text-xl font-bold text-neutral-100">
+        <span class="i18n" data-en="Commercial &amp; Studio Production Packages" data-fr="Forfaits Production Commerciale &amp; Studio">Commercial &amp; Studio Production Packages</span>
+      </h3>
+      <span class="text-xs text-neutral-500 hidden sm:inline">— <span class="i18n" data-en="Optimized for established pipelines, 3D integration, &amp; marketing rollouts." data-fr="Optimisé pour les pipelines établis, l'intégration 3D &amp; le marketing.">Optimized for established pipelines, 3D integration, &amp; marketing rollouts.</span></span>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      
+      <!-- Package 3: Production-Ready 3D Concept & Asset Pass -->
+      <div class="bg-neutral-900/60 rounded-3xl p-7 flex flex-col justify-between border border-neutral-800/40">
+        <div>
+          <div class="flex items-start justify-between gap-2 mb-3">
+            <h4 class="text-base font-bold text-neutral-100">
+              <span class="i18n" data-en="Production-Ready 3D Asset Pass" data-fr="Passe Asset 3D Prêt pour Production">Production-Ready 3D Asset Pass</span>
+            </h4>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-neutral-800 text-amber-300 whitespace-nowrap">2–3 wks</span>
+          </div>
+          <p class="text-xs text-neutral-400 mb-6">
+            <strong class="text-neutral-300"><span class="i18n" data-en="Best for:" data-fr="Idéal pour :">Best for:</span></strong>
+            <span class="i18n" data-en="Seamless handoff to 3D environment, weapon, or character art teams." data-fr="Transmission fluide aux équipes 3D d'environnement, d'armes ou de personnages.">Seamless handoff to 3D environment, weapon, or character art teams.</span>
+          </p>
+          
+          <p class="text-xs font-bold uppercase tracking-wider text-neutral-400 mb-3"><span class="i18n" data-en="Scope &amp; Deliverables:" data-fr="Portée &amp; Livrables :">Scope &amp; Deliverables:</span></p>
+          <ul class="space-y-2.5 text-xs text-neutral-300 leading-relaxed">
+            <li class="flex items-start gap-2"><span class="text-amber-400">✓</span> <span class="i18n" data-en="Detailed 2D orthographic callout sheet (front, side, top, mechanics)." data-fr="Fiche de callout orthographique 2D détaillée (vues, échelle, mécanique).">Detailed 2D orthographic callout sheet (front, side, top, mechanics).</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-400">✓</span> <span class="i18n" data-en="High-poly concept sculpt &amp; optimized game-ready low-poly mesh." data-fr="Sculpt concept high-poly et maillage low-poly optimisé pour le jeu.">High-poly concept sculpt &amp; optimized game-ready low-poly mesh.</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-400">✓</span> <span class="i18n" data-en="Clean UV layout with baked 4K PBR texture maps (Albedo, Normal, Rough, Metallic)." data-fr="Dépliage UV propre avec cartes de textures PBR 4K cuites.">Clean UV layout with baked 4K PBR texture maps (Albedo, Normal, Rough, Metallic).</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-400">✓</span> <span class="i18n" data-en="Engine verification file (import-ready FBX/OBJ tested in Unreal/Unity)." data-fr="Fichier de vérification moteur (FBX/OBJ prêt à l'import testé dans Unreal/Unity).">Engine verification file (import-ready FBX/OBJ tested in Unreal/Unity).</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Package 4: Complete UI/UX Design System -->
+      <div class="bg-neutral-900/60 rounded-3xl p-7 flex flex-col justify-between border border-neutral-800/40">
+        <div>
+          <div class="flex items-start justify-between gap-2 mb-3">
+            <h4 class="text-base font-bold text-neutral-100">
+              <span class="i18n" data-en="Complete UI/UX Design System" data-fr="Design System UI/UX Complet">Complete UI/UX Design System</span>
+            </h4>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-neutral-800 text-amber-300 whitespace-nowrap">4–6 wks</span>
+          </div>
+          <p class="text-xs text-neutral-400 mb-6">
+            <strong class="text-neutral-300"><span class="i18n" data-en="Best for:" data-fr="Idéal pour :">Best for:</span></strong>
+            <span class="i18n" data-en="Complex RPGs, live-service titles, or multiplatform releases requiring scaling." data-fr="RPGs complexes, titres live-service ou sorties multiplateformes.">Complex RPGs, live-service titles, or multiplatform releases requiring scaling.</span>
+          </p>
+
+          <p class="text-xs font-bold uppercase tracking-wider text-neutral-400 mb-3"><span class="i18n" data-en="Scope &amp; Deliverables:" data-fr="Portée &amp; Livrables :">Scope &amp; Deliverables:</span></p>
+          <ul class="space-y-2.5 text-xs text-neutral-300 leading-relaxed">
+            <li class="flex items-start gap-2"><span class="text-amber-400">✓</span> <span class="i18n" data-en="User journey maps &amp; interactive Figma wireframe flows." data-fr="Cartes de parcours utilisateur et flux interactifs Figma.">User journey maps &amp; interactive Figma wireframe flows.</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-400">✓</span> <span class="i18n" data-en="Scalable UI component library (design tokens, auto-layout, variants)." data-fr="Bibliothèque de composants UI évolutive avec tokens et variantes.">Scalable UI component library (design tokens, auto-layout, variants).</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-400">✓</span> <span class="i18n" data-en="Complete in-game HUD, nested menus, &amp; accessibility standards doc." data-fr="HUD complet en jeu, menus imbriqués et document d'accessibilité.">Complete in-game HUD, nested menus, &amp; accessibility standards doc.</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-400">✓</span> <span class="i18n" data-en="Clickable interactive prototype with menu transition logic." data-fr="Prototype interactif cliquable démontrant les transitions de menu.">Clickable interactive prototype with menu transition logic.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Package 5: Commercial Key Art & Storefront Kit -->
+      <div class="bg-neutral-900/60 rounded-3xl p-7 flex flex-col justify-between border border-neutral-800/40">
+        <div>
+          <div class="flex items-start justify-between gap-2 mb-3">
+            <h4 class="text-base font-bold text-neutral-100">
+              <span class="i18n" data-en="Key Art &amp; Storefront Kit" data-fr="Kit Key Art &amp; Storefront">Key Art &amp; Storefront Kit</span>
+            </h4>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-neutral-800 text-amber-300 whitespace-nowrap">2 wks</span>
+          </div>
+          <p class="text-xs text-neutral-400 mb-6">
+            <strong class="text-neutral-300"><span class="i18n" data-en="Best for:" data-fr="Idéal pour :">Best for:</span></strong>
+            <span class="i18n" data-en="Steam capsule art, console storefronts, &amp; marketing launches." data-fr="Art de capsule Steam, storefronts consoles &amp; visuels de lancement.">Steam capsule art, console storefronts, &amp; marketing launches.</span>
+          </p>
+
+          <p class="text-xs font-bold uppercase tracking-wider text-neutral-400 mb-3"><span class="i18n" data-en="Scope &amp; Deliverables:" data-fr="Portée &amp; Livrables :">Scope &amp; Deliverables:</span></p>
+          <ul class="space-y-2.5 text-xs text-neutral-300 leading-relaxed">
+            <li class="flex items-start gap-2"><span class="text-amber-400">✓</span> <span class="i18n" data-en="1 Ultra-high-res hero splash illustration (up to 8K)." data-fr="1 Illustration héroïque ultra-haute résolution jusqu'à 8K.">1 Ultra-high-res hero splash illustration (up to 8K).</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-400">✓</span> <span class="i18n" data-en="Fully layered master PSD for video animation &amp; trailer cutouts." data-fr="Fichier PSD maître entièrement calqué pour animation et vidéo.">Fully layered master PSD for video animation &amp; trailer cutouts.</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-400">✓</span> <span class="i18n" data-en="Multi-platform storefront resize set (Steam Header, Capsules, Socials)." data-fr="Ensemble de redimensionnement multiplateforme (Steam, réseaux sociaux).">Multi-platform storefront resize set (Steam Header, Capsules, Socials).</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
 
-<div class="bg-neutral-900/60 rounded-2xl p-7 flex flex-col justify-between">
-  <div>
-    <div class="mb-5">
-      <span class="inline-flex items-center rounded-full px-3 py-1 text-[11px] font-bold tracking-wider text-amber-300 bg-amber-400/10">STEP 03</span>
-    </div>
-    <h3 class="text-lg font-bold text-neutral-100 mb-3"><span class="i18n" data-en="Production-Ready Delivery" data-fr="Livraison prête pour la production">Production-Ready Delivery</span></h3>
-    <p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Final files handed off clean and organized — with in-engine implementation available for UI work, not just source art." data-fr="Fichiers finaux livrés propres et organisés — avec une implémentation dans le moteur disponible pour le travail d'UI, pas seulement l'art source.">Final files handed off clean and organized — with in-engine implementation available for UI work, not just source art.</span></p>
+<!-- 4. Package Summary Table -->
+<div class="border-t border-neutral-800 pt-16 mb-16">
+  <p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4">
+    <span class="i18n" data-en="Package Summary" data-fr="Résumé des forfaits">Package Summary</span>
+  </p>
+  <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-neutral-100 mb-8">
+    <span class="i18n" data-en="Quick Comparison Matrix" data-fr="Matrice de comparaison rapide">Quick Comparison Matrix</span>
+  </h2>
+
+  <div class="overflow-x-auto rounded-2xl border border-neutral-800 bg-neutral-900/40">
+    <table class="w-full text-left text-xs border-collapse">
+      <thead>
+        <tr class="border-b border-neutral-800 bg-neutral-900/80 text-amber-300 uppercase tracking-wider font-semibold">
+          <th class="py-4 px-5"><span class="i18n" data-en="Package" data-fr="Forfait">Package</span></th>
+          <th class="py-4 px-5"><span class="i18n" data-en="Primary Focus" data-fr="Objectif principal">Primary Focus</span></th>
+          <th class="py-4 px-5"><span class="i18n" data-en="Standard Timeline" data-fr="Délai standard">Standard Timeline</span></th>
+          <th class="py-4 px-5"><span class="i18n" data-en="Best Client Match" data-fr="Client idéal">Best Client Match</span></th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-neutral-800/60 text-neutral-300 font-light">
+        <tr class="hover:bg-neutral-800/30 transition-colors">
+          <td class="py-4 px-5 font-semibold text-neutral-100">VisDev &amp; Worldbuilding</td>
+          <td class="py-4 px-5"><span class="i18n" data-en="Pre-production visual bible" data-fr="Bible visuelle de pré-production">Pre-production visual bible</span></td>
+          <td class="py-4 px-5 whitespace-nowrap text-amber-300 font-medium">2–3 weeks / semaines</td>
+          <td class="py-4 px-5"><span class="i18n" data-en="Indie studios starting pre-production" data-fr="Studios indés démarrant la pré-production">Indie studios starting pre-production</span></td>
+        </tr>
+        <tr class="hover:bg-neutral-800/30 transition-colors">
+          <td class="py-4 px-5 font-semibold text-neutral-100">Indie UI Starter Kit</td>
+          <td class="py-4 px-5"><span class="i18n" data-en="Essential menus and core HUD" data-fr="Menus essentiels et HUD principal">Essential menus and core HUD</span></td>
+          <td class="py-4 px-5 whitespace-nowrap text-amber-300 font-medium">1–2 weeks / semaines</td>
+          <td class="py-4 px-5"><span class="i18n" data-en="Small teams polishing vertical slices" data-fr="Petites équipes préparant une vertical slice">Small teams polishing vertical slices</span></td>
+        </tr>
+        <tr class="hover:bg-neutral-800/30 transition-colors">
+          <td class="py-4 px-5 font-semibold text-neutral-100">3D Asset &amp; Callout Pass</td>
+          <td class="py-4 px-5"><span class="i18n" data-en="Production-ready 3D pipeline" data-fr="Pipeline 3D prêt pour la production">Production-ready 3D pipeline</span></td>
+          <td class="py-4 px-5 whitespace-nowrap text-amber-300 font-medium">2–3 weeks / semaines</td>
+          <td class="py-4 px-5"><span class="i18n" data-en="Mid-sized studios needing asset execution" data-fr="Studios de taille moyenne exécutant des assets">Mid-sized studios needing asset execution</span></td>
+        </tr>
+        <tr class="hover:bg-neutral-800/30 transition-colors">
+          <td class="py-4 px-5 font-semibold text-neutral-100">Complete UI/UX System</td>
+          <td class="py-4 px-5"><span class="i18n" data-en="Scalable multi-screen interface" data-fr="Interface multi-écrans évolutive">Scalable multi-screen interface</span></td>
+          <td class="py-4 px-5 whitespace-nowrap text-amber-300 font-medium">4–6 weeks / semaines</td>
+          <td class="py-4 px-5"><span class="i18n" data-en="Commercial titles with complex interactions" data-fr="Titres commerciaux aux interactions complexes">Commercial titles with complex interactions</span></td>
+        </tr>
+        <tr class="hover:bg-neutral-800/30 transition-colors">
+          <td class="py-4 px-5 font-semibold text-neutral-100">Key Art &amp; Storefront Kit</td>
+          <td class="py-4 px-5"><span class="i18n" data-en="High-impact promotional art" data-fr="Art promotionnel à fort impact">High-impact promotional art</span></td>
+          <td class="py-4 px-5 whitespace-nowrap text-amber-300 font-medium">2 weeks / semaines</td>
+          <td class="py-4 px-5"><span class="i18n" data-en="Publishers &amp; developers nearing launch" data-fr="Éditeurs et développeurs proches du lancement">Publishers &amp; developers nearing launch</span></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 
+<!-- 5. How I Work Process -->
+<div class="border-t border-neutral-800 pt-16 mb-16">
+  <p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4">
+    <span class="i18n" data-en="Process" data-fr="Processus">Process</span>
+  </p>
+  <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-neutral-100 mb-10">
+    <span class="i18n" data-en="How I Work" data-fr="Ma façon de travailler">How I Work</span>
+  </h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <div class="bg-neutral-900/60 rounded-2xl p-7 flex flex-col justify-between">
+      <div>
+        <div class="mb-5">
+          <span class="inline-flex items-center rounded-full px-3 py-1 text-[11px] font-bold tracking-wider text-amber-300 bg-amber-400/10">STEP 01</span>
+        </div>
+        <h3 class="text-lg font-bold text-neutral-100 mb-3">
+          <span class="i18n" data-en="Brief &amp; References" data-fr="Brief et références">Brief &amp; References</span>
+        </h3>
+        <p class="text-sm text-neutral-400 leading-relaxed">
+          <span class="i18n" data-en="We align on scope, references, and constraints up front — platform, engine, deadline, and what 'done' looks like." data-fr="On s'aligne d'abord sur la portée, les références et les contraintes — plateforme, moteur, délai et ce à quoi ressemble un travail « terminé ».">We align on scope, references, and constraints up front — platform, engine, deadline, and what 'done' looks like.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-neutral-900/60 rounded-2xl p-7 flex flex-col justify-between">
+      <div>
+        <div class="mb-5">
+          <span class="inline-flex items-center rounded-full px-3 py-1 text-[11px] font-bold tracking-wider text-amber-300 bg-amber-400/10">STEP 02</span>
+        </div>
+        <h3 class="text-lg font-bold text-neutral-100 mb-3">
+          <span class="i18n" data-en="Exploration &amp; Iteration" data-fr="Exploration et itération">Exploration &amp; Iteration</span>
+        </h3>
+        <p class="text-sm text-neutral-400 leading-relaxed">
+          <span class="i18n" data-en="Thumbnails or wireframes first, narrowed through feedback before any piece goes to final render or high-fidelity pass." data-fr="D'abord des miniatures ou des wireframes, affinés grâce aux retours avant qu'une pièce ne passe au rendu final ou à la passe haute-fidélité.">Thumbnails or wireframes first, narrowed through feedback before any piece goes to final render or high-fidelity pass.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-neutral-900/60 rounded-2xl p-7 flex flex-col justify-between">
+      <div>
+        <div class="mb-5">
+          <span class="inline-flex items-center rounded-full px-3 py-1 text-[11px] font-bold tracking-wider text-amber-300 bg-amber-400/10">STEP 03</span>
+        </div>
+        <h3 class="text-lg font-bold text-neutral-100 mb-3">
+          <span class="i18n" data-en="Production-Ready Delivery" data-fr="Livraison prête pour la production">Production-Ready Delivery</span>
+        </h3>
+        <p class="text-sm text-neutral-400 leading-relaxed">
+          <span class="i18n" data-en="Final files handed off clean and organized — with in-engine implementation available for UI work, not just source art." data-fr="Fichiers finaux livrés propres et organisés — avec une implémentation dans le moteur disponible pour le travail d'UI, pas seulement l'art source.">Final files handed off clean and organized — with in-engine implementation available for UI work, not just source art.</span>
+        </p>
+      </div>
+    </div>
+
+  </div>
 </div>
-</div>
-<!-- Get in Touch -->
+
+<!-- 6. Get in Touch -->
 <div class="border-t border-neutral-800 pt-16 max-w-2xl">
-<p class="brief-eyebrow text-[11px] tracking-[0.35em] uppercase mb-4"><span class="i18n" data-en="Get in Touch" data-fr="Me contacter">Get in Touch</span></p>
-<h2 class="text-3xl md:text-4xl font-bold tracking-tight text-neutral-100 mb-6"><span class="i18n" data-en="Tell Me About Your Project" data-fr="Parlez-moi de votre projet">Tell Me About Your Project</span></h2>
-<p class="text-neutral-400 leading-relaxed font-light mb-10 max-w-xl">
-        <span class="i18n" data-en="The fastest way to reach me is email — include a short brief, timeline, and platform/engine if you have one, and I'll get back to you." data-fr="Le moyen le plus rapide de me joindre est le courriel — incluez un court brief, un échéancier et la plateforme/le moteur si vous en avez un, et je vous répondrai.">The fastest way to reach me is email — include a short brief, timeline, and platform/engine if you have one, and I'll get back to you.</span>
-      </p>
-<a class="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-neutral-100 text-neutral-950 text-[11px] tracking-[0.2em] uppercase font-semibold hover:bg-amber-300 transition-all duration-300 hover:-translate-y-0.5" href="mailto:gg28.god@gmail.com?subject=Services%20Inquiry">
-        <span class="i18n" data-en="Email Me" data-fr="M'écrire">Email Me</span>
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-      </a>
-<p class="text-sm text-neutral-500 mt-6"><span class="i18n" data-en="gg28.god@gmail.com" data-fr="gg28.god@gmail.com">gg28.god@gmail.com</span></p>
+  <p class="brief-eyebrow text-[11px] tracking-[0.35em] uppercase mb-4">
+    <span class="i18n" data-en="Get in Touch" data-fr="Me contacter">Get in Touch</span>
+  </p>
+  <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-neutral-100 mb-6">
+    <span class="i18n" data-en="Tell Me About Your Project" data-fr="Parlez-moi de votre projet">Tell Me About Your Project</span>
+  </h2>
+  <p class="text-neutral-400 leading-relaxed font-light mb-10 max-w-xl">
+    <span class="i18n" data-en="The fastest way to reach me is email — include a short brief, timeline, and platform/engine if you have one, and I'll get back to you." data-fr="Le moyen le plus rapide de me joindre est le courriel — incluez un court brief, un échéancier et la plateforme/le moteur si vous en avez un, et je vous répondrai.">The fastest way to reach me is email — include a short brief, timeline, and platform/engine if you have one, and I'll get back to you.</span>
+  </p>
+  <a class="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-neutral-100 text-neutral-950 text-[11px] tracking-[0.2em] uppercase font-semibold hover:bg-amber-300 transition-all duration-300 hover:-translate-y-0.5" href="mailto:gg28.god@gmail.com?subject=Services%20Inquiry">
+    <span class="i18n" data-en="Email Me" data-fr="M'écrire">Email Me</span>
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+  </a>
+  <p class="text-sm text-neutral-500 mt-6"><span class="i18n" data-en="gg28.god@gmail.com" data-fr="gg28.god@gmail.com">gg28.god@gmail.com</span></p>
 </div>
-<!-- Recent Work -->
+
+<!-- 7. Recent Work Rail -->
 <div class="border-t border-neutral-800 pt-16 mt-16">
-<p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="Recent Work" data-fr="Travaux récents">Recent Work</span></p>
-<h2 class="text-2xl md:text-3xl font-bold tracking-tight text-neutral-100 mb-10"><span class="i18n" data-en="See It In Action" data-fr="À voir en action">See It In Action</span></h2>
-<div class="work-rail" id="recent-work-rail">
-<a class="work-card group flex flex-col justify-between text-left text-neutral-100 no-underline cursor-pointer bg-neutral-900/60 rounded-3xl p-4 sm:p-5 transition-all duration-300 hover:bg-neutral-900/90" href="outpost-red.html">
-  <div>
-    <div class="relative overflow-hidden rounded-2xl mb-4" style="aspect-ratio:4/3; background:#0a0a0a;">
-      <img alt="Outpost Red — Game UI Interface" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style="object-position: right center;" loading="lazy" src="thumbs/outpost-red.webp"/>
-    </div>
-    <p class="text-base font-semibold text-neutral-100 mb-1.5"><span class="i18n" data-en="Outpost Red" data-fr="Outpost Red">Outpost Red</span></p>
-    <p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Data-bound inventory UI, built as a real UMG widget in Unreal Engine 5." data-fr="UI d'inventaire connectée à des données, construite comme un vrai widget UMG dans Unreal Engine 5.">Data-bound inventory UI, built as a real UMG widget in Unreal Engine 5.</span></p>
-  </div>
-</a>
+  <p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4">
+    <span class="i18n" data-en="Recent Work" data-fr="Travaux récents">Recent Work</span>
+  </p>
+  <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-neutral-100 mb-10">
+    <span class="i18n" data-en="See It In Action" data-fr="À voir en action">See It In Action</span>
+  </h2>
+  <div class="work-rail" id="recent-work-rail">
+    
+    <a class="work-card group flex flex-col justify-between text-left text-neutral-100 no-underline cursor-pointer bg-neutral-900/60 rounded-3xl p-4 sm:p-5 transition-all duration-300 hover:bg-neutral-900/90" href="outpost-red.html">
+      <div>
+        <div class="relative overflow-hidden rounded-2xl mb-4" style="aspect-ratio:4/3; background:#0a0a0a;">
+          <img alt="Outpost Red — Game UI Interface" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style="object-position: right center;" loading="lazy" src="thumbs/outpost-red.webp"/>
+        </div>
+        <p class="text-base font-semibold text-neutral-100 mb-1.5"><span class="i18n" data-en="Outpost Red" data-fr="Outpost Red">Outpost Red</span></p>
+        <p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Data-bound inventory UI, built as a real UMG widget in Unreal Engine 5." data-fr="UI d'inventaire connectée à des données, construite comme un vrai widget UMG dans Unreal Engine 5.">Data-bound inventory UI, built as a real UMG widget in Unreal Engine 5.</span></p>
+      </div>
+    </a>
 
-<a class="work-card group flex flex-col justify-between text-left text-neutral-100 no-underline cursor-pointer bg-neutral-900/60 rounded-3xl p-4 sm:p-5 transition-all duration-300 hover:bg-neutral-900/90" href="home-run-derby-vr.html">
-  <div>
-    <div class="relative overflow-hidden rounded-2xl mb-4" style="aspect-ratio:4/3; background:#0a0a0a;">
-      <img alt="Home Run Derby VR — Sports VR UI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" src="thumbs/home-run-derby-vr.webp"/>
-    </div>
-    <p class="text-base font-semibold text-neutral-100 mb-1.5"><span class="i18n" data-en="Home Run Derby VR" data-fr="Home Run Derby VR">Home Run Derby VR</span></p>
-    <p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Licensed MLB VR sports UI, shipped for PlayStation VR and HTC Vive." data-fr="UI sportive VR sous licence MLB, livrée pour PlayStation VR et HTC Vive.">Licensed MLB VR sports UI, shipped for PlayStation VR and HTC Vive.</span></p>
-  </div>
-</a>
+    <a class="work-card group flex flex-col justify-between text-left text-neutral-100 no-underline cursor-pointer bg-neutral-900/60 rounded-3xl p-4 sm:p-5 transition-all duration-300 hover:bg-neutral-900/90" href="home-run-derby-vr.html">
+      <div>
+        <div class="relative overflow-hidden rounded-2xl mb-4" style="aspect-ratio:4/3; background:#0a0a0a;">
+          <img alt="Home Run Derby VR — Sports VR UI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" src="thumbs/home-run-derby-vr.webp"/>
+        </div>
+        <p class="text-base font-semibold text-neutral-100 mb-1.5"><span class="i18n" data-en="Home Run Derby VR" data-fr="Home Run Derby VR">Home Run Derby VR</span></p>
+        <p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Licensed MLB VR sports UI, shipped for PlayStation VR and HTC Vive." data-fr="UI sportive VR sous licence MLB, livrée pour PlayStation VR et HTC Vive.">Licensed MLB VR sports UI, shipped for PlayStation VR and HTC Vive.</span></p>
+      </div>
+    </a>
 
-<a class="work-card group flex flex-col justify-between text-left text-neutral-100 no-underline cursor-pointer bg-neutral-900/60 rounded-3xl p-4 sm:p-5 transition-all duration-300 hover:bg-neutral-900/90" href="wings-of-wanitu.html">
-  <div>
-    <div class="relative overflow-hidden rounded-2xl mb-4" style="aspect-ratio:4/3; background:#0a0a0a;">
-      <img alt="Wings of Wanitu — VR UI Design" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" src="thumbs/wings-of-wanitu.webp"/>
-    </div>
-    <p class="text-base font-semibold text-neutral-100 mb-1.5"><span class="i18n" data-en="Wings of Wanitu" data-fr="Wings of Wanitu">Wings of Wanitu</span></p>
-    <p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="VR UI design for an original narrative adventure." data-fr="Design d'UI VR pour une aventure narrative originale.">VR UI design for an original narrative adventure.</span></p>
-  </div>
-</a>
+    <a class="work-card group flex flex-col justify-between text-left text-neutral-100 no-underline cursor-pointer bg-neutral-900/60 rounded-3xl p-4 sm:p-5 transition-all duration-300 hover:bg-neutral-900/90" href="wings-of-wanitu.html">
+      <div>
+        <div class="relative overflow-hidden rounded-2xl mb-4" style="aspect-ratio:4/3; background:#0a0a0a;">
+          <img alt="Wings of Wanitu — VR UI Design" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" src="thumbs/wings-of-wanitu.webp"/>
+        </div>
+        <p class="text-base font-semibold text-neutral-100 mb-1.5"><span class="i18n" data-en="Wings of Wanitu" data-fr="Wings of Wanitu">Wings of Wanitu</span></p>
+        <p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="VR UI design for an original narrative adventure." data-fr="Design d'UI VR pour une aventure narrative originale.">VR UI design for an original narrative adventure.</span></p>
+      </div>
+    </a>
 
-<a class="work-card group flex flex-col justify-between text-left text-neutral-100 no-underline cursor-pointer bg-neutral-900/60 rounded-3xl p-4 sm:p-5 transition-all duration-300 hover:bg-neutral-900/90" href="tide-hollow.html">
-  <div>
-    <div class="relative overflow-hidden rounded-2xl mb-4" style="aspect-ratio:4/3; background:#0a0a0a;">
-      <img alt="Tide Hollow — 3D Asset Creation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" src="thumbs/tide-hollow.webp"/>
-    </div>
-    <p class="text-base font-semibold text-neutral-100 mb-1.5"><span class="i18n" data-en="Tide Hollow" data-fr="Tide Hollow">Tide Hollow</span></p>
-    <p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Concept art and 3D asset creation for an original world." data-fr="Art conceptuel et création d'assets 3D pour un univers original.">Concept art and 3D asset creation for an original world.</span></p>
-  </div>
-</a>
+    <a class="work-card group flex flex-col justify-between text-left text-neutral-100 no-underline cursor-pointer bg-neutral-900/60 rounded-3xl p-4 sm:p-5 transition-all duration-300 hover:bg-neutral-900/90" href="tide-hollow.html">
+      <div>
+        <div class="relative overflow-hidden rounded-2xl mb-4" style="aspect-ratio:4/3; background:#0a0a0a;">
+          <img alt="Tide Hollow — 3D Asset Creation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" src="thumbs/tide-hollow.webp"/>
+        </div>
+        <p class="text-base font-semibold text-neutral-100 mb-1.5"><span class="i18n" data-en="Tide Hollow" data-fr="Tide Hollow">Tide Hollow</span></p>
+        <p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Concept art and 3D asset creation for an original world." data-fr="Art conceptuel et création d'assets 3D pour un univers original.">Concept art and 3D asset creation for an original world.</span></p>
+      </div>
+    </a>
 
+  </div>
+  <div class="flex justify-center mt-6">
+    <div class="rail-dots" id="recent-work-dots"></div>
+  </div>
 </div>
-<div class="flex justify-center mt-6">
-<div class="rail-dots" id="recent-work-dots"></div>
-</div>
-</div>
+
 </main>
+
 <!-- FOOTER -->
 <footer class="border-t border-neutral-800 py-12">
 <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
