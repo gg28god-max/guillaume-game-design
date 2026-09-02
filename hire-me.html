@@ -368,43 +368,65 @@
       dot.className = 'rail-dot';
       dot.setAttribute('aria-label', 'Go to item ' + (i + 1) + ' of ' + cards.length);
       dot.addEventListener('click', function () {
-        rail.scrollTo({ left: card.offsetLeft - rail.offsetLeft, behavior: 'smooth' });
+        var targetLeft = card.offsetLeft - rail.offsetLeft;
+        rail.scrollTo({ left: targetLeft, behavior: 'smooth' });
+        dotsWrap.querySelectorAll('.rail-dot').forEach(function (d, dIdx) {
+          d.setAttribute('aria-current', dIdx === i ? 'true' : 'false');
+        });
       });
       dotsWrap.appendChild(dot);
     });
     updateRailDots(railId, dotsId);
   }
+
   function updateRailDots(railId, dotsId) {
     var rail = document.getElementById(railId);
     var dotsWrap = document.getElementById(dotsId);
     if (!rail || !dotsWrap) return;
     var cards = rail.querySelectorAll('.work-card');
     var dots = dotsWrap.querySelectorAll('.rail-dot');
-    if (!cards.length) return;
+    if (!cards.length || !dots.length) return;
 
+    var scrollLeft = rail.scrollLeft;
+    var maxScroll = rail.scrollWidth - rail.clientWidth;
     var current = 0;
-    // When scrolled to the right end (or within 15px threshold), activate the last dot
-    var isAtEnd = (rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 15);
 
-    if (isAtEnd) {
+    if (maxScroll > 0 && scrollLeft >= maxScroll - 15) {
       current = cards.length - 1;
     } else {
-      var railLeft = rail.getBoundingClientRect().left;
-      var closestDist = Infinity;
+      var minDiff = Infinity;
       cards.forEach(function (card, i) {
-        var dist = Math.abs(card.getBoundingClientRect().left - railLeft);
-        if (dist < closestDist) { closestDist = dist; current = i; }
+        var cardOffset = card.offsetLeft - rail.offsetLeft;
+        var diff = Math.abs(cardOffset - scrollLeft);
+        if (diff < minDiff) {
+          minDiff = diff;
+          current = i;
+        }
       });
     }
 
-    dots.forEach(function (dot, i) { dot.setAttribute('aria-current', i === current ? 'true' : 'false'); });
+    dots.forEach(function (dot, i) {
+      dot.setAttribute('aria-current', i === current ? 'true' : 'false');
+    });
   }
+
   [['services-rail', 'services-dots'], ['recent-work-rail', 'recent-work-dots']].forEach(function (pair) {
     var railId = pair[0], dotsId = pair[1];
     var rail = document.getElementById(railId);
     if (!rail) return;
     buildRailDots(railId, dotsId);
-    rail.addEventListener('scroll', function () { updateRailDots(railId, dotsId); }, { passive: true });
+
+    var isTicking = false;
+    rail.addEventListener('scroll', function () {
+      if (!isTicking) {
+        window.requestAnimationFrame(function () {
+          updateRailDots(railId, dotsId);
+          isTicking = false;
+        });
+        isTicking = true;
+      }
+    }, { passive: true });
+
     window.addEventListener('resize', function () { updateRailDots(railId, dotsId); });
   });
 </script>
