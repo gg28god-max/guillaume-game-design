@@ -249,8 +249,8 @@
 
       var lang = currentLang();
       var labels = lang === 'fr'
-        ? { scope: 'Portée / Livrable', project: 'Projet', stage: 'Étape de prod.', format: 'Format', style: 'Style / Genre', coverage: 'Couverture pipeline', engine: 'Moteur cible', budgetOpt: 'Budget optimisation', concept: 'Concept fourni ?', platform: 'Plateforme', state: 'État actuel', handoff: 'Livrable attendu', dimensions: 'Dimensions / Ratio', usage: 'Usage commercial', deadline: 'Échéance', budget: 'Fourchette budget', company: 'Studio / Entreprise', notes: 'Notes & Références', name: 'Nom', email: 'Courriel' }
-        : { scope: 'Scope / Deliverable', project: 'Project Name', stage: 'Production Stage', format: 'Deliverable Format', style: 'Visual Style', coverage: 'Pipeline Coverage', engine: 'Target Engine', budgetOpt: 'Optimization Budget', concept: 'Concept Provided?', platform: 'Platform & Inputs', state: 'Current Project State', handoff: 'Handoff Requirement', dimensions: 'Target Dimensions', usage: 'Commercial Usage', deadline: 'Target Deadline', budget: 'Budget Range', company: 'Studio / Company', notes: 'Notes & References', name: 'Name', email: 'Email' };
+        ? { scope: 'Portée / Livrable', project: 'Nom du projet', stage: 'Étape de production', format: 'Format de livrable', style: 'Style visuel', coverage: 'Couverture pipeline', engine: 'Moteur cible', budgetOpt: 'Budget optimisation', concept: 'Concept fourni ?', platform: 'Plateforme & Entrées', state: 'État actuel du projet', handoff: 'Livrable attendu', dimensions: 'Dimensions / Ratio', usage: 'Usage commercial', deadline: 'Échéance cible', budget: 'Fourchette budget', company: 'Studio / Entreprise', references: 'Liens de référence', notes: 'Notes techniques & fonctionnelles', name: 'Nom', email: 'Courriel' }
+        : { scope: 'Scope / Deliverable', project: 'Project Name', stage: 'Production Stage', format: 'Deliverable Format', style: 'Visual Style', coverage: 'Pipeline Coverage', engine: 'Target Engine', budgetOpt: 'Optimization Budget', concept: 'Concept Provided?', platform: 'Platform & Inputs', state: 'Current Project State', handoff: 'Handoff Requirement', dimensions: 'Target Dimensions', usage: 'Commercial Usage', deadline: 'Target Deadline', budget: 'Budget Range', company: 'Studio / Company', references: 'Reference Links', notes: 'Technical & Functional Notes', name: 'Name', email: 'Email' };
 
       var serviceName = root.getAttribute('data-service-name') || 'Service';
       var checkedScopeCards = Array.prototype.slice.call(root.querySelectorAll('.option-card[data-option-group="scope"] input:checked')).map(function (input) {
@@ -262,12 +262,6 @@
         return titleEl ? titleEl.textContent.trim() : card.textContent.trim();
       });
 
-      var estimatedRanges = checkedScopeCards.map(function (card) {
-        return card.getAttribute('data-estimated') || card.getAttribute('data-price-range') || '';
-      }).filter(Boolean);
-
-      var estimatedRangeText = estimatedRanges.join(' + ');
-      var scopeDisplay = scopeTitles.join(' • ');
       var userBudget = fieldValue('budget');
 
       // Collect checked chips for multi-select groups (e.g., coverage)
@@ -278,52 +272,91 @@
       });
 
       var serviceScopeLabel = lang === 'fr' ? (scopeTitles.length > 1 ? 'Service & Portées' : 'Service & Portée') : (scopeTitles.length > 1 ? 'Service & Scopes' : 'Service & Scope');
-      var budgetBracketLabel = lang === 'fr' ? 'Fourchette budgétaire' : 'Budget Bracket';
-      var estimatedInvestLabel = lang === 'fr' ? 'Investissement estimé' : 'Estimated Investment';
-      var userSelectedNote = lang === 'fr' ? ' (sélectionné)' : ' (Selected by user)';
+      var estimatedInvestLabel = lang === 'fr' ? 'Investissement estimé (Sélectionné)' : 'Estimated Investment (Selected)';
+      var filesLabel = lang === 'fr' ? 'Images & Fichiers joints' : 'Attached Images & Files';
 
-      var attachedFilesSummary = attachedFiles.length
-        ? (attachedFiles.length + (lang === 'fr' ? ' fichier(s) joint(s) (' : ' file(s) attached (') + attachedFiles.map(function (f) { return f.name; }).join(', ') + ')')
-        : '';
-      var filesLabel = lang === 'fr' ? 'Images / Fichiers joints' : 'Attached Images / Files';
+      // Scopes stacked vertically
+      var scopesContent = '<div class="font-semibold text-neutral-100 text-sm mb-1.5">' + escapeHtml(serviceName) + '</div>';
+      if (scopeTitles.length > 0) {
+        scopesContent += '<ul class="space-y-1.5 pl-3 border-l-2 border-amber-400/60 mt-2">' +
+          scopeTitles.map(function (title) {
+            return '<li class="text-xs text-neutral-300 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-300 inline-block shrink-0"></span>' + escapeHtml(title) + '</li>';
+          }).join('') +
+          '</ul>';
+      }
 
-      var rows = [
-        [serviceScopeLabel, serviceName + (scopeDisplay ? ' — ' + scopeDisplay : '')],
-        [budgetBracketLabel, userBudget ? (userBudget + userSelectedNote) : ''],
-        [estimatedInvestLabel, estimatedRangeText ? (estimatedRangeText + '*') : ''],
-        [labels.project, fieldValue('project')],
-        [labels.stage, fieldValue('stage')],
-        [labels.format, fieldValue('format')],
-        [labels.style, fieldValue('style')],
-        [labels.coverage, checkedCoverage.join(', ')],
-        [labels.engine, fieldValue('engine')],
-        [labels.budgetOpt, fieldValue('optimization')],
-        [labels.concept, fieldValue('concept_provided')],
-        [labels.platform, fieldValue('platform')],
-        [labels.state, fieldValue('project_state')],
-        [labels.handoff, fieldValue('handoff')],
-        [labels.dimensions, fieldValue('dimensions')],
-        [labels.usage, fieldValue('commercial_usage')],
-        [labels.deadline, fieldValue('deadline')],
-        [labels.company, fieldValue('company')],
-        [labels.notes, fieldValue('references')],
-        [filesLabel, attachedFilesSummary],
-        [labels.notes, fieldValue('notes')],
-        [labels.name, fieldValue('name')],
-        [labels.email, fieldValue('email')]
-      ].filter(function (r) { return r[1]; });
+      // Investment value: strictly the user-selected budget from Step 2
+      var investmentDisplay = userBudget
+        ? '<span class="font-bold text-amber-300 font-mono text-sm tracking-wide">' + escapeHtml(userBudget) + '</span>'
+        : '<span class="text-neutral-500 text-xs italic">' + (lang === 'fr' ? 'Flexible / À discuter' : 'Flexible / To be discussed') + '</span>';
 
-      summaryEl.innerHTML = rows.map(function (r) {
-        return '<div class="flow-summary-row flex justify-between gap-6 py-2.5">' +
-          '<dt class="text-neutral-500">' + escapeHtml(r[0]) + '</dt>' +
-          '<dd class="text-neutral-100 text-right">' + escapeHtml(r[1]) + '</dd></div>';
-      }).join('');
+      // Attached files stacked vertically
+      var attachedFilesHtml = '';
+      if (attachedFiles.length > 0) {
+        attachedFilesHtml = '<ul class="space-y-1.5 pl-3 border-l-2 border-amber-400/60 mt-2">' +
+          attachedFiles.map(function (f) {
+            var sizeKb = Math.round(f.size / 1024);
+            var sizeStr = sizeKb > 1024 ? (sizeKb / 1024).toFixed(1) + ' MB' : sizeKb + ' KB';
+            return '<li class="text-xs text-neutral-300 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-300 inline-block shrink-0"></span>' + escapeHtml(f.name) + ' <span class="text-[10px] text-neutral-500 font-mono">(' + sizeStr + ')</span></li>';
+          }).join('') +
+          '</ul>';
+      }
+
+      // Coverage items stacked vertically
+      var coverageHtml = '';
+      if (checkedCoverage.length > 0) {
+        coverageHtml = '<ul class="space-y-1.5 pl-3 border-l-2 border-amber-400/60 mt-2">' +
+          checkedCoverage.map(function (c) {
+            return '<li class="text-xs text-neutral-300 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-300 inline-block shrink-0"></span>' + escapeHtml(c) + '</li>';
+          }).join('') +
+          '</ul>';
+      }
+
+      var items = [
+        { label: serviceScopeLabel, html: scopesContent, raw: serviceName + (scopeTitles.length ? ' — ' + scopeTitles.join(', ') : '') },
+        { label: estimatedInvestLabel, html: investmentDisplay, raw: userBudget || 'Flexible' },
+        { label: labels.project, value: fieldValue('project') },
+        { label: labels.stage, value: fieldValue('stage') },
+        { label: labels.format, value: fieldValue('format') },
+        { label: labels.style, value: fieldValue('style') },
+        { label: labels.coverage, html: coverageHtml, raw: checkedCoverage.join(', ') },
+        { label: labels.engine, value: fieldValue('engine') },
+        { label: labels.budgetOpt, value: fieldValue('optimization') },
+        { label: labels.concept, value: fieldValue('concept_provided') },
+        { label: labels.platform, value: fieldValue('platform') },
+        { label: labels.state, value: fieldValue('project_state') },
+        { label: labels.handoff, value: fieldValue('handoff') },
+        { label: labels.dimensions, value: fieldValue('dimensions') },
+        { label: labels.usage, value: fieldValue('commercial_usage') },
+        { label: labels.deadline, value: fieldValue('deadline') },
+        { label: labels.company, value: fieldValue('company') },
+        { label: labels.references, value: fieldValue('references') },
+        { label: filesLabel, html: attachedFilesHtml, raw: attachedFiles.map(function(f){ return f.name; }).join(', ') },
+        { label: labels.notes, value: fieldValue('notes') },
+        { label: labels.name, value: fieldValue('name') },
+        { label: labels.email, value: fieldValue('email') }
+      ].filter(function (it) {
+        return it.html || (it.value && it.value.trim().length > 0);
+      });
+
+      summaryEl.innerHTML = '<div class="space-y-4">' +
+        items.map(function (it) {
+          var val = it.html || ('<div class="text-sm font-medium text-neutral-200 break-words">' + escapeHtml(it.value) + '</div>');
+          return '<div class="flow-summary-row pb-3.5 border-b border-neutral-800/60 last:border-b-0">' +
+            '<div class="text-[10px] font-bold uppercase tracking-widest text-neutral-500 mb-1.5">' + escapeHtml(it.label) + '</div>' +
+            val +
+            '</div>';
+        }).join('') +
+        '</div>';
 
       if (sendBtn) {
         var serviceName = root.getAttribute('data-service-name') || 'Service';
         var toEmail = root.getAttribute('data-service-email') || 'gg28.god@gmail.com';
         var subject = 'New Project Inquiry — ' + serviceName + (scopeTitles.length ? ' (' + scopeTitles.join(', ') + ')' : '');
-        var body = rows.map(function (r) { return r[0] + ': ' + r[1]; }).join('\n');
+        var body = items.map(function (it) {
+          var textVal = it.value || it.raw || '';
+          return textVal ? (it.label + ': ' + textVal) : '';
+        }).filter(Boolean).join('\n');
         if (attachedFiles.length > 0) {
           body += '\n\n*Note: ' + attachedFiles.length + ' file(s) selected (' + attachedFiles.map(function (f) { return f.name; }).join(', ') + '). Please remember to attach these files directly to this email response before sending!';
         }
