@@ -651,3 +651,54 @@ html.light .chip-option { border-color: #e5e5e5; color: #52525b; background: #ff
 html.light .chip-option:hover { border-color: #a1a1aa; color: #18181b; }
 html.light .chip-option.is-selected { border-color: #a07830; background: rgba(160, 120, 48, 0.1); color: #a07830; }
 
+.file-preview-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #141414;
+  border: 1px solid #262626;
+  border-radius: 999px;
+  padding: 4px 12px 4px 6px;
+  font-size: 11px;
+  color: #e5e5e5;
+  transition: border-color .2s ease;
+}
+.file-preview-chip img {
+  width: 22px;
+  height: 22px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.file-preview-chip .file-remove-btn {
+  color: #737373;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-size: 13px;
+  line-height: 1;
+  transition: all .2s ease;
+}
+.file-preview-chip .file-remove-btn:hover {
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.15);
+}
+html.light .file-preview-chip {
+  background: #f4f4f5;
+  border-color: #e4e4e7;
+  color: #18181b;
+}
+html.light .file-preview-chip .file-remove-btn {
+  color: #a1a1aa;
+}
+html.light .file-preview-chip .file-remove-btn:hover {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.12);
+}
+

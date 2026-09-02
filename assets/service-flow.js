@@ -173,6 +173,71 @@
       });
     });
 
+    // File upload & Link attachment handling
+    var attachedFiles = [];
+    var fileInput = root.querySelector('[data-flow-file-input]');
+    var filePreviewList = root.querySelector('[data-flow-file-previews]');
+    var linkToggleBtn = root.querySelector('[data-flow-link-toggle]');
+    var linkContainer = root.querySelector('[data-flow-link-container]');
+    var linkInput = root.querySelector('input[name="references"]');
+
+    if (linkToggleBtn && linkContainer) {
+      linkToggleBtn.addEventListener('click', function () {
+        linkContainer.classList.toggle('hidden');
+        if (!linkContainer.classList.contains('hidden') && linkInput) {
+          linkInput.focus();
+        }
+      });
+    }
+
+    if (fileInput) {
+      fileInput.addEventListener('change', function () {
+        if (!fileInput.files || !fileInput.files.length) return;
+        for (var i = 0; i < fileInput.files.length; i++) {
+          attachedFiles.push(fileInput.files[i]);
+        }
+        renderFilePreviews();
+        updateNextState(2);
+        buildSummary();
+      });
+    }
+
+    function renderFilePreviews() {
+      if (!filePreviewList) return;
+      filePreviewList.innerHTML = '';
+      if (!attachedFiles.length) return;
+
+      attachedFiles.forEach(function (file, idx) {
+        var chip = document.createElement('div');
+        chip.className = 'file-preview-chip';
+
+        var isImg = file.type && file.type.indexOf('image/') === 0;
+        var iconOrThumb = isImg
+          ? '<img src="' + URL.createObjectURL(file) + '" alt="' + escapeHtml(file.name) + '"/>'
+          : '<svg class="w-3.5 h-3.5 text-amber-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>';
+
+        var sizeKb = Math.round(file.size / 1024);
+        var sizeStr = sizeKb > 1024 ? (sizeKb / 1024).toFixed(1) + ' MB' : sizeKb + ' KB';
+
+        chip.innerHTML = iconOrThumb +
+          '<span class="truncate max-w-[140px] sm:max-w-[200px]" title="' + escapeHtml(file.name) + '">' + escapeHtml(file.name) + '</span>' +
+          '<span class="text-[10px] text-neutral-500 font-mono">(' + sizeStr + ')</span>' +
+          '<button type="button" class="file-remove-btn" data-remove-idx="' + idx + '" aria-label="Remove">&times;</button>';
+
+        filePreviewList.appendChild(chip);
+      });
+
+      Array.prototype.forEach.call(filePreviewList.querySelectorAll('[data-remove-idx]'), function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          var idx = Number(btn.getAttribute('data-remove-idx'));
+          attachedFiles.splice(idx, 1);
+          renderFilePreviews();
+          buildSummary();
+        });
+      });
+    }
+
     function buildSummary() {
       var summaryEl = root.querySelector('[data-flow-summary]');
       var sendBtn = root.querySelector('[data-flow-send]');
@@ -201,6 +266,11 @@
       var estimatedInvestLabel = lang === 'fr' ? 'Investissement estimé' : 'Estimated Investment';
       var userSelectedNote = lang === 'fr' ? ' (sélectionné)' : ' (Selected by user)';
 
+      var attachedFilesSummary = attachedFiles.length
+        ? (attachedFiles.length + (lang === 'fr' ? ' fichier(s) joint(s) (' : ' file(s) attached (') + attachedFiles.map(function (f) { return f.name; }).join(', ') + ')')
+        : '';
+      var filesLabel = lang === 'fr' ? 'Images / Fichiers joints' : 'Attached Images / Files';
+
       var rows = [
         [serviceScopeLabel, serviceName + (scopeTitle ? ' — ' + scopeTitle : '')],
         [budgetBracketLabel, userBudget ? (userBudget + userSelectedNote) : ''],
@@ -220,7 +290,9 @@
         [labels.usage, fieldValue('commercial_usage')],
         [labels.deadline, fieldValue('deadline')],
         [labels.company, fieldValue('company')],
-        [labels.notes, fieldValue('references') || fieldValue('notes')],
+        [labels.notes, fieldValue('references')],
+        [filesLabel, attachedFilesSummary],
+        [labels.notes, fieldValue('notes')],
         [labels.name, fieldValue('name')],
         [labels.email, fieldValue('email')]
       ].filter(function (r) { return r[1]; });
@@ -236,6 +308,9 @@
         var toEmail = root.getAttribute('data-service-email') || 'gg28.god@gmail.com';
         var subject = 'New Project Inquiry — ' + serviceName + (scopeTitle ? ' (' + scopeTitle + ')' : '');
         var body = rows.map(function (r) { return r[0] + ': ' + r[1]; }).join('\n');
+        if (attachedFiles.length > 0) {
+          body += '\n\n*Note: ' + attachedFiles.length + ' file(s) selected (' + attachedFiles.map(function (f) { return f.name; }).join(', ') + '). Please remember to attach these files directly to this email response before sending!';
+        }
         sendBtn.href = 'mailto:' + toEmail + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
       }
     }
