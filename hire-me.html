@@ -318,15 +318,23 @@
     if (!rail || !dotsWrap) return;
     var cards = rail.querySelectorAll('.work-card');
     var dots = dotsWrap.querySelectorAll('.rail-dot');
-    // Whichever card sits closest to the rail's own left edge is treated as
-    // "current" â€” matches scroll-snap-align: start, so the active dot lines
-    // up with the card that's actually snapped into place.
-    var railLeft = rail.getBoundingClientRect().left;
-    var current = 0, closestDist = Infinity;
-    cards.forEach(function (card, i) {
-      var dist = Math.abs(card.getBoundingClientRect().left - railLeft);
-      if (dist < closestDist) { closestDist = dist; current = i; }
-    });
+    if (!cards.length) return;
+
+    var current = 0;
+    // When scrolled to the right end (or within 15px threshold), activate the last dot
+    var isAtEnd = (rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 15);
+
+    if (isAtEnd) {
+      current = cards.length - 1;
+    } else {
+      var railLeft = rail.getBoundingClientRect().left;
+      var closestDist = Infinity;
+      cards.forEach(function (card, i) {
+        var dist = Math.abs(card.getBoundingClientRect().left - railLeft);
+        if (dist < closestDist) { closestDist = dist; current = i; }
+      });
+    }
+
     dots.forEach(function (dot, i) { dot.setAttribute('aria-current', i === current ? 'true' : 'false'); });
   }
   [['services-rail', 'services-dots'], ['recent-work-rail', 'recent-work-dots']].forEach(function (pair) {
