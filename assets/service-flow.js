@@ -248,11 +248,8 @@
       if (!summaryEl) return;
 
       var lang = currentLang();
-      var labels = lang === 'fr'
-        ? { scope: 'Portée / Livrable', project: 'Nom du projet', stage: 'Étape de production', format: 'Format de livrable', style: 'Style visuel', coverage: 'Couverture pipeline', engine: 'Moteur cible', budgetOpt: 'Budget optimisation', concept: 'Concept fourni ?', platform: 'Plateforme & Entrées', state: 'État actuel du projet', handoff: 'Livrable attendu', dimensions: 'Dimensions / Ratio', usage: 'Usage commercial', deadline: 'Échéance cible', budget: 'Fourchette budget', company: 'Studio / Entreprise', references: 'Liens de référence', notes: 'Notes techniques & fonctionnelles', name: 'Nom', email: 'Courriel' }
-        : { scope: 'Scope / Deliverable', project: 'Project Name', stage: 'Production Stage', format: 'Deliverable Format', style: 'Visual Style', coverage: 'Pipeline Coverage', engine: 'Target Engine', budgetOpt: 'Optimization Budget', concept: 'Concept Provided?', platform: 'Platform & Inputs', state: 'Current Project State', handoff: 'Handoff Requirement', dimensions: 'Target Dimensions', usage: 'Commercial Usage', deadline: 'Target Deadline', budget: 'Budget Range', company: 'Studio / Company', references: 'Reference Links', notes: 'Technical & Functional Notes', name: 'Name', email: 'Email' };
-
       var serviceName = root.getAttribute('data-service-name') || 'Service';
+
       var checkedScopeCards = Array.prototype.slice.call(root.querySelectorAll('.option-card[data-option-group="scope"] input:checked')).map(function (input) {
         return input.closest('.option-card');
       });
@@ -263,103 +260,125 @@
       });
 
       var userBudget = fieldValue('budget');
+      var projectName = fieldValue('project');
+      var stage = fieldValue('stage');
+      var format = fieldValue('format');
+      var style = fieldValue('style');
+      var engine = fieldValue('engine');
+      var notes = fieldValue('notes');
+      var refLink = fieldValue('references');
+      var deadline = fieldValue('deadline');
+      var company = fieldValue('company');
 
-      // Collect checked chips for multi-select groups (e.g., coverage)
       var checkedCoverage = [];
       Array.prototype.forEach.call(root.querySelectorAll('input[name="coverage"]:checked'), function (cb) {
         var labelEl = cb.closest('.chip-option');
         checkedCoverage.push(labelEl ? labelEl.textContent.trim() : cb.value);
       });
 
-      var serviceScopeLabel = lang === 'fr' ? (scopeTitles.length > 1 ? 'Service & Portées' : 'Service & Portée') : (scopeTitles.length > 1 ? 'Service & Scopes' : 'Service & Scope');
-      var estimatedInvestLabel = lang === 'fr' ? 'Investissement estimé (Sélectionné)' : 'Estimated Investment (Selected)';
-      var filesLabel = lang === 'fr' ? 'Images & Fichiers joints' : 'Attached Images & Files';
+      var checkIconSvg = '<svg class="w-3.5 h-3.5 text-amber-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>';
 
-      // Scopes stacked vertically
-      var scopesContent = '<div class="font-semibold text-neutral-100 text-sm mb-1.5">' + escapeHtml(serviceName) + '</div>';
+      var html = '<div class="space-y-6">';
+
+      // 1. Top Header Row: Service Title + Estimated Investment Badge
+      html += '<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-neutral-800/80">';
+      html += '<div>';
+      html += '<div class="text-[10px] font-bold tracking-[0.2em] uppercase text-amber-300 mb-1">' + (lang === 'fr' ? 'SERVICE SÉLECTIONNÉ' : 'SELECTED SERVICE') + '</div>';
+      html += '<div class="text-lg font-bold text-white tracking-tight">' + escapeHtml(serviceName) + '</div>';
+      html += '</div>';
+
+      html += '<div class="sm:text-right flex flex-col sm:items-end">';
+      html += '<div class="text-[10px] font-bold tracking-[0.2em] uppercase text-neutral-400 mb-1">' + (lang === 'fr' ? 'INVESTISSEMENT ESTIMÉ' : 'ESTIMATED INVESTMENT') + '</div>';
+      html += '<div class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-300 font-mono font-bold text-xs tracking-wide">' + escapeHtml(userBudget || (lang === 'fr' ? 'Flexible' : 'Flexible')) + '</div>';
+      html += '</div>';
+      html += '</div>';
+
+      // 2. Deliverables / Scopes as Badge Chips
       if (scopeTitles.length > 0) {
-        scopesContent += '<ul class="space-y-1.5 pl-3 border-l-2 border-amber-400/60 mt-2">' +
-          scopeTitles.map(function (title) {
-            return '<li class="text-xs text-neutral-300 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-300 inline-block shrink-0"></span>' + escapeHtml(title) + '</li>';
-          }).join('') +
-          '</ul>';
+        html += '<div>';
+        html += '<div class="text-[10px] font-bold tracking-[0.2em] uppercase text-neutral-400 mb-2.5">' + (lang === 'fr' ? 'LIVRABLES SÉLECTIONNÉS' : 'SELECTED DELIVERABLES &amp; SCOPES') + '</div>';
+        html += '<div class="flex flex-wrap gap-2">';
+        scopeTitles.forEach(function (t) {
+          html += '<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-neutral-800 bg-neutral-950/80 text-neutral-200 text-xs font-medium">' + checkIconSvg + '<span>' + escapeHtml(t) + '</span></div>';
+        });
+        html += '</div>';
+        html += '</div>';
       }
 
-      // Investment value: strictly the user-selected budget from Step 2
-      var investmentDisplay = userBudget
-        ? '<span class="font-bold text-amber-300 font-mono text-sm tracking-wide">' + escapeHtml(userBudget) + '</span>'
-        : '<span class="text-neutral-500 text-xs italic">' + (lang === 'fr' ? 'Flexible / À discuter' : 'Flexible / To be discussed') + '</span>';
+      // 3. Grid for Metadata (Project Name, Stage, Format, Style, Engine, Deadline, Company)
+      var metaCards = [];
+      if (projectName) metaCards.push({ label: lang === 'fr' ? 'Nom du projet' : 'Project Name', val: projectName });
+      if (stage) metaCards.push({ label: lang === 'fr' ? 'Étape de production' : 'Production Stage', val: stage });
+      if (format) metaCards.push({ label: lang === 'fr' ? 'Format de livrable' : 'Deliverable Format', val: format });
+      if (style) metaCards.push({ label: lang === 'fr' ? 'Style visuel' : 'Visual Style', val: style });
+      if (engine) metaCards.push({ label: lang === 'fr' ? 'Moteur cible' : 'Target Engine', val: engine });
+      if (checkedCoverage.length) metaCards.push({ label: lang === 'fr' ? 'Couverture pipeline' : 'Pipeline Coverage', val: checkedCoverage.join(', ') });
+      if (deadline) metaCards.push({ label: lang === 'fr' ? 'Échéance cible' : 'Target Deadline', val: deadline });
+      if (company) metaCards.push({ label: lang === 'fr' ? 'Studio / Entreprise' : 'Studio / Company', val: company });
 
-      // Attached files stacked vertically
-      var attachedFilesHtml = '';
-      if (attachedFiles.length > 0) {
-        attachedFilesHtml = '<ul class="space-y-1.5 pl-3 border-l-2 border-amber-400/60 mt-2">' +
-          attachedFiles.map(function (f) {
-            var sizeKb = Math.round(f.size / 1024);
-            var sizeStr = sizeKb > 1024 ? (sizeKb / 1024).toFixed(1) + ' MB' : sizeKb + ' KB';
-            return '<li class="text-xs text-neutral-300 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-300 inline-block shrink-0"></span>' + escapeHtml(f.name) + ' <span class="text-[10px] text-neutral-500 font-mono">(' + sizeStr + ')</span></li>';
-          }).join('') +
-          '</ul>';
+      if (metaCards.length > 0) {
+        html += '<div class="grid sm:grid-cols-2 gap-3 pt-4 border-t border-neutral-800/80">';
+        metaCards.forEach(function (card) {
+          html += '<div class="p-3.5 rounded-xl border border-neutral-800/80 bg-neutral-950/50">';
+          html += '<div class="text-[10px] font-bold tracking-[0.15em] uppercase text-neutral-500 mb-1">' + escapeHtml(card.label) + '</div>';
+          html += '<div class="text-xs font-medium text-neutral-200 truncate">' + escapeHtml(card.val) + '</div>';
+          html += '</div>';
+        });
+        html += '</div>';
       }
 
-      // Coverage items stacked vertically
-      var coverageHtml = '';
-      if (checkedCoverage.length > 0) {
-        coverageHtml = '<ul class="space-y-1.5 pl-3 border-l-2 border-amber-400/60 mt-2">' +
-          checkedCoverage.map(function (c) {
-            return '<li class="text-xs text-neutral-300 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-300 inline-block shrink-0"></span>' + escapeHtml(c) + '</li>';
-          }).join('') +
-          '</ul>';
+      // 4. Attachments & Links
+      if (attachedFiles.length > 0 || refLink) {
+        html += '<div class="pt-4 border-t border-neutral-800/80">';
+        html += '<div class="text-[10px] font-bold tracking-[0.2em] uppercase text-neutral-400 mb-2">' + (lang === 'fr' ? 'RÉFÉRENCES &amp; FICHIERS' : 'REFERENCES &amp; ATTACHMENTS') + '</div>';
+        html += '<div class="flex flex-wrap gap-2">';
+        if (refLink) {
+          html += '<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-neutral-800 bg-neutral-950/80 text-amber-300 text-xs font-mono truncate max-w-full"><svg class="w-3.5 h-3.5 text-amber-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg><span class="truncate max-w-[280px]">' + escapeHtml(refLink) + '</span></div>';
+        }
+        attachedFiles.forEach(function (f) {
+          var sizeKb = Math.round(f.size / 1024);
+          var sizeStr = sizeKb > 1024 ? (sizeKb / 1024).toFixed(1) + ' MB' : sizeKb + ' KB';
+          html += '<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-neutral-800 bg-neutral-950/80 text-neutral-200 text-xs font-mono"><svg class="w-3.5 h-3.5 text-amber-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg><span class="truncate max-w-[200px]">' + escapeHtml(f.name) + '</span><span class="text-[10px] text-neutral-500">(' + sizeStr + ')</span></div>';
+        });
+        html += '</div>';
+        html += '</div>';
       }
 
-      var items = [
-        { label: serviceScopeLabel, html: scopesContent, raw: serviceName + (scopeTitles.length ? ' — ' + scopeTitles.join(', ') : '') },
-        { label: estimatedInvestLabel, html: investmentDisplay, raw: userBudget || 'Flexible' },
-        { label: labels.project, value: fieldValue('project') },
-        { label: labels.stage, value: fieldValue('stage') },
-        { label: labels.format, value: fieldValue('format') },
-        { label: labels.style, value: fieldValue('style') },
-        { label: labels.coverage, html: coverageHtml, raw: checkedCoverage.join(', ') },
-        { label: labels.engine, value: fieldValue('engine') },
-        { label: labels.budgetOpt, value: fieldValue('optimization') },
-        { label: labels.concept, value: fieldValue('concept_provided') },
-        { label: labels.platform, value: fieldValue('platform') },
-        { label: labels.state, value: fieldValue('project_state') },
-        { label: labels.handoff, value: fieldValue('handoff') },
-        { label: labels.dimensions, value: fieldValue('dimensions') },
-        { label: labels.usage, value: fieldValue('commercial_usage') },
-        { label: labels.deadline, value: fieldValue('deadline') },
-        { label: labels.company, value: fieldValue('company') },
-        { label: labels.references, value: fieldValue('references') },
-        { label: filesLabel, html: attachedFilesHtml, raw: attachedFiles.map(function(f){ return f.name; }).join(', ') },
-        { label: labels.notes, value: fieldValue('notes') },
-        { label: labels.name, value: fieldValue('name') },
-        { label: labels.email, value: fieldValue('email') }
-      ].filter(function (it) {
-        return it.html || (it.value && it.value.trim().length > 0);
-      });
+      // 5. Brief Notes
+      if (notes) {
+        html += '<div class="pt-4 border-t border-neutral-800/80">';
+        html += '<div class="text-[10px] font-bold tracking-[0.2em] uppercase text-neutral-400 mb-2">' + (lang === 'fr' ? 'NOTES DU BRIEF' : 'TECHNICAL &amp; FUNCTIONAL NOTES') + '</div>';
+        html += '<div class="p-3.5 rounded-xl border border-neutral-800/80 bg-neutral-950/50 text-xs text-neutral-300 leading-relaxed font-sans break-words">' + escapeHtml(notes) + '</div>';
+        html += '</div>';
+      }
 
-      summaryEl.innerHTML = '<div class="space-y-4">' +
-        items.map(function (it) {
-          var val = it.html || ('<div class="text-sm font-medium text-neutral-200 break-words">' + escapeHtml(it.value) + '</div>');
-          return '<div class="flow-summary-row pb-3.5 border-b border-neutral-800/60 last:border-b-0">' +
-            '<div class="text-[10px] font-bold uppercase tracking-widest text-neutral-500 mb-1.5">' + escapeHtml(it.label) + '</div>' +
-            val +
-            '</div>';
-        }).join('') +
-        '</div>';
+      html += '</div>';
+
+      summaryEl.innerHTML = html;
 
       if (sendBtn) {
-        var serviceName = root.getAttribute('data-service-name') || 'Service';
         var toEmail = root.getAttribute('data-service-email') || 'gg28.god@gmail.com';
         var subject = 'New Project Inquiry — ' + serviceName + (scopeTitles.length ? ' (' + scopeTitles.join(', ') + ')' : '');
-        var body = items.map(function (it) {
-          var textVal = it.value || it.raw || '';
-          return textVal ? (it.label + ': ' + textVal) : '';
-        }).filter(Boolean).join('\n');
+
+        var body = 'SERVICE: ' + serviceName + '\n';
+        if (scopeTitles.length) body += 'SCOPES: ' + scopeTitles.join(' • ') + '\n';
+        if (userBudget) body += 'ESTIMATED INVESTMENT: ' + userBudget + '\n';
+        metaCards.forEach(function (c) {
+          body += c.label.toUpperCase() + ': ' + c.val + '\n';
+        });
+        if (refLink) body += 'REFERENCE LINK: ' + refLink + '\n';
+        if (attachedFiles.length) body += 'ATTACHED FILES: ' + attachedFiles.map(function(f){ return f.name; }).join(', ') + '\n';
+        if (notes) body += 'NOTES: ' + notes + '\n';
+
+        var clientName = fieldValue('name');
+        var clientEmail = fieldValue('email');
+        if (clientName) body += 'CLIENT NAME: ' + clientName + '\n';
+        if (clientEmail) body += 'CLIENT EMAIL: ' + clientEmail + '\n';
+
         if (attachedFiles.length > 0) {
           body += '\n\n*Note: ' + attachedFiles.length + ' file(s) selected (' + attachedFiles.map(function (f) { return f.name; }).join(', ') + '). Please remember to attach these files directly to this email response before sending!';
         }
+
         sendBtn.href = 'mailto:' + toEmail + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
       }
     }
