@@ -830,3 +830,43 @@ input[type="date"].flow-input::-webkit-calendar-picker-indicator:hover {
   margin-left: 8px;
 }
 
+/* Get Started Card Buttons Expanding Animation */
+.get-started-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0 !important;
+  padding: 8px 16px !important;
+  border-radius: 12px !important;
+  transition: all 0.3s cubic-bezier(0.34, 1.25, 0.64, 1) !important;
+  overflow: hidden;
+  cursor: pointer;
+}
+.get-started-btn .btn-arrow,
+.get-started-btn .cross-arrow {
+  display: inline-block;
+  opacity: 0;
+  max-width: 0;
+  transform: translateX(-6px);
+  transition: max-width 0.3s ease, opacity 0.3s ease, transform 0.3s ease, margin-left 0.3s ease !important;
+  margin-left: 0;
+  vertical-align: middle;
+}
+.get-started-btn:hover,
+.work-card:hover .get-started-btn {
+  padding-right: 22px !important;
+  background-color: #fcd34d !important;
+  border-color: #fcd34d !important;
+  color: #0a0a0a !important;
+  transform: scale(1.02);
+}
+.get-started-btn:hover .btn-arrow,
+.get-started-btn:hover .cross-arrow,
+.work-card:hover .btn-arrow,
+.work-card:hover .cross-arrow {
+  opacity: 1;
+  max-width: 18px;
+  transform: translateX(0);
+  margin-left: 6px;
+  color: #0a0a0a !important;
+}
+
