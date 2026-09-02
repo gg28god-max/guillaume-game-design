@@ -51,7 +51,7 @@
 
     function validateStep(n) {
       if (n === 1) {
-        return !!selectedOption('scope');
+        return root.querySelectorAll('.option-card[data-option-group="scope"] input:checked').length > 0;
       }
       if (n === 2) {
         var req2 = root.querySelectorAll('.flow-step[data-step="2"] [required]');
@@ -81,15 +81,19 @@
       btn.classList.toggle('pointer-events-none', !valid);
     }
 
-    // Radio option cards in Step 1
-    Array.prototype.forEach.call(root.querySelectorAll('.option-card input[type="radio"]'), function (input) {
+    // Option cards (checkboxes or radios) in Step 1
+    Array.prototype.forEach.call(root.querySelectorAll('.option-card input'), function (input) {
       input.addEventListener('change', function () {
         var card = input.closest('.option-card');
-        var group = card.getAttribute('data-option-group');
-        Array.prototype.forEach.call(root.querySelectorAll('.option-card[data-option-group="' + group + '"]'), function (c) {
-          c.classList.remove('is-selected');
-        });
-        card.classList.add('is-selected');
+        if (input.type === 'radio') {
+          var group = card.getAttribute('data-option-group');
+          Array.prototype.forEach.call(root.querySelectorAll('.option-card[data-option-group="' + group + '"]'), function (c) {
+            c.classList.remove('is-selected');
+          });
+          if (input.checked) card.classList.add('is-selected');
+        } else {
+          card.classList.toggle('is-selected', input.checked);
+        }
         updateNextState(1);
       });
     });
@@ -249,9 +253,21 @@
         : { scope: 'Scope / Deliverable', project: 'Project Name', stage: 'Production Stage', format: 'Deliverable Format', style: 'Visual Style', coverage: 'Pipeline Coverage', engine: 'Target Engine', budgetOpt: 'Optimization Budget', concept: 'Concept Provided?', platform: 'Platform & Inputs', state: 'Current Project State', handoff: 'Handoff Requirement', dimensions: 'Target Dimensions', usage: 'Commercial Usage', deadline: 'Target Deadline', budget: 'Budget Range', company: 'Studio / Company', notes: 'Notes & References', name: 'Name', email: 'Email' };
 
       var serviceName = root.getAttribute('data-service-name') || 'Service';
-      var scopeCard = selectedOption('scope');
-      var scopeTitle = scopeCard ? (scopeCard.querySelector('.option-title') ? scopeCard.querySelector('.option-title').textContent.trim() : scopeCard.textContent.trim()) : '';
-      var estimatedRange = scopeCard ? (scopeCard.getAttribute('data-estimated') || scopeCard.getAttribute('data-price-range') || '') : '';
+      var checkedScopeCards = Array.prototype.slice.call(root.querySelectorAll('.option-card[data-option-group="scope"] input:checked')).map(function (input) {
+        return input.closest('.option-card');
+      });
+
+      var scopeTitles = checkedScopeCards.map(function (card) {
+        var titleEl = card.querySelector('.option-title');
+        return titleEl ? titleEl.textContent.trim() : card.textContent.trim();
+      });
+
+      var estimatedRanges = checkedScopeCards.map(function (card) {
+        return card.getAttribute('data-estimated') || card.getAttribute('data-price-range') || '';
+      }).filter(Boolean);
+
+      var estimatedRangeText = estimatedRanges.join(' + ');
+      var scopeDisplay = scopeTitles.join(' • ');
       var userBudget = fieldValue('budget');
 
       // Collect checked chips for multi-select groups (e.g., coverage)
@@ -261,7 +277,7 @@
         checkedCoverage.push(labelEl ? labelEl.textContent.trim() : cb.value);
       });
 
-      var serviceScopeLabel = lang === 'fr' ? 'Service & Portée' : 'Service & Scope';
+      var serviceScopeLabel = lang === 'fr' ? (scopeTitles.length > 1 ? 'Service & Portées' : 'Service & Portée') : (scopeTitles.length > 1 ? 'Service & Scopes' : 'Service & Scope');
       var budgetBracketLabel = lang === 'fr' ? 'Fourchette budgétaire' : 'Budget Bracket';
       var estimatedInvestLabel = lang === 'fr' ? 'Investissement estimé' : 'Estimated Investment';
       var userSelectedNote = lang === 'fr' ? ' (sélectionné)' : ' (Selected by user)';
@@ -272,9 +288,9 @@
       var filesLabel = lang === 'fr' ? 'Images / Fichiers joints' : 'Attached Images / Files';
 
       var rows = [
-        [serviceScopeLabel, serviceName + (scopeTitle ? ' — ' + scopeTitle : '')],
+        [serviceScopeLabel, serviceName + (scopeDisplay ? ' — ' + scopeDisplay : '')],
         [budgetBracketLabel, userBudget ? (userBudget + userSelectedNote) : ''],
-        [estimatedInvestLabel, estimatedRange ? (estimatedRange + '*') : ''],
+        [estimatedInvestLabel, estimatedRangeText ? (estimatedRangeText + '*') : ''],
         [labels.project, fieldValue('project')],
         [labels.stage, fieldValue('stage')],
         [labels.format, fieldValue('format')],
@@ -306,7 +322,7 @@
       if (sendBtn) {
         var serviceName = root.getAttribute('data-service-name') || 'Service';
         var toEmail = root.getAttribute('data-service-email') || 'gg28.god@gmail.com';
-        var subject = 'New Project Inquiry — ' + serviceName + (scopeTitle ? ' (' + scopeTitle + ')' : '');
+        var subject = 'New Project Inquiry — ' + serviceName + (scopeTitles.length ? ' (' + scopeTitles.join(', ') + ')' : '');
         var body = rows.map(function (r) { return r[0] + ': ' + r[1]; }).join('\n');
         if (attachedFiles.length > 0) {
           body += '\n\n*Note: ' + attachedFiles.length + ' file(s) selected (' + attachedFiles.map(function (f) { return f.name; }).join(', ') + '). Please remember to attach these files directly to this email response before sending!';

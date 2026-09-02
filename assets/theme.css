@@ -588,15 +588,15 @@ html.light .flow-progress-line.is-done { background: #a07830; }
 .option-card + .option-card { margin-top: 14px; }
 .option-card:hover { border-color: #404040; }
 .option-card.is-selected { border-color: #fcd34d; background: rgba(252, 211, 77, 0.06); }
-.option-check { width: 20px; height: 20px; border-radius: 999px; border: 1px solid #404040; flex: 0 0 auto; position: relative; transition: border-color .2s ease; }
-.option-card.is-selected .option-check { border-color: #fcd34d; }
-.option-card.is-selected .option-check::after { content: ''; position: absolute; inset: 4px; border-radius: 999px; background: #fcd34d; }
+.option-check { width: 22px; height: 22px; border-radius: 6px; border: 1px solid #404040; flex: 0 0 auto; position: relative; transition: all .2s ease; display: flex; align-items: center; justify-content: center; }
+.option-card.is-selected .option-check { border-color: #fcd34d; background: #fcd34d; }
+.option-card.is-selected .option-check::after { content: '✓'; color: #0a0a0a; font-size: 13px; font-weight: 900; line-height: 1; }
 html.light .option-card { background: #fff; border-color: #e5e5e5; }
 html.light .option-card:hover { border-color: #a3a3a3; }
 html.light .option-card.is-selected { border-color: #a07830; background: rgba(160, 120, 48, 0.07); }
 html.light .option-check { border-color: #a3a3a3; }
-html.light .option-card.is-selected .option-check { border-color: #a07830; }
-html.light .option-card.is-selected .option-check::after { background: #a07830; }
+html.light .option-card.is-selected .option-check { border-color: #a07830; background: #a07830; }
+html.light .option-card.is-selected .option-check::after { color: #fff; }
 
 .flow-label { display: block; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #737373; margin-bottom: 8px; }
 html.light .flow-label { color: #71717a; }
