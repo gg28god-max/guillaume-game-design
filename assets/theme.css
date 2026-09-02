@@ -556,17 +556,25 @@ html.light .dodo-logo { --logo: url(dodo-body-light.png); --lid: #ffffff; }
    contact details, review, then send as a plain mailto — there is no
    backend, so "send" is exactly what it looks like. */
 .flow-progress { display: flex; align-items: center; margin-bottom: 48px; }
-.flow-progress-step { display: flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: .15em; text-transform: uppercase; color: #525252; white-space: nowrap; transition: color .25s ease; }
-.flow-progress-num { width: 24px; height: 24px; border-radius: 999px; border: 1px solid #404040; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #737373; transition: border-color .25s ease, color .25s ease, background-color .25s ease; flex: 0 0 auto; }
-.flow-progress-step.is-active { color: #e5e5e5; }
+.flow-progress-step { display: flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: .15em; text-transform: uppercase; color: #525252; white-space: nowrap; transition: all .25s ease; background: transparent; border: none; padding: 0; cursor: pointer; font-family: inherit; }
+.flow-progress-step:hover { color: #d4d4d4; }
+.flow-progress-step:hover .flow-progress-num { border-color: #737373; color: #e5e5e5; }
+.flow-progress-num { width: 24px; height: 24px; border-radius: 999px; border: 1px solid #404040; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #737373; transition: border-color .25s ease, color .25s ease, background-color .25s ease, transform .25s ease, box-shadow .25s ease; flex: 0 0 auto; }
+.flow-progress-step.is-active { color: #e5e5e5; cursor: default; }
 .flow-progress-step.is-active .flow-progress-num { border-color: #fcd34d; color: #fcd34d; }
+.flow-progress-step.is-done { color: #a3a3a3; cursor: pointer; }
+.flow-progress-step.is-done:hover { color: #fcd34d; }
 .flow-progress-step.is-done .flow-progress-num { background: #fcd34d; border-color: #fcd34d; color: #0a0a0a; }
+.flow-progress-step.is-done:hover .flow-progress-num { transform: scale(1.08); box-shadow: 0 0 12px rgba(252, 211, 77, 0.4); }
 .flow-progress-line { flex: 1 1 auto; height: 1px; background: #262626; margin: 0 14px; transition: background-color .25s ease; }
 .flow-progress-line.is-done { background: #fcd34d; }
 html.light .flow-progress-step { color: #a3a3a3; }
+html.light .flow-progress-step:hover { color: #52525b; }
 html.light .flow-progress-num { border-color: #d4d4d4; color: #737373; }
 html.light .flow-progress-step.is-active { color: #171717; }
 html.light .flow-progress-step.is-active .flow-progress-num { border-color: #a07830; color: #a07830; }
+html.light .flow-progress-step.is-done { color: #71717a; }
+html.light .flow-progress-step.is-done:hover { color: #a07830; }
 html.light .flow-progress-step.is-done .flow-progress-num { background: #a07830; border-color: #a07830; color: #fff; }
 html.light .flow-progress-line { background: #e5e5e5; }
 html.light .flow-progress-line.is-done { background: #a07830; }

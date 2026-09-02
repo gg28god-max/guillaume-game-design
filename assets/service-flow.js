@@ -135,6 +135,28 @@
       });
     });
 
+    // Step indicators as interactive buttons (jump back/forward)
+    Array.prototype.forEach.call(progressSteps, function (p) {
+      p.addEventListener('click', function () {
+        var targetStep = Number(p.getAttribute('data-step'));
+        if (targetStep === current) return;
+        if (targetStep < current) {
+          showStep(targetStep);
+          return;
+        }
+        var canProceed = true;
+        for (var s = current; s < targetStep; s++) {
+          if (!validateStep(s)) {
+            canProceed = false;
+            break;
+          }
+        }
+        if (canProceed) {
+          showStep(targetStep);
+        }
+      });
+    });
+
     // Escape hatch: "Not sure what you need yet? Send an open message"
     Array.prototype.forEach.call(root.querySelectorAll('[data-flow-escape]'), function (btn) {
       btn.addEventListener('click', function (e) {
