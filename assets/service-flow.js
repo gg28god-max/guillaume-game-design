@@ -49,25 +49,46 @@
       return el ? el.value.trim() : '';
     }
 
-    function validateStep(n) {
+    function validateStep(n, showErrors) {
       if (n === 1) {
         return root.querySelectorAll('.option-card[data-option-group="scope"] input:checked').length > 0;
       }
       if (n === 2) {
         var req2 = root.querySelectorAll('.flow-step[data-step="2"] [required]');
+        var valid2 = true;
         for (var i = 0; i < req2.length; i++) {
-          if (!req2[i].value.trim()) return false;
+          var el2 = req2[i];
+          if (!el2.value.trim()) {
+            valid2 = false;
+            if (showErrors) el2.classList.add('border-amber-400/80');
+          } else {
+            el2.classList.remove('border-amber-400/80');
+          }
         }
-        return true;
+        return valid2;
       }
       if (n === 3) {
         var req3 = root.querySelectorAll('.flow-step[data-step="3"] [required]');
+        var valid3 = true;
         for (var j = 0; j < req3.length; j++) {
-          if (!req3[j].value.trim()) return false;
+          var el3 = req3[j];
+          if (!el3.value.trim()) {
+            valid3 = false;
+            if (showErrors) el3.classList.add('border-amber-400/80');
+          } else {
+            el3.classList.remove('border-amber-400/80');
+          }
         }
         var email = root.querySelector('.flow-step[data-step="3"] input[type="email"]');
-        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) return false;
-        return true;
+        if (email) {
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+            valid3 = false;
+            if (showErrors) email.classList.add('border-amber-400/80');
+          } else {
+            email.classList.remove('border-amber-400/80');
+          }
+        }
+        return valid3;
       }
       return true;
     }
@@ -75,7 +96,7 @@
     function updateNextState(n) {
       var btn = root.querySelector('.flow-step[data-step="' + n + '"] [data-flow-next]');
       if (!btn) return;
-      var valid = validateStep(n);
+      var valid = validateStep(n, false);
       btn.disabled = !valid;
       btn.classList.toggle('opacity-40', !valid);
       btn.classList.toggle('pointer-events-none', !valid);
@@ -130,7 +151,7 @@
     Array.prototype.forEach.call(root.querySelectorAll('[data-flow-next]'), function (btn) {
       btn.addEventListener('click', function () {
         var n = Number(btn.closest('.flow-step').getAttribute('data-step'));
-        if (!validateStep(n)) return;
+        if (!validateStep(n, true)) return;
         showStep(n + 1);
       });
     });
@@ -152,7 +173,7 @@
         }
         var canProceed = true;
         for (var s = current; s < targetStep; s++) {
-          if (!validateStep(s)) {
+          if (!validateStep(s, true)) {
             canProceed = false;
             break;
           }
@@ -167,11 +188,18 @@
     Array.prototype.forEach.call(root.querySelectorAll('[data-flow-escape]'), function (btn) {
       btn.addEventListener('click', function (e) {
         e.preventDefault();
-        var firstOption = root.querySelector('.option-card input[type="radio"]');
+        var customOpt = root.querySelector('.option-card input[value="Custom Scope / Special Request"]');
+        var firstOption = customOpt || root.querySelector('.option-card input[type="checkbox"], .option-card input[type="radio"]');
         if (firstOption) {
           firstOption.checked = true;
           firstOption.closest('.option-card').classList.add('is-selected');
           updateNextState(1);
+        }
+        var notesArea = root.querySelector('textarea[name="notes"]');
+        if (notesArea && !notesArea.value.trim()) {
+          notesArea.value = (currentLang() === 'fr' 
+            ? "Je souhaite discuter d'un projet sur mesure / message libre." 
+            : "I would like to discuss a custom project scope / open consultation.");
         }
         showStep(2);
       });
