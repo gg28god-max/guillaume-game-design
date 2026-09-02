@@ -183,14 +183,11 @@
         ? { scope: 'Portée / Livrable', project: 'Projet', stage: 'Étape de prod.', format: 'Format', style: 'Style / Genre', coverage: 'Couverture pipeline', engine: 'Moteur cible', budgetOpt: 'Budget optimisation', concept: 'Concept fourni ?', platform: 'Plateforme', state: 'État actuel', handoff: 'Livrable attendu', dimensions: 'Dimensions / Ratio', usage: 'Usage commercial', deadline: 'Échéance', budget: 'Fourchette budget', company: 'Studio / Entreprise', notes: 'Notes & Références', name: 'Nom', email: 'Courriel' }
         : { scope: 'Scope / Deliverable', project: 'Project Name', stage: 'Production Stage', format: 'Deliverable Format', style: 'Visual Style', coverage: 'Pipeline Coverage', engine: 'Target Engine', budgetOpt: 'Optimization Budget', concept: 'Concept Provided?', platform: 'Platform & Inputs', state: 'Current Project State', handoff: 'Handoff Requirement', dimensions: 'Target Dimensions', usage: 'Commercial Usage', deadline: 'Target Deadline', budget: 'Budget Range', company: 'Studio / Company', notes: 'Notes & References', name: 'Name', email: 'Email' };
 
-      var bracketEl = root.querySelector('[data-flow-bracket]');
+      var serviceName = root.getAttribute('data-service-name') || 'Service';
       var scopeCard = selectedOption('scope');
       var scopeTitle = scopeCard ? (scopeCard.querySelector('.option-title') ? scopeCard.querySelector('.option-title').textContent.trim() : scopeCard.textContent.trim()) : '';
-      var priceRange = scopeCard ? (scopeCard.getAttribute('data-price-range') || '') : '';
-
-      if (bracketEl) {
-        bracketEl.textContent = priceRange ? (priceRange + '*') : 'Custom / Variable*';
-      }
+      var estimatedRange = scopeCard ? (scopeCard.getAttribute('data-estimated') || scopeCard.getAttribute('data-price-range') || '') : '';
+      var userBudget = fieldValue('budget');
 
       // Collect checked chips for multi-select groups (e.g., coverage)
       var checkedCoverage = [];
@@ -199,9 +196,15 @@
         checkedCoverage.push(labelEl ? labelEl.textContent.trim() : cb.value);
       });
 
+      var serviceScopeLabel = lang === 'fr' ? 'Service & Portée' : 'Service & Scope';
+      var budgetBracketLabel = lang === 'fr' ? 'Fourchette budgétaire' : 'Budget Bracket';
+      var estimatedInvestLabel = lang === 'fr' ? 'Investissement estimé' : 'Estimated Investment';
+      var userSelectedNote = lang === 'fr' ? ' (sélectionné)' : ' (Selected by user)';
+
       var rows = [
-        [labels.scope, scopeTitle],
-        [(lang === 'fr' ? 'Fourchette estimée' : 'Estimated Scope Bracket'), priceRange],
+        [serviceScopeLabel, serviceName + (scopeTitle ? ' — ' + scopeTitle : '')],
+        [budgetBracketLabel, userBudget ? (userBudget + userSelectedNote) : ''],
+        [estimatedInvestLabel, estimatedRange ? (estimatedRange + '*') : ''],
         [labels.project, fieldValue('project')],
         [labels.stage, fieldValue('stage')],
         [labels.format, fieldValue('format')],
@@ -216,7 +219,6 @@
         [labels.dimensions, fieldValue('dimensions')],
         [labels.usage, fieldValue('commercial_usage')],
         [labels.deadline, fieldValue('deadline')],
-        [labels.budget, fieldValue('budget')],
         [labels.company, fieldValue('company')],
         [labels.notes, fieldValue('references') || fieldValue('notes')],
         [labels.name, fieldValue('name')],
