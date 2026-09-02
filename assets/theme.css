@@ -604,3 +604,17 @@ html.light .flow-input:focus, html.light .flow-textarea:focus { border-color: #a
 html.light .flow-summary { background: #f7f7f7; border-color: #e5e5e5; }
 .flow-summary-row { border-bottom: 1px solid rgba(115, 115, 115, 0.2); }
 .flow-summary-row:last-child { border-bottom: none; }
+
+.flow-select { width: 100%; background: #0a0a0a; border: 1px solid #262626; border-radius: 10px; padding: 12px 16px; font-size: 14px; color: #e5e5e5; outline: none; transition: border-color .2s ease; font-family: inherit; cursor: pointer; }
+.flow-select:focus { border-color: #fcd34d; }
+html.light .flow-select { background: #fff; border-color: #d4d4d4; color: #171717; }
+html.light .flow-select:focus { border-color: #a07830; }
+
+.chip-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip-option { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 999px; border: 1px solid #262626; font-size: 12px; color: #a3a3a3; cursor: pointer; transition: all .2s ease; user-select: none; background: #0a0a0a; }
+.chip-option:hover { border-color: #525252; color: #e5e5e5; }
+.chip-option.is-selected { border-color: #fcd34d; background: rgba(252, 211, 77, 0.12); color: #fcd34d; font-weight: 500; }
+html.light .chip-option { border-color: #e5e5e5; color: #52525b; background: #fff; }
+html.light .chip-option:hover { border-color: #a1a1aa; color: #18181b; }
+html.light .chip-option.is-selected { border-color: #a07830; background: rgba(160, 120, 48, 0.1); color: #a07830; }
+
