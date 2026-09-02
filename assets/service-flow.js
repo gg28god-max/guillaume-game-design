@@ -43,6 +43,8 @@
     }
 
     function fieldValue(name) {
+      var radio = root.querySelector('input[type="radio"][name="' + name + '"]:checked');
+      if (radio) return radio.value.trim();
       var el = root.querySelector('[name="' + name + '"]');
       return el ? el.value.trim() : '';
     }
@@ -181,8 +183,14 @@
         ? { scope: 'Portée / Livrable', project: 'Projet', stage: 'Étape de prod.', format: 'Format', style: 'Style / Genre', coverage: 'Couverture pipeline', engine: 'Moteur cible', budgetOpt: 'Budget optimisation', concept: 'Concept fourni ?', platform: 'Plateforme', state: 'État actuel', handoff: 'Livrable attendu', dimensions: 'Dimensions / Ratio', usage: 'Usage commercial', deadline: 'Échéance', budget: 'Fourchette budget', company: 'Studio / Entreprise', notes: 'Notes & Références', name: 'Nom', email: 'Courriel' }
         : { scope: 'Scope / Deliverable', project: 'Project Name', stage: 'Production Stage', format: 'Deliverable Format', style: 'Visual Style', coverage: 'Pipeline Coverage', engine: 'Target Engine', budgetOpt: 'Optimization Budget', concept: 'Concept Provided?', platform: 'Platform & Inputs', state: 'Current Project State', handoff: 'Handoff Requirement', dimensions: 'Target Dimensions', usage: 'Commercial Usage', deadline: 'Target Deadline', budget: 'Budget Range', company: 'Studio / Company', notes: 'Notes & References', name: 'Name', email: 'Email' };
 
+      var bracketEl = root.querySelector('[data-flow-bracket]');
       var scopeCard = selectedOption('scope');
       var scopeTitle = scopeCard ? (scopeCard.querySelector('.option-title') ? scopeCard.querySelector('.option-title').textContent.trim() : scopeCard.textContent.trim()) : '';
+      var priceRange = scopeCard ? (scopeCard.getAttribute('data-price-range') || '') : '';
+
+      if (bracketEl) {
+        bracketEl.textContent = priceRange ? (priceRange + '*') : 'Custom / Variable*';
+      }
 
       // Collect checked chips for multi-select groups (e.g., coverage)
       var checkedCoverage = [];
@@ -193,6 +201,7 @@
 
       var rows = [
         [labels.scope, scopeTitle],
+        [(lang === 'fr' ? 'Fourchette estimée' : 'Estimated Scope Bracket'), priceRange],
         [labels.project, fieldValue('project')],
         [labels.stage, fieldValue('stage')],
         [labels.format, fieldValue('format')],
