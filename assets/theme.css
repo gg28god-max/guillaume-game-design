@@ -613,9 +613,34 @@ html.light .flow-summary { background: #f7f7f7; border-color: #e5e5e5; }
 .flow-summary-row { border-bottom: 1px solid rgba(115, 115, 115, 0.2); }
 .flow-summary-row:last-child { border-bottom: none; }
 
-.flow-select { width: 100%; background: #0a0a0a; border: 1px solid #262626; border-radius: 10px; padding: 12px 16px; font-size: 14px; color: #e5e5e5; outline: none; transition: border-color .2s ease; font-family: inherit; cursor: pointer; }
+.flow-select {
+  width: 100%;
+  background-color: #0a0a0a;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23a3a3a3'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #262626;
+  border-radius: 10px;
+  padding: 12px 44px 12px 16px;
+  font-size: 14px;
+  color: #e5e5e5;
+  outline: none;
+  transition: border-color .2s ease;
+  font-family: inherit;
+  cursor: pointer;
+}
 .flow-select:focus { border-color: #fcd34d; }
-html.light .flow-select { background: #fff; border-color: #d4d4d4; color: #171717; }
+html.light .flow-select {
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2352525b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  border-color: #d4d4d4;
+  color: #171717;
+}
+html.light .flow-select:focus { border-color: #a07830; }
 html.light .flow-select:focus { border-color: #a07830; }
 
 .chip-grid { display: flex; flex-wrap: wrap; gap: 8px; }
