@@ -768,3 +768,24 @@ html.light [data-flow-next].opacity-40 {
   color: #a1a1aa !important;
 }
 
+/* ── Datepicker calendar input styling ────────────────────────────────── */
+input[type="date"].flow-input {
+  color-scheme: dark;
+  cursor: pointer;
+}
+html.light input[type="date"].flow-input {
+  color-scheme: light;
+}
+input[type="date"].flow-input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(0.8) sepia(1) saturate(5) hue-rotate(5deg);
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+html.light input[type="date"].flow-input::-webkit-calendar-picker-indicator {
+  filter: none;
+}
+input[type="date"].flow-input::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
