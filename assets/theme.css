@@ -926,3 +926,46 @@ html.light .cal-today { color: #a07830; }
   color: #0a0a0a !important;
 }
 
+/* Option Card & Intake Flow Mobile Responsiveness Overrides */
+@media (max-width: 639px) {
+  .option-card {
+    position: relative !important;
+    padding: 16px 16px !important;
+  }
+  .option-card .option-check {
+    position: absolute !important;
+    right: 16px !important;
+    top: 16px !important;
+  }
+  .option-card > div > div {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding-right: 32px !important;
+  }
+  .option-card > div > div > div:last-child {
+    width: 100% !important;
+    margin-top: 2px !important;
+  }
+  .option-card p.option-title {
+    margin-bottom: 2px !important;
+    font-size: 15px !important;
+    line-height: 1.35 !important;
+  }
+  .flow-progress {
+    overflow-x: auto !important;
+    padding-bottom: 6px !important;
+    margin-bottom: 28px !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .flow-progress-step {
+    font-size: 10px !important;
+    letter-spacing: 0.1em !important;
+  }
+  .flow-summary {
+    padding: 18px 16px !important;
+    border-radius: 16px !important;
+  }
+}
+
