@@ -625,7 +625,7 @@ html.light .flow-summary { background: #f7f7f7; border-color: #e5e5e5; }
 .flow-select {
   width: 100%;
   background-color: #0a0a0a;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23a3a3a3'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23fcd34d'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 16px center;
   background-size: 16px 16px;
@@ -633,24 +633,34 @@ html.light .flow-summary { background: #f7f7f7; border-color: #e5e5e5; }
   -moz-appearance: none;
   appearance: none;
   border: 1px solid #262626;
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 12px 44px 12px 16px;
-  font-size: 14px;
+  font-size: 13.5px;
   color: #e5e5e5;
-  outline: none;
-  transition: border-color .2s ease;
+  color-scheme: dark;
+  outline: none !important;
+  transition: border-color .2s ease, box-shadow .2s ease;
   font-family: inherit;
   cursor: pointer;
 }
-.flow-select:focus { border-color: #fcd34d; }
+.flow-select:focus,
+.flow-select:focus-visible {
+  border-color: #fcd34d !important;
+  box-shadow: 0 0 0 1px rgba(252, 211, 77, 0.3) !important;
+  outline: none !important;
+}
 html.light .flow-select {
   background-color: #fff;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2352525b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23a07830'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
   border-color: #d4d4d4;
   color: #171717;
+  color-scheme: light;
 }
-html.light .flow-select:focus { border-color: #a07830; }
-html.light .flow-select:focus { border-color: #a07830; }
+html.light .flow-select:focus,
+html.light .flow-select:focus-visible {
+  border-color: #a07830 !important;
+  box-shadow: 0 0 0 1px rgba(160, 120, 48, 0.3) !important;
+}
 
 .chip-grid { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip-option { display: inline-flex; align-items: center; gap: 6px; padding: 8.5px 16px; border-radius: 12px; border: 1px solid transparent; font-size: 12px; color: #a3a3a3; cursor: pointer; transition: all .2s ease; user-select: none; background: rgba(255, 255, 255, 0.05); }
