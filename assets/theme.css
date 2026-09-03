@@ -565,7 +565,7 @@ html.light .dodo-logo { --logo: url(dodo-body-light.png); --lid: #ffffff; }
 .flow-progress-step.is-done { color: #a3a3a3; cursor: pointer; }
 .flow-progress-step.is-done:hover { color: #fcd34d; }
 .flow-progress-step.is-done .flow-progress-num { background: #fcd34d; border-color: #fcd34d; color: #0a0a0a; }
-.flow-progress-step.is-done:hover .flow-progress-num { transform: scale(1.08); box-shadow: 0 0 12px rgba(252, 211, 77, 0.4); }
+.flow-progress-step.is-done:hover .flow-progress-num { transform: scale(1.08); }
 .flow-progress-line { flex: 1 1 auto; height: 1px; background: #262626; margin: 0 14px; transition: background-color .25s ease; }
 .flow-progress-line.is-done { background: #fcd34d; }
 html.light .flow-progress-step { color: #a3a3a3; }
