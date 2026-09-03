@@ -244,6 +244,136 @@
     });
   }
 
+  function setupCustomDatePicker() {
+    document.querySelectorAll('input[type="date"]').forEach(function (input) {
+      input.setAttribute('type', 'text');
+      input.setAttribute('readonly', 'true');
+      input.setAttribute('placeholder', getLang() === 'fr' ? 'Sélectionner une date...' : 'Select target date...');
+
+      var container = document.createElement('div');
+      container.style.position = 'relative';
+      container.style.display = 'inline-block';
+      container.style.width = '100%';
+
+      input.parentNode.insertBefore(container, input);
+      container.appendChild(input);
+
+      var popover = null;
+      var viewDate = new Date();
+
+      function renderCalendar() {
+        if (!popover) {
+          popover = document.createElement('div');
+          popover.className = 'custom-date-popover';
+          container.appendChild(popover);
+        }
+
+        var year = viewDate.getFullYear();
+        var month = viewDate.getMonth();
+        var isFr = getLang() === 'fr';
+
+        var monthNames = isFr ?
+          ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"] :
+          ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+        var daysOfWeek = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+
+        var firstDayOfMonth = new Date(year, month, 1).getDay();
+        var daysInMonth = new Date(year, month + 1, 0).getDate();
+        var daysInPrevMonth = new Date(year, month, 0).getDate();
+
+        var html = '<div class="cal-header">' +
+          '<span class="cal-title">' + monthNames[month] + ', ' + year + '</span>' +
+          '<div class="cal-nav">' +
+          '<button type="button" class="cal-btn prev-m">‹</button>' +
+          '<button type="button" class="cal-btn next-m">›</button>' +
+          '</div></div>';
+
+        html += '<div class="cal-weekdays">';
+        daysOfWeek.forEach(function (w) { html += '<span>' + w + '</span>'; });
+        html += '</div>';
+
+        html += '<div class="cal-days">';
+        for (var p = firstDayOfMonth - 1; p >= 0; p--) {
+          html += '<span class="day-off">' + (daysInPrevMonth - p) + '</span>';
+        }
+
+        var valParts = input.value ? input.value.split('-') : [];
+        var selY = valParts.length === 3 ? parseInt(valParts[0], 10) : -1;
+        var selM = valParts.length === 3 ? parseInt(valParts[1], 10) - 1 : -1;
+        var selD = valParts.length === 3 ? parseInt(valParts[2], 10) : -1;
+
+        var today = new Date();
+
+        for (var d = 1; d <= daysInMonth; d++) {
+          var isSel = (selY === year && selM === month && selD === d);
+          var isTod = (today.getFullYear() === year && today.getMonth() === month && today.getDate() === d);
+          var cls = 'cal-day' + (isSel ? ' is-selected' : '') + (isTod ? ' is-today' : '');
+          html += '<button type="button" class="' + cls + '" data-day="' + d + '">' + d + '</button>';
+        }
+
+        var totalCells = firstDayOfMonth + daysInMonth;
+        var rem = (42 - totalCells) % 7;
+        for (var n = 1; n <= rem; n++) {
+          html += '<span class="day-off">' + n + '</span>';
+        }
+        html += '</div>';
+
+        html += '<div class="cal-footer">' +
+          '<button type="button" class="cal-action cal-clear">' + (isFr ? 'Effacer' : 'Clear') + '</button>' +
+          '<button type="button" class="cal-action cal-today">' + (isFr ? 'Aujourd\'hui' : 'Today') + '</button>' +
+          '</div>';
+
+        popover.innerHTML = html;
+
+        popover.querySelector('.prev-m').onclick = function (e) {
+          e.stopPropagation(); viewDate.setMonth(viewDate.getMonth() - 1); renderCalendar();
+        };
+        popover.querySelector('.next-m').onclick = function (e) {
+          e.stopPropagation(); viewDate.setMonth(viewDate.getMonth() + 1); renderCalendar();
+        };
+        popover.querySelector('.cal-clear').onclick = function (e) {
+          e.stopPropagation(); input.value = ''; closePopover();
+        };
+        popover.querySelector('.cal-today').onclick = function (e) {
+          e.stopPropagation();
+          var now = new Date();
+          var mm = String(now.getMonth() + 1).padStart(2, '0');
+          var dd = String(now.getDate()).padStart(2, '0');
+          input.value = now.getFullYear() + '-' + mm + '-' + dd;
+          closePopover();
+        };
+
+        popover.querySelectorAll('.cal-day').forEach(function (btn) {
+          btn.onclick = function (e) {
+            e.stopPropagation();
+            var dayNum = btn.getAttribute('data-day');
+            var mm = String(month + 1).padStart(2, '0');
+            var dd = String(dayNum).padStart(2, '0');
+            input.value = year + '-' + mm + '-' + dd;
+            closePopover();
+          };
+        });
+      }
+
+      function closePopover() {
+        if (popover && popover.parentNode) {
+          popover.parentNode.removeChild(popover);
+          popover = null;
+        }
+      }
+
+      input.onclick = function (e) {
+        e.stopPropagation();
+        if (popover) { closePopover(); } else { renderCalendar(); }
+      };
+
+      document.addEventListener('click', function (e) {
+        if (popover && !container.contains(e.target)) { closePopover(); }
+      });
+    });
+  }
+
   function init() {
     applyTheme(getTheme());
     applyLang(getLang());
@@ -252,6 +382,7 @@
     setupVideoEmbeds();
     setupFigmaEmbeds();
     setupDodoLogo();
+    setupCustomDatePicker();
 
     document.querySelectorAll('.theme-toggle-btn').forEach(function (b) {
       b.addEventListener('click', function () {
