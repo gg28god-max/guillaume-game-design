@@ -969,3 +969,57 @@ html.light .cal-today { color: #a07830; }
   }
 }
 
+/* Sleek Circular Hamburger Button & Floating Fixed Mobile Dropdown */
+.game-more-menu-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #404040;
+  background: transparent;
+  color: #e5e5e5;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+.game-more-menu-btn:hover {
+  border-color: #fcd34d;
+  color: #fcd34d;
+}
+html.light .game-more-menu-btn {
+  border-color: #d4d4d4;
+  color: #171717;
+}
+html.light .game-more-menu-btn:hover {
+  border-color: #a07830;
+  color: #a07830;
+}
+
+@media (min-width: 1280px) {
+  .game-more-menu-btn {
+    display: none !important;
+  }
+}
+
+.game-mobile-menu {
+  position: fixed !important;
+  top: 64px !important;
+  right: 16px !important;
+  left: auto !important;
+  width: 250px !important;
+  max-width: calc(100vw - 32px) !important;
+  z-index: 9999 !important;
+  background: #0d0d0d !important;
+  border: 1px solid #262626 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7) !important;
+  padding: 12px !important;
+}
+html.light .game-mobile-menu {
+  background: #ffffff !important;
+  border-color: #e5e5e5 !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.15) !important;
+}
+

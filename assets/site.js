@@ -374,6 +374,35 @@
     });
   }
 
+  function setupMobileMenu() {
+    var btns = document.querySelectorAll('.game-more-menu-btn, #hamburger-btn, button[aria-label="Menu"]');
+    var menu = document.getElementById('mobile-menu');
+    if (!menu) return;
+
+    btns.forEach(function (btn) {
+      btn.onclick = function (e) {
+        e.stopPropagation();
+        menu.classList.toggle('hidden');
+      };
+    });
+
+    document.addEventListener('click', function (e) {
+      if (menu && !menu.classList.contains('hidden')) {
+        var isClickInside = menu.contains(e.target);
+        var isClickBtn = Array.from(btns).some(function (b) { return b.contains(e.target); });
+        if (!isClickInside && !isClickBtn) {
+          menu.classList.add('hidden');
+        }
+      }
+    });
+
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.onclick = function () {
+        menu.classList.add('hidden');
+      };
+    });
+  }
+
   function init() {
     applyTheme(getTheme());
     applyLang(getLang());
@@ -383,6 +412,7 @@
     setupFigmaEmbeds();
     setupDodoLogo();
     setupCustomDatePicker();
+    setupMobileMenu();
 
     document.querySelectorAll('.theme-toggle-btn').forEach(function (b) {
       b.addEventListener('click', function () {
