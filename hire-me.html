@@ -16,26 +16,31 @@
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: #0a0a0a; }
     ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
-    /* kept per-page rather than in theme.css since only these case-study pages use it so far */
     .brief-eyebrow { color: #fcd34d; font-family: 'Courier New', ui-monospace, monospace; }
     html.light .brief-eyebrow { color: #a07830; }
-    /* Recent-work / services rail: native scroll-snap, a dot-pill indicator
-       (Apple's iPhone lineup style) drives and reflects position rather
-       than a full JS carousel library — the site has no per-page carousel
-       script, and this doesn't need one. */
-    .work-rail { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding-top: 16px; padding-bottom: 16px; margin: -16px -12px; padding-left: 12px; padding-right: 12px; }
-    .work-rail { scrollbar-width: none; -ms-overflow-style: none; }
+    .work-rail { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding-top: 16px; padding-bottom: 16px; margin: -16px -12px; padding-left: 12px; padding-right: 12px; scrollbar-width: none; -ms-overflow-style: none; }
     .work-rail::-webkit-scrollbar { display: none; }
     .work-card { scroll-snap-align: start; flex: 0 0 auto; width: 280px; transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
     @media (min-width: 640px) { .work-card { width: 320px; } }
+    @media (min-width: 1024px) {
+      #services-rail {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+        overflow-x: visible;
+        scroll-snap-type: none;
+        margin: 0;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      #services-rail .work-card {
+        width: 100%;
+        flex: 1 1 auto;
+      }
+    }
     .work-card:hover { transform: translateY(-4px) scale(1.02); }
     .work-card img { transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
     .work-card:hover img { transform: scale(1.05); }
-    /* Services cards have different description lengths, so the rail's
-       default align-items:stretch equalizes card height but leaves the
-       Get Started button at wherever the text happens to end. Making the
-       card a column and pinning the button with margin-top:auto keeps
-       every button flush with the bottom of the row instead. */
     #services-rail .work-card { display: flex; flex-direction: column; }
     #services-rail .work-card .cross-pill { align-self: flex-start; margin-top: auto; }
     .rail-dots { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 100px; background: #1a1a1a; }
@@ -275,7 +280,7 @@
     </div>
 
   </div>
-  <div class="flex justify-center mt-6">
+  <div class="flex justify-center mt-6 lg:hidden">
     <div class="rail-dots" id="services-dots"></div>
   </div>
 </div>
