@@ -1139,15 +1139,15 @@
       var desc = isFr ? scope.frDesc : scope.enDesc;
 
       var card = document.createElement('div');
-      card.className = 'scope-option-card border rounded-2xl p-4 sm:p-5 cursor-pointer transition-all flex items-start gap-4 ' +
+      card.className = 'scope-option-card border rounded-2xl p-4 sm:p-5 cursor-pointer transition-all flex items-center gap-4 ' +
         (isSelected ? 'border-amber-400 bg-amber-400/10' : 'border-neutral-800 bg-neutral-950/60 hover:border-neutral-700');
 
       card.innerHTML =
-        '<div class="scope-checkbox w-5 h-5 rounded-lg border-2 flex items-center justify-center text-neutral-950 text-xs font-bold shrink-0 mt-0.5 transition-all ' +
-          (isSelected ? 'border-amber-400 bg-amber-400' : 'border-neutral-700 bg-transparent') + '">' +
-          (isSelected ? '✓' : '') +
+        '<div class="scope-checkbox w-6 h-6 rounded-xl border-[2.5px] flex items-center justify-center shrink-0 self-center transition-all duration-200 ' +
+          (isSelected ? 'border-amber-400 bg-amber-400 text-neutral-950 shadow-[0_0_12px_rgba(251,191,36,0.25)]' : 'border-neutral-600 bg-neutral-900/80 hover:border-neutral-400') + '">' +
+          (isSelected ? '<svg class="w-3.5 h-3.5 text-neutral-950" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>' : '') +
         '</div>' +
-        '<div>' +
+        '<div class="flex-1">' +
           '<h4 class="text-sm font-bold text-neutral-100 mb-1">' + title + '</h4>' +
           '<p class="text-xs text-neutral-400 leading-relaxed">' + desc + '</p>' +
         '</div>';
