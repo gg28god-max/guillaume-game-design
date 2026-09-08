@@ -930,38 +930,6 @@
     var scrollLeft = rail.scrollLeft;
     var maxScroll = rail.scrollWidth - rail.clientWidth;
     var current = 0;
-
-    if (maxScroll > 0 && scrollLeft >= maxScroll - 15) {
-      current = cards.length - 1;
-    } else {
-      var minDiff = Infinity;
-      cards.forEach(function (card, i) {
-        var cardOffset = card.offsetLeft - rail.offsetLeft;
-        var diff = Math.abs(cardOffset - scrollLeft);
-        if (diff < minDiff) {
-          minDiff = diff;
-          current = i;
-        }
-      });
-    }
-
-    dots.forEach(function (dot, i) {
-      dot.setAttribute('aria-current', i === current ? 'true' : 'false');
-    });
-  }
-
-  [['services-rail', 'services-dots'], ['recent-work-rail', 'recent-work-dots']].forEach(function (pair) {
-    var railId = pair[0], dotsId = pair[1];
-    var rail = document.getElementById(railId);
-    if (!rail) return;
-    buildRailDots(railId, dotsId);
-
-    var isTicking = false;
-    rail.addEventListener('scroll', function () {
-      if (!isTicking) {
-        window.requestAnimationFrame(function () {
-          updateRailDots(railId, dotsId);
-          isTicking = false;
 <!-- FOOTER -->
 <footer class="border-t border-neutral-800 py-12">
 <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
