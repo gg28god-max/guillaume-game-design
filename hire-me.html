@@ -377,12 +377,31 @@
           <label class="block text-xs font-bold tracking-[0.15em] uppercase text-neutral-400 mb-2">
             <span class="i18n" data-en="Engine & Platform Focus" data-fr="Moteur & Plateforme cible">Engine & Platform Focus</span>
           </label>
-          <select id="select-platform" class="w-full bg-neutral-950/60 border border-neutral-800 rounded-xl px-4 py-3 text-xs text-neutral-100 focus:outline-none focus:border-amber-400 transition-colors">
-            <option value="Unreal Engine 5 (UMG & C++)">Unreal Engine 5 (UMG & C++)</option>
-            <option value="Unity (UI Toolkit / UGUI)">Unity (UI Toolkit / UGUI)</option>
-            <option value="Figma / 2D Concept Art & Specs">Figma / 2D Concept Art & Specs</option>
-            <option value="Cross-Platform / Engine Agnostic">Cross-Platform / Engine Agnostic</option>
-          </select>
+          <div class="custom-select-wrapper relative w-full" id="wrapper-select-platform">
+            <button type="button" class="custom-select-trigger w-full bg-neutral-950/80 border border-neutral-800 rounded-2xl px-4 py-3 text-xs text-neutral-100 flex items-center justify-between focus:outline-none hover:border-neutral-700 transition-all cursor-pointer">
+              <span class="custom-select-value">Unreal Engine 5 (UMG & C++)</span>
+              <svg class="custom-select-arrow w-4 h-4 text-amber-300 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="custom-select-options hidden absolute top-[calc(100%+6px)] left-0 right-0 z-50 bg-neutral-950/95 border border-neutral-800 rounded-2xl p-1.5 shadow-2xl backdrop-blur-xl space-y-1">
+              <button type="button" data-value="Unreal Engine 5 (UMG & C++)" class="custom-option w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-medium text-neutral-200 hover:bg-amber-400/10 hover:text-amber-300 flex items-center justify-between transition-all cursor-pointer">
+                <span>Unreal Engine 5 (UMG & C++)</span>
+                <span class="opt-check text-amber-300 font-bold hidden">✓</span>
+              </button>
+              <button type="button" data-value="Unity (UI Toolkit / UGUI)" class="custom-option w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-medium text-neutral-200 hover:bg-amber-400/10 hover:text-amber-300 flex items-center justify-between transition-all cursor-pointer">
+                <span>Unity (UI Toolkit / UGUI)</span>
+                <span class="opt-check text-amber-300 font-bold hidden">✓</span>
+              </button>
+              <button type="button" data-value="Figma / 2D Concept Art & Specs" class="custom-option w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-medium text-neutral-200 hover:bg-amber-400/10 hover:text-amber-300 flex items-center justify-between transition-all cursor-pointer">
+                <span>Figma / 2D Concept Art & Specs</span>
+                <span class="opt-check text-amber-300 font-bold hidden">✓</span>
+              </button>
+              <button type="button" data-value="Cross-Platform / Engine Agnostic" class="custom-option w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-medium text-neutral-200 hover:bg-amber-400/10 hover:text-amber-300 flex items-center justify-between transition-all cursor-pointer">
+                <span>Cross-Platform / Engine Agnostic</span>
+                <span class="opt-check text-amber-300 font-bold hidden">✓</span>
+              </button>
+            </div>
+            <input type="hidden" id="select-platform" value="Unreal Engine 5 (UMG & C++)"/>
+          </div>
         </div>
       </div>
 
@@ -391,11 +410,27 @@
         <label class="block text-xs font-bold tracking-[0.15em] uppercase text-neutral-400 mb-2">
           <span class="i18n" data-en="Current Production Stage" data-fr="Étape actuelle de production">Current Production Stage</span>
         </label>
-        <select id="select-stage" class="w-full bg-neutral-950/60 border border-neutral-800 rounded-xl px-4 py-3 text-xs text-neutral-100 focus:outline-none focus:border-amber-400 transition-colors">
-          <option value="Pre-production / Concept Phase">Pre-production / Concept Phase</option>
-          <option value="Production / Asset Creation (V1)">Production / Asset Creation (V1)</option>
-          <option value="Live Game / DLC / Refactor">Live Game / DLC / Refactor</option>
-        </select>
+        <div class="custom-select-wrapper relative w-full" id="wrapper-select-stage">
+          <button type="button" class="custom-select-trigger w-full bg-neutral-950/80 border border-neutral-800 rounded-2xl px-4 py-3 text-xs text-neutral-100 flex items-center justify-between focus:outline-none hover:border-neutral-700 transition-all cursor-pointer">
+            <span class="custom-select-value">Pre-production / Concept Phase</span>
+            <svg class="custom-select-arrow w-4 h-4 text-amber-300 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="custom-select-options hidden absolute top-[calc(100%+6px)] left-0 right-0 z-50 bg-neutral-950/95 border border-neutral-800 rounded-2xl p-1.5 shadow-2xl backdrop-blur-xl space-y-1">
+            <button type="button" data-value="Pre-production / Concept Phase" class="custom-option w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-medium text-neutral-200 hover:bg-amber-400/10 hover:text-amber-300 flex items-center justify-between transition-all cursor-pointer">
+              <span>Pre-production / Concept Phase</span>
+              <span class="opt-check text-amber-300 font-bold hidden">✓</span>
+            </button>
+            <button type="button" data-value="Production / Asset Creation (V1)" class="custom-option w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-medium text-neutral-200 hover:bg-amber-400/10 hover:text-amber-300 flex items-center justify-between transition-all cursor-pointer">
+              <span>Production / Asset Creation (V1)</span>
+              <span class="opt-check text-amber-300 font-bold hidden">✓</span>
+            </button>
+            <button type="button" data-value="Live Game / DLC / Refactor" class="custom-option w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-medium text-neutral-200 hover:bg-amber-400/10 hover:text-amber-300 flex items-center justify-between transition-all cursor-pointer">
+              <span>Live Game / DLC / Refactor</span>
+              <span class="opt-check text-amber-300 font-bold hidden">✓</span>
+            </button>
+          </div>
+          <input type="hidden" id="select-stage" value="Pre-production / Concept Phase"/>
+        </div>
       </div>
 
       <!-- References & Links -->
@@ -1363,6 +1398,9 @@
     if (nameInput) nameInput.addEventListener('input', validateStep3);
     if (emailInput) emailInput.addEventListener('input', validateStep3);
 
+    // Custom Select Dropdowns
+    initCustomSelects();
+
     // Language toggle listener
     document.querySelectorAll('.lang-toggle-btn').forEach(function (b) {
       b.addEventListener('click', function () {
@@ -1372,6 +1410,83 @@
             if (currentStep === 3) updateReviewSummary();
           }
         }, 50);
+      });
+    });
+  }
+
+  function initCustomSelects() {
+    var wrappers = document.querySelectorAll('.custom-select-wrapper');
+    wrappers.forEach(function (wrapper) {
+      var trigger = wrapper.querySelector('.custom-select-trigger');
+      var optionsMenu = wrapper.querySelector('.custom-select-options');
+      var valSpan = wrapper.querySelector('.custom-select-value');
+      var arrow = wrapper.querySelector('.custom-select-arrow');
+      var hiddenInput = wrapper.querySelector('input[type="hidden"]');
+      var options = wrapper.querySelectorAll('.custom-option');
+
+      function updateState() {
+        var currentVal = hiddenInput.value;
+        options.forEach(function (opt) {
+          var optVal = opt.getAttribute('data-value');
+          var check = opt.querySelector('.opt-check');
+          if (optVal === currentVal) {
+            opt.classList.add('bg-amber-400/10', 'text-amber-300');
+            opt.classList.remove('text-neutral-200');
+            if (check) check.classList.remove('hidden');
+          } else {
+            opt.classList.remove('bg-amber-400/10', 'text-amber-300');
+            opt.classList.add('text-neutral-200');
+            if (check) check.classList.add('hidden');
+          }
+        });
+      }
+
+      trigger.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var isHidden = optionsMenu.classList.contains('hidden');
+
+        document.querySelectorAll('.custom-select-options').forEach(function (m) {
+          m.classList.add('hidden');
+        });
+        document.querySelectorAll('.custom-select-trigger').forEach(function (t) {
+          t.classList.remove('border-amber-400');
+        });
+        document.querySelectorAll('.custom-select-arrow').forEach(function (a) {
+          a.classList.remove('rotate-180');
+        });
+
+        if (isHidden) {
+          optionsMenu.classList.remove('hidden');
+          trigger.classList.add('border-amber-400');
+          if (arrow) arrow.classList.add('rotate-180');
+        }
+      });
+
+      options.forEach(function (opt) {
+        opt.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var selectedVal = opt.getAttribute('data-value');
+          hiddenInput.value = selectedVal;
+          valSpan.textContent = selectedVal;
+          updateState();
+          optionsMenu.classList.add('hidden');
+          trigger.classList.remove('border-amber-400');
+          if (arrow) arrow.classList.remove('rotate-180');
+        });
+      });
+
+      updateState();
+    });
+
+    document.addEventListener('click', function () {
+      document.querySelectorAll('.custom-select-options').forEach(function (m) {
+        m.classList.add('hidden');
+      });
+      document.querySelectorAll('.custom-select-trigger').forEach(function (t) {
+        t.classList.remove('border-amber-400');
+      });
+      document.querySelectorAll('.custom-select-arrow').forEach(function (a) {
+        a.classList.remove('rotate-180');
       });
     });
   }
