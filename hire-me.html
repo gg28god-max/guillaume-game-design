@@ -22,11 +22,11 @@
     .work-rail::-webkit-scrollbar { display: none; }
     .work-card { scroll-snap-align: start; flex: 0 0 auto; width: 280px; transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
     @media (min-width: 640px) { .work-card { width: 320px; } }
-    @media (min-width: 1024px) {
+    @media (min-width: 768px) {
       #services-rail {
         display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px;
         overflow-x: visible;
         scroll-snap-type: none;
         margin: 0;
@@ -280,7 +280,7 @@
     </div>
 
   </div>
-  <div class="flex justify-center mt-6 lg:hidden">
+  <div class="flex justify-center mt-6 md:hidden">
     <div class="rail-dots" id="services-dots"></div>
   </div>
 </div>
