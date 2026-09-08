@@ -290,31 +290,34 @@
   <div class="bg-neutral-900/60 border border-neutral-800 rounded-3xl p-6 sm:p-10">
     
     <!-- Stepper Progress Header -->
-    <div class="flex items-center gap-4 sm:gap-6 mb-10 overflow-x-auto pb-2">
+    <div class="flex items-center justify-between gap-2 sm:gap-4 mb-10 overflow-hidden w-full">
       <!-- Step 1 Indicator -->
-      <button id="step-btn-1" type="button" class="flex items-center gap-3 text-xs font-bold tracking-[0.2em] uppercase text-neutral-100 cursor-pointer whitespace-nowrap">
-        <span id="step-num-1" class="w-7 h-7 rounded-full border-2 border-amber-400 text-amber-300 flex items-center justify-center text-xs font-bold">1</span>
-        <span class="i18n" data-en="SCOPE" data-fr="PORTÉE">SCOPE</span>
+      <button id="step-btn-1" type="button" class="flex items-center gap-2 sm:gap-3 text-xs font-bold tracking-[0.15em] uppercase text-neutral-100 cursor-pointer shrink-0">
+        <span id="step-num-1" class="w-6 h-6 sm:w-7 sm:h-7 rounded-full border-2 border-amber-400 text-amber-300 flex items-center justify-center text-xs font-bold shrink-0">1</span>
+        <span class="i18n hidden md:inline whitespace-nowrap" data-en="SCOPE" data-fr="PORTÉE">SCOPE</span>
+        <span class="i18n md:hidden whitespace-nowrap" data-en="SCOPE" data-fr="PORTÉE">SCOPE</span>
       </button>
 
-      <div class="flex-1 h-px bg-neutral-800 min-w-[20px] relative overflow-hidden">
+      <div class="flex-1 h-0.5 bg-neutral-800 min-w-[12px] relative overflow-hidden rounded mx-1">
         <div id="step-line-1" class="absolute inset-y-0 left-0 w-0 bg-amber-400 transition-all duration-300"></div>
       </div>
 
       <!-- Step 2 Indicator -->
-      <button id="step-btn-2" type="button" class="flex items-center gap-3 text-xs font-bold tracking-[0.2em] uppercase text-neutral-500 cursor-pointer whitespace-nowrap">
-        <span id="step-num-2" class="w-7 h-7 rounded-full border-2 border-neutral-800 text-neutral-500 flex items-center justify-center text-xs font-bold">2</span>
-        <span class="i18n" data-en="BRIEF & CONSTRAINTS" data-fr="BRIEF & CONTRAINTES">BRIEF & CONSTRAINTS</span>
+      <button id="step-btn-2" type="button" class="flex items-center gap-2 sm:gap-3 text-xs font-bold tracking-[0.15em] uppercase text-neutral-500 cursor-pointer shrink-0">
+        <span id="step-num-2" class="w-6 h-6 sm:w-7 sm:h-7 rounded-full border-2 border-neutral-800 text-neutral-500 flex items-center justify-center text-xs font-bold shrink-0">2</span>
+        <span class="i18n hidden md:inline whitespace-nowrap" data-en="BRIEF & CONSTRAINTS" data-fr="BRIEF & CONTRAINTES">BRIEF & CONSTRAINTS</span>
+        <span class="i18n md:hidden whitespace-nowrap" data-en="BRIEF" data-fr="BRIEF">BRIEF</span>
       </button>
 
-      <div class="flex-1 h-px bg-neutral-800 min-w-[20px] relative overflow-hidden">
+      <div class="flex-1 h-0.5 bg-neutral-800 min-w-[12px] relative overflow-hidden rounded mx-1">
         <div id="step-line-2" class="absolute inset-y-0 left-0 w-0 bg-amber-400 transition-all duration-300"></div>
       </div>
 
       <!-- Step 3 Indicator -->
-      <button id="step-btn-3" type="button" class="flex items-center gap-3 text-xs font-bold tracking-[0.2em] uppercase text-neutral-500 cursor-pointer whitespace-nowrap">
-        <span id="step-num-3" class="w-7 h-7 rounded-full border-2 border-neutral-800 text-neutral-500 flex items-center justify-center text-xs font-bold">3</span>
-        <span class="i18n" data-en="REVIEW & CONTACT" data-fr="RÉVISION & CONTACT">REVIEW & CONTACT</span>
+      <button id="step-btn-3" type="button" class="flex items-center gap-2 sm:gap-3 text-xs font-bold tracking-[0.15em] uppercase text-neutral-500 cursor-pointer shrink-0">
+        <span id="step-num-3" class="w-6 h-6 sm:w-7 sm:h-7 rounded-full border-2 border-neutral-800 text-neutral-500 flex items-center justify-center text-xs font-bold shrink-0">3</span>
+        <span class="i18n hidden md:inline whitespace-nowrap" data-en="REVIEW & CONTACT" data-fr="RÉVISION & CONTACT">REVIEW & CONTACT</span>
+        <span class="i18n md:hidden whitespace-nowrap" data-en="REVIEW" data-fr="RÉVISION">REVIEW</span>
       </button>
     </div>
 
@@ -333,9 +336,10 @@
       </div>
 
       <div class="flex justify-end">
-        <button id="to-step-2-btn" type="button" disabled class="px-7 py-3 rounded-full bg-neutral-800 text-neutral-500 text-xs font-bold tracking-[0.15em] uppercase transition-all duration-300 opacity-50 cursor-not-allowed inline-flex items-center gap-2">
-          <span class="i18n" data-en="Continue to Brief & Constraints" data-fr="Continuer vers Brief & Contraintes">Continue to Brief & Constraints</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        <button id="to-step-2-btn" type="button" disabled class="px-5 py-2.5 sm:px-7 sm:py-3 rounded-full bg-neutral-800 text-neutral-500 text-xs font-bold tracking-[0.15em] uppercase transition-all duration-300 opacity-50 cursor-not-allowed inline-flex items-center gap-2 whitespace-nowrap shrink-0">
+          <span class="i18n hidden sm:inline whitespace-nowrap" data-en="Continue to Brief & Constraints" data-fr="Continuer vers Brief & Contraintes">Continue to Brief & Constraints</span>
+          <span class="i18n sm:hidden whitespace-nowrap" data-en="Continue" data-fr="Continuer">Continue</span>
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </button>
       </div>
     </div>
@@ -464,14 +468,15 @@
         <textarea id="input-brief-notes" rows="4" placeholder="Mention key constraints, specific art styles, target resolution, or art direction inspiration..." class="w-full bg-neutral-950/60 border border-neutral-800 rounded-xl px-4 py-3 text-xs text-neutral-100 focus:outline-none focus:border-amber-400 transition-colors"></textarea>
       </div>
 
-      <div class="flex justify-between items-center">
-        <button id="back-to-step-1-btn" type="button" class="px-6 py-3 rounded-full border border-neutral-800 text-neutral-300 text-xs font-bold tracking-[0.15em] uppercase hover:bg-neutral-800 transition-all cursor-pointer inline-flex items-center gap-2">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
-          <span class="i18n" data-en="Back" data-fr="Retour">Back</span>
+      <div class="flex justify-between items-center gap-3">
+        <button id="back-to-step-1-btn" type="button" class="px-4 py-2.5 sm:px-6 sm:py-3 rounded-full border border-neutral-800 text-neutral-300 text-xs font-bold tracking-[0.15em] uppercase hover:bg-neutral-800 transition-all cursor-pointer inline-flex items-center gap-2 whitespace-nowrap shrink-0">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          <span class="i18n whitespace-nowrap" data-en="Back" data-fr="Retour">Back</span>
         </button>
-        <button id="to-step-3-btn" type="button" class="px-7 py-3 rounded-full bg-amber-400 text-neutral-950 text-xs font-bold tracking-[0.15em] uppercase hover:bg-amber-300 transition-all cursor-pointer inline-flex items-center gap-2">
-          <span class="i18n" data-en="Review & Contact" data-fr="Révision & Contact">Review & Contact</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        <button id="to-step-3-btn" type="button" class="px-5 py-2.5 sm:px-7 sm:py-3 rounded-full bg-amber-400 text-neutral-950 text-xs font-bold tracking-[0.15em] uppercase hover:bg-amber-300 transition-all cursor-pointer inline-flex items-center gap-2 whitespace-nowrap shrink-0">
+          <span class="i18n hidden sm:inline whitespace-nowrap" data-en="Review & Contact" data-fr="Révision & Contact">Review & Contact</span>
+          <span class="i18n sm:hidden whitespace-nowrap" data-en="Review" data-fr="Révision">Review</span>
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </button>
       </div>
     </div>
@@ -567,14 +572,14 @@
         </div>
       </div>
 
-      <div class="flex justify-between items-center">
-        <button id="back-to-step-2-btn" type="button" class="px-6 py-3 rounded-full border border-neutral-800 text-neutral-300 text-xs font-bold tracking-[0.15em] uppercase hover:bg-neutral-800 transition-all cursor-pointer inline-flex items-center gap-2">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
-          <span class="i18n" data-en="Back" data-fr="Retour">Back</span>
+      <div class="flex justify-between items-center gap-3">
+        <button id="back-to-step-2-btn" type="button" class="px-4 py-2.5 sm:px-6 sm:py-3 rounded-full border border-neutral-800 text-neutral-300 text-xs font-bold tracking-[0.15em] uppercase hover:bg-neutral-800 transition-all cursor-pointer inline-flex items-center gap-2 whitespace-nowrap shrink-0">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          <span class="i18n whitespace-nowrap" data-en="Back" data-fr="Retour">Back</span>
         </button>
-        <a id="submit-mailto-btn" href="#" class="px-8 py-3.5 rounded-full bg-neutral-800 text-neutral-500 text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 opacity-50 pointer-events-none inline-flex items-center gap-2">
-          <span class="i18n" data-en="Send Inquiry" data-fr="Envoyer la demande">Send Inquiry</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        <a id="submit-mailto-btn" href="#" class="px-5 py-2.5 sm:px-8 sm:py-3.5 rounded-full bg-neutral-800 text-neutral-500 text-xs font-bold tracking-[0.15em] uppercase transition-all duration-300 opacity-50 pointer-events-none inline-flex items-center gap-2 whitespace-nowrap shrink-0">
+          <span class="i18n whitespace-nowrap" data-en="Send Inquiry" data-fr="Envoyer la demande">Send Inquiry</span>
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
       </div>
     </div>
