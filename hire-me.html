@@ -1144,7 +1144,7 @@
 
       card.innerHTML =
         '<div class="scope-checkbox w-6 h-6 rounded-xl border-[2.5px] flex items-center justify-center shrink-0 self-center transition-all duration-200 ' +
-          (isSelected ? 'border-amber-400 bg-amber-400 text-neutral-950 shadow-[0_0_12px_rgba(251,191,36,0.25)]' : 'border-neutral-600 bg-neutral-900/80 hover:border-neutral-400') + '">' +
+          (isSelected ? 'border-amber-400 bg-amber-400 text-neutral-950' : 'border-neutral-600 bg-neutral-900/80 hover:border-neutral-400') + '">' +
           (isSelected ? '<svg class="w-3.5 h-3.5 text-neutral-950" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>' : '') +
         '</div>' +
         '<div class="flex-1">' +
@@ -1186,14 +1186,14 @@
       var isCurrent = sId === selectedServiceId;
       var btn = card.querySelector('.get-started-btn');
       if (isCurrent) {
-        card.classList.add('border-amber-400', 'ring-2', 'ring-amber-400/40');
+        card.classList.add('border-amber-400');
         card.classList.remove('border-transparent');
         if (btn) {
           btn.classList.add('bg-amber-400', 'text-neutral-950', 'border-amber-400');
           btn.classList.remove('text-neutral-300', 'border-neutral-700/80');
         }
       } else {
-        card.classList.remove('border-amber-400', 'ring-2', 'ring-amber-400/40');
+        card.classList.remove('border-amber-400');
         card.classList.add('border-transparent');
         if (btn) {
           btn.classList.remove('bg-amber-400', 'text-neutral-950', 'border-amber-400');
