@@ -1,0 +1,10 @@
+{
+  "name": "guillaume-game-design",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Game Design Portfolio Website",
+  "scripts": {
+    "start": "npx serve -p 3000",
+    "dev": "npx serve -p 3000"
+  }
+}

@@ -935,7 +935,8 @@ html.light .cal-today { color: #a07830; }
   .option-card .option-check {
     position: absolute !important;
     right: 16px !important;
-    top: 16px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
   }
   .option-card > div > div {
     display: flex !important;
