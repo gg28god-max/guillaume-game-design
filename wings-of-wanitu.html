@@ -25,6 +25,7 @@
        since only these case-study pages use it so far. */
     .brief-eyebrow { color: #fcd34d; font-family: 'Courier New', ui-monospace, monospace; }
     html.light .brief-eyebrow { color: #a07830; }
+    .cross-link-card:hover .cross-link-cta { background-color: #e64d00 !important; transform: scale(1.04); }
   </style>
 <link href="assets/theme.css" rel="stylesheet"/><script defer="" src="assets/site.js"></script>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
@@ -121,111 +122,405 @@
   </div>
 </div>
 </nav>
+
+<main class="pt-16">
 <!-- HERO IMAGE -->
-<div class="pt-16 w-full bg-neutral-950">
-<img alt="Wings of Wanitu — Project Overview" class="w-full" src="Wings%20of%20Wanitu/Project%2BOverview%2B%E2%80%94%2BWings%2Bof%2BWanitu.webp"/>
-</div>
-<!-- PROJECT INFO -->
-<div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 border-b border-neutral-800">
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-<div class="lg:col-span-2">
-<p class="text-[11px] tracking-[0.3em] uppercase text-neutral-600 mb-4"><span class="i18n" data-en="VR UI · Spatial Interfaces · Concept Art · 2025" data-fr="UI VR · Interfaces spatiales · Art conceptuel · 2025">VR UI · Spatial Interfaces · Concept Art · 2025</span></p>
-<h1 class="text-4xl md:text-6xl font-black tracking-tight text-neutral-100 leading-none mb-8"><span class="i18n" data-en="Wings of Wanitu" data-fr="Wings of Wanitu">Wings of Wanitu</span></h1>
-<p class="text-neutral-400 text-lg leading-relaxed font-light max-w-2xl">
-          <span class="i18n" data-en="A deep dive into immersive, spatial user interfaces highlighting the unique design challenges of Virtual Reality. As Lead on UI architecture, this project explores diegetic cockpit interfaces and glider dashboard localization systems optimized for VR performance — alongside a full suite of enemy creature designs, from concept through behaviour sheets and final color passes." data-fr="Une exploration approfondie des interfaces utilisateur spatiales immersives, mettant en lumière les défis de design propres à la réalité virtuelle. En tant que responsable de l'architecture UI, ce projet explore des interfaces de cockpit diégétiques et des systèmes de localisation de tableau de bord de planeur optimisés pour la performance VR — ainsi qu'une suite complète de designs de créatures ennemies, du concept aux fiches de comportement jusqu'aux passes de couleur finales.">A deep dive into immersive, spatial user interfaces highlighting the unique design challenges of Virtual Reality. As Lead on UI architecture, this project explores diegetic cockpit interfaces and glider dashboard localization systems optimized for VR performance — alongside a full suite of enemy creature designs, from concept through behaviour sheets and final color passes.</span>
-        </p>
-</div>
-<div class="space-y-8 lg:pt-16">
-<div>
-<p class="text-[10px] tracking-[0.25em] uppercase text-neutral-600 mb-2"><span class="i18n" data-en="Year" data-fr="Année">Year</span></p>
-<p class="text-sm text-neutral-300"><span class="i18n" data-en="2025" data-fr="2025">2025</span></p>
-</div>
-<div>
-<p class="text-[10px] tracking-[0.25em] uppercase text-neutral-600 mb-2"><span class="i18n" data-en="Role" data-fr="Rôle">Role</span></p>
-<p class="text-sm text-neutral-300"><span class="i18n" data-en="Lead UI Architect &amp; Concept Artist" data-fr="Architecte UI principal et artiste conceptuel">Lead UI Architect &amp; Concept Artist</span></p>
-</div>
-<div>
-<p class="text-[10px] tracking-[0.25em] uppercase text-neutral-600 mb-2"><span class="i18n" data-en="Disciplines" data-fr="Disciplines">Disciplines</span></p>
-<p class="text-sm text-neutral-300"><span class="i18n" data-en="VR UI, Spatial Interfaces, Enemy Design, World-Building" data-fr="UI VR, interfaces spatiales, design d'ennemis, world-building">VR UI, Spatial Interfaces, Enemy Design, World-Building</span></p>
-</div>
-</div>
-</div>
-</div>
-<!-- ART BRIEF & PROBLEM — unlike tide-hollow.html, this project's gallery
-     has no numbering gap: "01 — Overview" and "02 — Pipeline" are both
-     already pre-rendered slides, so these live sections continue the
-     sequence at 03/04 as real, bilingual, coded HTML rather than another
-     exported graphic. -->
-<div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 border-b border-neutral-800 space-y-16">
-<div>
-<p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="03 — Art Brief" data-fr="03 — Brief créatif">03 — Art Brief</span></p>
-<h2 class="text-3xl md:text-5xl font-black tracking-tight text-neutral-100 leading-none mb-6"><span class="i18n" data-en="The Brief" data-fr="Le Brief">The Brief</span></h2>
-<p class="text-neutral-400 text-lg leading-relaxed font-light max-w-2xl mb-10">
-        <span class="i18n" data-en="Wings of Wanitu asked me to solve two different design problems that happened to share a cockpit: an enemy needs to read as a threat before the player consciously processes it, and a HUD needs to disappear into peripheral vision until the moment it's needed. The brief below is what I held both halves of the project to." data-fr="Wings of Wanitu m'a demandé de résoudre deux problèmes de design différents qui se trouvaient partager un même cockpit : un ennemi doit se lire comme une menace avant que le joueur ne le traite consciemment, et un HUD doit disparaître dans la vision périphérique jusqu'au moment où il est nécessaire. Le brief ci-dessous est celui auquel j'ai tenu les deux moitiés du projet.">Wings of Wanitu asked me to solve two different design problems that happened to share a cockpit: an enemy needs to read as a threat before the player consciously processes it, and a HUD needs to disappear into peripheral vision until the moment it's needed. The brief below is what I held both halves of the project to.</span>
+<section aria-label="Project hero" class="w-full px-2 sm:px-3 md:px-4 pt-20 md:pt-24 pb-4">
+  <div class="relative overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Wings of Wanitu — Project Overview" class="w-full h-auto object-cover block" fetchpriority="high" src="Wings%20of%20Wanitu/Project%2BOverview%2B%E2%80%94%2BWings%2Bof%2BWanitu.webp"/>
+  </div>
+</section>
+
+<!-- 01 · PROJECT INFO -->
+<div class="max-w-7xl mx-auto px-6 lg:px-8 py-14 border-b border-neutral-800">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+    <div class="lg:col-span-2">
+      <p class="text-[11px] tracking-[0.3em] uppercase text-orange-500 font-mono mb-4">
+        <span class="i18n" data-en="01 — VR UI · SPATIAL INTERFACES · CONCEPT ART · 2025" data-fr="01 — UI VR · INTERFACES SPATIALES · ART CONCEPTUEL · 2025">01 — VR UI · SPATIAL INTERFACES · CONCEPT ART · 2025</span>
       </p>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
-<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="Premise" data-fr="Prémisse">Premise</span></p>
-<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="A VR aerial rogue-like for Meta Quest and SteamVR — high-speed flight combat across floating island biomes, against a bestiary of organic and automated adversaries. Built at Little Guy Games; my brief covered both the enemy cast and the cockpit itself." data-fr="Un rogue-like aérien VR pour Meta Quest et SteamVR — combat de vol à haute vitesse à travers des biomes d'îles flottantes, contre un bestiaire d'adversaires organiques et automatisés. Développé chez Little Guy Games ; mon brief couvrait à la fois le casting d'ennemis et le cockpit lui-même.">A VR aerial rogue-like for Meta Quest and SteamVR — high-speed flight combat across floating island biomes, against a bestiary of organic and automated adversaries. Built at Little Guy Games; my brief covered both the enemy cast and the cockpit itself.</span></p>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tight text-neutral-100 leading-none mb-6">
+        <span class="i18n" data-en="Wings of Wanitu" data-fr="Wings of Wanitu">Wings of Wanitu</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-neutral-200 font-medium leading-snug mb-3">
+        <span class="i18n" data-en="High-speed aerial rogue-like combat in stereoscopic 6DoF VR." data-fr="Combat aérien rogue-like à grande vitesse en réalité virtuelle 6DoF stéréoscopique.">High-speed aerial rogue-like combat in stereoscopic 6DoF VR.</span>
+      </p>
+      <p class="text-neutral-400 text-base leading-relaxed font-light max-w-2xl">
+        <span class="i18n" data-en="Developed at Little Guy Games for Meta Quest and SteamVR. Spearheaded the complete diegetic cockpit UI architecture and 360° spherical radar navigation alongside a full bestiary of enemy creatures from silhouette ideation to behavior sheets and final color passes." data-fr="Développé chez Little Guy Games pour Meta Quest et SteamVR. Direction complète de l'architecture UI de cockpit diégétique et navigation radar sphérique à 360°, accompagnée d'un bestiaire complet d'ennemis, de l'exploration de silhouettes aux fiches comportementales et passes de couleurs finales.">Developed at Little Guy Games for Meta Quest and SteamVR. Spearheaded the complete diegetic cockpit UI architecture and 360° spherical radar navigation alongside a full bestiary of enemy creatures from silhouette ideation to behavior sheets and final color passes.</span>
+      </p>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-1 gap-6 lg:pt-12 border-t lg:border-t-0 lg:border-l border-neutral-800 lg:pl-10">
+      <div>
+        <p class="text-[10px] font-mono tracking-[0.25em] uppercase text-neutral-500 mb-1.5">
+          <span class="i18n" data-en="PROJECT TYPE" data-fr="TYPE DE PROJET">PROJECT TYPE</span>
+        </p>
+        <p class="text-sm font-semibold text-neutral-200">
+          <span class="i18n" data-en="VR Aerial Rogue-like" data-fr="Rogue-like aérien VR">VR Aerial Rogue-like</span>
+        </p>
+      </div>
+      <div>
+        <p class="text-[10px] font-mono tracking-[0.25em] uppercase text-neutral-500 mb-1.5">
+          <span class="i18n" data-en="MY ROLE" data-fr="MON RÔLE">MY ROLE</span>
+        </p>
+        <p class="text-sm font-semibold text-neutral-200">
+          <span class="i18n" data-en="Lead UI Architect &amp; Concept Artist" data-fr="Architecte UI principal &amp; Artiste conceptuel">Lead UI Architect &amp; Concept Artist</span>
+        </p>
+      </div>
+      <div>
+        <p class="text-[10px] font-mono tracking-[0.25em] uppercase text-neutral-500 mb-1.5">
+          <span class="i18n" data-en="STUDIO &amp; PLATFORM" data-fr="STUDIO &amp; PLATEFORME">STUDIO &amp; PLATEFORME</span>
+        </p>
+        <p class="text-sm font-semibold text-neutral-200">
+          <span class="i18n" data-en="Little Guy Games · Meta Quest &amp; SteamVR" data-fr="Little Guy Games · Meta Quest &amp; SteamVR">Little Guy Games · Meta Quest &amp; SteamVR</span>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
-<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="Mood &amp; Tone" data-fr="Ambiance et ton">Mood &amp; Tone</span></p>
-<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="Stylized over photoreal — painterly skies and creature silhouettes that read like concept art, not simulation. The cockpit stays high-contrast and diegetic-adjacent rather than screen-accurate, since clarity at speed matters more than realism." data-fr="Stylisé plutôt que photoréaliste — des ciels peints et des silhouettes de créatures qui se lisent comme de l'art conceptuel, pas une simulation. Le cockpit reste à contraste élevé et proche du diégétique plutôt que fidèle à un écran réel, car la clarté à grande vitesse compte plus que le réalisme.">Stylized over photoreal — painterly skies and creature silhouettes that read like concept art, not simulation. The cockpit stays high-contrast and diegetic-adjacent rather than screen-accurate, since clarity at speed matters more than realism.</span></p>
+
+<!-- 02 · CORE DIRECTIVE & DESIGN PILLARS -->
+<div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 border-b border-neutral-800">
+  <div class="max-w-3xl mb-12">
+    <p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4 text-orange-500">
+      <span class="i18n" data-en="02 — CORE DIRECTIVE" data-fr="02 — DIRECTIVE CENTRALE">02 — CORE DIRECTIVE</span>
+    </p>
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-neutral-100 leading-tight">
+      <span class="i18n" data-en="&ldquo;How do you make an enemy readable at flight speed, and a cockpit HUD invisible until needed?&rdquo;" data-fr="« Comment rendre un ennemi lisible à pleine vitesse de vol, et un HUD de cockpit invisible jusqu'à ce qu'il soit requis ? »">“How do you make an enemy readable at flight speed, and a cockpit HUD invisible until needed?”</span>
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Pillar 1: Peripheral Clarity -->
+    <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 flex flex-col justify-between hover:border-neutral-700 transition-colors">
+      <div>
+        <span class="inline-block bg-neutral-800 text-amber-400 border border-neutral-700 text-[10px] font-mono tracking-wider font-semibold px-2 py-0.5 rounded uppercase mb-3">
+          <span class="i18n" data-en="PERIPHERAL CLARITY" data-fr="CLARTÉ PÉRIPHÉRIQUE">PERIPHERAL CLARITY</span>
+        </span>
+        <h3 class="text-base font-bold text-neutral-100 mb-2">
+          <span class="i18n" data-en="Diegetic Spatial Telemetry" data-fr="Télémétrie spatiale diégétique">Diegetic Spatial Telemetry</span>
+        </h3>
+        <p class="text-sm text-neutral-400 leading-relaxed">
+          <span class="i18n" data-en="A 360° spherical radar and ring gauges integrated directly into the glider frame, legible in peripheral vision without pulling pilot focus." data-fr="Un radar sphérique 360° et des jauges annulaires intégrés au châssis du planeur, lisibles en vision périphérique sans déconcentrer le pilote.">A 360° spherical radar and ring gauges integrated directly into the glider frame, legible in peripheral vision without pulling pilot focus.</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Pillar 2: Behavioural Telegraph -->
+    <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 flex flex-col justify-between hover:border-neutral-700 transition-colors">
+      <div>
+        <span class="inline-block bg-neutral-800 text-amber-400 border border-neutral-700 text-[10px] font-mono tracking-wider font-semibold px-2 py-0.5 rounded uppercase mb-3">
+          <span class="i18n" data-en="THREAT RECOGNITION" data-fr="RECONNAISSANCE DES MENACES">THREAT RECOGNITION</span>
+        </span>
+        <h3 class="text-base font-bold text-neutral-100 mb-2">
+          <span class="i18n" data-en="Silhouette-First Morphology" data-fr="Morphologie par silhouette">Silhouette-First Morphology</span>
+        </h3>
+        <p class="text-sm text-neutral-400 leading-relaxed">
+          <span class="i18n" data-en="Physically collapsing wings, charge arcs, and distinct flight vectors telegraph hostile behavior before conscious processing." data-fr="Ailes rétractables, arcs de charge et vecteurs de vol distincts télégraphient le comportement hostile avant tout traitement conscient.">Physically collapsing wings, charge arcs, and distinct flight vectors telegraph hostile behavior before conscious processing.</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Pillar 3: Cognitive Budget -->
+    <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 flex flex-col justify-between hover:border-neutral-700 transition-colors">
+      <div>
+        <span class="inline-block bg-neutral-800 text-amber-400 border border-neutral-700 text-[10px] font-mono tracking-wider font-semibold px-2 py-0.5 rounded uppercase mb-3">
+          <span class="i18n" data-en="COGNITIVE BUDGET" data-fr="BUDGET COGNITIF">COGNITIVE BUDGET</span>
+        </span>
+        <h3 class="text-base font-bold text-neutral-100 mb-2">
+          <span class="i18n" data-en="Unified Art &amp; UI Pipeline" data-fr="Pipeline Art &amp; UI unifié">Unified Art &amp; UI Pipeline</span>
+        </h3>
+        <p class="text-sm text-neutral-400 leading-relaxed">
+          <span class="i18n" data-en="Leading both creature design and cockpit UI removed handoff friction, ensuring HUD luminosity perfectly harmonized with skybox biomes." data-fr="Diriger l'art des créatures et l'UI du cockpit a éliminé les frictions de passation, harmonisant la luminosité du HUD avec les biomes célestes.">Leading both creature design and cockpit UI removed handoff friction, ensuring HUD luminosity perfectly harmonized with skybox biomes.</span>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
-<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="Deliverables" data-fr="Livrables">Deliverables</span></p>
-<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="A full enemy roster (Lurkers, Interceptors, Fighters) taken from silhouette through behaviour sheets to final color pass, plus the hero glider's cockpit dashboard: a 360-degree spherical radar, health/energy rings, and mission/currency HUD panels." data-fr="Un bestiaire complet (Lurkers, Interceptors, Fighters) de la silhouette aux fiches de comportement jusqu'à la passe de couleur finale, plus le tableau de bord du planeur héros : un radar sphérique à 360 degrés, des anneaux de vie/énergie et des panneaux HUD de mission/monnaie.">A full enemy roster (Lurkers, Interceptors, Fighters) taken from silhouette through behaviour sheets to final color pass, plus the hero glider's cockpit dashboard: a 360-degree spherical radar, health/energy rings, and mission/currency HUD panels.</span></p>
-</div>
-<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
-<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="Design Constraints" data-fr="Contraintes de design">Design Constraints</span></p>
-<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="Every enemy design had to double as a gameplay signal — flying pattern, attack telegraph, and scale all had to read correctly before a full rig existed. Every UI element had to hold up in a stereoscopic headset at arm's length, where flat contrast and fine text simply don't work." data-fr="Chaque design d'ennemi devait aussi servir de signal de gameplay — le motif de vol, le télégraphe d'attaque et l'échelle devaient tous se lire correctement avant même qu'un rig complet existe. Chaque élément d'UI devait tenir dans un casque stéréoscopique à bout de bras, où un contraste plat et un texte fin ne fonctionnent tout simplement pas.">Every enemy design had to double as a gameplay signal — flying pattern, attack telegraph, and scale all had to read correctly before a full rig existed. Every UI element had to hold up in a stereoscopic headset at arm's length, where flat contrast and fine text simply don't work.</span></p>
-</div>
-</div>
-</div>
-<div>
-<p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="04 — The Problem" data-fr="04 — Le problème">04 — The Problem</span></p>
-<h2 class="text-3xl md:text-5xl font-black tracking-tight text-neutral-100 leading-none mb-10"><span class="i18n" data-en="The Problem I Set Out to Solve" data-fr="Le problème que je voulais résoudre">The Problem I Set Out to Solve</span></h2>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
-<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="Making a threat readable before it's understood" data-fr="Rendre une menace lisible avant qu'elle ne soit comprise">Making a threat readable before it's understood</span></p>
-<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="In VR, there's no pause to study an enemy. The Interceptor's attack telegraph — wings and fins physically collapsing before it charges its electric blast — had to be legible from a glance and from any angle, because a player's reaction window in a headset is shorter than on a flat screen. The behaviour sheets exist because the silhouette alone had to carry that information." data-fr="En VR, il n'y a pas de pause pour étudier un ennemi. Le télégraphe d'attaque de l'Interceptor — les ailes et les ailerons qui se replient physiquement avant qu'il ne charge son tir électrique — devait être lisible d'un coup d'œil et sous n'importe quel angle, car la fenêtre de réaction d'un joueur en casque est plus courte que sur un écran plat. Les fiches de comportement existent parce que la silhouette seule devait porter cette information.">In VR, there's no pause to study an enemy. The Interceptor's attack telegraph — wings and fins physically collapsing before it charges its electric blast — had to be legible from a glance and from any angle, because a player's reaction window in a headset is shorter than on a flat screen. The behaviour sheets exist because the silhouette alone had to carry that information.</span></p>
-</div>
-<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
-<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="A HUD that works when the whole world is the screen" data-fr="Un HUD qui fonctionne quand le monde entier est l'écran">A HUD that works when the whole world is the screen</span></p>
-<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="A traditional 2D HUD doesn't work in VR — there's no fixed frame to anchor it to, and stacking flat panels in 3D space breaks immersion fast. The spherical radar and ring-based health/energy display went through several visual passes (the dashboard sheet shows three) before landing on a version legible in peripheral vision without pulling focus from flight." data-fr="Un HUD 2D traditionnel ne fonctionne pas en VR — il n'y a pas de cadre fixe où l'ancrer, et empiler des panneaux plats dans un espace 3D brise vite l'immersion. Le radar sphérique et l'affichage de vie/énergie en anneaux sont passés par plusieurs versions visuelles (la fiche du tableau de bord en montre trois) avant d'arriver à une version lisible en vision périphérique sans détourner l'attention du vol.">A traditional 2D HUD doesn't work in VR — there's no fixed frame to anchor it to, and stacking flat panels in 3D space breaks immersion fast. The spherical radar and ring-based health/energy display went through several visual passes (the dashboard sheet shows three) before landing on a version legible in peripheral vision without pulling focus from flight.</span></p>
-</div>
-<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
-<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="Two disciplines, one deadline, no handoff" data-fr="Deux disciplines, une échéance, aucune passation">Two disciplines, one deadline, no handoff</span></p>
-<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="Leading both the creature art and the UI architecture meant neither could be treated as the &quot;other&quot; team's problem. A cockpit redesign had to account for what the enemies needed to communicate, and an enemy repaint had to stay readable against whatever the HUD was doing in the same frame — there was no wall between the two halves of the brief." data-fr="Diriger à la fois l'art des créatures et l'architecture UI signifiait qu'aucune des deux ne pouvait être traitée comme le problème de « l'autre » équipe. Une refonte du cockpit devait tenir compte de ce que les ennemis avaient besoin de communiquer, et une nouvelle passe de couleur sur un ennemi devait rester lisible face à ce que faisait le HUD dans la même image — il n'y avait pas de mur entre les deux moitiés du brief.">Leading both the creature art and the UI architecture meant neither could be treated as the "other" team's problem. A cockpit redesign had to account for what the enemies needed to communicate, and an enemy repaint had to stay readable against whatever the HUD was doing in the same frame — there was no wall between the two halves of the brief.</span></p>
-</div>
-</div>
-</div>
-</div>
-<!-- GALLERY -->
-<div class="space-y-0 my-0">
-<img alt="Wings of Wanitu Overview" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Wings%2Bof%2Bwanitu%2Boverview.webp"/>
-<img alt="Wings UI" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Wings%2BUi.webp"/>
-<img alt="Wings UI 2" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Wings%2BUi-1.webp"/>
-<img alt="Wings UI 3" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Wings%2BUi%20(1).webp"/>
-<img alt="UI Glider Dashboard Localization System" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/UI%2BGlider%2BDashboard%2BLocalization%2Bsystem.webp"/>
-<img alt="Wings UI 4" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Wings%2BUi-2.webp"/>
-<img alt="Cockpit UI Design" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/cockpit%2Bui%2Bdesign.webp"/>
-<img alt="Cockpit UI Design 2" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/cockpit%2Bui%2Bdesign%20(1).webp"/>
-<img alt="UI Glider Dashboard Localization System 2" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/UI%2BGlider%2BDashboard%2BLocalization%2Bsystem%2B1.webp"/>
-<img alt="Enemy Design — Lurkers" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/enemie%2Bdesign%2Blurkers%2B1.webp"/>
-<img alt="Lurkers Design Concepts" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Lurkers%2BDesign%2Bconcepts%2B1.webp"/>
-<img alt="Deadzone Lurkers Concept Design" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Deadzone%2BLurkers%2Bconcept%2Bdesign%2B1.webp"/>
-<img alt="Lurkers Deadzone Behaviour" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Lurkers%2BDeadzone%2BBehaviour%2B1.webp"/>
-<img alt="Lurkers Color Pass" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/lurkers%2Bcolor%2Bpass%2Bdead%2Bzone%2B1.webp"/>
-<img alt="Bug Lurker Concept Render" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Bug%2BLurker%2Bconcept%2Brender%2B1.webp"/>
-<img alt="Interceptor Design Concept" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Interceptor%2BDesign%2Bconcept%2B1.webp"/>
-<img alt="Interceptor Enemy Behaviour" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Interceptor%2Benemy%2Bbehaviour%2B1.webp"/>
-<img alt="Interceptor Enemy Color Pass" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Interceptor%2Benemy%2Bcolor%2Bpass%2B1.webp"/>
-<img alt="Fighter Hunter Type Concept" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Fighter%2Bhunter%2Btype%2Bconcept%2Bvisualization%2B1.webp"/>
-<img alt="Hunters Fighter Type Behaviour" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Hunters%2Bfighter%2Btype%2BBehaviour%2B1.webp"/>
-<img alt="Fighter Enemy Color Pass" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/Fighter%2Benemy%2Bcolor%2Bpass.webp"/>
-<img alt="Wings Illustration Background" class="w-full" loading="lazy" src="Wings%20of%20Wanitu/wings%2Billustration%2Bbackground%2B2.webp"/>
-</div>
+
+<!-- 03 · ROLE & TECHNICAL STACK -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-b border-neutral-800">
+  <!-- Top Meta Bar: My Role / Genre / Platform -->
+  <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-neutral-800 pb-12 mb-12 border-b border-neutral-800">
+    <!-- Col 1: My Role -->
+    <div class="py-4 md:py-0 md:pr-8">
+      <p class="text-[11px] font-mono tracking-[0.25em] uppercase text-orange-500 mb-2.5">
+        <span class="i18n" data-en="MY ROLE" data-fr="MON RÔLE">MY ROLE</span>
+      </p>
+      <div class="text-base sm:text-lg lg:text-xl font-bold text-neutral-100 leading-snug space-y-0.5">
+        <p><span class="i18n" data-en="Lead UI Architect" data-fr="Architecte UI principal">Lead UI Architect</span></p>
+        <p><span class="i18n" data-en="Concept Artist" data-fr="Artiste conceptuel">Concept Artist</span></p>
+      </div>
+    </div>
+    <!-- Col 2: Genre -->
+    <div class="py-4 md:py-0 md:px-8">
+      <p class="text-[11px] font-mono tracking-[0.25em] uppercase text-orange-500 mb-2.5">
+        <span class="i18n" data-en="GENRE" data-fr="GENRE">GENRE</span>
+      </p>
+      <div class="text-base sm:text-lg lg:text-xl font-bold text-neutral-100 leading-snug space-y-0.5">
+        <p><span class="i18n" data-en="VR Aerial Rogue-like" data-fr="Rogue-like aérien VR">VR Aerial Rogue-like</span></p>
+        <p><span class="i18n" data-en="6DoF Flight Combat" data-fr="Combat aérien 6DoF">6DoF Flight Combat</span></p>
+      </div>
+    </div>
+    <!-- Col 3: Platform -->
+    <div class="py-4 md:py-0 md:pl-8">
+      <p class="text-[11px] font-mono tracking-[0.25em] uppercase text-orange-500 mb-2.5">
+        <span class="i18n" data-en="PLATFORM" data-fr="PLATEFORME">PLATFORM</span>
+      </p>
+      <p class="text-base sm:text-lg lg:text-xl font-bold text-neutral-100 leading-snug">
+        <span class="i18n" data-en="Meta Quest &amp; SteamVR" data-fr="Meta Quest &amp; SteamVR">Meta Quest &amp; SteamVR</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- Technical Stack Header -->
+  <div class="mb-8">
+    <p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-3 text-orange-500">
+      <span class="i18n" data-en="03 — TECHNICAL STACK" data-fr="03 — STACK TECHNIQUE">03 — TECHNICAL STACK</span>
+    </p>
+    <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-100">
+      <span class="i18n" data-en="Tools &amp; Software" data-fr="Outils &amp; logiciels">Tools &amp; Software</span>
+    </h2>
+  </div>
+
+  <!-- 3 Tool Cards Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+    <!-- Card 1: Figma -->
+    <div class="bg-[#121214] border border-neutral-800/80 hover:border-neutral-700 transition-colors rounded-2xl p-6 sm:p-7 flex items-center justify-between gap-4">
+      <div>
+        <span class="inline-block bg-[#eb2328] text-white text-[10px] sm:text-[11px] font-bold font-mono tracking-wider px-2.5 py-0.5 rounded uppercase mb-2.5">
+          <span class="i18n" data-en="Spatial UI" data-fr="UI spatiale">Spatial UI</span>
+        </span>
+        <h3 class="text-lg sm:text-xl font-bold text-neutral-100 mb-1">Figma</h3>
+        <p class="text-xs sm:text-sm text-neutral-400 font-normal">
+          <span class="i18n" data-en="Spatial UI Architecture / Cockpit Wireframes / Dashboard Localization" data-fr="Architecture UI spatiale / Wireframes cockpit / Localisation dashboard">Spatial UI Architecture / Cockpit Wireframes / Dashboard Localization</span>
+        </p>
+      </div>
+      <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#1c1c1f] border border-neutral-700/40 flex items-center justify-center p-3 shrink-0 shadow-inner">
+        <svg class="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 38 57" fill="none">
+          <path d="M19 28.5C19 23.2533 23.2533 19 28.5 19C33.7467 19 38 23.2533 38 28.5C38 33.7467 33.7467 38 28.5 38C23.2533 38 19 33.7467 19 28.5Z" fill="#1ABCFE"/>
+          <path d="M0 47.5C0 42.2533 4.25329 38 9.5 38H19V47.5C19 52.7467 14.7467 57 9.5 57C4.25329 57 0 52.7467 0 47.5Z" fill="#0ACF83"/>
+          <path d="M19 0V19H28.5C33.7467 19 38 14.7467 38 9.5C38 4.25329 33.7467 0 28.5 0H19Z" fill="#FF7262"/>
+          <path d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z" fill="#F24E1E"/>
+          <path d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z" fill="#A259FF"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Card 2: Unreal Engine 5 / Unity VR -->
+    <div class="bg-[#121214] border border-neutral-800/80 hover:border-neutral-700 transition-colors rounded-2xl p-6 sm:p-7 flex items-center justify-between gap-4">
+      <div>
+        <span class="inline-block bg-[#eb2328] text-white text-[10px] sm:text-[11px] font-bold font-mono tracking-wider px-2.5 py-0.5 rounded uppercase mb-2.5">
+          <span class="i18n" data-en="VR Engine" data-fr="Moteur VR">VR Engine</span>
+        </span>
+        <h3 class="text-lg sm:text-xl font-bold text-neutral-100 mb-1">Unreal / Unity VR</h3>
+        <p class="text-xs sm:text-sm text-neutral-400 font-normal">
+          <span class="i18n" data-en="Diegetic Canvases / Spherical 360° Radar / Stereoscopic Depth" data-fr="Canvas diégétiques / Radar 360° sphérique / Profondeur stéréoscopique">Diegetic Canvases / Spherical 360° Radar / Stereoscopic Depth</span>
+        </p>
+      </div>
+      <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#1c1c1f] border border-neutral-700/40 flex items-center justify-center p-3 shrink-0 text-white shadow-inner">
+        <svg class="w-full h-full" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0a12 12 0 1012 12A12 12 0 0012 0zm0 23.52A11.52 11.52 0 1123.52 12 11.52 11.52 0 0112 23.52zm7.13-9.791c-.206.997-1.126 3.557-4.06 4.942l-1.179-1.325-1.988 2a7.338 7.338 0 01-5.804-2.978 2.859 2.859 0 00.65.123c.326.006.678-.114.678-.66v-5.394a.89.89 0 00-1.116-.89c-.92.212-1.656 2.509-1.656 2.509a7.304 7.304 0 012.528-5.597 7.408 7.408 0 013.73-1.721c-1.006.573-1.57 1.507-1.57 2.29 0 1.262.76 1.109.984.923v7.28a1.157 1.157 0 00.148.256 1.075 1.075 0 00.88.445c.76 0 1.747-.868 1.747-.868V9.172c0-.6-.452-1.324-.905-1.572 0 0 .838-.149 1.484.346a5.537 5.537 0 01.387-.425c1.508-1.48 2.929-1.902 4.112-2.112 0 0-2.151 1.69-2.151 3.96 0 1.687.043 5.801.043 5.801.799.771 1.986-.342 3.059-1.441Z"></path>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Card 3: Photoshop / Blender -->
+    <div class="bg-[#121214] border border-neutral-800/80 hover:border-neutral-700 transition-colors rounded-2xl p-6 sm:p-7 flex items-center justify-between gap-4">
+      <div>
+        <span class="inline-block bg-[#eb2328] text-white text-[10px] sm:text-[11px] font-bold font-mono tracking-wider px-2.5 py-0.5 rounded uppercase mb-2.5">
+          <span class="i18n" data-en="Concept &amp; Bestiary" data-fr="Concept &amp; Bestiaire">Concept &amp; Bestiary</span>
+        </span>
+        <h3 class="text-lg sm:text-xl font-bold text-neutral-100 mb-1">Photoshop / Blender</h3>
+        <p class="text-xs sm:text-sm text-neutral-400 font-normal">
+          <span class="i18n" data-en="Enemy Silhouettes / Behaviour Sheets / Skybox Keyframes" data-fr="Silhouettes d'ennemis / Fiches comportement / Peintures de ciel">Enemy Silhouettes / Behaviour Sheets / Skybox Keyframes</span>
+        </p>
+      </div>
+      <div class="flex items-center gap-2.5 shrink-0">
+        <!-- Blender Icon -->
+        <div class="w-10 h-10 sm:w-11 sm:h-11 shrink-0 flex items-center justify-center drop-shadow" title="Blender">
+          <svg class="w-full h-full" viewBox="0 0 24 24" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.35 14.831c.006.314.106.922.256 1.398a7.372 7.372 0 0 0 1.593 2.757 8.227 8.227 0 0 0 2.787 2.001 8.947 8.947 0 0 0 3.66.76 8.964 8.964 0 0 0 3.657-.772 8.285 8.285 0 0 0 2.785-2.01 7.428 7.428 0 0 0 1.592-2.762 6.964 6.964 0 0 0 .25-3.074 7.123 7.123 0 0 0-1.016-2.779 7.764 7.764 0 0 0-1.852-2.043h.002L13.566 2.55l-.02-.015c-.492-.378-1.319-.376-1.86.002-.547.382-.609 1.015-.123 1.415l-.001.001 3.126 2.543-9.53.01h-.013c-.788.001-1.545.518-1.695 1.172-.154.665.38 1.217 1.2 1.22V8.9l4.83-.01-8.62 6.617-.034.025c-.813.622-1.075 1.658-.563 2.313.52.667 1.625.668 2.447.004L7.414 14s-.069.52-.063.831zm5.16-1.617c-.045.822.285 1.585.865 2.152a3.393 3.393 0 0 0 2.376.938c.875 0 1.722-.338 2.374-.938.58-.567.91-1.33.865-2.153-.045-.799-.436-1.505-1.028-2.005a3.424 3.424 0 0 0-2.211-.79 3.424 3.424 0 0 0-2.212.79c-.592.5-.984 1.206-1.03 2.006z" fill="#ea7600"/>
+            <circle cx="15.8" cy="13.2" r="3.2" fill="#ffffff"/>
+            <circle cx="15.8" cy="13.2" r="1.8" fill="#225cdb"/>
+          </svg>
+        </div>
+        <!-- Photoshop Icon -->
+        <div class="w-10 h-10 sm:w-11 sm:h-11 shrink-0 drop-shadow" title="Adobe Photoshop">
+          <svg class="w-full h-full" viewBox="0 0 48 48" fill="none">
+            <rect width="48" height="48" rx="10" fill="#001e36" stroke="#31a8ff" stroke-opacity="0.4" stroke-width="2"/>
+            <text x="24" y="32" text-anchor="middle" fill="#31a8ff" font-size="22" font-weight="800" font-family="system-ui, -apple-system, BlinkMacSystemFont, sans-serif" letter-spacing="-1px">Ps</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 · SPATIAL COCKPIT & DIEGETIC UI -->
+<section aria-label="Spatial cockpit and diegetic UI systems" class="w-full px-2 sm:px-3 md:px-4 py-8 md:py-14 space-y-6 md:space-y-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-2">
+    <p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-3 text-orange-500">
+      <span class="i18n" data-en="04 — SPATIAL COCKPIT &amp; DIEGETIC UI" data-fr="04 — COCKPIT SPATIAL &amp; UI DIÉGÉTIQUE">04 — SPATIAL COCKPIT &amp; DIEGETIC UI</span>
+    </p>
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-100">
+          <span class="i18n" data-en="VR Glider Dashboard &amp; Spatial Systems" data-fr="Tableau de bord de planeur VR &amp; Systèmes spatiaux">VR Glider Dashboard &amp; Spatial Systems</span>
+        </h2>
+        <p class="text-sm md:text-base text-neutral-400 mt-2 max-w-2xl font-light">
+          <span class="i18n" data-en="Diegetic flight instrumentation, 360-degree spherical radar, and ring-based energy telemetry engineered for 6DoF stereoscopic motion." data-fr="Instrumentation de vol diégétique, radar sphérique à 360 degrés et télémétrie d'énergie annulaire conçus pour le mouvement 6DoF stéréoscopique.">Diegetic flight instrumentation, 360-degree spherical radar, and ring-based energy telemetry engineered for 6DoF stereoscopic motion.</span>
+        </p>
+      </div>
+      <div class="flex items-center gap-2 text-xs font-mono text-neutral-500">
+        <span class="inline-block w-2 h-2 rounded-full bg-orange-500"></span>
+        <span class="i18n" data-en="9 PRODUCTION ASSETS" data-fr="9 ACTIFS DE PRODUCTION">9 PRODUCTION ASSETS</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Wings of Wanitu Overview" class="block w-full h-auto" loading="lazy" src="Wings%20of%20Wanitu/Wings%2Bof%2Bwanitu%2Boverview.webp"/>
+  </div>
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Wings UI Layout" class="block w-full h-auto" loading="lazy" src="Wings%20of%20Wanitu/Wings%2BUi.webp"/>
+  </div>
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Spherical Radar and In-Flight HUD" class="block w-full h-auto" loading="lazy" src="Wings%20of%20Wanitu/Wings%2BUi-1.webp"/>
+  </div>
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Diegetic Energy Gauges" class="block w-full h-auto" loading="lazy" src="Wings%20of%20Wanitu/Wings%2BUi%20(1).webp"/>
+  </div>
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="UI Glider Dashboard Localization System — Sheet 1" class="block w-full h-auto" loading="lazy" src="Wings%20of%20Wanitu/UI%2BGlider%2BDashboard%2BLocalization%2Bsystem.webp"/>
+  </div>
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="UI Glider Dashboard Localization System — Sheet 2" class="block w-full h-auto" loading="lazy" src="Wings%20of%20Wanitu/UI%2BGlider%2BDashboard%2BLocalization%2Bsystem%2B1.webp"/>
+  </div>
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Wings UI In-Flight Telemetry Pass" class="block w-full h-auto" loading="lazy" src="Wings%20of%20Wanitu/Wings%2BUi-2.webp"/>
+  </div>
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Cockpit UI Design View 1" class="block w-full h-auto" loading="lazy" src="Wings%20of%20Wanitu/cockpit%2Bui%2Bdesign.webp"/>
+  </div>
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Cockpit UI Design View 2" class="block w-full h-auto" loading="lazy" src="Wings%20of%20Wanitu/cockpit%2Bui%2Bdesign%20(1).webp"/>
+  </div>
+</section>
+
+<!-- 05 · ENEMY BESTIARY & BEHAVIOUR DESIGN -->
+<section aria-label="Enemy creature bestiary and behaviour design" class="w-full px-2 sm:px-3 md:px-4 py-8 md:py-14 space-y-6 md:space-y-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-2">
+    <p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-3 text-orange-500">
+      <span class="i18n" data-en="05 — ENEMY BESTIARY &amp; BEHAVIOUR DESIGN" data-fr="05 — BESTIAIRE D'ENNEMIS &amp; DESIGN COMPORTEMENTAL">05 — ENEMY BESTIARY &amp; BEHAVIOUR DESIGN</span>
+    </p>
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-100">
+          <span class="i18n" data-en="Lurkers, Interceptors &amp; Hunters" data-fr="Lurkers, Intercepteurs &amp; Chasseurs">Lurkers, Interceptors &amp; Hunters</span>
+        </h2>
+        <p class="text-sm md:text-base text-neutral-400 mt-2 max-w-2xl font-light">
+          <span class="i18n" data-en="Silhouette-first telegraphing and behavioral state sheets engineered for instantaneous threat recognition at flight velocity." data-fr="Télégraphie par silhouette et fiches d'états comportementaux conçues pour une reconnaissance instantanée des menaces en vol.">Silhouette-first telegraphing and behavioral state sheets engineered for instantaneous threat recognition at flight velocity.</span>
+        </p>
+      </div>
+      <div class="flex items-center gap-2 text-xs font-mono text-neutral-500">
+        <span class="inline-block w-2 h-2 rounded-full bg-orange-500"></span>
+        <span class="i18n" data-en="12 PRODUCTION ASSETS" data-fr="12 ACTIFS DE PRODUCTION">12 PRODUCTION ASSETS</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Enemy Design — Lurkers Morphology" class="block w-full h-auto" loading="lazy" src="Wings%20of%20Wanitu/enemie%2Bdesign%2Blurkers%2B1.webp"/>
+  </div>
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Lurkers Design Concepts &amp; Silhouettes" class="block w-full h-auto" loading="lazy" src="Wings%20of%20Wanitu/Lurkers%2BDesign%2Bconcepts%2B1.webp"/>
+  </div>
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Deadzone Lurkers Concept Design" class="block w-full h-auto" loading="lazy" src="Wings%20of%20Wanitu/Deadzone%2BLurkers%2Bconcept%2Bdesign%2B1.webp"/>
+  </div>
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Lurkers Deadzone Behaviour Sheet" class="block w-full h-auto" loading="lazy" src="Wings%20of%20Wanitu/Lurkers%2BDeadzone%2BBehaviour%2B1.webp"/>
+  </div>
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Lurkers Deadzone Color Pass" class="block w-full h-auto" loading="lazy" src="Wings%20of%20Wanitu/lurkers%2Bcolor%2Bpass%2Bdead%2Bzone%2B1.webp"/>
+  </div>
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Bug Lurker 3D Concept Render" class="block w-full h-auto" loading="lazy" src="Wings%20of%20Wanitu/Bug%2BLurker%2Bconcept%2Brender%2B1.webp"/>
+  </div>
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Interceptor Design Concept" class="block w-full h-auto" loading="lazy" src="Wings%20of%20Wanitu/Interceptor%2BDesign%2Bconcept%2B1.webp"/>
+  </div>
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Interceptor Enemy Behaviour Sheet" class="block w-full h-auto" loading="lazy" src="Wings%20of%20Wanitu/Interceptor%2Benemy%2Bbehaviour%2B1.webp"/>
+  </div>
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Interceptor Enemy Color Pass" class="block w-full h-auto" loading="lazy" src="Wings%20of%20Wanitu/Interceptor%2Benemy%2Bcolor%2Bpass%2B1.webp"/>
+  </div>
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Fighter Hunter Type Concept Visualization" class="block w-full h-auto" loading="lazy" src="Wings%20of%20Wanitu/Fighter%2Bhunter%2Btype%2Bconcept%2Bvisualization%2B1.webp"/>
+  </div>
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Hunters Fighter Type Behaviour Sheet" class="block w-full h-auto" loading="lazy" src="Wings%20of%20Wanitu/Hunters%2Bfighter%2Btype%2BBehaviour%2B1.webp"/>
+  </div>
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Fighter Enemy Final Color Pass" class="block w-full h-auto" loading="lazy" src="Wings%20of%20Wanitu/Fighter%2Benemy%2Bcolor%2Bpass.webp"/>
+  </div>
+</section>
+
+<!-- 06 · WORLD-BUILDING & ENVIRONMENT -->
+<section aria-label="World-building and environmental illustration" class="w-full px-2 sm:px-3 md:px-4 py-8 md:py-14 space-y-6 md:space-y-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-2">
+    <p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-3 text-orange-500">
+      <span class="i18n" data-en="06 — WORLD-BUILDING &amp; ENVIRONMENT" data-fr="06 — WORLD-BUILDING &amp; ENVIRONNEMENT">06 — WORLD-BUILDING &amp; ENVIRONMENT</span>
+    </p>
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-100">
+          <span class="i18n" data-en="Floating Island Biomes" data-fr="Biomes d'îles flottantes">Floating Island Biomes</span>
+        </h2>
+        <p class="text-sm md:text-base text-neutral-400 mt-2 max-w-2xl font-light">
+          <span class="i18n" data-en="Painterly environmental keyframes establishing atmosphere, lighting conditions, and horizon readability for high-speed aerial traversal." data-fr="Keyframes d'environnement peints établissant l'atmosphère, les conditions d'éclairage et la lisibilité de l'horizon pour la traversée aérienne rapide.">Painterly environmental keyframes establishing atmosphere, lighting conditions, and horizon readability for high-speed aerial traversal.</span>
+        </p>
+      </div>
+      <div class="flex items-center gap-2 text-xs font-mono text-neutral-500">
+        <span class="inline-block w-2 h-2 rounded-full bg-orange-500"></span>
+        <span class="i18n" data-en="1 PRODUCTION ASSET" data-fr="1 ACTIF DE PRODUCTION">1 PRODUCTION ASSET</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Wings of Wanitu — Floating Islands Environment Illustration" class="block w-full h-auto" loading="lazy" src="Wings%20of%20Wanitu/wings%2Billustration%2Bbackground%2B2.webp"/>
+  </div>
+</section>
+
+<!-- CROSS-LINK BANNER — Outro CTA -->
+<section aria-label="Cross-link banner" class="border-t border-neutral-800 bg-gradient-to-b from-[#0a0a0a] to-[#0f0f12]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+    <a class="cross-link-card flex flex-col lg:flex-row lg:items-center justify-between gap-6 sm:gap-8 bg-[#121214] border border-neutral-800 hover:border-neutral-700 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 transition-all duration-300 group shadow-2xl" href="https://uiux.guillaumedesign.ca/">
+      <div class="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-6">
+        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-neutral-900 border border-neutral-800 flex items-center justify-center shrink-0 shadow-md p-4">
+          <img alt="Guillaume Goder dodo logo" class="w-full h-full object-contain" src="Dodo%20logo%201.png"/>
+        </div>
+        <div>
+          <p class="text-[11px] font-mono tracking-[0.25em] uppercase text-orange-500 mb-2">
+            <span class="i18n" data-en="SPATIAL UI &amp; GAME DESIGN" data-fr="UI SPATIALE &amp; GAME DESIGN">SPATIAL UI &amp; GAME DESIGN</span>
+          </p>
+          <h3 class="text-xl sm:text-2xl font-bold text-neutral-100 group-hover:text-amber-300 transition-colors leading-tight mb-2">
+            <span class="i18n" data-en="Explore More UI/UX &amp; Game Architecture" data-fr="Découvrez plus d'UI/UX et d'architecture de jeu">Explore More UI/UX &amp; Game Architecture</span>
+          </h3>
+          <p class="text-xs sm:text-sm text-neutral-400 font-light max-w-xl">
+            <span class="i18n" data-en="Discover diegetic game interfaces, design systems, and playable Unreal Engine 5 &amp; VR case studies across my portfolio." data-fr="Découvrez des interfaces de jeu diégétiques, des systèmes de design et des études de cas jouables dans Unreal Engine 5 et VR.">Discover diegetic game interfaces, design systems, and playable Unreal Engine 5 &amp; VR case studies across my portfolio.</span>
+          </p>
+        </div>
+      </div>
+      <span class="cross-link-cta self-start lg:self-center inline-flex items-center justify-center text-center gap-2.5 rounded-xl px-7 py-4 text-xs sm:text-sm font-bold tracking-[0.15em] uppercase text-white bg-[#ff5500] hover:bg-[#e04b00] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-xl shadow-orange-500/25 shrink-0 whitespace-nowrap">
+        <span class="i18n" data-en="Visit UI/UX Portfolio" data-fr="Visiter le portfolio UI/UX">Visit UI/UX Portfolio</span>
+        <span class="cross-link-arrow" aria-hidden="true">→</span>
+      </span>
+    </a>
+  </div>
+</section>
+</main>
 <!-- PREV / NEXT -->
 <div class="border-t border-neutral-800 mt-16">
 <div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between py-10">
