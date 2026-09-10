@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title data-en="Resume — Guillaume Goder | Visual Development &amp; Concept Artist" data-fr="CV — Guillaume Goder | Artiste Développement Visuel &amp; Concept Art">Resume — Guillaume Goder | Visual Development &amp; Concept Artist</title>
-  <meta content="Interactive resume of Guillaume Goder — Mid-Level Visual Development Artist &amp; Concept Artist with 3D blockout and Unreal Engine 5 production pipelines." name="description"/>
+  <meta content="Resume of Guillaume Goder — Mid-Level Visual Development Artist &amp; Concept Artist with 3D blockout and Unreal Engine 5 production pipelines." name="description"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
@@ -27,31 +27,6 @@
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: #0b0c0e; }
     ::-webkit-scrollbar-thumb { background: #262a36; border-radius: 2px; }
-
-    /* Accordion transition */
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
-      opacity: 0;
-    }
-    .accordion-item[aria-expanded="true"] .accordion-content {
-      max-height: 800px;
-      opacity: 1;
-    }
-    .accordion-item[aria-expanded="true"] .accordion-icon {
-      transform: rotate(180deg);
-    }
-
-    /* Skill matrix filter transitions */
-    .skill-card {
-      transition: all 0.25s ease;
-    }
-    .skill-card.hidden-skill {
-      display: none;
-      opacity: 0;
-      transform: scale(0.96);
-    }
   </style>
   <link href="assets/theme.css" rel="stylesheet"/>
   <script defer="" src="assets/site.js"></script>
@@ -116,523 +91,200 @@
   </div>
 </nav>
 
-<main class="pt-24 pb-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+<main class="pt-28 pb-32 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
 
-  <!-- 1. DISCIPLINE BRIDGE SWITCHER BANNER -->
-  <aside aria-label="Discipline Switcher" class="bg-[#181a20] rounded-2xl p-4 sm:p-5 transition-all duration-300 hover:bg-[#1d2028]">
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-      <div class="flex items-start sm:items-center gap-3.5">
-        <span class="flex h-2.5 w-2.5 rounded-full bg-cyan-400 animate-pulse mt-1.5 sm:mt-0 shrink-0"></span>
-        <div>
-          <p class="text-[10px] font-mono tracking-[0.25em] uppercase text-cyan-400 font-bold mb-0.5">
-            <span class="i18n" data-en="DUAL-TRACK DISCIPLINE BRIDGE" data-fr="PASSERELLE DE DISCIPLINE DUAL-TRACK">DUAL-TRACK DISCIPLINE BRIDGE</span>
-          </p>
-          <p class="text-sm font-medium text-neutral-200">
-            <span class="i18n" data-en="Exploring Game UI/UX &amp; Technical Design? Switch to UI/UX Resume &amp; Engine Case Studies" data-fr="Vous cherchez l'expertise en UI/UX &amp; Design technique ? Voir le CV UI/UX &amp; Études de cas moteur">Exploring Game UI/UX &amp; Technical Design? Switch to UI/UX Resume &amp; Engine Case Studies</span>
-          </p>
-        </div>
-      </div>
-      <a href="https://uiux.guillaumedesign.ca/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#262a36] hover:bg-cyan-500 hover:text-black text-cyan-300 text-xs font-mono font-bold tracking-wider uppercase transition-all duration-200 shrink-0 shadow-sm">
-        <span class="i18n" data-en="Switch Track →" data-fr="Changer de Track →">Switch Track →</span>
-      </a>
+  <!-- 1. DISCIPLINE SWITCHER (Sleek Understated Pill) -->
+  <aside aria-label="Discipline Switcher" class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 px-4.5 rounded-xl bg-[#14161c] border border-neutral-800/80 text-xs">
+    <div class="flex items-center gap-2.5">
+      <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+      <span class="text-neutral-400">
+        <span class="i18n" data-en="Looking for Game UI/UX &amp; Technical Design?" data-fr="Vous cherchez l'expertise en UI/UX &amp; Design technique ?">Looking for Game UI/UX &amp; Technical Design?</span>
+      </span>
     </div>
+    <a href="https://uiux.guillaumedesign.ca/" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:text-cyan-300 font-semibold font-mono inline-flex items-center gap-1 transition-colors self-start sm:self-auto">
+      <span class="i18n" data-en="Switch to UI/UX Track →" data-fr="Voir le profil UI/UX →">Switch to UI/UX Track →</span>
+    </a>
   </aside>
 
-  <!-- 2. HERO / EXECUTIVE IDENTITY -->
-  <header class="space-y-6">
-    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-8 border-b border-[#2e323d]">
-      <div class="space-y-3 max-w-3xl">
-        <div class="flex flex-wrap items-center gap-2.5 font-mono text-[11px]">
-          <span class="text-amber-400 font-bold tracking-[0.25em] uppercase"><span class="i18n" data-en="CAREER PROFILE // 2025" data-fr="PROFIL PROFESSIONNEL // 2025">CAREER PROFILE // 2025</span></span>
-          <span class="text-neutral-600">/</span>
-          <span class="text-neutral-400"><span class="i18n" data-en="Montréal, QC · Available Worldwide" data-fr="Montréal, QC · Disponible à distance">Montréal, QC · Available Worldwide</span></span>
-        </div>
-        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-neutral-100 leading-none">
-          Guillaume Goder
-        </h1>
-        <p class="text-lg sm:text-xl font-medium text-amber-300/90 leading-snug">
-          <span class="i18n" data-en="Mid-Level Visual Development Artist &amp; Concept Artist" data-fr="Artiste Développement Visuel &amp; Concept Art">Mid-Level Visual Development Artist &amp; Concept Artist</span>
-        </p>
-        <p class="text-sm sm:text-base text-neutral-300 leading-relaxed font-light">
-          <span class="i18n" data-en="Concept artist specializing in worldbuilding, creature morphology, and hard-surface design — backed by 3D blockout pipelines and real-time engine integration (UE5). Bridging raw 2D ideation with zero-guesswork technical asset handoffs." data-fr="Artiste en développement visuel et concept art spécialisé en création d'univers, morphologie de créatures et design hard-surface — appuyé par des pipelines de modélisation 3D et une intégration moteur temps réel (UE5). Un pont entre l'idéation 2D et des livrables techniques sans compromis.">Concept artist specializing in worldbuilding, creature morphology, and hard-surface design — backed by 3D blockout pipelines and real-time engine integration (UE5). Bridging raw 2D ideation with zero-guesswork technical asset handoffs.</span>
-        </p>
-      </div>
-
-      <!-- Quick Action / PDF Downloads -->
-      <div class="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0">
-        <a href="resume/Concept%2BArt%2BResume%2B%E2%80%94%2BEnglish.pdf" download="" class="inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-neutral-950 font-semibold text-xs font-mono tracking-wider uppercase transition-all shadow-md">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
-          <span class="i18n" data-en="Download Resume (EN)" data-fr="Télécharger le CV (EN)">Download Resume (EN)</span>
-        </a>
-        <a href="resume/Concept%2BArt%2BResume%2B%E2%80%94%2BFran%C3%A7ais.pdf" download="" class="inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-[#181a20] hover:bg-[#222530] text-neutral-200 font-semibold text-xs font-mono tracking-wider uppercase transition-all">
-          <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
-          <span class="i18n" data-en="Télécharger le CV (FR)" data-fr="Télécharger le CV (FR)">Télécharger le CV (FR)</span>
-        </a>
-      </div>
+  <!-- 2. HERO / EXECUTIVE IDENTITY (Calm, Breathing Room) -->
+  <header class="space-y-6 pt-2 border-b border-neutral-800/80 pb-12">
+    <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+      <span class="text-[11px] font-mono uppercase tracking-[0.25em] text-neutral-500">
+        <span class="i18n" data-en="Curriculum Vitae" data-fr="Curriculum Vitae">Curriculum Vitae</span>
+      </span>
+      <span class="text-[11px] font-mono text-neutral-500">
+        <span class="i18n" data-en="Montréal, Canada · Available Worldwide" data-fr="Montréal, Canada · Disponible à distance">Montréal, Canada · Available Worldwide</span>
+      </span>
     </div>
 
-    <!-- Production Telemetry Metric Strip -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <div class="bg-[#181a20] rounded-2xl p-4 sm:p-5">
-        <p class="text-[10px] font-mono tracking-[0.25em] uppercase text-neutral-500 mb-1"><span class="i18n" data-en="SHIPPED / FLAGSHIP" data-fr="TITRES LIVRÉS">SHIPPED / FLAGSHIP</span></p>
-        <p class="text-xl sm:text-2xl font-black text-neutral-100">6+ Titles</p>
-        <p class="text-xs text-neutral-400 mt-0.5"><span class="i18n" data-en="VR, Mobile &amp; PC Productions" data-fr="Productions VR, Mobile &amp; PC">VR, Mobile &amp; PC Productions</span></p>
-      </div>
-
-      <div class="bg-[#181a20] rounded-2xl p-4 sm:p-5">
-        <p class="text-[10px] font-mono tracking-[0.25em] uppercase text-neutral-500 mb-1"><span class="i18n" data-en="CORE PIPELINE" data-fr="PIPELINE CLÉ">CORE PIPELINE</span></p>
-        <p class="text-xl sm:text-2xl font-black text-amber-400">2D + 3D Blockout</p>
-        <p class="text-xs text-neutral-400 mt-0.5"><span class="i18n" data-en="Photoshop · Blender · ZBrush" data-fr="Photoshop · Blender · ZBrush">Photoshop · Blender · ZBrush</span></p>
-      </div>
-
-      <div class="bg-[#181a20] rounded-2xl p-4 sm:p-5">
-        <p class="text-[10px] font-mono tracking-[0.25em] uppercase text-neutral-500 mb-1"><span class="i18n" data-en="ENGINE INTEGRATION" data-fr="INTÉGRATION MOTEUR">ENGINE INTEGRATION</span></p>
-        <p class="text-xl sm:text-2xl font-black text-neutral-100">Unreal Engine 5</p>
-        <p class="text-xs text-neutral-400 mt-0.5"><span class="i18n" data-en="Lumen, Nanite &amp; Graybox" data-fr="Lumen, Nanite &amp; Graybox">Lumen, Nanite &amp; Graybox</span></p>
-      </div>
-
-      <div class="bg-[#181a20] rounded-2xl p-4 sm:p-5">
-        <p class="text-[10px] font-mono tracking-[0.25em] uppercase text-neutral-500 mb-1"><span class="i18n" data-en="LANGUAGE &amp; HUB" data-fr="LANGUES &amp; HUB">LANGUAGE &amp; HUB</span></p>
-        <p class="text-xl sm:text-2xl font-black text-neutral-100">Bilingual EN/FR</p>
-        <p class="text-xs text-neutral-400 mt-0.5"><span class="i18n" data-en="Montreal Game Dev Network" data-fr="Écosystème JV Montréal">Montreal Game Dev Network</span></p>
-      </div>
-    </div>
-  </header>
-
-  <!-- 3. INTERACTIVE FILTERABLE SKILL MATRIX -->
-  <section aria-label="Skills &amp; Technical Capabilities" class="space-y-6">
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-      <div>
-        <p class="text-[10px] font-mono tracking-[0.3em] uppercase text-orange-500 font-bold mb-1">
-          <span class="i18n" data-en="PRODUCTION TOOLKIT &amp; CAPABILITIES" data-fr="BOÎTE À OUTILS &amp; CAPACITÉS">PRODUCTION TOOLKIT &amp; CAPABILITIES</span>
-        </p>
-        <h2 class="text-2xl sm:text-3xl font-bold text-neutral-100">
-          <span class="i18n" data-en="Filterable Competency Matrix" data-fr="Matrice de compétences filtrable">Filterable Competency Matrix</span>
-        </h2>
-      </div>
-
-      <!-- Filter Tabs -->
-      <div class="flex flex-wrap gap-2 p-1.5 bg-[#181a20] rounded-xl font-mono text-xs" role="tablist">
-        <button type="button" onclick="filterSkills('all')" class="skill-tab active px-3.5 py-1.5 rounded-lg bg-amber-400 text-neutral-950 font-bold transition-all" data-category="all">
-          <span class="i18n" data-en="All" data-fr="Tout">All</span>
-        </button>
-        <button type="button" onclick="filterSkills('visdev')" class="skill-tab px-3.5 py-1.5 rounded-lg text-neutral-400 hover:text-neutral-200 transition-all" data-category="visdev">
-          <span class="i18n" data-en="Concept &amp; VisDev" data-fr="Concept &amp; VisDev">Concept &amp; VisDev</span>
-        </button>
-        <button type="button" onclick="filterSkills('3d')" class="skill-tab px-3.5 py-1.5 rounded-lg text-neutral-400 hover:text-neutral-200 transition-all" data-category="3d">
-          <span class="i18n" data-en="3D &amp; Hard Surface" data-fr="3D &amp; Hard Surface">3D &amp; Hard Surface</span>
-        </button>
-        <button type="button" onclick="filterSkills('engine')" class="skill-tab px-3.5 py-1.5 rounded-lg text-neutral-400 hover:text-neutral-200 transition-all" data-category="engine">
-          <span class="i18n" data-en="Engine &amp; Tech" data-fr="Moteur &amp; Tech">Engine &amp; Tech</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- Skill Grid Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="skills-grid">
-      <!-- VisDev Skills -->
-      <div class="skill-card bg-[#181a20] rounded-2xl p-5 space-y-3" data-category="visdev">
-        <div class="flex items-center justify-between">
-          <span class="text-[10px] font-mono uppercase tracking-wider text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded font-bold">2D Pipeline</span>
-          <span class="text-[11px] font-mono text-neutral-500">Core</span>
-        </div>
-        <h3 class="text-base font-bold text-neutral-100">Keyframe Illustration &amp; Mood Paintings</h3>
-        <p class="text-xs text-neutral-400 leading-relaxed">
-          <span class="i18n" data-en="Cinematic lighting scripts, atmospheric key moments, and narrative beat composition establishing production tone." data-fr="Scripts d'éclairage cinématique, moments clés atmosphériques et composition narrative définissant le ton de production.">Cinematic lighting scripts, atmospheric key moments, and narrative beat composition establishing production tone.</span>
-        </p>
-      </div>
-
-      <div class="skill-card bg-[#181a20] rounded-2xl p-5 space-y-3" data-category="visdev">
-        <div class="flex items-center justify-between">
-          <span class="text-[10px] font-mono uppercase tracking-wider text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded font-bold">Character/Creature</span>
-          <span class="text-[11px] font-mono text-neutral-500">Production</span>
-        </div>
-        <h3 class="text-base font-bold text-neutral-100">Creature Morphology &amp; Turnarounds</h3>
-        <p class="text-xs text-neutral-400 leading-relaxed">
-          <span class="i18n" data-en="Anatomical silhouettes, orthographic turnarounds, callout sheets, and behavioral motion breakdowns for 3D character artists." data-fr="Silhouettes anatomiques, vues orthographiques, planches de détails et décompositions de mouvement pour modeleurs 3D.">Anatomical silhouettes, orthographic turnarounds, callout sheets, and behavioral motion breakdowns for 3D character artists.</span>
-        </p>
-      </div>
-
-      <div class="skill-card bg-[#181a20] rounded-2xl p-5 space-y-3" data-category="visdev">
-        <div class="flex items-center justify-between">
-          <span class="text-[10px] font-mono uppercase tracking-wider text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded font-bold">Worldbuilding</span>
-          <span class="text-[11px] font-mono text-neutral-500">Bibles</span>
-        </div>
-        <h3 class="text-base font-bold text-neutral-100">Style Bibles &amp; Visual Language</h3>
-        <p class="text-xs text-neutral-400 leading-relaxed">
-          <span class="i18n" data-en="Comprehensive architectural rulesets, cultural prop languages, and material palettes aligning multidisciplinary teams." data-fr="Règles architecturales complètes, langages d'accessoires culturels et palettes de matériaux alignant les équipes multidisciplinaires.">Comprehensive architectural rulesets, cultural prop languages, and material palettes aligning multidisciplinary teams.</span>
-        </p>
-      </div>
-
-      <!-- 3D Skills -->
-      <div class="skill-card bg-[#181a20] rounded-2xl p-5 space-y-3" data-category="3d">
-        <div class="flex items-center justify-between">
-          <span class="text-[10px] font-mono uppercase tracking-wider text-orange-400 bg-orange-400/10 px-2 py-0.5 rounded font-bold">3D Modeling</span>
-          <span class="text-[11px] font-mono text-neutral-500">Blender / ZBrush</span>
-        </div>
-        <h3 class="text-base font-bold text-neutral-100">Rapid 3D Environment Blockouts</h3>
-        <p class="text-xs text-neutral-400 leading-relaxed">
-          <span class="i18n" data-en="Quickly translating rough sketches into volumetric graybox meshes to test camera angles, player sightlines, and scale." data-fr="Traduction rapide de croquis en volumes graybox 3D pour valider les angles de caméra, les lignes de vue et l'échelle.">Quickly translating rough sketches into volumetric graybox meshes to test camera angles, player sightlines, and scale.</span>
-        </p>
-      </div>
-
-      <div class="skill-card bg-[#181a20] rounded-2xl p-5 space-y-3" data-category="3d">
-        <div class="flex items-center justify-between">
-          <span class="text-[10px] font-mono uppercase tracking-wider text-orange-400 bg-orange-400/10 px-2 py-0.5 rounded font-bold">Hard Surface</span>
-          <span class="text-[11px] font-mono text-neutral-500">Plasticity / CAD</span>
-        </div>
-        <h3 class="text-base font-bold text-neutral-100">NURBS Vehicles &amp; Mechanical Props</h3>
-        <p class="text-xs text-neutral-400 leading-relaxed">
-          <span class="i18n" data-en="Mathematical curvature and functional mechanical articulation for rovers, cockpits, weapon assemblies, and sci-fi hardware." data-fr="Courbures mathématiques et articulations mécaniques fonctionnelles pour véhicules, cockpits, armes et matériel sci-fi.">Mathematical curvature and functional mechanical articulation for rovers, cockpits, weapon assemblies, and sci-fi hardware.</span>
-        </p>
-      </div>
-
-      <div class="skill-card bg-[#181a20] rounded-2xl p-5 space-y-3" data-category="3d">
-        <div class="flex items-center justify-between">
-          <span class="text-[10px] font-mono uppercase tracking-wider text-orange-400 bg-orange-400/10 px-2 py-0.5 rounded font-bold">Texturing</span>
-          <span class="text-[11px] font-mono text-neutral-500">Substance 3D</span>
-        </div>
-        <h3 class="text-base font-bold text-neutral-100">PBR Materials &amp; Weathering Pass</h3>
-        <p class="text-xs text-neutral-400 leading-relaxed">
-          <span class="i18n" data-en="Material definitions, edge wear, oxidized metals, and surface decay communicating history and tactile realism." data-fr="Définitions de matériaux, usure des arêtes, métaux oxydés et patine de surface communiquant réalisme et vécu.">Material definitions, edge wear, oxidized metals, and surface decay communicating history and tactile realism.</span>
-        </p>
-      </div>
-
-      <!-- Engine Skills -->
-      <div class="skill-card bg-[#181a20] rounded-2xl p-5 space-y-3" data-category="engine">
-        <div class="flex items-center justify-between">
-          <span class="text-[10px] font-mono uppercase tracking-wider text-cyan-400 bg-cyan-400/10 px-2 py-0.5 rounded font-bold">Engine</span>
-          <span class="text-[11px] font-mono text-neutral-500">Unreal Engine 5</span>
-        </div>
-        <h3 class="text-base font-bold text-neutral-100">Level Graybox &amp; Lighting Prototyping</h3>
-        <p class="text-xs text-neutral-400 leading-relaxed">
-          <span class="i18n" data-en="Setting up Lumen real-time lighting, volumetric fog, and post-process grading inside UE5 to validate mood in-engine." data-fr="Configuration de l'éclairage temps réel Lumen, brouillard volumétrique et étalonnage dans UE5 pour valider l'ambiance en jeu.">Setting up Lumen real-time lighting, volumetric fog, and post-process grading inside UE5 to validate mood in-engine.</span>
-        </p>
-      </div>
-
-      <div class="skill-card bg-[#181a20] rounded-2xl p-5 space-y-3" data-category="engine">
-        <div class="flex items-center justify-between">
-          <span class="text-[10px] font-mono uppercase tracking-wider text-cyan-400 bg-cyan-400/10 px-2 py-0.5 rounded font-bold">VR &amp; Spatial</span>
-          <span class="text-[11px] font-mono text-neutral-500">Meta Quest / SteamVR</span>
-        </div>
-        <h3 class="text-base font-bold text-neutral-100">Spatial Interfaces &amp; 360° Scale Awareness</h3>
-        <p class="text-xs text-neutral-400 leading-relaxed">
-          <span class="i18n" data-en="Diegetic cockpit HUD design, spatial telemetry, and VR comfort validation ensuring visuals excel in stereoscopic 6DoF." data-fr="Design de HUD de cockpit diégétique, télémétrie spatiale et validation de confort VR pour l'affichage stéréoscopique 6DoF.">Diegetic cockpit HUD design, spatial telemetry, and VR comfort validation ensuring visuals excel in stereoscopic 6DoF.</span>
-        </p>
-      </div>
-
-      <div class="skill-card bg-[#181a20] rounded-2xl p-5 space-y-3" data-category="engine">
-        <div class="flex items-center justify-between">
-          <span class="text-[10px] font-mono uppercase tracking-wider text-cyan-400 bg-cyan-400/10 px-2 py-0.5 rounded font-bold">Handoff</span>
-          <span class="text-[11px] font-mono text-neutral-500">Pipelines</span>
-        </div>
-        <h3 class="text-base font-bold text-neutral-100">Production-Ready Asset Documentation</h3>
-        <p class="text-xs text-neutral-400 leading-relaxed">
-          <span class="i18n" data-en="Detailed callout sheets with material callouts, exact dimensions, texture budget guides, and mechanical joints breakdown." data-fr="Planches techniques avec indications de matériaux, cotes précises, budgets de texture et détails d'articulations mécaniques.">Detailed callout sheets with material callouts, exact dimensions, texture budget guides, and mechanical joints breakdown.</span>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. EXPANDABLE CAR / STAR EXPERIENCE MODULES -->
-  <section aria-label="Professional Experience" class="space-y-6">
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#2e323d] pb-4">
-      <div>
-        <p class="text-[10px] font-mono tracking-[0.3em] uppercase text-orange-500 font-bold mb-1">
-          <span class="i18n" data-en="TRACK RECORD // PRODUCTION IMPACT" data-fr="PARCOURS // IMPACT EN PRODUCTION">TRACK RECORD // PRODUCTION IMPACT</span>
-        </p>
-        <h2 class="text-2xl sm:text-3xl font-bold text-neutral-100">
-          <span class="i18n" data-en="Experience &amp; Production Outcomes" data-fr="Expérience &amp; Résultats en production">Experience &amp; Production Outcomes</span>
-        </h2>
-      </div>
-      <p class="text-xs font-mono text-neutral-500">
-        <span class="i18n" data-en="Click any role to expand CAR breakdown" data-fr="Cliquez pour développer le détail CAR">Click any role to expand CAR breakdown</span>
+    <div class="space-y-3 max-w-2xl">
+      <h1 class="text-4xl sm:text-5xl font-black tracking-tight text-neutral-100">Guillaume Goder</h1>
+      <p class="text-lg sm:text-xl font-medium text-amber-400/90">
+        <span class="i18n" data-en="Visual Development Artist &amp; Concept Artist" data-fr="Artiste Développement Visuel &amp; Concept Art">Visual Development Artist &amp; Concept Artist</span>
+      </p>
+      <p class="text-sm sm:text-base text-neutral-300 font-light leading-relaxed">
+        <span class="i18n" data-en="Specializing in worldbuilding, creature morphology, and functional hard-surface designs. Backed by 3D blockout pipelines (Blender / ZBrush) and real-time engine integration (Unreal Engine 5) for zero-guesswork production asset delivery." data-fr="Spécialisé en création d'univers, morphologie de créatures et design hard-surface fonctionnel. Appuyé par des pipelines de modélisation 3D (Blender / ZBrush) et une intégration moteur temps réel (Unreal Engine 5) pour des livrables de production fiables.">Specializing in worldbuilding, creature morphology, and functional hard-surface designs. Backed by 3D blockout pipelines (Blender / ZBrush) and real-time engine integration (Unreal Engine 5) for zero-guesswork production asset delivery.</span>
       </p>
     </div>
 
-    <div class="space-y-4">
+    <!-- Quick Action / PDF Downloads -->
+    <div class="flex flex-wrap gap-3 pt-2">
+      <a href="resume/Concept%2BArt%2BResume%2B%E2%80%94%2BEnglish.pdf" download="" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-neutral-950 font-bold text-xs font-mono uppercase tracking-wider transition-all shadow-sm">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+        <span class="i18n" data-en="Download Resume (EN)" data-fr="Télécharger le CV (EN)">Download Resume (EN)</span>
+      </a>
+      <a href="resume/Concept%2BArt%2BResume%2B%E2%80%94%2BFran%C3%A7ais.pdf" download="" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#181a20] hover:bg-[#222530] text-neutral-300 font-semibold text-xs font-mono uppercase tracking-wider transition-all">
+        <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+        <span class="i18n" data-en="Télécharger le CV (FR)" data-fr="Télécharger le CV (FR)">Télécharger le CV (FR)</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- 3. PRODUCTION EXPERIENCE (Linear Editorial Timeline — Clean & Breathable) -->
+  <section aria-label="Production Experience" class="space-y-10">
+    <div class="flex items-center justify-between border-b border-neutral-800/80 pb-3">
+      <h2 class="text-xs font-mono uppercase tracking-[0.25em] text-amber-400 font-bold">
+        <span class="i18n" data-en="Selected Production Experience" data-fr="Expérience de production sélectionnée">Selected Production Experience</span>
+      </h2>
+      <span class="text-xs font-mono text-neutral-500">2019 — Present</span>
+    </div>
+
+    <div class="space-y-12">
       <!-- Role 1: Little Guy Games -->
-      <article class="accordion-item bg-[#181a20] rounded-2xl overflow-hidden transition-all duration-300" aria-expanded="true">
-        <button type="button" onclick="toggleAccordion(this)" class="w-full text-left p-5 sm:p-6 flex items-start justify-between gap-4 group">
-          <div class="space-y-2 flex-1">
-            <div class="flex flex-wrap items-center gap-2.5">
-              <span class="text-xs font-mono font-bold text-amber-400 bg-amber-400/10 px-2.5 py-0.5 rounded">2022 — 2025</span>
-              <span class="text-xs font-mono text-neutral-500">VR &amp; Spatial Studio</span>
-              <span class="text-xs font-mono text-neutral-400">Toronto / Remote</span>
-            </div>
-            <div class="flex flex-col sm:flex-row sm:items-baseline gap-2">
-              <h3 class="text-xl sm:text-2xl font-bold text-neutral-100 group-hover:text-amber-300 transition-colors">
-                Lead Concept Artist &amp; UI Designer
-              </h3>
-              <span class="text-neutral-400 font-medium text-base">@ Little Guy Games</span>
-            </div>
-            <p class="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed">
-              <span class="i18n" data-en="Directed visual development and diegetic spatial interfaces across Meta Quest and SteamVR titles (Wings of Wanitu, Home Run Derby VR), reducing downstream 3D handoff iteration by 35%." data-fr="Direction du développement visuel et des interfaces spatiales diégétiques sur titres Meta Quest et SteamVR (Wings of Wanitu, Home Run Derby VR), réduisant les allers-retours de modélisation 3D de 35%.">Directed visual development and diegetic spatial interfaces across Meta Quest and SteamVR titles (Wings of Wanitu, Home Run Derby VR), reducing downstream 3D handoff iteration by 35%.</span>
-            </p>
+      <article class="space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+          <div>
+            <h3 class="text-xl font-bold text-neutral-100">
+              <span class="i18n" data-en="Lead Concept Artist &amp; UI Designer" data-fr="Artiste Conceptuel Principal &amp; Designer UI">Lead Concept Artist &amp; UI Designer</span>
+            </h3>
+            <p class="text-sm font-medium text-neutral-400 mt-0.5">Little Guy Games · <span class="text-neutral-500 font-normal"><span class="i18n" data-en="VR &amp; Immersive Titles" data-fr="Titres VR &amp; Immersifs">VR &amp; Immersive Titles</span></span></p>
           </div>
-          <div class="accordion-icon w-9 h-9 rounded-xl bg-[#262a36] flex items-center justify-center text-amber-400 group-hover:text-black group-hover:bg-amber-400 shrink-0 transition-all">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </div>
-        </button>
-
-        <div class="accordion-content px-5 sm:px-6 pb-6 pt-2 space-y-4 border-t border-[#2e323d]/60">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
-            <div class="bg-[#12141a] rounded-xl p-4 space-y-1.5">
-              <p class="text-[10px] font-mono tracking-wider uppercase text-red-400 font-bold"><span class="i18n" data-en="CHALLENGE" data-fr="DÉFI">CHALLENGE</span></p>
-              <p class="text-xs text-neutral-300 leading-relaxed">
-                <span class="i18n" data-en="Establish high-contrast readability and spatial depth in VR headsets under tight frame budgets, avoiding UI motion sickness while maintaining intense dogfight velocity." data-fr="Établir une lisibilité à fort contraste et une profondeur spatiale en VR avec un budget de rendu strict, sans provoquer de cinétose tout en conservant la vitesse de combat.">Establish high-contrast readability and spatial depth in VR headsets under tight frame budgets, avoiding UI motion sickness while maintaining intense dogfight velocity.</span>
-              </p>
-            </div>
-
-            <div class="bg-[#12141a] rounded-xl p-4 space-y-1.5">
-              <p class="text-[10px] font-mono tracking-wider uppercase text-amber-400 font-bold"><span class="i18n" data-en="EXECUTION (ART + TECH)" data-fr="ACTION (ART + TECH)">EXECUTION (ART + TECH)</span></p>
-              <p class="text-xs text-neutral-300 leading-relaxed">
-                <span class="i18n" data-en="Modeled 3D volumetric cockpit grayboxes in Blender to test physical reach and sightlines in-headset. Authored 60+ creature silhouettes and diegetic 360° spherical radar telemetry." data-fr="Modélisation de volumes 3D de cockpits dans Blender pour tester la portée et le champ de vision au casque. Création de plus de 60 silhouettes de créatures et du radar sphérique diégétique 360°.">Modeled 3D volumetric cockpit grayboxes in Blender to test physical reach and sightlines in-headset. Authored 60+ creature silhouettes and diegetic 360° spherical radar telemetry.</span>
-              </p>
-            </div>
-
-            <div class="bg-[#12141a] rounded-xl p-4 space-y-1.5">
-              <p class="text-[10px] font-mono tracking-wider uppercase text-emerald-400 font-bold"><span class="i18n" data-en="PRODUCTION OUTCOME" data-fr="RÉSULTAT">PRODUCTION OUTCOME</span></p>
-              <p class="text-xs text-neutral-300 leading-relaxed">
-                <span class="i18n" data-en="Zero asset rebuilds required downstream; full production style bible and 8 spatial HUD sheets shipped on schedule for official Meta Quest store compliance." data-fr="Zéro reconstruction d'actifs nécessaire en aval ; bible de style complète et 8 planches de HUD spatial livrées dans les délais pour conformité Meta Quest.">Zero asset rebuilds required downstream; full production style bible and 8 spatial HUD sheets shipped on schedule for official Meta Quest store compliance.</span>
-              </p>
-            </div>
-          </div>
+          <span class="text-xs font-mono text-neutral-400">2022 — 2025</span>
         </div>
+        <ul class="space-y-2.5 text-sm text-neutral-300 font-light leading-relaxed pl-4 border-l border-neutral-800">
+          <li>
+            <strong class="text-neutral-100 font-medium"><span class="i18n" data-en="VR Worldbuilding &amp; Ergonomics:" data-fr="Worldbuilding &amp; Ergonomie VR :">VR Worldbuilding &amp; Ergonomics:</span></strong>
+            <span class="i18n" data-en="Directed visual development across Meta Quest and SteamVR titles (Wings of Wanitu, Home Run Derby VR), establishing 360° cockpit interfaces and stereoscopic motion comfort." data-fr="Direction du développement visuel sur titres Meta Quest et SteamVR (Wings of Wanitu, Home Run Derby VR), établissant les interfaces de cockpit 360° et le confort stéréoscopique.">Directed visual development across Meta Quest and SteamVR titles (Wings of Wanitu, Home Run Derby VR), establishing 360° cockpit interfaces and stereoscopic motion comfort.</span>
+          </li>
+          <li>
+            <strong class="text-neutral-100 font-medium"><span class="i18n" data-en="3D Blockout Pipeline:" data-fr="Pipeline de Blockout 3D :">3D Blockout Pipeline:</span></strong>
+            <span class="i18n" data-en="Modeled volumetric cockpit grayboxes in Blender to test physical reach and sightlines directly in-headset, reducing downstream 3D handoff iterations by 35%." data-fr="Modélisation de volumes 3D de cockpits dans Blender pour tester la portée et le champ de vision au casque, réduisant les itérations de modélisation de 35%.">Modeled volumetric cockpit grayboxes in Blender to test physical reach and sightlines directly in-headset, reducing downstream 3D handoff iterations by 35%.</span>
+          </li>
+          <li>
+            <strong class="text-neutral-100 font-medium"><span class="i18n" data-en="Creature Morphology:" data-fr="Morphologie de créatures :">Creature Morphology:</span></strong>
+            <span class="i18n" data-en="Authored 60+ creature silhouettes and orthographic callout sheets with zero downstream asset rebuilds required." data-fr="Création de plus de 60 silhouettes de créatures et planches de détails techniques avec zéro reconstruction d'actifs nécessaire.">Authored 60+ creature silhouettes and orthographic callout sheets with zero downstream asset rebuilds required.</span>
+          </li>
+        </ul>
       </article>
 
       <!-- Role 2: Cosmic Games Studio -->
-      <article class="accordion-item bg-[#181a20] rounded-2xl overflow-hidden transition-all duration-300" aria-expanded="false">
-        <button type="button" onclick="toggleAccordion(this)" class="w-full text-left p-5 sm:p-6 flex items-start justify-between gap-4 group">
-          <div class="space-y-2 flex-1">
-            <div class="flex flex-wrap items-center gap-2.5">
-              <span class="text-xs font-mono font-bold text-amber-400 bg-amber-400/10 px-2.5 py-0.5 rounded">2019 — 2021</span>
-              <span class="text-xs font-mono text-neutral-500">Mobile Game Studio</span>
-              <span class="text-xs font-mono text-neutral-400">Toronto / Remote</span>
-            </div>
-            <div class="flex flex-col sm:flex-row sm:items-baseline gap-2">
-              <h3 class="text-xl sm:text-2xl font-bold text-neutral-100 group-hover:text-amber-300 transition-colors">
-                Lead Concept Artist
-              </h3>
-              <span class="text-neutral-400 font-medium text-base">@ Cosmic Games Studio</span>
-            </div>
-            <p class="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed">
-              <span class="i18n" data-en="Spearheaded end-to-end visual development for mobile sci-fi shooter Starquest, producing 40+ ship hulls, modular customizers, weapon systems, and planetary warzone hazard sheets." data-fr="Direction complète du développement visuel du shooter mobile sci-fi Starquest, créant plus de 40 coques de vaisseaux, un customiseur modulaire, des systèmes d'armes et des planches de dangers de guerre.">Spearheaded end-to-end visual development for mobile sci-fi shooter Starquest, producing 40+ ship hulls, modular customizers, weapon systems, and planetary warzone hazard sheets.</span>
-            </p>
+      <article class="space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+          <div>
+            <h3 class="text-xl font-bold text-neutral-100">
+              <span class="i18n" data-en="Lead Concept Artist" data-fr="Artiste Conceptuel Principal">Lead Concept Artist</span>
+            </h3>
+            <p class="text-sm font-medium text-neutral-400 mt-0.5">Cosmic Games Studio · <span class="text-neutral-500 font-normal"><span class="i18n" data-en="Mobile Sci-Fi Shooter" data-fr="Jeu de tir mobile Sci-Fi">Mobile Sci-Fi Shooter</span></span></p>
           </div>
-          <div class="accordion-icon w-9 h-9 rounded-xl bg-[#262a36] flex items-center justify-center text-amber-400 group-hover:text-black group-hover:bg-amber-400 shrink-0 transition-all">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </div>
-        </button>
-
-        <div class="accordion-content px-5 sm:px-6 pb-6 pt-2 space-y-4 border-t border-[#2e323d]/60">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
-            <div class="bg-[#12141a] rounded-xl p-4 space-y-1.5">
-              <p class="text-[10px] font-mono tracking-wider uppercase text-red-400 font-bold"><span class="i18n" data-en="CHALLENGE" data-fr="DÉFI">CHALLENGE</span></p>
-              <p class="text-xs text-neutral-300 leading-relaxed">
-                <span class="i18n" data-en="Create instantly readable combat silhouettes on 6-inch mobile screens while maintaining high-end mechanical fidelity and modular weapon interchangeability." data-fr="Créer des silhouettes de combat lisibles instantanément sur écran mobile de 6 pouces tout en conservant une grande fidélité mécanique et l'interchangeabilité des armes.">Create instantly readable combat silhouettes on 6-inch mobile screens while maintaining high-end mechanical fidelity and modular weapon interchangeability.</span>
-              </p>
-            </div>
-
-            <div class="bg-[#12141a] rounded-xl p-4 space-y-1.5">
-              <p class="text-[10px] font-mono tracking-wider uppercase text-amber-400 font-bold"><span class="i18n" data-en="EXECUTION (ART + TECH)" data-fr="ACTION (ART + TECH)">EXECUTION (ART + TECH)</span></p>
-              <p class="text-xs text-neutral-300 leading-relaxed">
-                <span class="i18n" data-en="Pioneered high-contrast threshold silhouette ideation; paired 2D speed-painting with ZBrush 3D hard-surface blockouts for capital ships and modular hangar customizer UI." data-fr="Développement d'une méthode de silhouettes à fort contraste ; combinaison de speed-painting 2D et de blockouts hard-surface sous ZBrush pour vaisseaux amiraux et interface de hangar.">Pioneered high-contrast threshold silhouette ideation; paired 2D speed-painting with ZBrush 3D hard-surface blockouts for capital ships and modular hangar customizer UI.</span>
-              </p>
-            </div>
-
-            <div class="bg-[#12141a] rounded-xl p-4 space-y-1.5">
-              <p class="text-[10px] font-mono tracking-wider uppercase text-emerald-400 font-bold"><span class="i18n" data-en="PRODUCTION OUTCOME" data-fr="RÉSULTAT">PRODUCTION OUTCOME</span></p>
-              <p class="text-xs text-neutral-300 leading-relaxed">
-                <span class="i18n" data-en="Established complete visual style guide across 8 production chapters; delivered zero-defect orthographic handoffs enabling rapid 3D turnaround by external artists." data-fr="Établissement du guide de style visuel sur 8 chapitres de production ; livrables orthographiques sans défaut permettant une modélisation 3D rapide par des prestataires externes.">Established complete visual style guide across 8 production chapters; delivered zero-defect orthographic handoffs enabling rapid 3D turnaround by external artists.</span>
-              </p>
-            </div>
-          </div>
+          <span class="text-xs font-mono text-neutral-400">2019 — 2021</span>
         </div>
+        <ul class="space-y-2.5 text-sm text-neutral-300 font-light leading-relaxed pl-4 border-l border-neutral-800">
+          <li>
+            <strong class="text-neutral-100 font-medium"><span class="i18n" data-en="Mobile Visual Direction:" data-fr="Direction Visuelle Mobile :">Mobile Visual Direction:</span></strong>
+            <span class="i18n" data-en="Spearheaded end-to-end visual identity for Starquest, authoring 40+ ship hulls, modular customizers, weapon systems, and planetary warzone hazard sheets." data-fr="Direction complète de l'identité visuelle de Starquest, créant plus de 40 coques de vaisseaux, un customiseur modulaire, des armes et des planches de zones de guerre.">Spearheaded end-to-end visual identity for Starquest, authoring 40+ ship hulls, modular customizers, weapon systems, and planetary warzone hazard sheets.</span>
+          </li>
+          <li>
+            <strong class="text-neutral-100 font-medium"><span class="i18n" data-en="Threshold Silhouette Readability:" data-fr="Lisibilité des Silhouettes :">Threshold Silhouette Readability:</span></strong>
+            <span class="i18n" data-en="Pioneered high-contrast thumbnail ideation ensuring immediate combat readability on small mobile screens." data-fr="Développement d'une méthode de vignettes à fort contraste assurant une lisibilité immédiate du combat sur petits écrans mobiles.">Pioneered high-contrast thumbnail ideation ensuring immediate combat readability on small mobile screens.</span>
+          </li>
+          <li>
+            <strong class="text-neutral-100 font-medium"><span class="i18n" data-en="Production Art Bible:" data-fr="Bible Artistique de Production :">Production Art Bible:</span></strong>
+            <span class="i18n" data-en="Established foundational 8-chapter style guide providing technical callouts for external 3D modellers and VFX artists." data-fr="Établissement du guide de style en 8 chapitres fournissant les détails techniques aux modeleurs 3D et artistes VFX.">Established foundational 8-chapter style guide providing technical callouts for external 3D modellers and VFX artists.</span>
+          </li>
+        </ul>
       </article>
 
       <!-- Role 3: TELUS Digital -->
-      <article class="accordion-item bg-[#181a20] rounded-2xl overflow-hidden transition-all duration-300" aria-expanded="false">
-        <button type="button" onclick="toggleAccordion(this)" class="w-full text-left p-5 sm:p-6 flex items-start justify-between gap-4 group">
-          <div class="space-y-2 flex-1">
-            <div class="flex flex-wrap items-center gap-2.5">
-              <span class="text-xs font-mono font-bold text-amber-400 bg-amber-400/10 px-2.5 py-0.5 rounded">2021 — 2022</span>
-              <span class="text-xs font-mono text-neutral-500">Enterprise Digital Systems</span>
-              <span class="text-xs font-mono text-neutral-400">Toronto / Remote</span>
-            </div>
-            <div class="flex flex-col sm:flex-row sm:items-baseline gap-2">
-              <h3 class="text-xl sm:text-2xl font-bold text-neutral-100 group-hover:text-amber-300 transition-colors">
-                UI/UX Designer &amp; Systems Specialist
-              </h3>
-              <span class="text-neutral-400 font-medium text-base">@ TELUS Digital</span>
-            </div>
-            <p class="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed">
-              <span class="i18n" data-en="Architected design system frameworks, structured state machines, and multi-tier developer handoff standards for enterprise digital products." data-fr="Architecture de frameworks de design system, machines à états et standards de transfert pour produits numériques d'entreprise.">Architected design system frameworks, structured state machines, and multi-tier developer handoff standards for enterprise digital products.</span>
-            </p>
+      <article class="space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+          <div>
+            <h3 class="text-xl font-bold text-neutral-100">
+              <span class="i18n" data-en="UI/UX Designer &amp; Systems Specialist" data-fr="Designer UI/UX &amp; Spécialiste Systèmes">UI/UX Designer &amp; Systems Specialist</span>
+            </h3>
+            <p class="text-sm font-medium text-neutral-400 mt-0.5">TELUS Digital · <span class="text-neutral-500 font-normal"><span class="i18n" data-en="Enterprise Digital Systems" data-fr="Systèmes Numériques d'Entreprise">Enterprise Digital Systems</span></span></p>
           </div>
-          <div class="accordion-icon w-9 h-9 rounded-xl bg-[#262a36] flex items-center justify-center text-amber-400 group-hover:text-black group-hover:bg-amber-400 shrink-0 transition-all">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </div>
-        </button>
-
-        <div class="accordion-content px-5 sm:px-6 pb-6 pt-2 space-y-4 border-t border-[#2e323d]/60">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
-            <div class="bg-[#12141a] rounded-xl p-4 space-y-1.5">
-              <p class="text-[10px] font-mono tracking-wider uppercase text-red-400 font-bold"><span class="i18n" data-en="CHALLENGE" data-fr="DÉFI">CHALLENGE</span></p>
-              <p class="text-xs text-neutral-300 leading-relaxed">
-                <span class="i18n" data-en="Consolidate disparate interface patterns across multiple product squads into a unified, accessible, and scalable design token architecture." data-fr="Consolider des interfaces disparates réparties sur plusieurs équipes produit au sein d'une architecture de tokens unifiée, accessible et évolutive.">Consolidate disparate interface patterns across multiple product squads into a unified, accessible, and scalable design token architecture.</span>
-              </p>
-            </div>
-
-            <div class="bg-[#12141a] rounded-xl p-4 space-y-1.5">
-              <p class="text-[10px] font-mono tracking-wider uppercase text-amber-400 font-bold"><span class="i18n" data-en="EXECUTION (ART + TECH)" data-fr="ACTION (ART + TECH)">EXECUTION (ART + TECH)</span></p>
-              <p class="text-xs text-neutral-300 leading-relaxed">
-                <span class="i18n" data-en="Built standardized state documentation (Default, Hover, Active, Disabled, Focus) and automated Figma-to-code token alignment with frontend engineers." data-fr="Création d'une documentation complète des états (Default, Hover, Active, Disabled, Focus) et alignement automatisé des tokens Figma vers le code avec les ingénieurs.">Built standardized state documentation (Default, Hover, Active, Disabled, Focus) and automated Figma-to-code token alignment with frontend engineers.</span>
-              </p>
-            </div>
-
-            <div class="bg-[#12141a] rounded-xl p-4 space-y-1.5">
-              <p class="text-[10px] font-mono tracking-wider uppercase text-emerald-400 font-bold"><span class="i18n" data-en="PRODUCTION OUTCOME" data-fr="RÉSULTAT">PRODUCTION OUTCOME</span></p>
-              <p class="text-xs text-neutral-300 leading-relaxed">
-                <span class="i18n" data-en="Reduced design-to-engineering handoff latency by 40%; raised WCAG accessibility compliance to 100% across core enterprise customer flows." data-fr="Réduction de 40% des délais de transfert design-ingénierie ; conformité d'accessibilité WCAG portée à 100% sur les parcours clés.">Reduced design-to-engineering handoff latency by 40%; raised WCAG accessibility compliance to 100% across core enterprise customer flows.</span>
-              </p>
-            </div>
-          </div>
+          <span class="text-xs font-mono text-neutral-400">2021 — 2022</span>
         </div>
+        <ul class="space-y-2.5 text-sm text-neutral-300 font-light leading-relaxed pl-4 border-l border-neutral-800">
+          <li>
+            <strong class="text-neutral-100 font-medium"><span class="i18n" data-en="Design Systems Architecture:" data-fr="Architecture de Design System :">Design Systems Architecture:</span></strong>
+            <span class="i18n" data-en="Architected scalable token frameworks and interactive state machines across enterprise web ecosystems." data-fr="Architecture de frameworks de jetons évolutifs et de machines à états interactives à l'échelle de l'écosystème web d'entreprise.">Architected scalable token frameworks and interactive state machines across enterprise web ecosystems.</span>
+          </li>
+          <li>
+            <strong class="text-neutral-100 font-medium"><span class="i18n" data-en="Sprint Velocity &amp; Handoff:" data-fr="Vélocité de Sprint &amp; Transfert :">Sprint Velocity &amp; Handoff:</span></strong>
+            <span class="i18n" data-en="Standardized developer handoff documentation, cutting design-to-engineering sprint latency by 40%." data-fr="Standardisation de la documentation de transfert, réduisant les délais de transmission design-développement de 40%.">Standardized developer handoff documentation, cutting design-to-engineering sprint latency by 40%.</span>
+          </li>
+        </ul>
       </article>
     </div>
   </section>
 
-  <!-- 5. FLAGSHIP PROJECT SPOTLIGHTS -->
-  <section aria-label="Flagship Project Spotlights" class="space-y-6">
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#2e323d] pb-4">
-      <div>
-        <p class="text-[10px] font-mono tracking-[0.3em] uppercase text-orange-500 font-bold mb-1">
-          <span class="i18n" data-en="FLAGSHIP CASE STUDIES" data-fr="ÉTUDES DE CAS PHARES">FLAGSHIP CASE STUDIES</span>
+  <!-- 4. CORE CAPABILITIES & TOOLS (3 Elegant Columns — Zero Clutter) -->
+  <section aria-label="Capabilities and Tools" class="space-y-6 pt-4 border-t border-neutral-800/80">
+    <h2 class="text-xs font-mono uppercase tracking-[0.25em] text-amber-400 font-bold">
+      <span class="i18n" data-en="Core Competencies &amp; Technical Tools" data-fr="Compétences Clés &amp; Outils Techniques">Core Competencies &amp; Technical Tools</span>
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+      <div class="space-y-2">
+        <h3 class="font-bold text-neutral-100 font-mono text-xs uppercase tracking-wider text-amber-300">
+          <span class="i18n" data-en="01 / Concept Art &amp; VisDev" data-fr="01 / Concept Art &amp; VisDev">01 / Concept Art &amp; VisDev</span>
+        </h3>
+        <p class="text-neutral-400 text-xs leading-relaxed">
+          <span class="i18n" data-en="Worldbuilding · Keyframe Illustration · Creature &amp; Character Turnarounds · Color Scripts · Environmental Storytelling · Visual Style Bibles" data-fr="Worldbuilding · Illustration Clé · Vues Orthographiques Personnages &amp; Créatures · Scripts de Couleur · Récit Environnemental · Bibles de Style">Worldbuilding · Keyframe Illustration · Creature &amp; Character Turnarounds · Color Scripts · Environmental Storytelling · Visual Style Bibles</span>
         </p>
-        <h2 class="text-2xl sm:text-3xl font-bold text-neutral-100">
-          <span class="i18n" data-en="Visual Development in Action" data-fr="Le développement visuel en action">Visual Development in Action</span>
-        </h2>
-      </div>
-      <a href="index.html" class="text-xs font-mono text-amber-400 hover:text-amber-300 font-semibold uppercase tracking-wider transition-colors">
-        <span class="i18n" data-en="View All 6 Projects →" data-fr="Voir les 6 projets →">View All 6 Projects →</span>
-      </a>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <!-- Spotlight 1: Outpost Red -->
-      <div class="bg-[#181a20] rounded-2xl overflow-hidden group flex flex-col justify-between">
-        <div class="relative overflow-hidden aspect-[16/10] bg-black">
-          <img alt="Outpost Red VisDev" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" src="thumbs/outpost-red.webp"/>
-          <div class="absolute top-4 left-4 flex gap-2">
-            <span class="px-2.5 py-1 rounded-md bg-black/80 backdrop-blur text-[10px] font-mono text-amber-400 font-bold tracking-wider uppercase">Sci-Fi VisDev</span>
-            <span class="px-2.5 py-1 rounded-md bg-black/80 backdrop-blur text-[10px] font-mono text-neutral-300 tracking-wider uppercase">Unreal Engine 5</span>
-          </div>
-        </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <h3 class="text-xl font-bold text-neutral-100 group-hover:text-amber-300 transition-colors">Outpost Red</h3>
-            <p class="text-xs sm:text-sm text-neutral-400 mt-1.5 leading-relaxed">
-              <span class="i18n" data-en="Hard-surface exploration, modular exploration rover chassis, contaminated crew character designs, and 3D level blockouts for tactical extraction gameplay." data-fr="Exploration hard-surface, châssis de rover modulaire, designs de membres d'équipage contaminés et blockouts de niveaux 3D pour gameplay d'extraction tactique.">Hard-surface exploration, modular exploration rover chassis, contaminated crew character designs, and 3D level blockouts for tactical extraction gameplay.</span>
-            </p>
-          </div>
-          <div class="pt-2 border-t border-[#2e323d] flex items-center justify-between">
-            <span class="text-[11px] font-mono text-neutral-500">2025 · IP Showcase</span>
-            <a href="outpost-red.html" class="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-amber-400 hover:text-amber-300 uppercase tracking-wider">
-              <span class="i18n" data-en="Explore Case Study →" data-fr="Explorer l'étude de cas →">Explore Case Study →</span>
-            </a>
-          </div>
-        </div>
       </div>
 
-      <!-- Spotlight 2: Tide Hollow -->
-      <div class="bg-[#181a20] rounded-2xl overflow-hidden group flex flex-col justify-between">
-        <div class="relative overflow-hidden aspect-[16/10] bg-black">
-          <img alt="Tide Hollow Stylized Fantasy VisDev" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" src="thumbs/tide-hollow.webp"/>
-          <div class="absolute top-4 left-4 flex gap-2">
-            <span class="px-2.5 py-1 rounded-md bg-black/80 backdrop-blur text-[10px] font-mono text-amber-400 font-bold tracking-wider uppercase">Stylized VisDev</span>
-            <span class="px-2.5 py-1 rounded-md bg-black/80 backdrop-blur text-[10px] font-mono text-neutral-300 tracking-wider uppercase">3D Worldbuilding</span>
-          </div>
-        </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <h3 class="text-xl font-bold text-neutral-100 group-hover:text-amber-300 transition-colors">Tide Hollow</h3>
-            <p class="text-xs sm:text-sm text-neutral-400 mt-1.5 leading-relaxed">
-              <span class="i18n" data-en="Organic clay architecture, modular gourd dwelling scale sheets, interior configurations, and environmental keyframes for a submerged coastal universe." data-fr="Architecture organique en argile, planches d'échelle de logis modulaires, configurations intérieures et keyframes environnementaux pour un univers côtier submergé.">Organic clay architecture, modular gourd dwelling scale sheets, interior configurations, and environmental keyframes for a submerged coastal universe.</span>
-            </p>
-          </div>
-          <div class="pt-2 border-t border-[#2e323d] flex items-center justify-between">
-            <span class="text-[11px] font-mono text-neutral-500">2025 · Original IP</span>
-            <a href="tide-hollow.html" class="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-amber-400 hover:text-amber-300 uppercase tracking-wider">
-              <span class="i18n" data-en="Explore Case Study →" data-fr="Explorer l'étude de cas →">Explore Case Study →</span>
-            </a>
-          </div>
-        </div>
+      <div class="space-y-2">
+        <h3 class="font-bold text-neutral-100 font-mono text-xs uppercase tracking-wider text-amber-300">
+          <span class="i18n" data-en="02 / 3D &amp; Hard Surface" data-fr="02 / 3D &amp; Hard Surface">02 / 3D &amp; Hard Surface</span>
+        </h3>
+        <p class="text-neutral-400 text-xs leading-relaxed">
+          <span class="i18n" data-en="Blender · ZBrush · Plasticity (NURBS/CAD) · Substance 3D Painter · Rapid Graybox Blockouts · Mechanical Assemblies · Handoff Schematics" data-fr="Blender · ZBrush · Plasticity (NURBS/CAD) · Substance 3D Painter · Blockouts Graybox Rapides · Assemblages Mécaniques · Schémas de Production">Blender · ZBrush · Plasticity (NURBS/CAD) · Substance 3D Painter · Rapid Graybox Blockouts · Mechanical Assemblies · Handoff Schematics</span>
+        </p>
+      </div>
+
+      <div class="space-y-2">
+        <h3 class="font-bold text-neutral-100 font-mono text-xs uppercase tracking-wider text-amber-300">
+          <span class="i18n" data-en="03 / Engine &amp; Technical" data-fr="03 / Moteur &amp; Technique">03 / Engine &amp; Technical</span>
+        </h3>
+        <p class="text-neutral-400 text-xs leading-relaxed">
+          <span class="i18n" data-en="Unreal Engine 5 (Lumen/Nanite) · Graybox Level Prototyping · VR Spatial Comfort (6DoF) · PBR Texturing · Figma Token Systems" data-fr="Unreal Engine 5 (Lumen/Nanite) · Prototypage de Niveaux Graybox · Confort Spatial VR (6DoF) · Textures PBR · Systèmes de Jetons Figma">Unreal Engine 5 (Lumen/Nanite) · Graybox Level Prototyping · VR Spatial Comfort (6DoF) · PBR Texturing · Figma Token Systems</span>
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- 6. EDUCATION & STATIC PDF DOWNLOAD HUB -->
-  <section aria-label="Education and Downloads" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-    <!-- Education & Training -->
-    <div class="bg-[#181a20] rounded-2xl p-6 space-y-4 lg:col-span-2">
-      <div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.25em] text-orange-500 font-bold">
-        <span class="i18n" data-en="ACADEMIC BACKGROUND &amp; HONORS" data-fr="FORMATION ACADÉMIQUE &amp; DISTINCTIONS">ACADEMIC BACKGROUND &amp; HONORS</span>
-      </div>
-      <div>
-        <h3 class="text-lg font-bold text-neutral-100">Bachelor of Design (BDes) in Illustration</h3>
-        <p class="text-sm text-amber-400 font-medium">OCAD University · Toronto, Canada</p>
-        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">
-          <span class="i18n" data-en="Rigorous classical training in figurative anatomy, perspective drafting, narrative composition, color theory, and digital visual communication." data-fr="Formation classique rigoureuse en anatomie figurative, dessin en perspective, composition narrative, théorie des couleurs et communication visuelle numérique.">Rigorous classical training in figurative anatomy, perspective drafting, narrative composition, color theory, and digital visual communication.</span>
-        </p>
-      </div>
-      <div class="pt-4 border-t border-[#2e323d] grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs">
-        <div>
-          <p class="font-mono text-neutral-500 text-[10px] uppercase">Specialization</p>
-          <p class="font-semibold text-neutral-200 mt-0.5">Visual Development</p>
-        </div>
-        <div>
-          <p class="font-mono text-neutral-500 text-[10px] uppercase">Location</p>
-          <p class="font-semibold text-neutral-200 mt-0.5">Toronto / Montreal</p>
-        </div>
-        <div>
-          <p class="font-mono text-neutral-500 text-[10px] uppercase">Citizenship</p>
-          <p class="font-semibold text-neutral-200 mt-0.5">Canadian Citizen</p>
-        </div>
-      </div>
+  <!-- 5. EDUCATION & LOCATION -->
+  <section aria-label="Education and Location" class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-neutral-800/80 text-xs">
+    <div class="space-y-1">
+      <span class="font-mono text-neutral-500 uppercase tracking-wider">
+        <span class="i18n" data-en="Education" data-fr="Formation">Education</span>
+      </span>
+      <p class="font-bold text-neutral-200">
+        <span class="i18n" data-en="Bachelor of Design (BDes) in Illustration" data-fr="Baccalauréat en Design (BDes) en Illustration">Bachelor of Design (BDes) in Illustration</span>
+      </p>
+      <p class="text-neutral-400">OCAD University · Toronto, Canada</p>
     </div>
-
-    <!-- Official PDF Download Hub -->
-    <div class="bg-[#181a20] rounded-2xl p-6 space-y-4 flex flex-col justify-between">
-      <div class="space-y-2">
-        <div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.25em] text-amber-400 font-bold">
-          <span class="i18n" data-en="OFFICIAL PDF ACCESS" data-fr="TÉLÉCHARGEMENT PDF OFFICIEL">OFFICIAL PDF ACCESS</span>
-        </div>
-        <h3 class="text-lg font-bold text-neutral-100">
-          <span class="i18n" data-en="One-Sheet Formats" data-fr="Formats condensés">One-Sheet Formats</span>
-        </h3>
-        <p class="text-xs text-neutral-400 leading-relaxed">
-          <span class="i18n" data-en="Download ATS-ready, recruiter-formatted PDF resumes formatted for fast studio review." data-fr="Téléchargez les CVs PDF optimisés pour les systèmes ATS et la révision rapide en studio.">Download ATS-ready, recruiter-formatted PDF resumes formatted for fast studio review.</span>
-        </p>
-      </div>
-
-      <div class="space-y-2.5 pt-2">
-        <a href="resume/Concept%2BArt%2BResume%2B%E2%80%94%2BEnglish.pdf" download="" class="flex items-center justify-between p-3 rounded-xl bg-[#262a36] hover:bg-amber-400 hover:text-black group transition-all">
-          <div class="flex items-center gap-2.5">
-            <svg class="w-4 h-4 text-amber-400 group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-            <span class="text-xs font-mono font-bold">Resume — English (PDF)</span>
-          </div>
-          <span class="text-[10px] font-mono text-neutral-400 group-hover:text-black uppercase tracking-wider">313 KB</span>
-        </a>
-
-        <a href="resume/Concept%2BArt%2BResume%2B%E2%80%94%2BFran%C3%A7ais.pdf" download="" class="flex items-center justify-between p-3 rounded-xl bg-[#262a36] hover:bg-amber-400 hover:text-black group transition-all">
-          <div class="flex items-center gap-2.5">
-            <svg class="w-4 h-4 text-amber-400 group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-            <span class="text-xs font-mono font-bold">CV — Français (PDF)</span>
-          </div>
-          <span class="text-[10px] font-mono text-neutral-400 group-hover:text-black uppercase tracking-wider">338 KB</span>
-        </a>
-      </div>
+    <div class="space-y-1">
+      <span class="font-mono text-neutral-500 uppercase tracking-wider">
+        <span class="i18n" data-en="Citizenship &amp; Location" data-fr="Citoyenneté &amp; Localisation">Citizenship &amp; Location</span>
+      </span>
+      <p class="font-bold text-neutral-200">
+        <span class="i18n" data-en="Canadian Citizen" data-fr="Citoyen Canadien">Canadian Citizen</span>
+      </p>
+      <p class="text-neutral-400">
+        <span class="i18n" data-en="Montréal, QC (Available Worldwide / On-site / Remote)" data-fr="Montréal, QC (Disponible à distance ou sur place)">Montréal, QC (Available Worldwide / On-site / Remote)</span>
+      </p>
     </div>
   </section>
 
@@ -654,37 +306,7 @@
   </div>
 </footer>
 
-<!-- INTERACTIVE SCRIPTS -->
 <script>
-  // Accordion Toggle
-  function toggleAccordion(button) {
-    const item = button.closest('.accordion-item');
-    const isExpanded = item.getAttribute('aria-expanded') === 'true';
-    item.setAttribute('aria-expanded', !isExpanded);
-  }
-
-  // Skill Matrix Filter
-  function filterSkills(category) {
-    // Update active tab button
-    document.querySelectorAll('.skill-tab').forEach(tab => {
-      if (tab.getAttribute('data-category') === category) {
-        tab.className = 'skill-tab active px-3.5 py-1.5 rounded-lg bg-amber-400 text-neutral-950 font-bold transition-all';
-      } else {
-        tab.className = 'skill-tab px-3.5 py-1.5 rounded-lg text-neutral-400 hover:text-neutral-200 transition-all';
-      }
-    });
-
-    // Filter skill cards
-    document.querySelectorAll('.skill-card').forEach(card => {
-      const cardCat = card.getAttribute('data-category');
-      if (category === 'all' || cardCat === category) {
-        card.classList.remove('hidden-skill');
-      } else {
-        card.classList.add('hidden-skill');
-      }
-    });
-  }
-
   // Mobile menu toggle
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
