@@ -130,11 +130,31 @@
   -->
 <main class="pt-16">
 <h1 class="sr-only"><span class="i18n" data-en="Outpost Red — Concept Art Case Study" data-fr="Outpost Red — Étude de cas en art conceptuel">Outpost Red — Concept Art Case Study</span></h1>
-<!-- 1 · HERO — title, synopsis, astronaut (baked into hero image) -->
-<section aria-label="Project overview" class="w-full px-2 sm:px-3 md:px-4 pt-20 md:pt-24 pb-4">
-  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
-    <img alt="Outpost Red — project case study hero with astronaut and project synopsis" class="block w-full h-auto" fetchpriority="high" src="Outpost%20Red/Project%2BOverview%2B-%2BOutpost%2Bred.webp"/>
+<!-- 1 · HERO — Video Demo & UI/UX Cross-Link Card -->
+<section aria-label="Project video overview" class="w-full px-2 sm:px-3 md:px-4 pt-20 md:pt-24 pb-4 space-y-4 sm:space-y-6">
+  <!-- Video with animated play button -->
+  <div class="video-embed relative overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <video class="w-full h-auto block" playsinline preload="metadata" poster="Outpost%20Red/main-menu.webp" src="Outpost%20Red/The%20Final%20Cut%20Reformate.mp4"></video>
   </div>
+
+  <!-- Card below video redirecting to UI/UX website -->
+  <a class="cross-link-card flex flex-col sm:flex-row sm:items-center justify-between gap-5 sm:gap-6 bg-[#121214] border border-neutral-800 hover:border-neutral-700 rounded-2xl p-5 sm:p-6 transition-all duration-300 group" href="https://uiux.guillaumedesign.ca/work/outpost-red">
+    <div class="flex items-center gap-4 sm:gap-5">
+      <img alt="Outpost Red UI/UX case study preview" class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl object-cover shrink-0 border border-neutral-800 shadow-sm" loading="lazy" src="https://uiux.guillaumedesign.ca/case-studies/outpost-red/hi-fi/select-difficulty.jpg"/>
+      <div>
+        <p class="text-[10px] font-mono tracking-[0.25em] uppercase text-orange-500 mb-1.5">
+          <span class="i18n" data-en="THE OTHER HALF OF THIS PROJECT" data-fr="L'AUTRE MOITIÉ DE CE PROJET">THE OTHER HALF OF THIS PROJECT</span>
+        </p>
+        <p class="text-base sm:text-lg font-bold text-neutral-100 group-hover:text-amber-300 transition-colors leading-snug">
+          <span class="i18n" data-en="It lives on the UI/UX portfolio." data-fr="Il se trouve sur le portfolio UI/UX.">It lives on the UI/UX portfolio.</span>
+        </p>
+      </div>
+    </div>
+    <span class="cross-link-cta self-start sm:self-center inline-flex items-center justify-center text-center gap-2.5 rounded-xl px-6 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-[13px] font-bold tracking-[0.15em] uppercase text-white bg-[#ff5500] hover:bg-[#e04b00] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-lg shadow-orange-500/20 shrink-0">
+      <span class="i18n" data-en="View the UI/UX of Outpost Red" data-fr="Voir l'UI/UX d'Outpost Red">View the UI/UX of Outpost Red</span>
+      <span class="cross-link-arrow" aria-hidden="true">→</span>
+    </span>
+  </a>
 </section>
 
 <!-- CORE DIRECTIVE & DESIGN PILLARS (Streamlined Brief & Problem) -->
