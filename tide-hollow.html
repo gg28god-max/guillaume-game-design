@@ -119,6 +119,7 @@
   </div>
 </div>
 </nav>
+<main class="pt-16">
 <!-- HERO IMAGE -->
 <section aria-label="Project hero" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-4">
   <div class="relative overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
@@ -427,25 +428,70 @@
     <img alt="Water World — Concept Art" class="w-full h-auto block" loading="lazy" src="Tide%20Hollow/thumbnail-Tide%20Hollow.webp"/>
   </div>
 </section>
-<!-- PREV / NEXT -->
-<div class="border-t border-neutral-800 mt-16">
-<div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between py-10">
-<a class="group flex items-center gap-4" href="outpost-red.html">
-<span class="text-amber-300 text-xl group-hover:-translate-x-1 transition-transform"><span class="i18n" data-en="←" data-fr="←">←</span></span>
-<div>
-<p class="text-[10px] tracking-[0.2em] uppercase text-neutral-600 mb-1"><span class="i18n" data-en="Previous Project" data-fr="Projet précédent">Previous Project</span></p>
-<p class="text-sm font-semibold text-neutral-300 group-hover:text-neutral-100 transition-colors"><span class="i18n" data-en="Outpost Red" data-fr="Outpost Red">Outpost Red</span></p>
-</div>
-</a>
-<a class="group flex items-center gap-4 text-right" href="wings-of-wanitu.html">
-<div>
-<p class="text-[10px] tracking-[0.2em] uppercase text-neutral-600 mb-1"><span class="i18n" data-en="Next Project" data-fr="Projet suivant">Next Project</span></p>
-<p class="text-sm font-semibold text-neutral-300 group-hover:text-neutral-100 transition-colors"><span class="i18n" data-en="Wings of Wanitu" data-fr="Wings of Wanitu">Wings of Wanitu</span></p>
-</div>
-<span class="text-amber-300 text-xl group-hover:translate-x-1 transition-transform"><span class="i18n" data-en="→" data-fr="→">→</span></span>
-</a>
-</div>
-</div>
+
+<!-- PROJECT NAVIGATION (PREV / NEXT DUAL CARDS) -->
+<section aria-label="Project navigation" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14 border-t border-neutral-800">
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+    <!-- Previous Project Card -->
+    <a href="outpost-red.html" class="project-nav-card group flex items-center gap-4 p-5 sm:p-6 rounded-2xl bg-[#121214] border border-neutral-800 hover:border-neutral-700 hover:bg-[#161619] transition-all duration-300 shadow-lg">
+      <div class="nav-card-icon w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-amber-400 group-hover:text-orange-500 group-hover:border-orange-500/40 group-hover:-translate-x-1 transition-all shrink-0">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </div>
+      <div class="min-w-0">
+        <p class="text-[10px] font-mono tracking-[0.25em] uppercase text-neutral-500 group-hover:text-orange-500 transition-colors mb-1">
+          <span class="i18n" data-en="PREVIOUS PROJECT" data-fr="PROJET PRÉCÉDENT">PREVIOUS PROJECT</span>
+        </p>
+        <p class="text-sm sm:text-base font-bold text-neutral-200 group-hover:text-neutral-100 transition-colors truncate">
+          <span class="i18n" data-en="Outpost Red" data-fr="Outpost Red">Outpost Red</span>
+        </p>
+      </div>
+    </a>
+
+    <!-- Next Project Card -->
+    <a href="wings-of-wanitu.html" class="project-nav-card group flex items-center justify-between sm:justify-end text-left sm:text-right gap-4 p-5 sm:p-6 rounded-2xl bg-[#121214] border border-neutral-800 hover:border-neutral-700 hover:bg-[#161619] transition-all duration-300 shadow-lg">
+      <div class="min-w-0">
+        <p class="text-[10px] font-mono tracking-[0.25em] uppercase text-neutral-500 group-hover:text-orange-500 transition-colors mb-1">
+          <span class="i18n" data-en="NEXT PROJECT" data-fr="PROJET SUIVANT">NEXT PROJECT</span>
+        </p>
+        <p class="text-sm sm:text-base font-bold text-neutral-200 group-hover:text-neutral-100 transition-colors truncate">
+          <span class="i18n" data-en="Wings of Wanitu" data-fr="Wings of Wanitu">Wings of Wanitu</span>
+        </p>
+      </div>
+      <div class="nav-card-icon w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-amber-400 group-hover:text-orange-500 group-hover:border-orange-500/40 group-hover:translate-x-1 transition-all shrink-0">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- CROSS-LINK BANNER — Outro CTA -->
+<section aria-label="Cross-link banner" class="border-t border-neutral-800 bg-gradient-to-b from-[#0a0a0a] to-[#0f0f12]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+    <a class="cross-link-card flex flex-col lg:flex-row lg:items-center justify-between gap-6 sm:gap-8 bg-[#121214] border border-neutral-800 hover:border-neutral-700 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 transition-all duration-300 group shadow-2xl" href="https://uiux.guillaumedesign.ca/">
+      <div class="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-6">
+        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-neutral-900 border border-neutral-800 flex items-center justify-center shrink-0 shadow-md p-4">
+          <img alt="Guillaume Goder dodo logo" class="w-full h-full object-contain" src="Dodo%20logo%201.png"/>
+        </div>
+        <div>
+          <p class="text-[11px] font-mono tracking-[0.25em] uppercase text-orange-500 mb-2">
+            <span class="i18n" data-en="SPATIAL UI &amp; GAME DESIGN" data-fr="UI SPATIALE &amp; GAME DESIGN">SPATIAL UI &amp; GAME DESIGN</span>
+          </p>
+          <h3 class="text-xl sm:text-2xl font-bold text-neutral-100 group-hover:text-amber-300 transition-colors leading-tight mb-2">
+            <span class="i18n" data-en="Explore More UI/UX &amp; Game Architecture" data-fr="Découvrez plus d'UI/UX et d'architecture de jeu">Explore More UI/UX &amp; Game Architecture</span>
+          </h3>
+          <p class="text-xs sm:text-sm text-neutral-400 font-light max-w-xl">
+            <span class="i18n" data-en="Discover diegetic game interfaces, design systems, and playable Unreal Engine 5 &amp; VR case studies across my portfolio." data-fr="Découvrez des interfaces de jeu diégétiques, des systèmes de design et des études de cas jouables dans Unreal Engine 5 et VR.">Discover diegetic game interfaces, design systems, and playable Unreal Engine 5 &amp; VR case studies across my portfolio.</span>
+          </p>
+        </div>
+      </div>
+      <span class="cross-link-cta self-start lg:self-center inline-flex items-center justify-center text-center gap-2.5 rounded-xl px-7 py-4 text-xs sm:text-sm font-bold tracking-[0.15em] uppercase text-white bg-[#ff5500] hover:bg-[#e04b00] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-xl shadow-orange-500/25 shrink-0 whitespace-nowrap">
+        <span class="i18n" data-en="Visit UI/UX Portfolio" data-fr="Visiter le portfolio UI/UX">Visit UI/UX Portfolio</span>
+        <span class="cross-link-arrow" aria-hidden="true">→</span>
+      </span>
+    </a>
+  </div>
+</section>
+</main>
 <!-- FOOTER -->
 <footer class="border-t border-neutral-800 py-12">
 <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">

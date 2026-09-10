@@ -1461,4 +1461,20 @@ html.light .glb-hint kbd {
   }
 }
 
+/* ---- Project Navigation Dual Cards (Light Mode) ---- */
+html.light .project-nav-card {
+  background-color: #ffffff !important;
+  border-color: #e4e4e7 !important;
+}
+html.light .project-nav-card:hover {
+  background-color: #fbfbf9 !important;
+  border-color: #f97316 !important;
+}
+html.light .project-nav-card .nav-card-icon {
+  background-color: #f4f4f5 !important;
+  border-color: #e4e4e7 !important;
+  color: #ea580c !important;
+}
+
+
 
