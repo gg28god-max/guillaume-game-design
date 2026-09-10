@@ -407,6 +407,16 @@
      Modern Fullscreen Gallery Lightbox with Zoom, Pan, Animations & Navigation
      ========================================================================== */
   function setupGalleryLightbox() {
+    // Only run lightbox on project case studies, art galleries, and resume pages.
+    // Explicitly bypass index.html and pages with project navigation cards.
+    var path = (window.location.pathname || '').toLowerCase();
+    var isHome = path.endsWith('index.html') ||
+                 path === '' ||
+                 path === '/' ||
+                 path.endsWith('/') ||
+                 document.querySelector('.project-card') !== null;
+    if (isHome) return;
+
     var galleryItems = [];
     var currentIndex = 0;
     var currentScale = 1;
@@ -829,20 +839,29 @@
         var src = img.getAttribute('src');
         if (!src) return;
 
-        // Ignore small UI elements, logos, icons, avatars, external difficulty preview
-        if (src.indexOf('logos/') !== -1 ||
+        // Ignore small UI elements, logos, icons, avatars, external difficulty preview, thumbnails, and ANY anchor tag
+        if (img.closest('a') ||
+            img.closest('.project-card') ||
+            img.closest('.project-nav-card') ||
+            img.closest('.cross-link-card') ||
+            img.closest('nav') ||
+            img.closest('footer') ||
+            img.closest('header') ||
+            img.closest('.tool-chip') ||
+            img.closest('.site-toggles') ||
+            src.indexOf('logos/') !== -1 ||
             src.indexOf('icon') !== -1 ||
             src.indexOf('select-difficulty') !== -1 ||
             src.indexOf('logo') !== -1 ||
-            img.closest('nav') ||
-            img.closest('.tool-chip') ||
-            img.closest('.cross-link-card') ||
-            img.closest('.site-toggles')) {
+            src.indexOf('thumbs/') !== -1) {
           return;
         }
 
         if (seen[src]) return;
         seen[src] = true;
+
+        var container = img.closest('.overflow-hidden') || img.closest('.masonry-item') || img.parentElement;
+        if (!container || container.tagName === 'A' || container.closest('a') || container.classList.contains('project-card')) return;
 
         var alt = img.getAttribute('alt') || '';
         var idx = galleryItems.length;
@@ -853,37 +872,35 @@
           el: img
         });
 
-        var container = img.closest('.overflow-hidden') || img.closest('.masonry-item') || img.parentElement;
-        if (container) {
-          container.classList.add('gallery-zoom-target');
-          container.setAttribute('tabindex', '0');
-          container.setAttribute('role', 'button');
-          container.setAttribute('aria-label', (alt ? alt + ' — ' : '') + (getLang() === 'fr' ? 'Agrandir en plein écran' : 'Enlarge image'));
+        container.classList.add('gallery-zoom-target');
+        container.setAttribute('tabindex', '0');
+        container.setAttribute('role', 'button');
+        container.setAttribute('aria-label', (alt ? alt + ' — ' : '') + (getLang() === 'fr' ? 'Agrandir en plein écran' : 'Enlarge image'));
 
-          if (!container.querySelector('.gallery-zoom-badge')) {
-            var badge = document.createElement('span');
-            badge.className = 'gallery-zoom-badge';
-            badge.setAttribute('aria-hidden', 'true');
-            badge.innerHTML = ZOOM_SVG + '<span class="i18n" data-en="Zoom" data-fr="Zoom">Zoom</span>';
-            container.appendChild(badge);
-          }
-
-          function trigger(e) {
-            e.preventDefault();
-            openLightbox(idx);
-          }
-
-          container.addEventListener('click', trigger);
-          container.addEventListener('keydown', function (e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-              trigger(e);
-            }
-          });
+        if (!container.querySelector('.gallery-zoom-badge')) {
+          var badge = document.createElement('span');
+          badge.className = 'gallery-zoom-badge';
+          badge.setAttribute('aria-hidden', 'true');
+          badge.innerHTML = ZOOM_SVG + '<span class="i18n" data-en="Zoom" data-fr="Zoom">Zoom</span>';
+          container.appendChild(badge);
         }
+
+        function trigger(e) {
+          e.preventDefault();
+          openLightbox(idx);
+        }
+
+        container.addEventListener('click', trigger);
+        container.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            trigger(e);
+          }
+        });
       });
     }
 
     scanGallery();
+    if (!galleryItems.length) return;
   }
 
   function init() {
