@@ -130,65 +130,208 @@
   -->
 <main class="pt-16">
 <h1 class="sr-only"><span class="i18n" data-en="Outpost Red — Concept Art Case Study" data-fr="Outpost Red — Étude de cas en art conceptuel">Outpost Red — Concept Art Case Study</span></h1>
-<!-- 1 · HERO — title, synopsis, astronaut + meta badges & tools (baked into images) -->
-<section aria-label="Project overview" class="space-y-0">
-<img alt="Outpost Red — project case study hero with astronaut and project synopsis" class="block w-full" fetchpriority="high" src="Outpost%20Red/Project%2BOverview%2B-%2BOutpost%2Bred.webp"/>
-<img alt="Role, genre and platform badges with tools and software stack" class="block w-full" loading="lazy" src="Outpost%20Red/Project%2BOverview%2B2.webp"/>
+<!-- 1 · HERO — title, synopsis, astronaut (baked into hero image) -->
+<section aria-label="Project overview" class="w-full px-2 sm:px-3 md:px-4 pt-20 md:pt-24 pb-4">
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Outpost Red — project case study hero with astronaut and project synopsis" class="block w-full h-auto" fetchpriority="high" src="Outpost%20Red/Project%2BOverview%2B-%2BOutpost%2Bred.webp"/>
+  </div>
 </section>
-<!-- ART BRIEF & PROBLEM — continues the hero's small-caps "01 — Overview"
-     eyebrow sequence at 02/03, as real, bilingual, coded HTML. -->
-<div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 border-b border-neutral-800 space-y-16">
-<div>
-<p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="02 — Art Brief" data-fr="02 — Brief créatif">02 — Art Brief</span></p>
-<h2 class="text-3xl md:text-5xl font-black tracking-tight text-neutral-100 leading-none mb-6"><span class="i18n" data-en="The Brief" data-fr="Le Brief">The Brief</span></h2>
-<p class="text-neutral-400 text-lg leading-relaxed font-light max-w-2xl mb-10">
-        <span class="i18n" data-en="Outpost Red asked for concept art grim enough to sell a contamination event without a single line of UI to lean on — the rover, the suit, and the crew themselves had to carry the whole story. The brief below is what I held that work to." data-fr="Outpost Red demandait un art conceptuel assez sombre pour vendre un événement de contamination sans la moindre ligne d'UI pour s'appuyer dessus — le rover, la combinaison et l'équipage lui-même devaient porter toute l'histoire. Le brief ci-dessous est celui auquel j'ai tenu ce travail.">Outpost Red asked for concept art grim enough to sell a contamination event without a single line of UI to lean on — the rover, the suit, and the crew themselves had to carry the whole story. The brief below is what I held that work to.</span>
+
+<!-- CORE DIRECTIVE & DESIGN PILLARS (Streamlined Brief & Problem) -->
+<div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 border-b border-neutral-800">
+  <div class="max-w-3xl mb-12">
+    <p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4 text-orange-500">
+      <span class="i18n" data-en="02 — CORE DIRECTIVE" data-fr="02 — DIRECTIVE CENTRALE">02 — CORE DIRECTIVE</span>
+    </p>
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-neutral-100 leading-tight">
+      <span class="i18n" data-en="&ldquo;How do you make body horror terrifying without losing the human underneath?&rdquo;" data-fr="« Comment rendre l'horreur corporelle terrifiante sans perdre l'humain en dessous ? »">“How do you make body horror terrifying without losing the human underneath?”</span>
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Pillar 1: Scope -->
+    <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 flex flex-col justify-between hover:border-neutral-700 transition-colors">
+      <div>
+        <span class="inline-block bg-neutral-800 text-amber-400 border border-neutral-700 text-[10px] font-mono tracking-wider font-semibold px-2 py-0.5 rounded uppercase mb-3">
+          <span class="i18n" data-en="SCOPE" data-fr="PORTÉE">SCOPE</span>
+        </span>
+        <h3 class="text-base font-bold text-neutral-100 mb-2">
+          <span class="i18n" data-en="Martian Expedition Kit" data-fr="Kit d'expédition martienne">Martian Expedition Kit</span>
+        </h3>
+        <p class="text-sm text-neutral-400 leading-relaxed">
+          <span class="i18n" data-en="Long-range surface rover across multiple terrain contexts alongside full contaminated crew breakdown." data-fr="Rover de surface tout-terrain et décomposition complète de l'équipage contaminé.">Long-range surface rover across multiple terrain contexts alongside full contaminated crew breakdown.</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Pillar 2: Body Horror -->
+    <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 flex flex-col justify-between hover:border-neutral-700 transition-colors">
+      <div>
+        <span class="inline-block bg-neutral-800 text-amber-400 border border-neutral-700 text-[10px] font-mono tracking-wider font-semibold px-2 py-0.5 rounded uppercase mb-3">
+          <span class="i18n" data-en="BODY HORROR" data-fr="HORREUR CORPORELLE">BODY HORROR</span>
+        </span>
+        <h3 class="text-base font-bold text-neutral-100 mb-2">
+          <span class="i18n" data-en="The Preserved Human Silhouette" data-fr="La silhouette humaine préservée">The Preserved Human Silhouette</span>
+        </h3>
+        <p class="text-sm text-neutral-400 leading-relaxed">
+          <span class="i18n" data-en="Legible flight harnesses, boots, and helmet contours ground the biological breach in relatable tragedy." data-fr="Harnais de vol, bottes et contours du casque lisibles ancrent la brèche biologique dans une tragédie palpable.">Legible flight harnesses, boots, and helmet contours ground the biological breach in relatable tragedy.</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Pillar 3: Hard Sci-Fi -->
+    <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 flex flex-col justify-between hover:border-neutral-700 transition-colors">
+      <div>
+        <span class="inline-block bg-neutral-800 text-amber-400 border border-neutral-700 text-[10px] font-mono tracking-wider font-semibold px-2 py-0.5 rounded uppercase mb-3">
+          <span class="i18n" data-en="HARD SCI-FI" data-fr="HARD SCI-FI">HARD SCI-FI</span>
+        </span>
+        <h3 class="text-base font-bold text-neutral-100 mb-2">
+          <span class="i18n" data-en="Function Before Infection" data-fr="La fonction avant l'infection">Function Before Infection</span>
+        </h3>
+        <p class="text-sm text-neutral-400 leading-relaxed">
+          <span class="i18n" data-en="Authentic aerospace panel lines, hazmat gaskets, and mechanical suspension make the technological violation real." data-fr="Lignes de panneaux aérospatiaux, joints hazmat et suspensions réalistes rendent la violation technologique crédible.">Authentic aerospace panel lines, hazmat gaskets, and mechanical suspension make the technological violation real.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ROLE & TECHNICAL STACK (Replaces pre-rendered Overview 2 slide) -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-b border-neutral-800">
+  <!-- Top Meta Bar: My Role / Genre / Platform -->
+  <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-neutral-800 pb-12 mb-12 border-b border-neutral-800">
+    <!-- Col 1: My Role -->
+    <div class="py-4 md:py-0 md:pr-8">
+      <p class="text-[11px] font-mono tracking-[0.25em] uppercase text-orange-500 mb-2.5">
+        <span class="i18n" data-en="MY ROLE" data-fr="MON RÔLE">MY ROLE</span>
       </p>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
-<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="Premise" data-fr="Prémisse">Premise</span></p>
-<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="A concept art case study set in the aftermath of an extraterrestrial contamination event on a long-range Martian expedition — sterile aerospace technology set against visceral, bioluminescent infection, carried across a mechanical rover, a ruptured space suit, and the crew themselves." data-fr="Une étude de cas en art conceptuel se déroulant dans les suites d'un événement de contamination extraterrestre lors d'une expédition martienne longue distance — une technologie aérospatiale aseptisée confrontée à une infection bioluminescente et viscérale, présente sur un rover mécanique, une combinaison spatiale déchirée et l'équipage lui-même.">A concept art case study set in the aftermath of an extraterrestrial contamination event on a long-range Martian expedition — sterile aerospace technology set against visceral, bioluminescent infection, carried across a mechanical rover, a ruptured space suit, and the crew themselves.</span></p>
-</div>
-<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
-<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="Mood &amp; Tone" data-fr="Ambiance et ton">Mood &amp; Tone</span></p>
-<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="Hard-sci-fi survival horror — a desaturated Martian palette broken only by a hazard-orange accent, so the technology reads as clinical and the infection reads as wrong. Isolation first, monster second." data-fr="Horreur de survie hard-science-fiction — une palette martienne désaturée rompue uniquement par un accent orange danger, de sorte que la technologie se lise comme clinique et l'infection comme anormale. L'isolement avant le monstre." >Hard-sci-fi survival horror — a desaturated Martian palette broken only by a hazard-orange accent, so the technology reads as clinical and the infection reads as wrong. Isolation first, monster second.</span></p>
-</div>
-<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
-<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="Deliverables" data-fr="Livrables">Deliverables</span></p>
-<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="Vehicle design — a mechanical space rover pushed through multiple render passes and terrain contexts — alongside full character design for the contaminated crew member, from silhouette through final render." data-fr="Design de véhicule — un rover spatial mécanique poussé à travers plusieurs passes de rendu et contextes de terrain — accompagné d'un design de personnage complet pour le membre d'équipage contaminé, de la silhouette jusqu'au rendu final.">Vehicle design — a mechanical space rover pushed through multiple render passes and terrain contexts — alongside full character design for the contaminated crew member, from silhouette through final render.</span></p>
-</div>
-<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
-<p class="brief-eyebrow text-[10px] tracking-[0.25em] uppercase mb-3"><span class="i18n" data-en="Process &amp; Tools" data-fr="Processus et outils">Process &amp; Tools</span></p>
-<p class="text-sm text-neutral-300 leading-relaxed"><span class="i18n" data-en="Blender for base forms and camera-accurate proportions, Photoshop for paint-over and final render. Real aerospace and hazmat references grounded every design pass, so the hardware reads as plausible before the infection ever touches it." data-fr="Blender pour les formes de base et des proportions fidèles à la caméra, Photoshop pour le paint-over et le rendu final. De vraies références aérospatiales et de matières dangereuses ont ancré chaque passe de design, afin que le matériel se lise comme plausible avant même que l'infection n'y touche.">Blender for base forms and camera-accurate proportions, Photoshop for paint-over and final render. Real aerospace and hazmat references grounded every design pass, so the hardware reads as plausible before the infection ever touches it.</span></p>
-</div>
-</div>
-</div>
-<div>
-<p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-4"><span class="i18n" data-en="03 — The Problem" data-fr="03 — Le problème">03 — The Problem</span></p>
-<h2 class="text-3xl md:text-5xl font-black tracking-tight text-neutral-100 leading-none mb-10"><span class="i18n" data-en="The Problem I Set Out to Solve" data-fr="Le problème que je voulais résoudre">The Problem I Set Out to Solve</span></h2>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
-<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="Making body horror read as still human" data-fr="Rendre l'horreur corporelle lisible comme encore humaine">Making body horror read as still human</span></p>
-<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="The contaminated crew member had to be horrifying without stopping being a person in a suit. The bioluminescent growth needed to overtake the body without erasing the silhouette underneath — the helmet, the harness, the boots all stay legible, because the horror is in what's still recognizably human, not in what isn't." data-fr="Le membre d'équipage contaminé devait être terrifiant sans cesser d'être une personne dans une combinaison. La croissance bioluminescente devait envahir le corps sans effacer la silhouette en dessous — le casque, le harnais, les bottes restent lisibles, car l'horreur réside dans ce qui reste reconnaissablement humain, pas dans ce qui ne l'est plus." >The contaminated crew member had to be horrifying without stopping being a person in a suit. The bioluminescent growth needed to overtake the body without erasing the silhouette underneath — the helmet, the harness, the boots all stay legible, because the horror is in what's still recognizably human, not in what isn't.</span></p>
-</div>
-<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
-<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="Grounding the tech so the horror lands" data-fr="Ancrer la technologie pour que l'horreur porte">Grounding the tech so the horror lands</span></p>
-<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="The rover and the suit had to read as plausible hardware first — real panel lines, real hazmat and aerospace references — so that the infection overtaking them reads as a violation of something functional, not just texture painted over a shape." data-fr="Le rover et la combinaison devaient d'abord se lire comme du matériel plausible — de vraies lignes de panneaux, de vraies références aérospatiales et de matières dangereuses — afin que l'infection qui les envahit se lise comme la violation de quelque chose de fonctionnel, pas seulement une texture peinte sur une forme.">The rover and the suit had to read as plausible hardware first — real panel lines, real hazmat and aerospace references — so that the infection overtaking them reads as a violation of something functional, not just texture painted over a shape.</span></p>
-</div>
-<div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
-<p class="text-base font-semibold text-neutral-100 mb-3"><span class="i18n" data-en="One visual language across vehicle and character" data-fr="Un seul langage visuel pour le véhicule et le personnage">One visual language across vehicle and character</span></p>
-<p class="text-sm text-neutral-400 leading-relaxed"><span class="i18n" data-en="The same aerospace-meets-infection tone had to hold whether I was painting the rover's hull or the crew member's ruptured suit, so the two pieces read as one fiction — the same contamination, the same light, the same desaturated palette — not two unrelated studies." data-fr="Le même ton mêlant aérospatiale et infection devait tenir, que je peigne la coque du rover ou la combinaison déchirée du membre d'équipage, afin que les deux pièces se lisent comme une seule fiction — la même contamination, la même lumière, la même palette désaturée — pas deux études sans rapport." >The same aerospace-meets-infection tone had to hold whether I was painting the rover's hull or the crew member's ruptured suit, so the two pieces read as one fiction — the same contamination, the same light, the same desaturated palette — not two unrelated studies.</span></p>
-</div>
-</div>
-</div>
-</div>
+      <div class="text-base sm:text-lg lg:text-xl font-bold text-neutral-100 leading-snug space-y-0.5">
+        <p><span class="i18n" data-en="UI Designer" data-fr="Designer UI">UI Designer</span></p>
+        <p><span class="i18n" data-en="Technical UI Artist" data-fr="Artiste UI technique">Technical UI Artist</span></p>
+      </div>
+    </div>
+    <!-- Col 2: Genre -->
+    <div class="py-4 md:py-0 md:px-8">
+      <p class="text-[11px] font-mono tracking-[0.25em] uppercase text-orange-500 mb-2.5">
+        <span class="i18n" data-en="GENRE" data-fr="GENRE">GENRE</span>
+      </p>
+      <div class="text-base sm:text-lg lg:text-xl font-bold text-neutral-100 leading-snug space-y-0.5">
+        <p><span class="i18n" data-en="Hard Sci-Fi Survival" data-fr="Survie Hard Sci-Fi">Hard Sci-Fi Survival</span></p>
+        <p><span class="i18n" data-en="Tactical Simulation &amp; FPS" data-fr="Simulation tactique &amp; FPS">Tactical Simulation &amp; FPS</span></p>
+      </div>
+    </div>
+    <!-- Col 3: Platform -->
+    <div class="py-4 md:py-0 md:pl-8">
+      <p class="text-[11px] font-mono tracking-[0.25em] uppercase text-orange-500 mb-2.5">
+        <span class="i18n" data-en="PLATFORM" data-fr="PLATEFORME">PLATFORM</span>
+      </p>
+      <p class="text-base sm:text-lg lg:text-xl font-bold text-neutral-100 leading-snug">
+        <span class="i18n" data-en="PC / Console" data-fr="PC / Console">PC / Console</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- Technical Stack Header -->
+  <div class="mb-8">
+    <p class="brief-eyebrow text-[11px] tracking-[0.3em] uppercase mb-3 text-orange-500">
+      <span class="i18n" data-en="03 — TECHNICAL STACK" data-fr="03 — STACK TECHNIQUE">03 — TECHNICAL STACK</span>
+    </p>
+    <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-100">
+      <span class="i18n" data-en="Tools &amp; Software" data-fr="Outils &amp; logiciels">Tools &amp; Software</span>
+    </h2>
+  </div>
+
+  <!-- 3 Tool Cards Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+    <!-- Card 1: Figma -->
+    <div class="bg-[#121214] border border-neutral-800/80 hover:border-neutral-700 transition-colors rounded-2xl p-6 sm:p-7 flex items-center justify-between gap-4">
+      <div>
+        <span class="inline-block bg-[#eb2328] text-white text-[10px] sm:text-[11px] font-bold font-mono tracking-wider px-2.5 py-0.5 rounded uppercase mb-2.5">
+          <span class="i18n" data-en="UI" data-fr="UI">UI</span>
+        </span>
+        <h3 class="text-lg sm:text-xl font-bold text-neutral-100 mb-1">Figma</h3>
+        <p class="text-xs sm:text-sm text-neutral-400 font-normal">
+          <span class="i18n" data-en="UI Style Guide / Player Prototypes / Userflow Mapping" data-fr="Guide de style UI / Prototypes joueur / Cartographie userflow">UI Style Guide / Player Prototypes / Userflow Mapping</span>
+        </p>
+      </div>
+      <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#1c1c1f] border border-neutral-700/40 flex items-center justify-center p-3 shrink-0 shadow-inner">
+        <svg class="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 38 57" fill="none">
+          <path d="M19 28.5C19 23.2533 23.2533 19 28.5 19C33.7467 19 38 23.2533 38 28.5C38 33.7467 33.7467 38 28.5 38C23.2533 38 19 33.7467 19 28.5Z" fill="#1ABCFE"/>
+          <path d="M0 47.5C0 42.2533 4.25329 38 9.5 38H19V47.5C19 52.7467 14.7467 57 9.5 57C4.25329 57 0 52.7467 0 47.5Z" fill="#0ACF83"/>
+          <path d="M19 0V19H28.5C33.7467 19 38 14.7467 38 9.5C38 4.25329 33.7467 0 28.5 0H19Z" fill="#FF7262"/>
+          <path d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z" fill="#F24E1E"/>
+          <path d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z" fill="#A259FF"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Card 2: Unreal Engine 5 -->
+    <div class="bg-[#121214] border border-neutral-800/80 hover:border-neutral-700 transition-colors rounded-2xl p-6 sm:p-7 flex items-center justify-between gap-4">
+      <div>
+        <span class="inline-block bg-[#eb2328] text-white text-[10px] sm:text-[11px] font-bold font-mono tracking-wider px-2.5 py-0.5 rounded uppercase mb-2.5">
+          <span class="i18n" data-en="UE5" data-fr="UE5">UE5</span>
+        </span>
+        <h3 class="text-lg sm:text-xl font-bold text-neutral-100 mb-1">Unreal Engine 5</h3>
+        <p class="text-xs sm:text-sm text-neutral-400 font-normal">
+          <span class="i18n" data-en="Game Engine / UMG / Widget Blueprints / Enhanced Input System" data-fr="Moteur de jeu / UMG / Blueprints Widget / Enhanced Input System">Game Engine / UMG / Widget Blueprints / Enhanced Input System</span>
+        </p>
+      </div>
+      <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#1c1c1f] border border-neutral-700/40 flex items-center justify-center p-3 shrink-0 text-white shadow-inner">
+        <svg class="w-full h-full" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0a12 12 0 1012 12A12 12 0 0012 0zm0 23.52A11.52 11.52 0 1123.52 12 11.52 11.52 0 0112 23.52zm7.13-9.791c-.206.997-1.126 3.557-4.06 4.942l-1.179-1.325-1.988 2a7.338 7.338 0 01-5.804-2.978 2.859 2.859 0 00.65.123c.326.006.678-.114.678-.66v-5.394a.89.89 0 00-1.116-.89c-.92.212-1.656 2.509-1.656 2.509a7.304 7.304 0 012.528-5.597 7.408 7.408 0 013.73-1.721c-1.006.573-1.57 1.507-1.57 2.29 0 1.262.76 1.109.984.923v7.28a1.157 1.157 0 00.148.256 1.075 1.075 0 00.88.445c.76 0 1.747-.868 1.747-.868V9.172c0-.6-.452-1.324-.905-1.572 0 0 .838-.149 1.484.346a5.537 5.537 0 01.387-.425c1.508-1.48 2.929-1.902 4.112-2.112 0 0-2.151 1.69-2.151 3.96 0 1.687.043 5.801.043 5.801.799.771 1.986-.342 3.059-1.441Z"></path>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Card 3: Photoshop / Blender -->
+    <div class="bg-[#121214] border border-neutral-800/80 hover:border-neutral-700 transition-colors rounded-2xl p-6 sm:p-7 flex items-center justify-between gap-4">
+      <div>
+        <span class="inline-block bg-[#eb2328] text-white text-[10px] sm:text-[11px] font-bold font-mono tracking-wider px-2.5 py-0.5 rounded uppercase mb-2.5">
+          <span class="i18n" data-en="Concept Art / 3D" data-fr="Concept Art / 3D">Concept Art / 3D</span>
+        </span>
+        <h3 class="text-lg sm:text-xl font-bold text-neutral-100 mb-1">Photoshop / Blender</h3>
+        <p class="text-xs sm:text-sm text-neutral-400 font-normal">
+          <span class="i18n" data-en="3D Modeling / Space Rovers / Character Astronaut" data-fr="Modélisation 3D / Rovers spatiaux / Astronaute">3D Modeling / Space Rovers / Character Astronaut</span>
+        </p>
+      </div>
+      <div class="flex items-center gap-2.5 shrink-0">
+        <!-- Blender Icon -->
+        <div class="w-10 h-10 sm:w-11 sm:h-11 shrink-0 flex items-center justify-center drop-shadow" title="Blender">
+          <svg class="w-full h-full" viewBox="0 0 24 24" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.35 14.831c.006.314.106.922.256 1.398a7.372 7.372 0 0 0 1.593 2.757 8.227 8.227 0 0 0 2.787 2.001 8.947 8.947 0 0 0 3.66.76 8.964 8.964 0 0 0 3.657-.772 8.285 8.285 0 0 0 2.785-2.01 7.428 7.428 0 0 0 1.592-2.762 6.964 6.964 0 0 0 .25-3.074 7.123 7.123 0 0 0-1.016-2.779 7.764 7.764 0 0 0-1.852-2.043h.002L13.566 2.55l-.02-.015c-.492-.378-1.319-.376-1.86.002-.547.382-.609 1.015-.123 1.415l-.001.001 3.126 2.543-9.53.01h-.013c-.788.001-1.545.518-1.695 1.172-.154.665.38 1.217 1.2 1.22V8.9l4.83-.01-8.62 6.617-.034.025c-.813.622-1.075 1.658-.563 2.313.52.667 1.625.668 2.447.004L7.414 14s-.069.52-.063.831zm5.16-1.617c-.045.822.285 1.585.865 2.152a3.393 3.393 0 0 0 2.376.938c.875 0 1.722-.338 2.374-.938.58-.567.91-1.33.865-2.153-.045-.799-.436-1.505-1.028-2.005a3.424 3.424 0 0 0-2.211-.79 3.424 3.424 0 0 0-2.212.79c-.592.5-.984 1.206-1.03 2.006z" fill="#ea7600"/>
+            <circle cx="15.8" cy="13.2" r="3.2" fill="#ffffff"/>
+            <circle cx="15.8" cy="13.2" r="1.8" fill="#225cdb"/>
+          </svg>
+        </div>
+        <!-- Photoshop Icon -->
+        <div class="w-10 h-10 sm:w-11 sm:h-11 shrink-0 drop-shadow" title="Adobe Photoshop">
+          <svg class="w-full h-full" viewBox="0 0 48 48" fill="none">
+            <rect width="48" height="48" rx="10" fill="#001e36" stroke="#31a8ff" stroke-opacity="0.4" stroke-width="2"/>
+            <text x="24" y="32" text-anchor="middle" fill="#31a8ff" font-size="22" font-weight="800" font-family="system-ui, -apple-system, BlinkMacSystemFont, sans-serif" letter-spacing="-1px">Ps</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 2 · CONCEPT ART — banner, framed vehicle & character design cards -->
-<section aria-label="Concept art" class="space-y-0">
-<img alt="Concept Art — vehicle design, character design" class="block w-full" loading="lazy" src="Outpost%20Red/Concept%2Bart.webp"/>
-<img alt="Vehicle design — space rover sketches" class="block w-full" loading="lazy" src="Outpost%20Red/VEHICLE%2BDESIGN.png"/>
-<img alt="Vehicle design — space rover render views" class="block w-full" loading="lazy" src="Outpost%20Red/VEHICLE%2BDESIGN%20%281%29.jpg"/>
-<img alt="Vehicle design — space rover render on Martian terrain" class="block w-full" loading="lazy" src="Outpost%20Red/VEHICLE%2BDESIGN%20%282%29.jpg"/>
-<img alt="Character design — contaminated crew member" class="block w-full" loading="lazy" src="Outpost%20Red/VEHICLE%2BDESIGN%20%283%29.jpg"/>
+<section aria-label="Concept art" class="w-full px-2 sm:px-3 md:px-4 py-6 md:py-10 space-y-4 sm:space-y-6">
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Concept Art — vehicle design, character design" class="block w-full h-auto" loading="lazy" src="Outpost%20Red/Concept%2Bart.webp"/>
+  </div>
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Vehicle design — space rover sketches" class="block w-full h-auto" loading="lazy" src="Outpost%20Red/VEHICLE%2BDESIGN.png"/>
+  </div>
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Vehicle design — space rover render views" class="block w-full h-auto" loading="lazy" src="Outpost%20Red/VEHICLE%2BDESIGN%20%281%29.jpg"/>
+  </div>
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Vehicle design — space rover render on Martian terrain" class="block w-full h-auto" loading="lazy" src="Outpost%20Red/VEHICLE%2BDESIGN%20%282%29.jpg"/>
+  </div>
+  <div class="overflow-hidden rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl bg-neutral-950">
+    <img alt="Character design — contaminated crew member" class="block w-full h-auto" loading="lazy" src="Outpost%20Red/VEHICLE%2BDESIGN%20%283%29.jpg"/>
+  </div>
 </section>
 <!-- CROSS-LINK — this page is the concept-art half of Outpost Red; the UI/UX
      system (wireframes, style guide, production screens in UE5) now lives on
