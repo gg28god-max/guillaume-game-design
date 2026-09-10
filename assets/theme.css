@@ -1503,9 +1503,29 @@ html.light .project-nav-card:hover .nav-card-icon {
   box-shadow: none !important;
 }
 
-/* ---- UI/UX Cross-Link CTA (No Glow) ---- */
+/* ---- UI/UX Cross-Link CTA (Option C: Minimalist Monochrome Pill) ---- */
 .cross-link-cta {
   box-shadow: none !important;
+  background-color: #f4f4f5 !important;
+  color: #09090b !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.cross-link-cta:hover,
+.cross-link-card:hover .cross-link-cta {
+  background-color: #fcd34d !important;
+  color: #09090b !important;
+  transform: scale(1.02);
+}
+
+/* Light Mode */
+html.light .cross-link-cta {
+  background-color: #18181b !important;
+  color: #ffffff !important;
+}
+html.light .cross-link-cta:hover,
+html.light .cross-link-card:hover .cross-link-cta {
+  background-color: #d97706 !important;
+  color: #ffffff !important;
 }
 
 
