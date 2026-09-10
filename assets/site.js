@@ -403,6 +403,489 @@
     });
   }
 
+  /* ==========================================================================
+     Modern Fullscreen Gallery Lightbox with Zoom, Pan, Animations & Navigation
+     ========================================================================== */
+  function setupGalleryLightbox() {
+    var galleryItems = [];
+    var currentIndex = 0;
+    var currentScale = 1;
+    var currentPanX = 0;
+    var currentPanY = 0;
+    var isDragging = false;
+    var isPointerDown = false;
+    var startX = 0;
+    var startY = 0;
+    var startPanX = 0;
+    var startPanY = 0;
+    var moveDistance = 0;
+    var touchStartX = 0;
+    var touchStartY = 0;
+    var overlay = null;
+    var imgEl = null;
+    var imgContainer = null;
+    var imgWrap = null;
+    var counterEl = null;
+    var titleEl = null;
+    var zoomPill = null;
+    var prevBtn = null;
+    var nextBtn = null;
+    var isAnimating = false;
+
+    var ZOOM_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>';
+    var ZOOM_IN_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>';
+    var ZOOM_OUT_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>';
+    var CLOSE_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+    var FULLSCREEN_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>';
+    var PREV_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>';
+    var NEXT_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>';
+
+    function buildLightboxDOM() {
+      if (document.getElementById('gallery-lightbox')) {
+        overlay = document.getElementById('gallery-lightbox');
+        imgEl = overlay.querySelector('.glb-image');
+        imgContainer = overlay.querySelector('.glb-image-container');
+        imgWrap = overlay.querySelector('.glb-image-wrap');
+        counterEl = overlay.querySelector('.glb-counter');
+        titleEl = overlay.querySelector('.glb-title');
+        zoomPill = overlay.querySelector('.glb-zoom-pill');
+        prevBtn = overlay.querySelector('.glb-nav-prev');
+        nextBtn = overlay.querySelector('.glb-nav-next');
+        return;
+      }
+
+      overlay = document.createElement('div');
+      overlay.id = 'gallery-lightbox';
+      overlay.className = 'glb-overlay';
+      overlay.setAttribute('role', 'dialog');
+      overlay.setAttribute('aria-modal', 'true');
+      overlay.setAttribute('aria-label', getLang() === 'fr' ? 'Visualiseur d\'images' : 'Image viewer');
+      overlay.style.display = 'none';
+
+      var fr = getLang() === 'fr';
+
+      overlay.innerHTML =
+        '<div class="glb-header">' +
+          '<div class="glb-header-left">' +
+            '<span class="glb-counter">01 / 01</span>' +
+            '<span class="glb-title"></span>' +
+          '</div>' +
+          '<div class="glb-header-actions">' +
+            '<button type="button" class="glb-btn glb-btn-zoom-out" aria-label="' + (fr ? 'Zoom arrière' : 'Zoom out') + '">' + ZOOM_OUT_SVG + '</button>' +
+            '<button type="button" class="glb-zoom-pill" aria-label="' + (fr ? 'Réinitialiser le zoom' : 'Reset zoom') + '">100%</button>' +
+            '<button type="button" class="glb-btn glb-btn-zoom-in" aria-label="' + (fr ? 'Zoom avant' : 'Zoom in') + '">' + ZOOM_IN_SVG + '</button>' +
+            '<button type="button" class="glb-btn glb-btn-fullscreen" aria-label="' + (fr ? 'Plein écran' : 'Toggle fullscreen') + '">' + FULLSCREEN_SVG + '</button>' +
+            '<button type="button" class="glb-btn glb-btn-close" aria-label="' + (fr ? 'Fermer (Échap)' : 'Close (Esc)') + '">' + CLOSE_SVG + '</button>' +
+          '</div>' +
+        '</div>' +
+        '<div class="glb-stage">' +
+          '<button type="button" class="glb-nav-btn glb-nav-prev" aria-label="' + (fr ? 'Image précédente' : 'Previous image') + '">' + PREV_SVG + '</button>' +
+          '<div class="glb-image-wrap">' +
+            '<div class="glb-image-container">' +
+              '<img class="glb-image" src="" alt="" draggable="false" />' +
+            '</div>' +
+          '</div>' +
+          '<button type="button" class="glb-nav-btn glb-nav-next" aria-label="' + (fr ? 'Image suivante' : 'Next image') + '">' + NEXT_SVG + '</button>' +
+        '</div>' +
+        '<div class="glb-footer">' +
+          '<div class="glb-hint">' +
+            '<span><kbd>←</kbd> <kbd>→</kbd> ' + (fr ? 'Naviguer' : 'Navigate') + '</span>' +
+            '<span><kbd>' + (fr ? 'Clic' : 'Click') + '</kbd> / <kbd>' + (fr ? 'Molette' : 'Scroll') + '</kbd> ' + (fr ? 'Zoomer' : 'Zoom') + '</span>' +
+            '<span><kbd>' + (fr ? 'Glisser' : 'Drag') + '</kbd> ' + (fr ? 'Déplacer' : 'Pan') + '</span>' +
+            '<span><kbd>Échap</kbd> ' + (fr ? 'Fermer' : 'Close') + '</span>' +
+          '</div>' +
+        '</div>';
+
+      document.body.appendChild(overlay);
+
+      imgEl = overlay.querySelector('.glb-image');
+      imgContainer = overlay.querySelector('.glb-image-container');
+      imgWrap = overlay.querySelector('.glb-image-wrap');
+      counterEl = overlay.querySelector('.glb-counter');
+      titleEl = overlay.querySelector('.glb-title');
+      zoomPill = overlay.querySelector('.glb-zoom-pill');
+      prevBtn = overlay.querySelector('.glb-nav-prev');
+      nextBtn = overlay.querySelector('.glb-nav-next');
+
+      // Header actions
+      overlay.querySelector('.glb-btn-zoom-in').addEventListener('click', function (e) {
+        e.stopPropagation(); setZoom(currentScale + 0.5);
+      });
+      overlay.querySelector('.glb-btn-zoom-out').addEventListener('click', function (e) {
+        e.stopPropagation(); setZoom(currentScale - 0.5);
+      });
+      zoomPill.addEventListener('click', function (e) {
+        e.stopPropagation();
+        setZoom(currentScale > 1.05 ? 1 : 2.2);
+      });
+      overlay.querySelector('.glb-btn-fullscreen').addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (!document.fullscreenElement) {
+          if (overlay.requestFullscreen) overlay.requestFullscreen();
+        } else {
+          if (document.exitFullscreen) document.exitFullscreen();
+        }
+      });
+      overlay.querySelector('.glb-btn-close').addEventListener('click', function (e) {
+        e.stopPropagation(); closeLightbox();
+      });
+
+      // Navigation
+      prevBtn.addEventListener('click', function (e) {
+        e.stopPropagation(); showPrev();
+      });
+      nextBtn.addEventListener('click', function (e) {
+        e.stopPropagation(); showNext();
+      });
+
+      // Backdrop dismiss
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay || e.target.classList.contains('glb-stage')) {
+          closeLightbox();
+        }
+      });
+
+      // Pointer / Drag & Pan
+      imgWrap.addEventListener('pointerdown', onPointerDown);
+      window.addEventListener('pointermove', onPointerMove);
+      window.addEventListener('pointerup', onPointerUp);
+      window.addEventListener('pointercancel', onPointerUp);
+
+      // Mouse Wheel Zoom
+      imgWrap.addEventListener('wheel', onWheel, { passive: false });
+
+      // Double-click / Double-tap zoom
+      imgWrap.addEventListener('dblclick', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleZoom(e.clientX, e.clientY);
+      });
+    }
+
+    function updateTransform(animate) {
+      if (!imgContainer) return;
+      if (animate === false) {
+        imgContainer.style.transition = 'none';
+      } else {
+        imgContainer.style.transition = 'transform 0.28s cubic-bezier(0.16, 1, 0.3, 1)';
+      }
+      imgContainer.style.transform = 'scale(' + currentScale + ') translate(' + currentPanX + 'px, ' + currentPanY + 'px)';
+      if (zoomPill) {
+        zoomPill.textContent = Math.round(currentScale * 100) + '%';
+      }
+      if (imgWrap) {
+        imgWrap.classList.toggle('is-zoomed', currentScale > 1.05);
+      }
+    }
+
+    function setZoom(newScale, clientX, clientY) {
+      newScale = Math.max(1, Math.min(4, newScale));
+      if (newScale <= 1.02) {
+        currentScale = 1;
+        currentPanX = 0;
+        currentPanY = 0;
+      } else {
+        if (clientX !== undefined && clientY !== undefined && imgWrap) {
+          var rect = imgWrap.getBoundingClientRect();
+          var offsetX = clientX - (rect.left + rect.width / 2);
+          var offsetY = clientY - (rect.top + rect.height / 2);
+          var scaleRatio = newScale / currentScale;
+          currentPanX = (currentPanX - offsetX / currentScale) + (offsetX / newScale);
+          currentPanY = (currentPanY - offsetY / currentScale) + (offsetY / newScale);
+        }
+        currentScale = newScale;
+        clampPan();
+      }
+      updateTransform(true);
+    }
+
+    function toggleZoom(clientX, clientY) {
+      if (currentScale > 1.05) {
+        setZoom(1);
+      } else {
+        setZoom(2.2, clientX, clientY);
+      }
+    }
+
+    function clampPan() {
+      if (!imgWrap || !imgEl) return;
+      var w = imgWrap.clientWidth;
+      var h = imgWrap.clientHeight;
+      var maxPanX = Math.max(0, (w * (currentScale - 1)) / (2 * currentScale));
+      var maxPanY = Math.max(0, (h * (currentScale - 1)) / (2 * currentScale));
+      currentPanX = Math.max(-maxPanX, Math.min(maxPanX, currentPanX));
+      currentPanY = Math.max(-maxPanY, Math.min(maxPanY, currentPanY));
+    }
+
+    function onPointerDown(e) {
+      if (e.button !== 0 && e.pointerType === 'mouse') return;
+      isPointerDown = true;
+      startX = e.clientX;
+      startY = e.clientY;
+      startPanX = currentPanX;
+      startPanY = currentPanY;
+      moveDistance = 0;
+      touchStartX = e.clientX;
+      touchStartY = e.clientY;
+
+      if (currentScale > 1.05) {
+        isDragging = true;
+        if (imgWrap) imgWrap.classList.add('is-dragging');
+        if (e.target && e.target.setPointerCapture) {
+          try { e.target.setPointerCapture(e.pointerId); } catch (err) {}
+        }
+      }
+    }
+
+    function onPointerMove(e) {
+      if (!isPointerDown) return;
+      var dx = e.clientX - startX;
+      var dy = e.clientY - startY;
+      moveDistance = Math.hypot(dx, dy);
+
+      if (isDragging && currentScale > 1.05) {
+        currentPanX = startPanX + dx / currentScale;
+        currentPanY = startPanY + dy / currentScale;
+        clampPan();
+        updateTransform(false);
+      }
+    }
+
+    function onPointerUp(e) {
+      if (!isPointerDown) return;
+      isPointerDown = false;
+
+      if (isDragging) {
+        isDragging = false;
+        if (imgWrap) imgWrap.classList.remove('is-dragging');
+        clampPan();
+        updateTransform(true);
+      }
+
+      // Check for tap / click without drag
+      if (moveDistance < 6) {
+        if (e.target === imgEl || (imgWrap && imgWrap.contains(e.target))) {
+          toggleZoom(e.clientX, e.clientY);
+        }
+      } else if (currentScale <= 1.05) {
+        // Touch swipe when not zoomed
+        var swipeDx = e.clientX - touchStartX;
+        var swipeDy = e.clientY - touchStartY;
+        if (Math.abs(swipeDx) > 40 && Math.abs(swipeDx) > Math.abs(swipeDy)) {
+          if (swipeDx < 0) showNext();
+          else showPrev();
+        }
+      }
+    }
+
+    function onWheel(e) {
+      e.preventDefault();
+      var factor = e.deltaY < 0 ? 1.2 : 0.82;
+      setZoom(currentScale * factor, e.clientX, e.clientY);
+    }
+
+    function onKeyDown(e) {
+      if (!overlay || overlay.style.display === 'none') return;
+      switch (e.key) {
+        case 'Escape':
+          closeLightbox();
+          break;
+        case 'ArrowRight':
+          showNext();
+          break;
+        case 'ArrowLeft':
+          showPrev();
+          break;
+        case '+':
+        case '=':
+          setZoom(currentScale + 0.5);
+          break;
+        case '-':
+        case '_':
+          setZoom(currentScale - 0.5);
+          break;
+        case '0':
+          setZoom(1);
+          break;
+        case 'f':
+        case 'F':
+          if (!document.fullscreenElement) {
+            if (overlay.requestFullscreen) overlay.requestFullscreen();
+          } else {
+            if (document.exitFullscreen) document.exitFullscreen();
+          }
+          break;
+      }
+    }
+
+    function showImage(index, direction) {
+      if (!galleryItems.length || !imgEl) return;
+      if (isAnimating) return;
+
+      var prevIndex = currentIndex;
+      currentIndex = (index + galleryItems.length) % galleryItems.length;
+      var item = galleryItems[currentIndex];
+
+      var totalStr = galleryItems.length < 10 ? '0' + galleryItems.length : '' + galleryItems.length;
+      var curStr = (currentIndex + 1) < 10 ? '0' + (currentIndex + 1) : '' + (currentIndex + 1);
+      if (counterEl) counterEl.textContent = curStr + ' / ' + totalStr;
+
+      var cleanTitle = (item.alt || '').replace(/\s*[—–\-]\s*(Starquest|Wings of Wanitu|Home Run Derby|Outpost Red|Tide Hollow).*/i, '').trim();
+      if (titleEl) titleEl.textContent = cleanTitle || item.alt || '';
+
+      if (direction) {
+        isAnimating = true;
+        var outClass = direction === 'next' ? 'slide-next-out' : 'slide-prev-out';
+        var inClass = direction === 'next' ? 'slide-next-in' : 'slide-prev-in';
+
+        imgEl.classList.add(outClass);
+
+        setTimeout(function () {
+          imgEl.src = item.src;
+          imgEl.alt = item.alt;
+          setZoom(1);
+          imgEl.classList.remove(outClass);
+          imgEl.classList.add(inClass);
+
+          setTimeout(function () {
+            imgEl.classList.remove(inClass);
+            isAnimating = false;
+          }, 320);
+        }, 140);
+      } else {
+        imgEl.src = item.src;
+        imgEl.alt = item.alt;
+        setZoom(1);
+      }
+    }
+
+    function showNext() {
+      showImage(currentIndex + 1, 'next');
+    }
+
+    function showPrev() {
+      showImage(currentIndex - 1, 'prev');
+    }
+
+    function openLightbox(indexOrSrc, optAlt) {
+      buildLightboxDOM();
+      var targetIndex = 0;
+
+      if (typeof indexOrSrc === 'number') {
+        targetIndex = indexOrSrc;
+      } else if (typeof indexOrSrc === 'string') {
+        var found = -1;
+        for (var i = 0; i < galleryItems.length; i++) {
+          if (galleryItems[i].src === indexOrSrc || galleryItems[i].rawSrc === indexOrSrc) {
+            found = i;
+            break;
+          }
+        }
+        if (found !== -1) {
+          targetIndex = found;
+        } else {
+          galleryItems.push({ src: indexOrSrc, rawSrc: indexOrSrc, alt: optAlt || '' });
+          targetIndex = galleryItems.length - 1;
+        }
+      }
+
+      showImage(targetIndex);
+
+      overlay.style.display = 'flex';
+      // Trigger reflow for CSS opacity transition
+      void overlay.offsetWidth;
+      overlay.classList.add('is-active');
+
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', onKeyDown);
+    }
+
+    function closeLightbox() {
+      if (!overlay || overlay.style.display === 'none') return;
+      overlay.classList.remove('is-active');
+      window.removeEventListener('keydown', onKeyDown);
+      document.body.style.overflow = '';
+      if (document.fullscreenElement && document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+      setTimeout(function () {
+        overlay.style.display = 'none';
+        if (imgEl) imgEl.src = '';
+        setZoom(1);
+      }, 300);
+    }
+
+    // Expose global openLightbox for backward compatibility
+    window.openLightbox = openLightbox;
+    window.closeLightbox = closeLightbox;
+
+    // Scan page for gallery items
+    function scanGallery() {
+      galleryItems = [];
+      var candidates = document.querySelectorAll('section img, main .overflow-hidden img, .masonry-item img, .feat-row img');
+      var seen = {};
+
+      Array.prototype.forEach.call(candidates, function (img) {
+        var src = img.getAttribute('src');
+        if (!src) return;
+
+        // Ignore small UI elements, logos, icons, avatars, external difficulty preview
+        if (src.indexOf('logos/') !== -1 ||
+            src.indexOf('icon') !== -1 ||
+            src.indexOf('select-difficulty') !== -1 ||
+            src.indexOf('logo') !== -1 ||
+            img.closest('nav') ||
+            img.closest('.tool-chip') ||
+            img.closest('.cross-link-card') ||
+            img.closest('.site-toggles')) {
+          return;
+        }
+
+        if (seen[src]) return;
+        seen[src] = true;
+
+        var alt = img.getAttribute('alt') || '';
+        var idx = galleryItems.length;
+        galleryItems.push({
+          src: src,
+          rawSrc: src,
+          alt: alt,
+          el: img
+        });
+
+        var container = img.closest('.overflow-hidden') || img.closest('.masonry-item') || img.parentElement;
+        if (container) {
+          container.classList.add('gallery-zoom-target');
+          container.setAttribute('tabindex', '0');
+          container.setAttribute('role', 'button');
+          container.setAttribute('aria-label', (alt ? alt + ' — ' : '') + (getLang() === 'fr' ? 'Agrandir en plein écran' : 'Enlarge image'));
+
+          if (!container.querySelector('.gallery-zoom-badge')) {
+            var badge = document.createElement('span');
+            badge.className = 'gallery-zoom-badge';
+            badge.setAttribute('aria-hidden', 'true');
+            badge.innerHTML = ZOOM_SVG + '<span class="i18n" data-en="Zoom" data-fr="Zoom">Zoom</span>';
+            container.appendChild(badge);
+          }
+
+          function trigger(e) {
+            e.preventDefault();
+            openLightbox(idx);
+          }
+
+          container.addEventListener('click', trigger);
+          container.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              trigger(e);
+            }
+          });
+        }
+      });
+    }
+
+    scanGallery();
+  }
+
   function init() {
     applyTheme(getTheme());
     applyLang(getLang());
@@ -413,6 +896,7 @@
     setupDodoLogo();
     setupCustomDatePicker();
     setupMobileMenu();
+    setupGalleryLightbox();
 
     document.querySelectorAll('.theme-toggle-btn').forEach(function (b) {
       b.addEventListener('click', function () {
