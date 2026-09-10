@@ -1503,5 +1503,10 @@ html.light .project-nav-card:hover .nav-card-icon {
   box-shadow: none !important;
 }
 
+/* ---- UI/UX Cross-Link CTA (No Glow) ---- */
+.cross-link-cta {
+  box-shadow: none !important;
+}
+
 
 
