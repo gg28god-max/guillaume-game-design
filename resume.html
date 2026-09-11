@@ -1,501 +1,195 @@
 <!DOCTYPE html>
-<html lang="en" data-lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title data-en="Resume — Guillaume Goder | Visual Development &amp; Concept Artist" data-fr="CV — Guillaume Goder | Artiste Développement Visuel &amp; Concept Art">Resume — Guillaume Goder | Visual Development &amp; Concept Artist</title>
-  <meta content="Resume of Guillaume Goder — Mid-Level Visual Development Artist &amp; Concept Artist with 3D blockout and Unreal Engine 5 production pipelines." name="description"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace']
-          }
-        }
-      }
-    };
-  </script>
-  <style>
+
+<html lang="en">
+<head><script>(function(){try{var t=localStorage.getItem('theme')||'dark';var l=localStorage.getItem('lang')||'en';if(t==='light')document.documentElement.classList.add('light');document.documentElement.setAttribute('lang',l);document.documentElement.setAttribute('data-lang',l);}catch(e){}})();</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title data-en="Resume — Guillaume Goder" data-fr="CV — Guillaume Goder">Resume — Guillaume Goder</title>
+<meta content="Resume of Guillaume Goder — UI/UX Designer and Concept Artist for games and VR." data-en="Resume of Guillaume Goder — UI/UX Designer and Concept Artist for games and VR." data-fr="CV de Guillaume Goder — Designer UI/UX et artiste conceptuel pour jeux vidéo et VR." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } } }</script>
+<style>
     * { font-family: 'Inter', system-ui, sans-serif; }
-    .font-mono { font-family: '"JetBrains Mono"', monospace; }
-    ::-webkit-scrollbar { width: 5px; }
-    ::-webkit-scrollbar-track { background: #0b0c0e; }
-    ::-webkit-scrollbar-thumb { background: #262a36; border-radius: 3px; }
-
-    /* Scroll progress indicator */
-    #scroll-progress {
-      position: fixed;
-      top: 64px; /* below 16 h-16 nav */
-      left: 0;
-      height: 2px;
-      background: linear-gradient(90deg, #f59e0b, #fbbf24, #38bdf8);
-      width: 0%;
-      z-index: 49;
-      transition: width 0.1s linear;
-      box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
-    }
-
-    /* Scroll Reveal Animations */
-    .scroll-reveal {
-      opacity: 0;
-      transform: translateY(36px);
-      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: opacity, transform;
-    }
-
-    .scroll-reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Stagger helpers */
-    .delay-100 { transition-delay: 0.12s; }
-    .delay-200 { transition-delay: 0.24s; }
-    .delay-300 { transition-delay: 0.36s; }
-
-    @media (prefers-reduced-motion: reduce) {
-      .scroll-reveal {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-      #scroll-progress {
-        display: none;
-      }
-    }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
+    .resume-card img { transition: transform 0.5s ease; }
+    .resume-card:hover img { transform: scale(1.02); }
+    #lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,0.96); display: flex; align-items: center; justify-content: center; padding: 1rem; }
+    #lightbox img { max-width: 100%; max-height: 90vh; object-fit: contain; }
+    #lightbox-close { position: absolute; top: 1rem; right: 1.5rem; color: #aaa; font-size: 2rem; font-weight: 300; cursor: pointer; line-height: 1; background: none; border: none; }
+    #lightbox-close:hover { color: white; }
   </style>
-  <link href="assets/theme.css" rel="stylesheet"/>
-  <script defer="" src="assets/site.js"></script>
-  <link rel="icon" href="/favicon.ico" sizes="any"/>
-  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png"/>
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
-  <link rel="canonical" href="https://game.guillaumedesign.ca/resume.html"/>
+<link href="assets/theme.css" rel="stylesheet"/><script defer="" src="assets/site.js"></script>
+<link rel="icon" href="/favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+<link rel="canonical" href="https://game.guillaumedesign.ca/resume.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Guillaume Goder"/>
+<meta property="og:locale" content="en_CA"/>
+<meta property="og:title" content="Resume — Guillaume Goder"/>
+<meta property="og:description" content="Resume of Guillaume Goder — UI/UX Designer and Concept Artist for games and VR."/>
+<meta property="og:url" content="https://game.guillaumedesign.ca/resume.html"/>
+<meta property="og:image" content="https://game.guillaumedesign.ca/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Guillaume Goder — Concept Artist and UI/UX Designer"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Resume — Guillaume Goder"/>
+<meta name="twitter:description" content="Resume of Guillaume Goder — UI/UX Designer and Concept Artist for games and VR."/>
+<meta name="twitter:image" content="https://game.guillaumedesign.ca/og-image.png"/>
 </head>
-<body class="bg-[#0b0c0e] text-neutral-100 min-h-screen selection:bg-amber-400 selection:text-black antialiased">
-
-<!-- Scroll Progress Bar -->
-<div id="scroll-progress" aria-hidden="true"></div>
-
+<body class="bg-[#0a0a0a] text-neutral-100 min-h-screen">
 <!-- NAV -->
-<nav class="fixed top-0 w-full z-50 border-b border-[#2e323d] nav-surface backdrop-blur-md bg-[#0b0c0e]/80">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3 h-16">
-    <a class="group flex items-center gap-2.5 sm:gap-3 text-[11px] sm:text-sm font-semibold tracking-[0.1em] sm:tracking-[0.2em] uppercase text-neutral-100 hover:text-amber-300 transition-colors duration-300" href="index.html">
-      <img alt="Guillaume Goder dodo logo" class="h-8 w-8 sm:h-9 sm:w-9 object-contain shrink-0 group-hover:scale-105 transition-transform duration-300" src="Dodo%20logo%201.png"/>
-    </a>
-    <div class="hidden xl:flex items-center gap-6">
-      <div class="relative group">
-        <a class="text-[11px] tracking-[0.15em] uppercase text-neutral-100 flex items-center gap-1" href="index.html">
-          <span class="i18n" data-en="Projects" data-fr="Projets">Projects</span>
-          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-        </a>
-        <div class="absolute top-full left-0 mt-3 w-60 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-2xl dropdown-surface">
-          <a class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all border-b border-[#2e323d]" href="outpost-red.html"><span class="i18n" data-en="Outpost Red" data-fr="Outpost Red">Outpost Red</span> <span class="text-neutral-700"><span class="i18n" data-en="2025" data-fr="2025">2025</span></span></a>
-          <a class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all border-b border-[#2e323d]" href="tide-hollow.html"><span class="i18n" data-en="Tide Hollow" data-fr="Tide Hollow">Tide Hollow</span> <span class="text-neutral-700"><span class="i18n" data-en="2025" data-fr="2025">2025</span></span></a>
-          <a class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all border-b border-[#2e323d]" href="wings-of-wanitu.html"><span class="i18n" data-en="Wings of Wanitu" data-fr="Wings of Wanitu">Wings of Wanitu</span> <span class="text-neutral-700"><span class="i18n" data-en="2025" data-fr="2025">2025</span></span></a>
-          <a class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all border-b border-[#2e323d]" href="home-run-derby-vr.html"><span class="i18n" data-en="Home Run Derby VR" data-fr="Home Run Derby VR">Home Run Derby VR</span> <span class="text-neutral-700"><span class="i18n" data-en="2023" data-fr="2023">2023</span></span></a>
-          <a class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all border-b border-[#2e323d]" href="starquest.html"><span class="i18n" data-en="Starquest" data-fr="Starquest">Starquest</span> <span class="text-neutral-700"><span class="i18n" data-en="2020" data-fr="2020">2020</span></span></a>
-          <a class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all" href="diverse-creative-studies.html"><span class="i18n" data-en="Diverse Creative Studies" data-fr="Diverse Creative Studies">Diverse Creative Studies</span> <span class="text-neutral-700"><span class="i18n" data-en="2020" data-fr="2020">2020</span></span></a>
-        </div>
-      </div>
-      <a class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors" href="illustrations.html"><span class="i18n" data-en="Illustrations" data-fr="Illustrations">Illustrations</span></a>
-      <a class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors" href="paintings.html"><span class="i18n" data-en="Paintings" data-fr="Peintures">Paintings</span></a>
-      <a class="text-[11px] tracking-[0.15em] uppercase text-amber-400 font-semibold" href="resume.html"><span class="i18n" data-en="Resume" data-fr="CV">Resume</span></a>
-      <a class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors" href="about.html"><span class="i18n" data-en="About" data-fr="À propos">About</span></a>
-    </div>
-    <div class="flex items-center gap-2.5 sm:gap-4">
-      <a class="cross-pill text-[11px] tracking-[0.15em] uppercase border rounded-full px-3.5 sm:px-4 py-1.5 transition-all duration-300 whitespace-nowrap inline-flex items-center gap-2" href="hire-me.html"><span class="i18n" data-en="Services" data-fr="Services">Services</span></a>
-      <button type="button" class="lang-toggle-btn text-xs font-bold text-neutral-300 hover:text-amber-300 px-2 py-1 transition-colors">FR</button>
-      <button type="button" class="theme-toggle-btn text-xs font-bold text-neutral-300 hover:text-amber-300 p-1.5 transition-colors" aria-label="Toggle theme">
-        <svg class="icon-moon w-3.5 h-3.5" fill="currentColor" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-        <svg class="icon-sun w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
-      </button>
-      <button type="button" id="mobile-menu-btn" class="xl:hidden text-neutral-300 hover:text-amber-300 p-1" aria-label="Open mobile navigation">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-      </button>
-    </div>
-  </div>
-  <div id="mobile-menu" class="hidden xl:hidden border-t border-[#2e323d] px-4 py-4 bg-[#0b0c0e]/95 backdrop-blur-md">
-    <div class="flex flex-col gap-2">
-      <a class="block py-1.5 px-2 text-xs font-medium text-neutral-300 hover:text-amber-300 rounded" href="outpost-red.html"><span class="i18n" data-en="Outpost Red" data-fr="Outpost Red">Outpost Red</span></a>
-      <a class="block py-1.5 px-2 text-xs font-medium text-neutral-300 hover:text-amber-300 rounded" href="tide-hollow.html"><span class="i18n" data-en="Tide Hollow" data-fr="Tide Hollow">Tide Hollow</span></a>
-      <a class="block py-1.5 px-2 text-xs font-medium text-neutral-300 hover:text-amber-300 rounded" href="wings-of-wanitu.html"><span class="i18n" data-en="Wings of Wanitu" data-fr="Wings of Wanitu">Wings of Wanitu</span></a>
-      <a class="block py-1.5 px-2 text-xs font-medium text-neutral-300 hover:text-amber-300 rounded" href="home-run-derby-vr.html"><span class="i18n" data-en="Home Run Derby VR" data-fr="Home Run Derby VR">Home Run Derby VR</span></a>
-      <a class="block py-1.5 px-2 text-xs font-medium text-neutral-300 hover:text-amber-300 rounded" href="starquest.html"><span class="i18n" data-en="Starquest" data-fr="Starquest">Starquest</span></a>
-      <a class="block py-1.5 px-2 text-xs font-medium text-neutral-300 hover:text-amber-300 rounded" href="diverse-creative-studies.html"><span class="i18n" data-en="Diverse Creative Studies" data-fr="Diverse Creative Studies">Diverse Creative Studies</span></a>
-      <a class="block py-1.5 px-2 text-xs font-medium text-neutral-300 hover:text-amber-300 rounded" href="illustrations.html"><span class="i18n" data-en="Illustrations" data-fr="Illustrations">Illustrations</span></a>
-      <a class="block py-1.5 px-2 text-xs font-medium text-neutral-300 hover:text-amber-300 rounded" href="paintings.html"><span class="i18n" data-en="Paintings" data-fr="Peintures">Paintings</span></a>
-      <a class="block py-1.5 px-2 text-xs font-medium text-amber-400 font-bold rounded" href="resume.html"><span class="i18n" data-en="Resume" data-fr="CV">Resume</span></a>
-      <a class="block py-1.5 px-2 text-xs font-medium text-neutral-300 hover:text-amber-300 rounded" href="about.html"><span class="i18n" data-en="About" data-fr="À propos">About</span></a>
-    </div>
-  </div>
+<nav class="fixed top-0 w-full z-50 border-b border-neutral-800 nav-surface">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3 h-16">
+<a class="group flex items-center gap-2.5 sm:gap-3 text-[11px] sm:text-sm font-semibold tracking-[0.1em] sm:tracking-[0.2em] uppercase text-neutral-100 hover:text-amber-300 transition-colors duration-300" href="index.html">
+<img alt="Guillaume Goder dodo logo" class="h-8 w-8 sm:h-9 sm:w-9 object-contain shrink-0 group-hover:scale-105 transition-transform duration-300" src="Dodo%20logo%201.png"/>
+<span class="whitespace-nowrap hidden sm:inline"><span class="i18n" data-en="Guillaume Goder" data-fr="Guillaume Goder">Guillaume Goder</span></span>
+</a>
+<div class="hidden md:flex items-center gap-8">
+<div class="relative group">
+<a class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors flex items-center gap-1" href="index.html">
+            <span class="i18n" data-en="Projects" data-fr="Projets">Projects</span> <svg class="w-3 h-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+<div class="absolute top-full left-0 mt-3 w-60 border border-neutral-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-2xl dropdown-surface">
+<a class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all border-b border-neutral-800" href="outpost-red.html"><span class="i18n" data-en="Outpost Red" data-fr="Outpost Red">Outpost Red</span> <span class="text-neutral-700"><span class="i18n" data-en="2025" data-fr="2025">2025</span></span></a>
+<a class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all border-b border-neutral-800" href="tide-hollow.html"><span class="i18n" data-en="Tide Hollow" data-fr="Tide Hollow">Tide Hollow</span> <span class="text-neutral-700"><span class="i18n" data-en="2025" data-fr="2025">2025</span></span></a>
+<a class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all border-b border-neutral-800" href="wings-of-wanitu.html"><span class="i18n" data-en="Wings of Wanitu" data-fr="Wings of Wanitu">Wings of Wanitu</span> <span class="text-neutral-700"><span class="i18n" data-en="2025" data-fr="2025">2025</span></span></a>
+<a class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all border-b border-neutral-800" href="home-run-derby-vr.html"><span class="i18n" data-en="Home Run Derby VR" data-fr="Home Run Derby VR">Home Run Derby VR</span> <span class="text-neutral-700"><span class="i18n" data-en="2023" data-fr="2023">2023</span></span></a>
+<a class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all border-b border-neutral-800" href="starquest.html"><span class="i18n" data-en="Starquest" data-fr="Starquest">Starquest</span> <span class="text-neutral-700"><span class="i18n" data-en="2020" data-fr="2020">2020</span></span></a>
+<a class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all" href="diverse-creative-studies.html"><span class="i18n" data-en="Diverse Creative Studies" data-fr="Diverse Creative Studies">Diverse Creative Studies</span> <span class="text-neutral-700"><span class="i18n" data-en="2020" data-fr="2020">2020</span></span></a>
+</div>
+</div>
+<a class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors" href="illustrations.html"><span class="i18n" data-en="Illustrations" data-fr="Illustrations">Illustrations</span></a>
+<a class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors" href="paintings.html"><span class="i18n" data-en="Paintings" data-fr="Peintures">Paintings</span></a>
+<a class="text-[11px] tracking-[0.15em] uppercase text-neutral-100" href="resume.html"><span class="i18n" data-en="Resume" data-fr="CV">Resume</span></a>
+<a class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors" href="about.html"><span class="i18n" data-en="About" data-fr="À propos">About</span></a>
+
+</div>
+<div class="flex items-center gap-3 sm:gap-5">
+<a class="cross-pill text-[11px] tracking-[0.15em] uppercase border rounded-full px-4 py-1.5 transition-all duration-300 whitespace-nowrap inline-flex items-center gap-2" href="https://uiux.guillaumedesign.ca/"><span class="i18n" data-en="UI UX Portfolio" data-fr="UI UX Portfolio">UI UX Portfolio</span> <span class="cross-arrow" aria-hidden="true">→</span></a>
+<div class="hidden md:flex items-center gap-5">
+
+<a class="li-pill inline-flex items-center gap-2 text-[11px] tracking-[0.12em] uppercase border rounded-full px-3.5 py-1.5 transition-all duration-300" href="https://www.linkedin.com/in/guillaume-goder-50a611125" rel="noopener" target="_blank"><svg class="li-icon w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.02h4.56V24H.22V8.02zM8.34 8.02h4.37v2.18h.06c.61-1.16 2.1-2.38 4.32-2.38 4.62 0 5.47 3.04 5.47 6.99V24h-4.56v-6.29c0-1.5-.03-3.43-2.09-3.43-2.09 0-2.41 1.63-2.41 3.32V24H8.34V8.02z"/></svg><span class="i18n" data-en="LinkedIn" data-fr="LinkedIn">LinkedIn</span></a>
+
+</div>
+<div class="site-toggles"><button aria-label="Passer en français" class="lang-toggle-btn" type="button">FR</button><button aria-label="Switch to light mode" class="theme-toggle-btn" type="button"><svg class="icon-moon" fill="currentColor" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg></button></div>
+<button aria-label="Menu" class="md:hidden flex flex-col gap-1.5 p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+<span class="block w-5 h-px bg-neutral-400"></span>
+<span class="block w-5 h-px bg-neutral-400"></span>
+<span class="block w-3 h-px bg-neutral-400"></span>
+</button>
+</div>
+</div>
+<div class="hidden md:hidden border-t border-neutral-800 mobile-surface" id="mobile-menu">
+<div class="px-6 py-6 space-y-1">
+<p class="text-[10px] tracking-[0.2em] uppercase text-neutral-600 mb-3"><span class="i18n" data-en="Projects" data-fr="Projets">Projects</span></p>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="outpost-red.html"><span class="i18n" data-en="Outpost Red" data-fr="Outpost Red">Outpost Red</span></a>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="tide-hollow.html"><span class="i18n" data-en="Tide Hollow" data-fr="Tide Hollow">Tide Hollow</span></a>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="wings-of-wanitu.html"><span class="i18n" data-en="Wings of Wanitu" data-fr="Wings of Wanitu">Wings of Wanitu</span></a>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="home-run-derby-vr.html"><span class="i18n" data-en="Home Run Derby VR" data-fr="Home Run Derby VR">Home Run Derby VR</span></a>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="starquest.html"><span class="i18n" data-en="Starquest" data-fr="Starquest">Starquest</span></a>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="diverse-creative-studies.html"><span class="i18n" data-en="Diverse Creative Studies" data-fr="Diverse Creative Studies">Diverse Creative Studies</span></a>
+<div class="border-t border-neutral-800 my-4"></div>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="illustrations.html"><span class="i18n" data-en="Illustrations" data-fr="Illustrations">Illustrations</span></a>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="paintings.html"><span class="i18n" data-en="Paintings" data-fr="Peintures">Paintings</span></a>
+<a class="block py-2 text-sm text-white font-medium" href="resume.html"><span class="i18n" data-en="Resume" data-fr="CV">Resume</span></a>
+<a class="block py-2 text-sm text-neutral-300 hover:text-white transition-colors" href="about.html"><span class="i18n" data-en="About" data-fr="À propos">About</span></a>
+<a class="cross-pill mt-3 text-xs tracking-[0.15em] uppercase border rounded-full px-4 py-2 transition-all duration-300 inline-flex items-center gap-2" href="https://uiux.guillaumedesign.ca/"><span class="i18n" data-en="UI UX Portfolio" data-fr="UI UX Portfolio">UI UX Portfolio</span> <span class="cross-arrow" aria-hidden="true">→</span></a>
+<div class="border-t border-neutral-800 mt-4 pt-4 flex gap-6">
+
+<a class="text-xs text-neutral-500 hover:text-white transition-colors" href="https://www.linkedin.com/in/guillaume-goder-50a611125" rel="noopener" target="_blank"><span class="i18n" data-en="LinkedIn" data-fr="LinkedIn">LinkedIn</span></a>
+
+</div>
+</div>
+</div>
 </nav>
-
-<!-- MAIN CONTAINER WITH GENEROUS BREATHING ROOM -->
-<main class="pt-36 sm:pt-44 pb-48 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 space-y-28 sm:space-y-36">
-
-  <!-- 1. HERO / EXECUTIVE IDENTITY (Expansive, High-End Editorial Style) -->
-  <header class="scroll-reveal space-y-10 border-b border-neutral-800/80 pb-16 sm:pb-20">
-    
-    <!-- Meta Strip -->
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2">
-      <div class="inline-flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-        <span class="text-xs font-mono uppercase tracking-[0.28em] text-neutral-400 font-medium">
-          <span class="i18n" data-en="Curriculum Vitae" data-fr="Curriculum Vitae">Curriculum Vitae</span>
-        </span>
-      </div>
-      <div class="text-xs font-mono text-neutral-500 tracking-wide">
-        <span class="i18n" data-en="Montréal, Canada · Available Worldwide" data-fr="Montréal, Canada · Disponible à distance">Montréal, Canada · Available Worldwide</span>
-      </div>
-    </div>
-
-    <!-- Main Headline & Positioning Statement -->
-    <div class="space-y-6 max-w-3xl">
-      <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-neutral-100 leading-[1.08]">
-        Guillaume Goder
-      </h1>
-      <p class="text-xl sm:text-2xl md:text-3xl font-medium text-amber-400/95 tracking-normal">
-        <span class="i18n" data-en="Visual Development Artist &amp; Concept Artist" data-fr="Artiste Développement Visuel &amp; Concept Art">Visual Development Artist &amp; Concept Artist</span>
+<main class="pt-24 pb-32 px-6 lg:px-8 max-w-7xl mx-auto">
+<div class="mb-10">
+<p class="text-[11px] tracking-[0.35em] uppercase text-neutral-600 mb-4"><span class="i18n" data-en="Documentation" data-fr="Documentation">Documentation</span></p>
+<h1 class="text-2xl md:text-3xl font-semibold tracking-tight text-neutral-300 leading-none mb-6"><span class="i18n" data-en="Resume" data-fr="CV">Resume</span></h1>
+<p class="text-neutral-500 text-sm max-w-lg leading-relaxed">
+        <span class="i18n" data-en="Available in English and French. Click any resume to view full size." data-fr="Disponible en anglais et en français. Cliquez sur un CV pour l'afficher en plein format.">Available in English and French. Click any resume to view full size.</span>
       </p>
-      <p class="text-base sm:text-lg text-neutral-300 font-light leading-relaxed pt-2">
-        <span class="i18n" data-en="Specializing in worldbuilding, creature morphology, and functional hard-surface designs. Backed by 3D blockout pipelines (Blender / ZBrush) and real-time engine integration (Unreal Engine 5) for zero-guesswork production asset delivery." data-fr="Spécialisé en création d'univers, morphologie de créatures et design hard-surface fonctionnel. Appuyé par des pipelines de modélisation 3D (Blender / ZBrush) et une intégration moteur temps réel (Unreal Engine 5) pour des livrables de production fiables.">Specializing in worldbuilding, creature morphology, and functional hard-surface designs. Backed by 3D blockout pipelines (Blender / ZBrush) and real-time engine integration (Unreal Engine 5) for zero-guesswork production asset delivery.</span>
-      </p>
-    </div>
-
-    <!-- Action Bar: Direct PDF Downloads & Cross-Discipline Switcher -->
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-6">
-      
-      <!-- PDF Buttons -->
-      <div class="flex flex-wrap items-center gap-4">
-        <a href="resume/Concept%2BArt%2BResume%2B%E2%80%94%2BEnglish.pdf" download="" class="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-neutral-950 font-bold text-xs font-mono uppercase tracking-wider transition-all duration-300 shadow-lg shadow-amber-400/10 hover:shadow-amber-400/20 hover:-translate-y-0.5">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-          <span class="i18n" data-en="Download Resume (EN)" data-fr="Télécharger le CV (EN)">Download Resume (EN)</span>
-        </a>
-        <a href="resume/Concept%2BArt%2BResume%2B%E2%80%94%2BFran%C3%A7ais.pdf" download="" class="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl bg-[#181a20] hover:bg-[#222530] text-neutral-300 hover:text-white font-semibold text-xs font-mono uppercase tracking-wider border border-[#2b2f3d] transition-all duration-300 hover:-translate-y-0.5">
-          <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-          <span class="i18n" data-en="Télécharger le CV (FR)" data-fr="Télécharger le CV (FR)">Télécharger le CV (FR)</span>
-        </a>
-      </div>
-
-      <!-- Subtle Discipline Bridge Pill -->
-      <a href="https://uiux.guillaumedesign.ca/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 px-4 py-2.5 rounded-full bg-[#12141a] hover:bg-[#181c26] border border-neutral-800 hover:border-cyan-500/40 text-xs transition-all duration-300">
-        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 group-hover:scale-125 transition-transform duration-300"></span>
-        <span class="text-neutral-400 group-hover:text-neutral-200 transition-colors">
-          <span class="i18n" data-en="Looking for UI/UX &amp; Tech Design?" data-fr="Expertise en UI/UX &amp; Tech Design ?">Looking for UI/UX &amp; Tech Design?</span>
-        </span>
-        <span class="text-cyan-400 font-mono font-semibold group-hover:translate-x-0.5 transition-transform">
-          <span class="i18n" data-en="Switch Track →" data-fr="Voir profil →">Switch Track →</span>
-        </span>
-      </a>
-
-    </div>
-
-  </header>
-
-  <!-- 2. PRODUCTION EXPERIENCE (Spacious Linear Timeline with Smooth Scroll Reveal) -->
-  <section aria-label="Production Experience" class="space-y-16">
-    
-    <!-- Section Header -->
-    <div class="scroll-reveal flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-neutral-800/80 pb-6">
-      <div>
-        <span class="text-xs font-mono uppercase tracking-[0.28em] text-neutral-500 block mb-2">01 / Career History</span>
-        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-100">
-          <span class="i18n" data-en="Selected Production Experience" data-fr="Expérience de production sélectionnée">Selected Production Experience</span>
-        </h2>
-      </div>
-      <span class="text-xs font-mono text-amber-400/90 font-semibold tracking-wider">2019 — 2025</span>
-    </div>
-
-    <div class="space-y-20 sm:space-y-24">
-
-      <!-- Role 1: Little Guy Games -->
-      <article class="scroll-reveal group space-y-6">
-        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-3">
-          <div class="space-y-1">
-            <h3 class="text-2xl sm:text-3xl font-bold text-neutral-100 group-hover:text-amber-300 transition-colors duration-300">
-              <span class="i18n" data-en="Lead Concept Artist &amp; UI Designer" data-fr="Artiste Conceptuel Principal &amp; Designer UI">Lead Concept Artist &amp; UI Designer</span>
-            </h3>
-            <p class="text-base text-neutral-400 font-medium">
-              Little Guy Games <span class="text-neutral-600 mx-1.5">·</span> <span class="text-neutral-400 font-normal"><span class="i18n" data-en="VR &amp; Immersive Titles (Meta Quest / SteamVR)" data-fr="Titres VR &amp; Immersifs (Meta Quest / SteamVR)">VR &amp; Immersive Titles (Meta Quest / SteamVR)</span></span>
-            </p>
-          </div>
-          <span class="self-start sm:self-auto px-3 py-1 rounded-full bg-[#161822] border border-neutral-800 text-xs font-mono text-neutral-400 font-medium">
-            2022 — 2025
-          </span>
-        </div>
-
-        <ul class="space-y-5 text-sm sm:text-base text-neutral-300 font-light leading-relaxed pl-6 sm:pl-8 border-l-2 border-neutral-800 group-hover:border-amber-400/40 transition-colors duration-500">
-          <li class="relative">
-            <strong class="text-neutral-100 font-semibold block sm:inline mr-1"><span class="i18n" data-en="VR Worldbuilding &amp; Ergonomics:" data-fr="Worldbuilding &amp; Ergonomie VR :">VR Worldbuilding &amp; Ergonomics:</span></strong>
-            <span class="i18n" data-en="Directed visual development across Meta Quest and SteamVR titles (Wings of Wanitu, Home Run Derby VR), establishing 360° cockpit interfaces and stereoscopic motion comfort." data-fr="Direction du développement visuel sur titres Meta Quest et SteamVR (Wings of Wanitu, Home Run Derby VR), établissant les interfaces de cockpit 360° et le confort stéréoscopique.">Directed visual development across Meta Quest and SteamVR titles (Wings of Wanitu, Home Run Derby VR), establishing 360° cockpit interfaces and stereoscopic motion comfort.</span>
-          </li>
-          <li class="relative">
-            <strong class="text-neutral-100 font-semibold block sm:inline mr-1"><span class="i18n" data-en="3D Blockout Pipeline:" data-fr="Pipeline de Blockout 3D :">3D Blockout Pipeline:</span></strong>
-            <span class="i18n" data-en="Modeled volumetric cockpit grayboxes in Blender to test physical reach and sightlines directly in-headset, reducing downstream 3D handoff iterations by 35%." data-fr="Modélisation de volumes 3D de cockpits dans Blender pour tester la portée et le champ de vision au casque, réduisant les itérations de modélisation de 35%.">Modeled volumetric cockpit grayboxes in Blender to test physical reach and sightlines directly in-headset, reducing downstream 3D handoff iterations by 35%.</span>
-          </li>
-          <li class="relative">
-            <strong class="text-neutral-100 font-semibold block sm:inline mr-1"><span class="i18n" data-en="Creature Morphology:" data-fr="Morphologie de créatures :">Creature Morphology:</span></strong>
-            <span class="i18n" data-en="Authored 60+ creature silhouettes and orthographic callout sheets with zero downstream asset rebuilds required." data-fr="Création de plus de 60 silhouettes de créatures et planches de détails techniques avec zéro reconstruction d'actifs nécessaire.">Authored 60+ creature silhouettes and orthographic callout sheets with zero downstream asset rebuilds required.</span>
-          </li>
-        </ul>
-      </article>
-
-      <!-- Role 2: Cosmic Games Studio -->
-      <article class="scroll-reveal group space-y-6">
-        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-3">
-          <div class="space-y-1">
-            <h3 class="text-2xl sm:text-3xl font-bold text-neutral-100 group-hover:text-amber-300 transition-colors duration-300">
-              <span class="i18n" data-en="Lead Concept Artist" data-fr="Artiste Conceptuel Principal">Lead Concept Artist</span>
-            </h3>
-            <p class="text-base text-neutral-400 font-medium">
-              Cosmic Games Studio <span class="text-neutral-600 mx-1.5">·</span> <span class="text-neutral-400 font-normal"><span class="i18n" data-en="Mobile Sci-Fi Shooter (Starquest)" data-fr="Jeu de tir mobile Sci-Fi (Starquest)">Mobile Sci-Fi Shooter (Starquest)</span></span>
-            </p>
-          </div>
-          <span class="self-start sm:self-auto px-3 py-1 rounded-full bg-[#161822] border border-neutral-800 text-xs font-mono text-neutral-400 font-medium">
-            2019 — 2021
-          </span>
-        </div>
-
-        <ul class="space-y-5 text-sm sm:text-base text-neutral-300 font-light leading-relaxed pl-6 sm:pl-8 border-l-2 border-neutral-800 group-hover:border-amber-400/40 transition-colors duration-500">
-          <li class="relative">
-            <strong class="text-neutral-100 font-semibold block sm:inline mr-1"><span class="i18n" data-en="Mobile Visual Direction:" data-fr="Direction Visuelle Mobile :">Mobile Visual Direction:</span></strong>
-            <span class="i18n" data-en="Spearheaded end-to-end visual identity for Starquest, authoring 40+ ship hulls, modular customizers, weapon systems, and planetary warzone hazard sheets." data-fr="Direction complète de l'identité visuelle de Starquest, créant plus de 40 coques de vaisseaux, un customiseur modulaire, des armes et des planches de zones de guerre.">Spearheaded end-to-end visual identity for Starquest, authoring 40+ ship hulls, modular customizers, weapon systems, and planetary warzone hazard sheets.</span>
-          </li>
-          <li class="relative">
-            <strong class="text-neutral-100 font-semibold block sm:inline mr-1"><span class="i18n" data-en="Threshold Silhouette Readability:" data-fr="Lisibilité des Silhouettes :">Threshold Silhouette Readability:</span></strong>
-            <span class="i18n" data-en="Pioneered high-contrast thumbnail ideation ensuring immediate combat readability on small mobile screens." data-fr="Développement d'une méthode de vignettes à fort contraste assurant une lisibilité immédiate du combat sur petits écrans mobiles.">Pioneered high-contrast thumbnail ideation ensuring immediate combat readability on small mobile screens.</span>
-          </li>
-          <li class="relative">
-            <strong class="text-neutral-100 font-semibold block sm:inline mr-1"><span class="i18n" data-en="Production Art Bible:" data-fr="Bible Artistique de Production :">Production Art Bible:</span></strong>
-            <span class="i18n" data-en="Established foundational 8-chapter style guide providing technical callouts for external 3D modellers and VFX artists." data-fr="Établissement du guide de style en 8 chapitres fournissant les détails techniques aux modeleurs 3D et artistes VFX.">Established foundational 8-chapter style guide providing technical callouts for external 3D modellers and VFX artists.</span>
-          </li>
-        </ul>
-      </article>
-
-      <!-- Role 3: TELUS Digital -->
-      <article class="scroll-reveal group space-y-6">
-        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-3">
-          <div class="space-y-1">
-            <h3 class="text-2xl sm:text-3xl font-bold text-neutral-100 group-hover:text-amber-300 transition-colors duration-300">
-              <span class="i18n" data-en="UI/UX Designer &amp; Systems Specialist" data-fr="Designer UI/UX &amp; Spécialiste Systèmes">UI/UX Designer &amp; Systems Specialist</span>
-            </h3>
-            <p class="text-base text-neutral-400 font-medium">
-              TELUS Digital <span class="text-neutral-600 mx-1.5">·</span> <span class="text-neutral-400 font-normal"><span class="i18n" data-en="Enterprise Design Systems" data-fr="Systèmes Numériques d'Entreprise">Enterprise Design Systems</span></span>
-            </p>
-          </div>
-          <span class="self-start sm:self-auto px-3 py-1 rounded-full bg-[#161822] border border-neutral-800 text-xs font-mono text-neutral-400 font-medium">
-            2021 — 2022
-          </span>
-        </div>
-
-        <ul class="space-y-5 text-sm sm:text-base text-neutral-300 font-light leading-relaxed pl-6 sm:pl-8 border-l-2 border-neutral-800 group-hover:border-amber-400/40 transition-colors duration-500">
-          <li class="relative">
-            <strong class="text-neutral-100 font-semibold block sm:inline mr-1"><span class="i18n" data-en="Design Systems Architecture:" data-fr="Architecture de Design System :">Design Systems Architecture:</span></strong>
-            <span class="i18n" data-en="Architected scalable token frameworks and interactive state machines across enterprise web ecosystems." data-fr="Architecture de frameworks de jetons évolutifs et de machines à états interactives à l'échelle de l'écosystème web d'entreprise.">Architected scalable token frameworks and interactive state machines across enterprise web ecosystems.</span>
-          </li>
-          <li class="relative">
-            <strong class="text-neutral-100 font-semibold block sm:inline mr-1"><span class="i18n" data-en="Sprint Velocity &amp; Handoff:" data-fr="Vélocité de Sprint &amp; Transfert :">Sprint Velocity &amp; Handoff:</span></strong>
-            <span class="i18n" data-en="Standardized developer handoff documentation, cutting design-to-engineering sprint latency by 40%." data-fr="Standardisation de la documentation de transfert, réduisant les délais de transmission design-développement de 40%.">Standardized developer handoff documentation, cutting design-to-engineering sprint latency by 40%.</span>
-          </li>
-        </ul>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- 3. CORE CAPABILITIES & TOOLS (3 Spacious Architectural Panels) -->
-  <section aria-label="Capabilities and Tools" class="space-y-12 pt-8 border-t border-neutral-800/80">
-    
-    <div class="scroll-reveal flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-neutral-800/80 pb-6">
-      <div>
-        <span class="text-xs font-mono uppercase tracking-[0.28em] text-neutral-500 block mb-2">02 / Technical Stack</span>
-        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-100">
-          <span class="i18n" data-en="Core Competencies &amp; Production Pipeline" data-fr="Compétences Clés &amp; Pipeline de Production">Core Competencies &amp; Production Pipeline</span>
-        </h2>
-      </div>
-      <span class="text-xs font-mono text-neutral-500">2D · 3D · Engine</span>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-      
-      <!-- Column 1 -->
-      <div class="scroll-reveal delay-100 p-8 sm:p-10 rounded-2xl bg-[#12141a]/60 border border-[#242835] hover:border-amber-400/40 transition-all duration-300 space-y-6 flex flex-col justify-between">
-        <div class="space-y-4">
-          <span class="text-xs font-mono uppercase tracking-[0.2em] text-amber-400 font-bold block">
-            01 / VisDev
-          </span>
-          <h3 class="text-lg font-bold text-neutral-100">
-            <span class="i18n" data-en="Concept Art &amp; Worldbuilding" data-fr="Concept Art &amp; Worldbuilding">Concept Art &amp; Worldbuilding</span>
-          </h3>
-          <p class="text-sm text-neutral-400 leading-relaxed">
-            <span class="i18n" data-en="Visual style bibles, mood exploration, environment keyframes, and character / creature morphological callouts." data-fr="Bibles de style visuel, exploration d'ambiance, illustrations clés d'environnement et planches de morphologie créatures/personnages.">Visual style bibles, mood exploration, environment keyframes, and character / creature morphological callouts.</span>
-          </p>
-        </div>
-        <div class="pt-4 border-t border-neutral-800/80 flex flex-wrap gap-2 text-xs font-mono text-neutral-300">
-          <span class="px-2.5 py-1 rounded bg-[#181b24] border border-neutral-800">Photoshop</span>
-          <span class="px-2.5 py-1 rounded bg-[#181b24] border border-neutral-800">Keyframes</span>
-          <span class="px-2.5 py-1 rounded bg-[#181b24] border border-neutral-800">Turnarounds</span>
-          <span class="px-2.5 py-1 rounded bg-[#181b24] border border-neutral-800">Color Scripts</span>
-        </div>
-      </div>
-
-      <!-- Column 2 -->
-      <div class="scroll-reveal delay-200 p-8 sm:p-10 rounded-2xl bg-[#12141a]/60 border border-[#242835] hover:border-amber-400/40 transition-all duration-300 space-y-6 flex flex-col justify-between">
-        <div class="space-y-4">
-          <span class="text-xs font-mono uppercase tracking-[0.2em] text-amber-400 font-bold block">
-            02 / 3D Pipelines
-          </span>
-          <h3 class="text-lg font-bold text-neutral-100">
-            <span class="i18n" data-en="3D &amp; Hard Surface Blockout" data-fr="Blockout 3D &amp; Hard-Surface">3D &amp; Hard Surface Blockout</span>
-          </h3>
-          <p class="text-sm text-neutral-400 leading-relaxed">
-            <span class="i18n" data-en="Volumetric grayboxing, mechanical vehicle assemblies, CAD/NURBS modeling, and direct 3D paint-over workflows." data-fr="Grayboxing volumétrique, assemblages mécaniques de véhicules, modélisation CAO/NURBS et flux de travail de paint-over 3D direct.">Volumetric grayboxing, mechanical vehicle assemblies, CAD/NURBS modeling, and direct 3D paint-over workflows.</span>
-          </p>
-        </div>
-        <div class="pt-4 border-t border-neutral-800/80 flex flex-wrap gap-2 text-xs font-mono text-neutral-300">
-          <span class="px-2.5 py-1 rounded bg-[#181b24] border border-neutral-800">Blender</span>
-          <span class="px-2.5 py-1 rounded bg-[#181b24] border border-neutral-800">ZBrush</span>
-          <span class="px-2.5 py-1 rounded bg-[#181b24] border border-neutral-800">Plasticity</span>
-          <span class="px-2.5 py-1 rounded bg-[#181b24] border border-neutral-800">Substance</span>
-        </div>
-      </div>
-
-      <!-- Column 3 -->
-      <div class="scroll-reveal delay-300 p-8 sm:p-10 rounded-2xl bg-[#12141a]/60 border border-[#242835] hover:border-amber-400/40 transition-all duration-300 space-y-6 flex flex-col justify-between">
-        <div class="space-y-4">
-          <span class="text-xs font-mono uppercase tracking-[0.2em] text-amber-400 font-bold block">
-            03 / Engine &amp; Real-Time
-          </span>
-          <h3 class="text-lg font-bold text-neutral-100">
-            <span class="i18n" data-en="Unreal Engine 5 &amp; Tech Systems" data-fr="Unreal Engine 5 &amp; Systèmes Tech">Unreal Engine 5 &amp; Tech Systems</span>
-          </h3>
-          <p class="text-sm text-neutral-400 leading-relaxed">
-            <span class="i18n" data-en="Level prototyping, Lumen &amp; Nanite scene setup, VR spatial comfort validation, PBR shader logic, and tokenized design systems." data-fr="Prototypage de niveaux, configuration de scènes Lumen &amp; Nanite, validation du confort spatial VR, logique de shaders PBR et systèmes de jetons.">Level prototyping, Lumen &amp; Nanite scene setup, VR spatial comfort validation, PBR shader logic, and tokenized design systems.</span>
-          </p>
-        </div>
-        <div class="pt-4 border-t border-neutral-800/80 flex flex-wrap gap-2 text-xs font-mono text-neutral-300">
-          <span class="px-2.5 py-1 rounded bg-[#181b24] border border-neutral-800">UE5 (Lumen)</span>
-          <span class="px-2.5 py-1 rounded bg-[#181b24] border border-neutral-800">VR Spatial</span>
-          <span class="px-2.5 py-1 rounded bg-[#181b24] border border-neutral-800">PBR Texturing</span>
-          <span class="px-2.5 py-1 rounded bg-[#181b24] border border-neutral-800">Figma Tokens</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 4. EDUCATION & LOCATION (Spacious Architectural Footer Card) -->
-  <section aria-label="Education and Location" class="scroll-reveal space-y-8 pt-8 border-t border-neutral-800/80">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 p-8 sm:p-12 rounded-3xl bg-[#12141a]/40 border border-[#222632]">
-      
-      <div class="space-y-3">
-        <span class="font-mono text-xs text-amber-400 uppercase tracking-widest font-semibold block">
-          <span class="i18n" data-en="Education &amp; Background" data-fr="Formation &amp; Diplôme">Education &amp; Background</span>
-        </span>
-        <h3 class="text-xl font-bold text-neutral-100">
-          <span class="i18n" data-en="Bachelor of Design (BDes) in Illustration" data-fr="Baccalauréat en Design (BDes) en Illustration">Bachelor of Design (BDes) in Illustration</span>
-        </h3>
-        <p class="text-sm text-neutral-400 leading-relaxed">
-          OCAD University · Toronto, Ontario, Canada
-        </p>
-        <p class="text-xs text-neutral-500 font-light pt-1">
-          <span class="i18n" data-en="Classical foundation in anatomy, perspective, draftsmanship, color theory, and narrative visual design." data-fr="Formation classique en anatomie, perspective, dessin académique, théorie des couleurs et design narratif.">Classical foundation in anatomy, perspective, draftsmanship, color theory, and narrative visual design.</span>
-        </p>
-      </div>
-
-      <div class="space-y-3">
-        <span class="font-mono text-xs text-amber-400 uppercase tracking-widest font-semibold block">
-          <span class="i18n" data-en="Citizenship &amp; Work Authorization" data-fr="Citoyenneté &amp; Autorisation de Travail">Citizenship &amp; Work Authorization</span>
-        </span>
-        <h3 class="text-xl font-bold text-neutral-100">
-          <span class="i18n" data-en="Canadian Citizen" data-fr="Citoyen Canadien">Canadian Citizen</span>
-        </h3>
-        <p class="text-sm text-neutral-400 leading-relaxed">
-          <span class="i18n" data-en="Based in Greater Montréal, QC, Canada" data-fr="Basé dans le Grand Montréal, QC, Canada">Based in Greater Montréal, QC, Canada</span>
-        </p>
-        <p class="text-xs text-neutral-500 font-light pt-1">
-          <span class="i18n" data-en="Available for full-time studio roles, hybrid/on-site in Montreal, and remote worldwide contracts." data-fr="Disponible pour postes studio à temps plein, hybride/sur place à Montréal, et contrats à distance dans le monde entier.">Available for full-time studio roles, hybrid/on-site in Montreal, and remote worldwide contracts.</span>
-        </p>
-      </div>
-
-    </div>
-  </section>
-
+</div>
+<!-- UI/UX resumes moved to the UI UX portfolio's own header -- see
+     https://uiux.guillaumedesign.ca/. The image assets stay in resume/ and
+     are still linked from there; only the cards on this page are gone. -->
+<!-- Concept Art Resumes -->
+<div>
+<h2 class="text-[11px] tracking-[0.3em] uppercase text-neutral-500 mb-8 border-b border-neutral-800 pb-4"><span class="i18n" data-en="Concept Art" data-fr="Art conceptuel">Concept Art</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="resume-card group flex flex-col h-full">
+<div class="overflow-hidden rounded-[20px] bg-neutral-900 border border-neutral-800 cursor-zoom-in mb-4 aspect-[1/1.414]" onclick="openLightbox('resume/Concept%2BArt%2BResume%2B%E2%80%94%2BEnglish.webp','Concept Art Resume — English')">
+<img alt="Concept Art Resume — English" class="w-full h-full object-contain" src="resume/Concept%2BArt%2BResume%2B%E2%80%94%2BEnglish.webp"/>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<p class="text-sm font-medium text-neutral-200"><span class="i18n" data-en="Concept Art Resume" data-fr="CV Art conceptuel">Concept Art Resume</span></p>
+<p class="text-xs text-neutral-500 mt-0.5"><span class="i18n" data-en="English" data-fr="Anglais">English</span></p>
+</div>
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-700 text-[11px] tracking-wider uppercase text-neutral-400 hover:text-neutral-100 hover:border-neutral-500 transition-all" download="" href="resume/Concept%2BArt%2BResume%2B%E2%80%94%2BEnglish.pdf">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+              <span class="i18n" data-en="Download" data-fr="Télécharger">Download</span>
+            </a>
+</div>
+</div>
+<div class="resume-card group flex flex-col h-full">
+<div class="overflow-hidden rounded-[20px] bg-neutral-900 border border-neutral-800 cursor-zoom-in mb-4 aspect-[1/1.414]" onclick="openLightbox('resume/Concept%2BArt%2BResume%2B%E2%80%94%2BFran%C3%A7ais.webp','Concept Art Resume — Français')">
+<img alt="Concept Art Resume — Français" class="w-full h-full object-contain" src="resume/Concept%2BArt%2BResume%2B%E2%80%94%2BFrançais.webp"/>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<p class="text-sm font-medium text-neutral-200"><span class="i18n" data-en="Concept Art Resume" data-fr="CV Art conceptuel">Concept Art Resume</span></p>
+<p class="text-xs text-neutral-500 mt-0.5"><span class="i18n" data-en="Français" data-fr="Français">Français</span></p>
+</div>
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-700 text-[11px] tracking-wider uppercase text-neutral-400 hover:text-neutral-100 hover:border-neutral-500 transition-all" download="" href="resume/Concept%2BArt%2BResume%2B%E2%80%94%2BFrançais.pdf">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+              <span class="i18n" data-en="Download" data-fr="Télécharger">Download</span>
+            </a>
+</div>
+</div>
+</div>
+</div>
 </main>
-
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="if(event.target===this)closeLightbox()" style="display:none;">
+<button aria-label="Close" id="lightbox-close" onclick="closeLightbox()"><span class="i18n" data-en="×" data-fr="×">×</span></button>
+<img alt="" id="lightbox-img" src=""/>
+</div>
 <!-- FOOTER -->
-<footer class="border-t border-[#2e323d] py-16">
-  <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-    <p class="text-xs text-neutral-500 tracking-wider">
-      <span class="i18n" data-en="© 2025 Guillaume Goder. All rights reserved." data-fr="© 2025 Guillaume Goder. Tous droits réservés.">© 2025 Guillaume Goder. All rights reserved.</span>
-    </p>
-    <div class="flex flex-wrap gap-8 justify-center">
-      <a class="text-xs text-neutral-400 hover:text-amber-300 transition-colors" href="https://www.guillaumedesign.ca/"><span class="i18n" data-en="guillaumedesign.ca" data-fr="guillaumedesign.ca">guillaumedesign.ca</span></a>
-      <a class="text-xs text-neutral-400 hover:text-amber-300 transition-colors" href="mailto:gg28.god@gmail.com"><span class="i18n" data-en="gg28.god@gmail.com" data-fr="gg28.god@gmail.com">gg28.god@gmail.com</span></a>
-      <a class="text-xs text-neutral-400 hover:text-amber-300 transition-colors" href="https://www.instagram.com/guillaumegoderart" rel="noopener" target="_blank"><span class="i18n" data-en="Instagram" data-fr="Instagram">Instagram</span></a>
-      <a class="text-xs text-neutral-400 hover:text-amber-300 transition-colors" href="https://www.linkedin.com/in/guillaume-goder-50a611125" rel="noopener" target="_blank"><span class="i18n" data-en="LinkedIn" data-fr="LinkedIn">LinkedIn</span></a>
-      <a class="text-xs text-neutral-400 hover:text-amber-300 transition-colors" href="https://www.artstation.com/guillaumegoder" rel="noopener" target="_blank"><span class="i18n" data-en="ArtStation" data-fr="ArtStation">ArtStation</span></a>
-    </div>
-  </div>
+<footer class="border-t border-neutral-800 py-12">
+<div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+<p class="text-[11px] text-neutral-700 tracking-wider"><span class="i18n" data-en="© 2025 Guillaume Goder. All rights reserved." data-fr="© 2025 Guillaume Goder. Tous droits réservés.">© 2025 Guillaume Goder. All rights reserved.</span></p>
+<div class="flex flex-wrap gap-6 justify-center">
+<a class="text-[11px] text-neutral-500 hover:text-neutral-200 transition-colors" href="https://www.guillaumedesign.ca/"><span class="i18n" data-en="guillaumedesign.ca" data-fr="guillaumedesign.ca">guillaumedesign.ca</span></a>
+<a class="text-[11px] text-neutral-500 hover:text-neutral-200 transition-colors" href="mailto:gg28.god@gmail.com"><span class="i18n" data-en="gg28.god@gmail.com" data-fr="gg28.god@gmail.com">gg28.god@gmail.com</span></a>
+<a class="text-[11px] text-neutral-500 hover:text-neutral-200 transition-colors" href="https://www.instagram.com/guillaumegoderart" rel="noopener" target="_blank"><span class="i18n" data-en="Instagram" data-fr="Instagram">Instagram</span></a>
+<a class="text-[11px] text-neutral-500 hover:text-neutral-200 transition-colors" href="https://www.linkedin.com/in/guillaume-goder-50a611125" rel="noopener" target="_blank"><span class="i18n" data-en="LinkedIn" data-fr="LinkedIn">LinkedIn</span></a>
+<a class="text-[11px] text-neutral-500 hover:text-neutral-200 transition-colors" href="https://www.artstation.com/guillaumegoder" rel="noopener" target="_blank"><span class="i18n" data-en="ArtStation" data-fr="ArtStation">ArtStation</span></a>
+</div>
+</div>
 </footer>
-
 <script>
-  // Mobile menu toggle
-  const mobileBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (mobileBtn && mobileMenu) {
-    mobileBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  }
-
-  // Scroll Progress Bar
-  const progressBar = document.getElementById('scroll-progress');
-  window.addEventListener('scroll', () => {
-    if (!progressBar) return;
-    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-    if (totalHeight > 0) {
-      const progress = (window.scrollY / totalHeight) * 100;
-      progressBar.style.width = Math.min(progress, 100) + '%';
+    function openLightbox(src, alt) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox-img').alt = alt || '';
+      document.getElementById('lightbox').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      document.addEventListener('keydown', escHandler);
     }
-  }, { passive: true });
-
-  // Scroll Reveal Animations via IntersectionObserver
-  function setupScrollReveal() {
-    const reveals = document.querySelectorAll('.scroll-reveal');
-    if (!reveals.length) return;
-
-    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.08,
-        rootMargin: '0px 0px -40px 0px'
-      });
-
-      reveals.forEach((el) => observer.observe(el));
-    } else {
-      reveals.forEach((el) => el.classList.add('is-visible'));
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+      document.getElementById('lightbox-img').src = '';
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', escHandler);
     }
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setupScrollReveal);
-  } else {
-    setupScrollReveal();
-  }
-</script>
-
+    function escHandler(e) { if (e.key === 'Escape') closeLightbox(); }
+  </script>
 </body>
 </html>
