@@ -173,9 +173,27 @@ html.light .theme-toggle-btn:hover { color: #18181b; border-color: #a1a1aa; }
 html.light .theme-toggle-btn .icon-moon { display: none; }
 html.light .theme-toggle-btn .icon-sun { display: block; }
 
-/* Cross-site navigation pill — arrow slides on hover */
-.cross-pill .cross-arrow { transition: transform 0.3s ease; display: inline-block; }
-.cross-pill:hover .cross-arrow { transform: translateX(3px); }
+/* Cross-site navigation pill — arrow expands on hover */
+.cross-pill .cross-arrow {
+  display: inline-block;
+  opacity: 0;
+  max-width: 0;
+  transform: translateX(-6px);
+  transition: max-width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              margin-left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-left: 0;
+  white-space: nowrap;
+  vertical-align: middle;
+  overflow: hidden;
+}
+.cross-pill:hover .cross-arrow {
+  opacity: 1;
+  max-width: 16px;
+  transform: translateX(0);
+  margin-left: 6px;
+}
 
 /* ── Project cards (home grid) ────────────────────────────────────────────
    Contained rounded cards. Hover matches the landing page and UX portfolio:
@@ -865,25 +883,47 @@ html.light .cal-today { color: #a07830; }
   cursor: pointer;
   overflow: hidden;
 }
-.hero-explore-btn .btn-arrow {
+/* Expanding Arrow Button Animations (Arrow hidden by default, expands on hover) */
+.btn-arrow,
+.cross-link-arrow,
+.cross-arrow {
   display: inline-block;
   opacity: 0;
   max-width: 0;
   transform: translateX(-8px);
-  transition: max-width 0.3s ease, opacity 0.3s ease, transform 0.3s ease, margin-left 0.3s ease;
+  transition: max-width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              margin-left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   margin-left: 0;
   white-space: nowrap;
+  vertical-align: middle;
+  overflow: hidden;
 }
-.hero-explore-btn:hover {
-  padding-right: 28px;
-  background-color: #fbbf24;
-  transform: scale(1.02);
-}
-.hero-explore-btn:hover .btn-arrow {
+
+:hover > .btn-arrow,
+:hover > .cross-link-arrow,
+:hover > .cross-arrow,
+.group:hover .btn-arrow,
+.group:hover .cross-link-arrow,
+.group:hover .cross-arrow,
+.cross-link-card:hover .cross-link-arrow,
+.cross-link-card:hover .btn-arrow {
   opacity: 1;
-  max-width: 20px;
+  max-width: 24px;
   transform: translateX(0);
   margin-left: 8px;
+}
+
+.cross-pill {
+  overflow: hidden;
+}
+.cross-pill:hover > .cross-arrow,
+.cross-pill:hover .cross-arrow {
+  opacity: 1;
+  max-width: 16px;
+  transform: translateX(0);
+  margin-left: 6px;
 }
 
 /* Get Started Card Buttons Expanding Animation */
