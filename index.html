@@ -8,11 +8,25 @@
 <meta content="Portfolio of Guillaume Goder, Concept Artist and UI/UX Designer specializing in game UI, concept art, and immersive VR interfaces. Based in Montréal, Canada." data-en="Portfolio of Guillaume Goder, Concept Artist and UI/UX Designer specializing in game UI, concept art, and immersive VR interfaces. Based in Montréal, Canada." data-fr="Portfolio de Guillaume Goder, artiste conceptuel et designer UI/UX spécialisé en UI de jeu, art conceptuel et interfaces VR immersives. Basé à Montréal, Canada." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } } }</script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          display: ['"Plus Jakarta Sans"', '"Space Grotesk"', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'monospace']
+        }
+      }
+    }
+  };
+</script>
 <style>
-    * { font-family: 'Inter', system-ui, sans-serif; }
+    * { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: #0a0a0a; }
     ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
@@ -27,6 +41,96 @@
     @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
     .hero-text { animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both; }
     .hero-sub { animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both; }
+
+    /* === WORD-BY-WORD LEFT-TO-RIGHT KINETIC DE-BLURRING === */
+    @keyframes wordKineticDeBlur {
+      0% {
+        opacity: 0;
+        filter: blur(12px);
+        transform: translate3d(-6px, 12px, 0) scale(0.95);
+      }
+      60% {
+        opacity: 0.85;
+        filter: blur(2px);
+      }
+      100% {
+        opacity: 1;
+        filter: blur(0px);
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+    }
+
+    .word-reveal {
+      display: inline-block;
+      animation: wordKineticDeBlur 0.45s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      will-change: filter, opacity, transform;
+    }
+
+    .hero-btn-kinetic {
+      animation: wordKineticDeBlur 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      will-change: filter, opacity, transform;
+    }
+
+    /* Silky-Smooth Card Deck Overlap & Spring Fan-Out */
+    .project-card {
+      will-change: transform, opacity, filter, box-shadow;
+      transition: transform 1.35s cubic-bezier(0.19, 1, 0.22, 1),
+                  box-shadow 1.35s cubic-bezier(0.19, 1, 0.22, 1),
+                  filter 1.35s cubic-bezier(0.19, 1, 0.22, 1),
+                  opacity 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    /* Stacked/Overlapping State */
+    .cards-deck-stacked .project-card {
+      transform: translate3d(var(--stack-x, 0px), var(--stack-y, 0px), 0px) rotate(var(--stack-rot, 0deg)) scale(var(--stack-scale, 0.88));
+      box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.1);
+      z-index: var(--stack-z, 1);
+      filter: brightness(var(--stack-bright, 1));
+      pointer-events: none;
+    }
+
+    /* ── Clip-Mask Text Reveal ── */
+    .clip-reveal {
+      overflow: hidden;
+      display: block;
+    }
+    .clip-reveal .clip-inner {
+      display: block;
+      transform: translateY(110%);
+      transition: transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+    }
+    .clip-reveal.is-visible .clip-inner {
+      transform: translateY(0);
+    }
+    .clip-d1 .clip-inner { transition-delay: 0.08s; }
+    .clip-d2 .clip-inner { transition-delay: 0.18s; }
+    .clip-d3 .clip-inner { transition-delay: 0.28s; }
+    .clip-d4 .clip-inner { transition-delay: 0.38s; }
+
+    /* Scroll-reveal fade-up for below-the-fold */
+    .sr {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .sr.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .clip-reveal .clip-inner {
+        transform: none !important;
+        transition: none !important;
+      }
+      .sr {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
   </style>
 <link href="assets/theme.css" rel="stylesheet"/><script defer="" src="assets/site.js"></script>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
@@ -127,22 +231,25 @@
 <section class="pt-28 md:pt-32 pb-8 px-6 lg:px-8 max-w-7xl mx-auto">
 <div class="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
 <div class="hero-text">
-<p class="text-[11px] tracking-[0.35em] uppercase text-neutral-600 mb-4"><span class="i18n" data-en="Guillaume Goder · Montréal, Canada" data-fr="Guillaume Goder · Montréal, Canada">Guillaume Goder · Montréal, Canada</span></p>
-<h1 class="text-[clamp(1.5rem,3vw,2.25rem)] font-semibold tracking-tight text-neutral-300 leading-[1.06]" style="text-wrap:balance">
-        <span class="i18n" data-en="Concept Art &amp; Illustration for Games and VR." data-fr="Art conceptuel et illustration pour les jeux et la VR.">Concept Art &amp; Illustration for Games and VR.</span>
-      </h1>
-<p class="hero-sub text-neutral-500 text-[11px] md:text-xs leading-relaxed font-light mt-4">
-        <span class="i18n" data-en="Character, creature, vehicle, and environment design — plus the UI systems that bring these worlds to life." data-fr="Design de personnages, créatures, véhicules et environnements — ainsi que les systèmes UI qui donnent vie à ces mondes.">Character, creature, vehicle, and environment design — plus the UI systems that bring these worlds to life.</span>
-      </p>
-<div class="mt-6">
-  <a href="hire-me.html" class="hero-explore-btn">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#12141a] border border-[#262a36] text-[10px] font-mono tracking-[0.2em] uppercase text-neutral-400 mb-5">
+  <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+  <span class="i18n" data-en="Guillaume Goder · Montréal, Canada" data-fr="Guillaume Goder · Montréal, Canada">Guillaume Goder · Montréal, Canada</span>
+</div>
+<h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-display tracking-tight text-neutral-100 leading-[1.08] word-animate-target" style="text-wrap:balance">
+  <span class="i18n" data-en="Concept Art &amp; Illustration for Games and VR." data-fr="Art conceptuel et illustration pour les jeux et la VR.">Concept Art &amp; Illustration for Games and VR.</span>
+</h1>
+<p class="hero-sub text-neutral-400 text-sm sm:text-base leading-relaxed font-normal mt-5 max-w-2xl word-animate-target">
+  <span class="i18n" data-en="Character, creature, vehicle, and environment design — plus the UI systems that bring these worlds to life." data-fr="Design de personnages, créatures, véhicules et environnements — ainsi que les systèmes UI qui donnent vie à ces mondes.">Character, creature, vehicle, and environment design — plus the UI systems that bring these worlds to life.</span>
+</p>
+<div class="mt-7">
+  <a href="hire-me.html" class="hero-explore-btn hero-btn-kinetic">
     <span class="i18n" data-en="Explore Services &amp; Rates" data-fr="Explorer les services &amp; tarifs">Explore Services &amp; Rates</span>
     <svg class="btn-arrow" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
 </div>
 </div>
 <div class="flex flex-col gap-2.5 md:items-end">
-<p class="hero-tools-label text-[9px] tracking-[0.25em] uppercase"><span class="i18n" data-en="Toolkit" data-fr="Outils">Toolkit</span></p>
+<p class="hero-tools-label text-[10px] font-mono tracking-[0.25em] uppercase text-neutral-400"><span class="i18n" data-en="00 // TOOLKIT" data-fr="00 // OUTILS">00 // TOOLKIT</span></p>
 <div class="hero-tools flex items-center gap-1 sm:gap-2 md:justify-end" aria-label="Software toolkit">
 <span class="tool-chip inline-flex h-6 w-6 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-full" role="img" data-tip="Figma" aria-label="Figma"><span class="tool-glyph"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z"></path></svg></span></span>
 <span class="tool-chip inline-flex h-6 w-6 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-full" role="img" data-tip="Photoshop" aria-label="Photoshop"><span class="tool-glyph glyph-softer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.85 8.42c-.37-.15-.77-.21-1.18-.2-.26 0-.49 0-.68.01-.2-.01-.34 0-.41.01v3.36c.14.01.27.02.39.02h.53c.39 0 .78-.06 1.15-.18.32-.09.6-.28.82-.53.21-.25.31-.59.31-1.03.01-.31-.07-.62-.23-.89-.17-.26-.41-.46-.7-.57zM19.75.3H4.25C1.9.3 0 2.2 0 4.55v14.899c0 2.35 1.9 4.25 4.25 4.25h15.5c2.35 0 4.25-1.9 4.25-4.25V4.55C24 2.2 22.1.3 19.75.3zm-7.391 11.65c-.399.56-.959.98-1.609 1.22-.68.25-1.43.34-2.25.34-.24 0-.4 0-.5-.01s-.24-.01-.43-.01v3.209c.01.07-.04.131-.11.141H5.52c-.08 0-.12-.041-.12-.131V6.42c0-.07.03-.11.1-.11.17 0 .33 0 .56-.01.24-.01.49-.01.76-.02s.56-.01.87-.02c.31-.01.61-.01.91-.01.82 0 1.5.1 2.06.31.5.17.96.45 1.34.82.32.32.57.71.73 1.14.149.42.229.85.229 1.3.001.86-.199 1.57-.6 2.13zm7.091 3.89c-.28.4-.671.709-1.12.891-.49.209-1.09.318-1.811.318-.459 0-.91-.039-1.359-.129-.35-.061-.7-.17-1.02-.32-.07-.039-.121-.109-.111-.189v-1.74c0-.029.011-.07.041-.09.029-.02.06-.01.09.01.39.23.8.391 1.24.49.379.1.779.15 1.18.15.38 0 .65-.051.83-.141.16-.07.27-.24.27-.42 0-.141-.08-.27-.24-.4-.16-.129-.489-.279-.979-.471-.51-.18-.979-.42-1.42-.719-.31-.221-.569-.51-.761-.85-.159-.32-.239-.67-.229-1.021 0-.43.12-.84.341-1.21.25-.4.619-.72 1.049-.92.469-.239 1.059-.349 1.769-.349.41 0 .83.03 1.24.09.3.04.59.12.86.23.039.01.08.05.1.09.01.04.02.08.02.12v1.63c0 .04-.02.08-.05.1-.09.02-.14.02-.18 0-.3-.16-.62-.27-.96-.34-.37-.08-.74-.13-1.12-.13-.2-.01-.41.02-.601.07-.129.03-.24.1-.31.2-.05.08-.08.18-.08.27s.04.18.101.26c.09.11.209.2.34.27.229.12.47.23.709.33.541.18 1.061.43 1.541.73.33.209.6.49.789.83.16.318.24.67.23 1.029.011.471-.129.94-.389 1.331z"></path></svg></span></span>
@@ -160,10 +267,10 @@
 <!-- PROJECTS GRID -->
 <section class="px-6 lg:px-8 pb-32 max-w-7xl mx-auto">
 <div class="flex items-center justify-between mb-10 border-t border-[#2e323d] pt-8">
-<h2 class="text-[11px] tracking-[0.3em] uppercase text-neutral-500"><span class="i18n" data-en="Selected Work" data-fr="Travaux sélectionnés">Selected Work</span></h2>
-<span class="text-[11px] tracking-[0.2em] uppercase text-neutral-500"><span class="i18n" data-en="06 Projects" data-fr="06 Projets">06 Projects</span></span>
+<h2 class="text-xs font-mono tracking-[0.25em] uppercase text-neutral-400 font-semibold flex items-center gap-2"><span class="text-amber-400 font-bold">01 //</span> <span class="i18n" data-en="SELECTED WORK" data-fr="TRAVAUX SÉLECTIONNÉS">SELECTED WORK</span></h2>
+<span class="text-[11px] font-mono tracking-[0.2em] uppercase text-neutral-500"><span class="i18n" data-en="06 Projects" data-fr="06 Projets">06 Projects</span></span>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8" id="projects-grid">
 <!-- Outpost Red -->
 <a class="project-card relative overflow-hidden block" href="outpost-red.html" style="aspect-ratio:4/3; background:#0a0a0a;">
 <img alt="Outpost Red — Game UI Interface" class="w-full h-full object-cover" style="object-position: right center;" loading="lazy" src="thumbs/outpost-red.webp"/>
@@ -243,6 +350,16 @@
 </div>
 </a>
 </div>
+<div class="mt-14 flex flex-col sm:flex-row items-center sm:justify-end gap-4 sm:gap-6">
+  <a href="https://uiux.guillaumedesign.ca/" class="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl bg-white hover:bg-neutral-200 text-neutral-950 font-mono text-xs uppercase tracking-[0.18em] font-bold transition-all duration-300 shadow-lg shadow-white/10 hover:shadow-white/20 hover:-translate-y-0.5 group w-full sm:w-auto">
+    <span class="i18n" data-en="Explore UI / UX Portfolio" data-fr="Explorer le portfolio UI / UX">Explore UI / UX Portfolio</span>
+    <svg class="w-4 h-4 text-neutral-950 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+  <a href="illustrations.html" class="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-neutral-950 font-mono text-xs uppercase tracking-[0.18em] font-bold transition-all duration-300 shadow-lg shadow-amber-400/10 hover:shadow-amber-400/20 hover:-translate-y-0.5 group w-full sm:w-auto">
+    <span class="i18n" data-en="Explore Illustrations Gallery" data-fr="Explorer la galerie d'illustrations">Explore Illustrations Gallery</span>
+    <svg class="w-4 h-4 text-neutral-950 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</div>
 </section>
 <!-- FOOTER -->
 <footer class="border-t border-[#2e323d] py-12">
@@ -257,5 +374,119 @@
 </div>
 </div>
 </footer>
+
+<script>
+  (function() {
+    // 1. WORD-BY-WORD LEFT-TO-RIGHT WRAPPER
+    function applyWordByWordSpans() {
+      const targets = document.querySelectorAll('.word-animate-target .i18n, .word-animate-target');
+      targets.forEach(container => {
+        const childNodes = Array.from(container.childNodes);
+        childNodes.forEach(node => {
+          if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim().length > 0) {
+            const words = node.nodeValue.split(/(\s+)/);
+            const fragment = document.createDocumentFragment();
+            
+            words.forEach(word => {
+              if (word.trim().length === 0) {
+                fragment.appendChild(document.createTextNode(word));
+              } else {
+                const span = document.createElement('span');
+                span.className = 'word-reveal';
+                span.textContent = word;
+                fragment.appendChild(span);
+              }
+            });
+            
+            node.parentNode.replaceChild(fragment, node);
+          }
+        });
+      });
+    }
+
+    applyWordByWordSpans();
+
+    function setWordDelays(startDelay, step) {
+      const words = document.querySelectorAll('.word-reveal');
+      let currentDelay = startDelay;
+      words.forEach((w) => {
+        w.style.animationDelay = `${currentDelay.toFixed(3)}s`;
+        currentDelay += step;
+      });
+
+      // Set CTA button delay after headline words finish
+      const btn = document.querySelector('.hero-btn-kinetic');
+      if (btn) {
+        btn.style.animationDelay = `${(currentDelay + 0.08).toFixed(3)}s`;
+      }
+      return currentDelay;
+    }
+
+    setWordDelays(0.05, 0.038);
+
+    // 2. CARD DECK OVERLAP & SMOOTH BLOSSOM
+    const grid = document.getElementById('projects-grid');
+    if (!grid) return;
+    const cards = Array.from(grid.querySelectorAll('.project-card'));
+
+    const stackConfigs = [
+      { rot: -3.8, scale: 0.90, bright: 0.98, yOffset: -8, z: 6 },
+      { rot: 3.2, scale: 0.88, bright: 0.90, yOffset: -4, z: 5 },
+      { rot: -1.8, scale: 0.86, bright: 0.84, yOffset: 0, z: 4 },
+      { rot: 2.2, scale: 0.84, bright: 0.78, yOffset: 4, z: 3 },
+      { rot: -0.8, scale: 0.82, bright: 0.72, yOffset: 8, z: 2 },
+      { rot: 1.2, scale: 0.80, bright: 0.66, yOffset: 12, z: 1 }
+    ];
+
+    function calculateStackOffsets() {
+      const gridRect = grid.getBoundingClientRect();
+      const targetCenterX = gridRect.left + gridRect.width / 2;
+      const firstCardRect = cards[0].getBoundingClientRect();
+      const targetCenterY = gridRect.top + firstCardRect.height * 0.55;
+
+      cards.forEach((card, i) => {
+        const config = stackConfigs[i] || { rot: 0, scale: 0.85, bright: 0.9, yOffset: 0, z: 1 };
+        const cardRect = card.getBoundingClientRect();
+        const cardCenterX = cardRect.left + cardRect.width / 2;
+        const cardCenterY = cardRect.top + cardRect.height / 2;
+
+        const deltaX = Math.round(targetCenterX - cardCenterX);
+        const deltaY = Math.round((targetCenterY + config.yOffset) - cardCenterY);
+
+        card.style.setProperty('--stack-x', `${deltaX}px`);
+        card.style.setProperty('--stack-y', `${deltaY}px`);
+        card.style.setProperty('--stack-rot', `${config.rot}deg`);
+        card.style.setProperty('--stack-scale', `${config.scale}`);
+        card.style.setProperty('--stack-bright', `${config.bright}`);
+        card.style.setProperty('--stack-z', `${config.z}`);
+      });
+    }
+
+    let isStacked = true;
+
+    function spreadCards() {
+      grid.classList.remove('cards-deck-stacked');
+      isStacked = false;
+      cards.forEach((card, i) => {
+        card.style.transitionDelay = `${i * 0.045}s`;
+      });
+    }
+
+    // Initialize: stack on load, then blossom out
+    window.addEventListener('load', () => {
+      calculateStackOffsets();
+      grid.classList.add('cards-deck-stacked');
+      setTimeout(() => {
+        spreadCards();
+      }, 500);
+    });
+
+    window.addEventListener('resize', () => {
+      if (isStacked) calculateStackOffsets();
+    });
+
+  })();
+</script>
+
 </body>
 </html>

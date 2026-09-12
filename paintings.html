@@ -8,11 +8,23 @@
 <meta content="Paintings by Guillaume Goder — portrait studies, life paintings, and conceptual works." data-en="Paintings by Guillaume Goder — portrait studies, life paintings, and conceptual works." data-fr="Peintures de Guillaume Goder — études de portraits, peintures d'après nature et œuvres conceptuelles." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } } }</script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'monospace']
+        }
+      }
+    }
+  };
+</script>
 <style>
-    * { font-family: 'Inter', system-ui, sans-serif; }
+    * { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: #0a0a0a; }
     ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
@@ -208,6 +220,16 @@
 <img alt="Portrait Study" loading="lazy" src="paintings/img_1823905x695.webp"/>
 <div class="hover-label"><p class="text-xs text-neutral-300 font-medium"><span class="i18n" data-en="Portrait Study" data-fr="Portrait Study">Portrait Study</span></p></div>
 </div>
+</div>
+<div class="mt-16 mb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center sm:justify-end gap-4 sm:gap-6">
+  <a href="https://uiux.guillaumedesign.ca/" class="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl bg-white hover:bg-neutral-200 text-neutral-950 font-mono text-xs uppercase tracking-[0.18em] font-bold transition-all duration-300 shadow-lg shadow-white/10 hover:shadow-white/20 hover:-translate-y-0.5 group w-full sm:w-auto">
+    <span class="i18n" data-en="Explore UI / UX Portfolio" data-fr="Explorer le portfolio UI / UX">Explore UI / UX Portfolio</span>
+    <svg class="w-4 h-4 text-neutral-950 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+  <a href="resume.html" class="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-neutral-950 font-mono text-xs uppercase tracking-[0.18em] font-bold transition-all duration-300 shadow-lg shadow-amber-400/10 hover:shadow-amber-400/20 hover:-translate-y-0.5 group w-full sm:w-auto">
+    <span class="i18n" data-en="Explore Resume" data-fr="Explorer le CV">Explore Resume</span>
+    <svg class="w-4 h-4 text-neutral-950 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
 </div>
 </main>
 <!-- FOOTER -->
