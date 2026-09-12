@@ -863,6 +863,47 @@ html.light .cal-footer { border-top-color: #e5e5e5; }
 .cal-today { color: #fcd34d; font-weight: 700; }
 html.light .cal-today { color: #a07830; }
 
+/* ---- Standardized Expanding CTA Buttons (Matches Hero Services & Rates Button) ---- */
+.site-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.site-cta-btn.cta-yellow {
+  background-color: #fcd34d;
+  color: #0a0a0a !important;
+  box-shadow: 0 4px 14px rgba(252, 211, 77, 0.15);
+}
+.site-cta-btn.cta-yellow:hover {
+  background-color: #fbbf24;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 25px -5px rgba(252, 211, 77, 0.35);
+}
+
+.site-cta-btn.cta-white {
+  background-color: #ffffff;
+  color: #0a0a0a !important;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.12);
+}
+.site-cta-btn.cta-white:hover {
+  background-color: #e5e5e5;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.3);
+}
+
 /* Hero Explore Services & Rates Expanding Button */
 .hero-explore-btn {
   display: inline-flex;
@@ -878,11 +919,10 @@ html.light .cal-today { color: #a07830; }
   letter-spacing: 0.15em;
   text-transform: uppercase;
   text-decoration: none;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 14px rgba(252, 211, 77, 0.15);
   cursor: pointer;
   overflow: hidden;
-  will-change: transform, box-shadow, background-color;
 }
 .hero-explore-btn:hover {
   background-color: #fbbf24;
@@ -890,29 +930,23 @@ html.light .cal-today { color: #a07830; }
   box-shadow: 0 10px 25px -5px rgba(252, 211, 77, 0.35);
 }
 
-/* Expanding Arrow Button Animations — Smooth 3D Hardware Accelerated Spring Reveal */
+/* Expanding Arrow Button Animations — Rock-Solid, No Shaking, Smooth Reveal */
 .btn-arrow,
 .cross-link-arrow,
 .cross-arrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 0;
-  max-width: 0;
+  display: inline-block;
   opacity: 0;
-  transform: translate3d(-10px, 0, 0) scale(0.65);
+  max-width: 0;
+  transform: translateX(-6px);
+  transition: max-width 0.3s ease, opacity 0.3s ease, transform 0.3s ease, margin-left 0.3s ease;
   margin-left: 0;
   white-space: nowrap;
   vertical-align: middle;
   overflow: hidden;
-  will-change: width, max-width, opacity, transform, margin-left;
-  transition: width 0.38s cubic-bezier(0.16, 1, 0.3, 1),
-              max-width 0.38s cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
-              margin-left 0.38s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.site-cta-btn:hover .btn-arrow,
+.hero-explore-btn:hover .btn-arrow,
 :hover > .btn-arrow,
 :hover > .cross-link-arrow,
 :hover > .cross-arrow,
@@ -921,25 +955,23 @@ html.light .cal-today { color: #a07830; }
 .group:hover .cross-arrow,
 .cross-link-card:hover .cross-link-arrow,
 .cross-link-card:hover .btn-arrow {
-  width: 1.2em;
-  max-width: 26px;
   opacity: 1;
-  transform: translate3d(0, 0, 0) scale(1);
-  margin-left: 0.55em;
+  max-width: 20px;
+  transform: translateX(0);
+  margin-left: 8px;
 }
 
 .cross-pill {
   overflow: hidden;
   will-change: transform, background-color, border-color;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s ease;
 }
 .cross-pill:hover > .cross-arrow,
 .cross-pill:hover .cross-arrow {
-  width: 1em;
-  max-width: 16px;
   opacity: 1;
-  transform: translate3d(0, 0, 0) scale(1);
-  margin-left: 0.4em;
+  max-width: 16px;
+  transform: translateX(0);
+  margin-left: 6px;
 }
 
 /* Get Started Card Buttons Expanding Animation */
