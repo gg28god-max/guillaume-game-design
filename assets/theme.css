@@ -237,6 +237,21 @@ html.light .theme-toggle-btn .icon-sun { display: block; }
 /* The card now scales too — soften the image zoom so it reads as one motion */
 .project-card:hover img { transform: scale(1.03); }
 
+.card-title {
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: normal;
+  color: #d4d4d8;
+  transition: color 0.3s ease, font-weight 0.3s ease, letter-spacing 0.3s ease;
+}
+
+.project-card:hover .card-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+}
+
 html.light .project-card {
   border-color: rgba(0, 0, 0, 0.10);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
