@@ -8,14 +8,15 @@
 <meta content="Paintings by Guillaume Goder — portrait studies, life paintings, and conceptual works." data-en="Paintings by Guillaume Goder — portrait studies, life paintings, and conceptual works." data-fr="Peintures de Guillaume Goder — études de portraits, peintures d'après nature et œuvres conceptuelles." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Oswald:wght@500;600;700&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
     theme: {
       extend: {
         fontFamily: {
-          sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+          sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          display: ['"Bebas Neue"', '"Oswald"', '"Plus Jakarta Sans"', 'sans-serif'],
           mono: ['"JetBrains Mono"', 'monospace']
         }
       }
@@ -139,7 +140,7 @@
 <!-- PAGE HEADER -->
 <header class="pt-24 pb-6 px-6 lg:px-8 max-w-7xl mx-auto">
 <p class="text-[11px] font-mono tracking-[0.3em] uppercase text-orange-500 mb-4"><span class="i18n" data-en="GALLERY" data-fr="GALERIE">GALLERY</span></p>
-<h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white leading-[0.95] mb-6"><span class="i18n" data-en="Paintings" data-fr="Peintures">Paintings</span></h1>
+<h1 class="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[92px] tracking-wide uppercase text-white leading-[0.92] mb-6"><span class="i18n" data-en="Paintings" data-fr="Peintures">Paintings</span></h1>
 </header>
 <!-- MASONRY GALLERY -->
 <main class="px-3 pb-32">
