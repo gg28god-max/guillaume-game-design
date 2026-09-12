@@ -876,7 +876,8 @@ html.light .cal-today { color: #a07830; }
   letter-spacing: 0.18em;
   text-transform: uppercase;
   text-decoration: none;
-  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  box-shadow: none !important;
   cursor: pointer;
   overflow: hidden;
   white-space: nowrap;
@@ -885,23 +886,23 @@ html.light .cal-today { color: #a07830; }
 .site-cta-btn.cta-yellow {
   background-color: #fcd34d;
   color: #0a0a0a !important;
-  box-shadow: 0 4px 14px rgba(252, 211, 77, 0.15);
+  box-shadow: none !important;
 }
 .site-cta-btn.cta-yellow:hover {
   background-color: #fbbf24;
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 10px 25px -5px rgba(252, 211, 77, 0.35);
+  transform: scale(1.02);
+  box-shadow: none !important;
 }
 
 .site-cta-btn.cta-white {
   background-color: #ffffff;
   color: #0a0a0a !important;
-  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.12);
+  box-shadow: none !important;
 }
 .site-cta-btn.cta-white:hover {
   background-color: #e5e5e5;
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.3);
+  transform: scale(1.02);
+  box-shadow: none !important;
 }
 
 /* Hero Explore Services & Rates Expanding Button */
@@ -919,15 +920,15 @@ html.light .cal-today { color: #a07830; }
   letter-spacing: 0.15em;
   text-transform: uppercase;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 14px rgba(252, 211, 77, 0.15);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: none !important;
   cursor: pointer;
   overflow: hidden;
 }
 .hero-explore-btn:hover {
   background-color: #fbbf24;
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 10px 25px -5px rgba(252, 211, 77, 0.35);
+  transform: scale(1.02);
+  box-shadow: none !important;
 }
 
 /* Expanding Arrow Button Animations — Rock-Solid, No Shaking, Smooth Reveal */
@@ -1593,18 +1594,17 @@ html.light .project-nav-card:hover .nav-card-icon {
 
 /* ---- UI/UX Cross-Link CTA (Option C: Minimalist Monochrome Pill) ---- */
 .cross-link-cta {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+  box-shadow: none !important;
   background-color: #f4f4f5 !important;
   color: #09090b !important;
-  will-change: transform, box-shadow, background-color;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease !important;
 }
 .cross-link-cta:hover,
 .cross-link-card:hover .cross-link-cta {
   background-color: #fcd34d !important;
   color: #09090b !important;
-  transform: translateY(-1px) scale(1.02);
-  box-shadow: 0 8px 20px -4px rgba(252, 211, 77, 0.35) !important;
+  transform: scale(1.02);
+  box-shadow: none !important;
 }
 
 /* Light Mode */
