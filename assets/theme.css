@@ -1588,46 +1588,36 @@ html.light .glb-hint kbd {
   }
 }
 
-/* ---- Project Navigation Dual Cards (No Glow, Clean & Compact) ---- */
-.project-nav-card {
-  box-shadow: none !important;
+/* ---- Project Navigation Buttons (Rich Filled Color Backgrounds) ---- */
+.project-nav-btn {
+  background-color: #1c202b;
+  background-image: linear-gradient(135deg, #222634 0%, #1a1d26 100%);
+  border: 1px solid #32384a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.project-nav-card:hover {
-  box-shadow: none !important;
-}
-.project-nav-card .nav-card-icon {
-  background-color: #24242a !important;
-  border-color: #404048 !important;
-  box-shadow: none !important;
-}
-.project-nav-card:hover .nav-card-icon {
-  background-color: #2c2c34 !important;
-  border-color: #52525c !important;
-  box-shadow: none !important;
+
+.project-nav-btn:hover {
+  background-color: #272d3e;
+  background-image: linear-gradient(135deg, #2b3245 0%, #202534 100%);
+  border-color: rgba(252, 211, 77, 0.55);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(252, 211, 77, 0.12);
 }
 
 /* Light Mode */
-html.light .project-nav-card {
-  background-color: #ffffff !important;
-  border-color: #e4e4e7 !important;
-  box-shadow: none !important;
+html.light .project-nav-btn {
+  background-color: #f4f4f6;
+  background-image: linear-gradient(135deg, #ffffff 0%, #f0f0f4 100%);
+  border-color: #e4e4e7;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
-html.light .project-nav-card:hover {
-  background-color: #fafafa !important;
-  border-color: #d4d4d8 !important;
-  box-shadow: none !important;
-}
-html.light .project-nav-card .nav-card-icon {
-  background-color: #f4f4f5 !important;
-  border-color: #d4d4d8 !important;
-  color: #18181b !important;
-  box-shadow: none !important;
-}
-html.light .project-nav-card:hover .nav-card-icon {
-  background-color: #e4e4e7 !important;
-  border-color: #a1a1aa !important;
-  color: #18181b !important;
-  box-shadow: none !important;
+
+html.light .project-nav-btn:hover {
+  background-color: #ffffff;
+  background-image: linear-gradient(135deg, #ffffff 0%, #e8e8ed 100%);
+  border-color: rgba(217, 119, 6, 0.5);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 /* ---- UI/UX Cross-Link CTA (Option C: Minimalist Monochrome Pill) ---- */
