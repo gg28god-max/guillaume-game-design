@@ -8,16 +8,30 @@
 <meta content="Home Run Derby VR — Lead Architect for game UI visual identity, developed with MLB for Meta Quest. Sports simulation VR UI design system." data-en="Home Run Derby VR — Lead Architect for game UI visual identity, developed with MLB for Meta Quest. Sports simulation VR UI design system." data-fr="Home Run Derby VR — Architecte principal de l'identité visuelle UI du jeu, développé avec la MLB pour Meta Quest. Système de design UI VR pour simulation sportive." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } } }</script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          display: ['"Plus Jakarta Sans"', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'monospace']
+        }
+      }
+    }
+  };
+</script>
 <style>
-    * { font-family: 'Inter', system-ui, sans-serif; }
+    * { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: #0a0a0a; }
     ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
-    /* kept per-page rather than in theme.css since only these case-study pages use it so far */
-    .brief-eyebrow { color: #fcd34d; font-family: 'Courier New', ui-monospace, monospace; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .brief-eyebrow { color: #fcd34d; font-family: 'JetBrains Mono', monospace; }
     html.light .brief-eyebrow { color: #a07830; }
   </style>
 <link href="assets/theme.css" rel="stylesheet"/><script defer="" src="assets/site.js"></script>

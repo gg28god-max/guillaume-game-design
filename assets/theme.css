@@ -1,3 +1,22 @@
+/* ---- Global Site Typography System (Plus Jakarta Sans + JetBrains Mono) ---- */
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+body, button, input, select, textarea {
+  font-family: var(--font-sans);
+}
+
+.font-mono,
+.brief-eyebrow,
+.font-code,
+.hero-tools-label,
+.site-cta-btn,
+.cross-pill {
+  font-family: var(--font-mono);
+}
+
 /* ==========================================================================
    Guillaume Goder portfolio — shared theme + language toggle styles
    Default site theme is dark (unchanged). All rules below only apply when
