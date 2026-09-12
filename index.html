@@ -67,7 +67,7 @@
     }
 
     .hero-btn-kinetic {
-      animation: wordKineticDeBlur 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation: wordKineticDeBlur 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) both;
       will-change: filter, opacity, transform;
     }
 
@@ -414,10 +414,10 @@
         currentDelay += step;
       });
 
-      // Set CTA button delay after headline words finish
+      // Set CTA button delay to appear quickly alongside title
       const btn = document.querySelector('.hero-btn-kinetic');
       if (btn) {
-        btn.style.animationDelay = `${(currentDelay + 0.08).toFixed(3)}s`;
+        btn.style.animationDelay = '0.08s';
       }
       return currentDelay;
     }
