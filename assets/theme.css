@@ -1,4 +1,4 @@
-/* ---- Global Site Typography System (Bebas Neue + Plus Jakarta Sans + JetBrains Mono) ---- */
+/* ---- Global Site Typography System (Option 2: Bebas Neue for Headings, Cards & CTAs) ---- */
 :root {
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
@@ -13,14 +13,27 @@ body, button, input, select, textarea {
 .brief-eyebrow,
 .font-code,
 .hero-tools-label,
-.site-cta-btn,
 .cross-pill {
   font-family: var(--font-mono);
 }
 
 .font-display,
-.project-header-title {
+.project-header-title,
+h1, h2, h3,
+.site-cta-btn {
   font-family: var(--font-display);
+}
+
+h1, h2, h3, .project-header-title {
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.site-cta-btn {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 1.05rem;
 }
 
 /* ==========================================================================

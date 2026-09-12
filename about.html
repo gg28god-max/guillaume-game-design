@@ -8,14 +8,15 @@
 <meta content="Guillaume Goder — Concept Artist and UI/UX Designer based in Montréal, Canada. Specializing in game UI, concept art, and immersive VR interfaces." data-en="Guillaume Goder — Concept Artist and UI/UX Designer based in Montréal, Canada. Specializing in game UI, concept art, and immersive VR interfaces." data-fr="Guillaume Goder — Artiste conceptuel et designer UI/UX basé à Montréal, Canada. Spécialisé en UI de jeu, art conceptuel et interfaces VR immersives." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Oswald:wght@500;600;700&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
     theme: {
       extend: {
         fontFamily: {
-          sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+          sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          display: ['"Bebas Neue"', '"Oswald"', '"Plus Jakarta Sans"', 'sans-serif'],
           mono: ['"JetBrains Mono"', 'monospace']
         }
       }
@@ -128,8 +129,8 @@
 <main class="pt-24 pb-32 px-6 lg:px-8 max-w-7xl mx-auto">
 <!-- Header -->
 <div class="mb-10">
-<p class="text-[11px] tracking-[0.35em] uppercase text-neutral-600 mb-4"><span class="i18n" data-en="Profile" data-fr="Profil">Profile</span></p>
-<h1 class="text-2xl md:text-3xl font-semibold tracking-tight text-neutral-300 leading-none mb-6"><span class="i18n" data-en="About" data-fr="À propos">About</span></h1>
+<p class="text-[11px] font-mono tracking-[0.3em] uppercase text-orange-500 mb-4"><span class="i18n" data-en="PROFILE" data-fr="PROFIL">PROFILE</span></p>
+<h1 class="font-display text-5xl sm:text-7xl md:text-8xl tracking-wide uppercase text-white leading-[0.92] mb-6"><span class="i18n" data-en="About" data-fr="À propos">About</span></h1>
 </div>
 <!-- Two-column layout -->
 <div class="grid grid-cols-1 md:grid-cols-[minmax(0,660px)_1fr] md:grid-rows-[auto_auto] gap-x-10 lg:gap-x-16 gap-y-10 mb-28 items-start">
