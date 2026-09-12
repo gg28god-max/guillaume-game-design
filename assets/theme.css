@@ -247,8 +247,8 @@ html.light .theme-toggle-btn .icon-sun { display: block; }
 
 .project-card:hover .card-title {
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  text-transform: none;
+  letter-spacing: normal;
   color: #ffffff;
 }
 
