@@ -746,8 +746,8 @@
     </div>
     <!-- Video Player -->
     <div class="relative w-full aspect-[16/9] bg-black flex items-center justify-center">
-      <video id="trailer-video" controls autoplay preload="auto" playsinline class="w-full h-full object-contain">
-        <source src="assets/wings-of-wanitu/wings-of-wanitu-trailer.mp4" type="video/mp4">
+      <video id="trailer-video" controls playsinline preload="auto" class="w-full h-full object-contain">
+        <source src="assets/wings-of-wanitu/wings-of-wanitu-trailer.mp4#t=0.5" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
@@ -771,15 +771,25 @@ function openTrailerModal() {
   if (modal && video) {
     modal.classList.remove('hidden');
     modal.classList.add('flex');
-    video.currentTime = 0;
-    var playPromise = video.play();
-    if (playPromise !== undefined) {
-      playPromise.then(function() {}).catch(function() {
-        video.muted = true;
-        video.play();
-      });
-    }
     document.body.style.overflow = 'hidden';
+    
+    // Jump past initial black frame and trigger immediate play
+    if (video.currentTime < 0.5) {
+      video.currentTime = 0.5;
+    }
+    
+    var startPlay = function() {
+      var p = video.play();
+      if (p !== undefined) {
+        p.catch(function() {
+          video.muted = true;
+          video.play();
+        });
+      }
+    };
+    
+    startPlay();
+    setTimeout(startPlay, 100);
   }
 }
 
