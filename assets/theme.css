@@ -435,7 +435,9 @@ html.light .li-pill:hover {
 
 /* Two concentric rings ripple outward to catch the eye. */
 .video-play-btn::before,
-.video-play-btn::after {
+.video-play-btn::after,
+.video-play-btn-thumb::before,
+.video-play-btn-thumb::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -444,8 +446,10 @@ html.light .li-pill:hover {
   opacity: 0;
   pointer-events: none;
 }
-.video-embed.in-view .video-play-btn::before { animation: videoPulse 2.1s ease-out infinite; }
-.video-embed.in-view .video-play-btn::after  { animation: videoPulse 2.1s ease-out infinite 1.05s; }
+.video-embed.in-view .video-play-btn::before,
+.video-play-btn-thumb::before { animation: videoPulse 2.1s ease-out infinite; }
+.video-embed.in-view .video-play-btn::after,
+.video-play-btn-thumb::after  { animation: videoPulse 2.1s ease-out infinite 1.05s; }
 @keyframes videoPulse {
   0%   { transform: scale(1);   opacity: 0.7; }
   70%  { opacity: 0; }
