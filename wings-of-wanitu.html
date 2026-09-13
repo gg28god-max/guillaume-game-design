@@ -745,8 +745,8 @@
       </button>
     </div>
     <!-- Video Player -->
-    <div class="relative w-full aspect-[16/9] bg-black">
-      <video id="trailer-video" controls class="w-full h-full object-contain">
+    <div class="relative w-full aspect-[16/9] bg-black flex items-center justify-center">
+      <video id="trailer-video" controls autoplay preload="auto" playsinline class="w-full h-full object-contain">
         <source src="assets/wings-of-wanitu/wings-of-wanitu-trailer.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -771,7 +771,14 @@ function openTrailerModal() {
   if (modal && video) {
     modal.classList.remove('hidden');
     modal.classList.add('flex');
-    video.play().catch(function() {});
+    video.currentTime = 0;
+    var playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.then(function() {}).catch(function() {
+        video.muted = true;
+        video.play();
+      });
+    }
     document.body.style.overflow = 'hidden';
   }
 }
