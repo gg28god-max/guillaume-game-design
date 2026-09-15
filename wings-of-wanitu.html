@@ -481,7 +481,7 @@
     </div>
     <!-- Video Thumbnail Preview -->
     <div class="shrink-0">
-      <button type="button" onclick="openTrailerModal()" class="group relative block w-44 sm:w-52 aspect-[16/9] rounded-xl overflow-hidden border border-[#2e323d] hover:border-orange-500 transition-all duration-300 shadow-md cursor-pointer focus:outline-none" aria-label="Watch Wings of Wanitu Teaser Trailer">
+      <button type="button" onclick="openTrailerModal(event)" class="group relative block w-44 sm:w-52 aspect-[16/9] rounded-xl overflow-hidden border border-[#2e323d] hover:border-orange-500 transition-all duration-300 shadow-md cursor-pointer focus:outline-none" aria-label="Watch Wings of Wanitu Teaser Trailer">
         <img src="assets/wings-of-wanitu/wings_of_wanitu_clean_banner.jpg" alt="Wings of Wanitu Trailer Preview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-300"></div>
         <div class="video-play-btn-thumb absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/70 backdrop-blur-sm flex items-center justify-center text-neutral-900 group-hover:scale-110 group-hover:bg-white transition-all duration-300 shadow-lg">
@@ -765,7 +765,9 @@
 </div>
 
 <script>
-function openTrailerModal() {
+function openTrailerModal(e) {
+  if (e && e.stopPropagation) e.stopPropagation();
+  if (e && e.preventDefault) e.preventDefault();
   var modal = document.getElementById('trailer-modal');
   var video = document.getElementById('trailer-video');
   if (modal && video) {

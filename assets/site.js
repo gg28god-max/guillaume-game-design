@@ -839,8 +839,10 @@
         var src = img.getAttribute('src');
         if (!src) return;
 
-        // Ignore small UI elements, logos, icons, avatars, external difficulty preview, thumbnails, and ANY anchor tag
+        // Ignore small UI elements, logos, icons, avatars, external difficulty preview, thumbnails, buttons, video embeds, and ANY anchor tag
         if (img.closest('a') ||
+            img.closest('button') ||
+            img.closest('.video-embed') ||
             img.closest('.project-card') ||
             img.closest('.project-nav-card') ||
             img.closest('.cross-link-card') ||
@@ -861,7 +863,7 @@
         seen[src] = true;
 
         var container = img.closest('.overflow-hidden') || img.closest('.masonry-item') || img.parentElement;
-        if (!container || container.tagName === 'A' || container.closest('a') || container.classList.contains('project-card')) return;
+        if (!container || container.tagName === 'A' || container.tagName === 'BUTTON' || container.closest('a') || container.closest('button') || container.classList.contains('project-card')) return;
 
         var alt = img.getAttribute('alt') || '';
         var idx = galleryItems.length;
