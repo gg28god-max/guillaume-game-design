@@ -1748,6 +1748,25 @@ html.light .header-blue-gradient {
               linear-gradient(180deg, rgba(224, 231, 255, 0.5) 0%, rgba(243, 244, 246, 0.1) 70%, transparent 100%);
 }
 
+/* ---- Disable Hover Glow / Outline / Zoom Badge on Top Hero Images ---- */
+[aria-label="Project hero"] .gallery-zoom-target,
+[aria-label="Project hero"] .gallery-zoom-target:hover,
+[aria-label="Project video overview"] .gallery-zoom-target,
+[aria-label="Project video overview"] .gallery-zoom-target:hover {
+  border-color: transparent !important;
+  box-shadow: none !important;
+  cursor: default !important;
+}
+[aria-label="Project hero"] .gallery-zoom-badge,
+[aria-label="Project video overview"] .gallery-zoom-badge {
+  display: none !important;
+}
+[aria-label="Project hero"] img,
+[aria-label="Project video overview"] img {
+  transform: none !important;
+}
+
+
 
 
 

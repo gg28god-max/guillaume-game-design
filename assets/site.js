@@ -846,6 +846,8 @@
             img.closest('.project-card') ||
             img.closest('.project-nav-card') ||
             img.closest('.cross-link-card') ||
+            img.closest('[aria-label="Project hero"]') ||
+            img.closest('[aria-label="Project video overview"]') ||
             img.closest('nav') ||
             img.closest('footer') ||
             img.closest('header') ||
