@@ -1736,13 +1736,82 @@ html.light .hero-card-btn .card-btn-arrow {
   color: #d97706;
 }
 
-/* ---- Case Study Header Blue Background Gradient ---- */
-.header-blue-gradient {
+/* ---- Case Study Header Background Accent Gradients ---- */
+.header-blue-gradient,
+.header-accent-outpost-red,
+.header-accent-tide-hollow,
+.header-accent-wings-of-icaria,
+.header-accent-home-run-derby,
+.header-accent-starquest,
+.header-accent-diverse-studies {
   position: relative;
+}
+
+/* Outpost Red — Earthy Martian Red */
+.header-accent-outpost-red {
+  background: radial-gradient(100% 140% at 50% 0%, rgba(185, 28, 28, 0.32) 0%, rgba(127, 29, 29, 0.14) 50%, rgba(11, 12, 14, 0) 100%),
+              linear-gradient(180deg, rgba(153, 27, 27, 0.24) 0%, rgba(15, 23, 42, 0.05) 70%, transparent 100%);
+}
+html.light .header-accent-outpost-red {
+  background: radial-gradient(100% 140% at 50% 0%, rgba(254, 226, 226, 0.85) 0%, rgba(254, 202, 202, 0.4) 50%, transparent 100%),
+              linear-gradient(180deg, rgba(252, 165, 165, 0.35) 0%, rgba(243, 244, 246, 0.1) 70%, transparent 100%);
+}
+
+/* Tide Hollow — Ocean Teal / Coastal Cyan */
+.header-accent-tide-hollow {
+  background: radial-gradient(100% 140% at 50% 0%, rgba(13, 148, 136, 0.3) 0%, rgba(15, 118, 110, 0.12) 50%, rgba(11, 12, 14, 0) 100%),
+              linear-gradient(180deg, rgba(20, 184, 166, 0.2) 0%, rgba(15, 23, 42, 0.05) 70%, transparent 100%);
+}
+html.light .header-accent-tide-hollow {
+  background: radial-gradient(100% 140% at 50% 0%, rgba(204, 251, 241, 0.85) 0%, rgba(153, 246, 228, 0.4) 50%, transparent 100%),
+              linear-gradient(180deg, rgba(153, 246, 228, 0.35) 0%, rgba(243, 244, 246, 0.1) 70%, transparent 100%);
+}
+
+/* Wings of Icaria — Sky Blue / Electric Cyan */
+.header-accent-wings-of-icaria {
+  background: radial-gradient(100% 140% at 50% 0%, rgba(2, 132, 199, 0.3) 0%, rgba(3, 105, 161, 0.12) 50%, rgba(11, 12, 14, 0) 100%),
+              linear-gradient(180deg, rgba(14, 165, 233, 0.2) 0%, rgba(15, 23, 42, 0.05) 70%, transparent 100%);
+}
+html.light .header-accent-wings-of-icaria {
+  background: radial-gradient(100% 140% at 50% 0%, rgba(224, 242, 254, 0.85) 0%, rgba(186, 230, 253, 0.4) 50%, transparent 100%),
+              linear-gradient(180deg, rgba(186, 230, 253, 0.35) 0%, rgba(243, 244, 246, 0.1) 70%, transparent 100%);
+}
+
+/* Home Run Derby VR — Stadium Turf Emerald Green */
+.header-accent-home-run-derby {
+  background: radial-gradient(100% 140% at 50% 0%, rgba(21, 128, 61, 0.3) 0%, rgba(22, 101, 52, 0.12) 50%, rgba(11, 12, 14, 0) 100%),
+              linear-gradient(180deg, rgba(34, 197, 94, 0.2) 0%, rgba(15, 23, 42, 0.05) 70%, transparent 100%);
+}
+html.light .header-accent-home-run-derby {
+  background: radial-gradient(100% 140% at 50% 0%, rgba(220, 252, 231, 0.85) 0%, rgba(187, 247, 208, 0.4) 50%, transparent 100%),
+              linear-gradient(180deg, rgba(187, 247, 208, 0.35) 0%, rgba(243, 244, 246, 0.1) 70%, transparent 100%);
+}
+
+/* Starquest — Cosmic Violet / Deep Space Nebula Purple */
+.header-accent-starquest {
+  background: radial-gradient(100% 140% at 50% 0%, rgba(124, 58, 237, 0.3) 0%, rgba(109, 40, 217, 0.12) 50%, rgba(11, 12, 14, 0) 100%),
+              linear-gradient(180deg, rgba(139, 92, 246, 0.2) 0%, rgba(15, 23, 42, 0.05) 70%, transparent 100%);
+}
+html.light .header-accent-starquest {
+  background: radial-gradient(100% 140% at 50% 0%, rgba(237, 233, 254, 0.85) 0%, rgba(221, 214, 254, 0.4) 50%, transparent 100%),
+              linear-gradient(180deg, rgba(221, 214, 254, 0.35) 0%, rgba(243, 244, 246, 0.1) 70%, transparent 100%);
+}
+
+/* Diverse Creative Studies — Warm Amber / Industrial Gold */
+.header-accent-diverse-studies {
+  background: radial-gradient(100% 140% at 50% 0%, rgba(217, 119, 6, 0.3) 0%, rgba(180, 83, 9, 0.12) 50%, rgba(11, 12, 14, 0) 100%),
+              linear-gradient(180deg, rgba(245, 158, 11, 0.2) 0%, rgba(15, 23, 42, 0.05) 70%, transparent 100%);
+}
+html.light .header-accent-diverse-studies {
+  background: radial-gradient(100% 140% at 50% 0%, rgba(254, 243, 199, 0.85) 0%, rgba(253, 230, 138, 0.4) 50%, transparent 100%),
+              linear-gradient(180deg, rgba(253, 230, 138, 0.35) 0%, rgba(243, 244, 246, 0.1) 70%, transparent 100%);
+}
+
+/* Default Fallback */
+.header-blue-gradient {
   background: radial-gradient(100% 140% at 50% 0%, rgba(30, 64, 175, 0.28) 0%, rgba(30, 58, 138, 0.12) 50%, rgba(11, 12, 14, 0) 100%),
               linear-gradient(180deg, rgba(29, 78, 216, 0.2) 0%, rgba(15, 23, 42, 0.05) 70%, transparent 100%);
 }
-
 html.light .header-blue-gradient {
   background: radial-gradient(100% 140% at 50% 0%, rgba(219, 234, 254, 0.7) 0%, rgba(239, 246, 255, 0.3) 50%, transparent 100%),
               linear-gradient(180deg, rgba(224, 231, 255, 0.5) 0%, rgba(243, 244, 246, 0.1) 70%, transparent 100%);
