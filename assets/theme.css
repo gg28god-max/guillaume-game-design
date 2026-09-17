@@ -910,8 +910,9 @@ html.light .cal-today { color: #a07830; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 28px;
-  border-radius: 12px;
+  height: 64px;
+  padding: 0 28px;
+  border-radius: 16px;
   font-family: inherit;
   font-weight: 700;
   font-size: 12px;
@@ -923,6 +924,7 @@ html.light .cal-today { color: #a07830; }
   cursor: pointer;
   overflow: hidden;
   white-space: nowrap;
+  box-sizing: border-box;
 }
 
 .site-cta-btn.cta-yellow {
@@ -1656,7 +1658,8 @@ html.light .cross-link-card:hover .cross-link-cta {
   align-items: center;
   justify-content: space-between;
   gap: 28px;
-  padding: 14px 22px;
+  height: 64px;
+  padding: 0 22px;
   border-radius: 16px;
   background-color: #141620;
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -1665,6 +1668,7 @@ html.light .cross-link-card:hover .cross-link-cta {
   box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.45);
   cursor: pointer;
   max-width: 100%;
+  box-sizing: border-box;
 }
 
 .hero-card-btn:hover {
