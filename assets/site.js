@@ -133,11 +133,60 @@
      that pulses when the video scrolls into view. Progressive enhancement: the
      button is injected here, and the native controls stay on the <video> as the
      no-JS fallback until this runs and takes over. Works for any .video-embed. */
+  function openVideoModal(videoSrc, titleText) {
+    if (!videoSrc) return;
+    var existing = document.getElementById('video-modal-popup');
+    if (existing) existing.remove();
+
+    var fr = getLang() === 'fr';
+    var modal = document.createElement('div');
+    modal.id = 'video-modal-popup';
+    modal.style.cssText = 'position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;';
+    
+    modal.innerHTML = 
+      '<div class="vmodal-container" style="position:relative;width:100%;max-width:960px;background:#0d0e12;border:1px solid rgba(255,255,255,0.18);border-radius:16px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.9);display:flex;flex-direction:column;">' +
+        '<div style="padding:14px 20px;border-bottom:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:space-between;">' +
+          '<span style="font-family:\'Plus Jakarta Sans\',sans-serif;font-weight:700;font-size:14px;color:#ffffff;">' + (titleText || (fr ? 'Démo UI Outpost Red' : 'Outpost Red UI Demo')) + '</span>' +
+          '<button type="button" class="vmodal-close" aria-label="' + (fr ? 'Fermer' : 'Close') + '" style="width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#ffffff;display:flex;align-items:center;justify-content:center;cursor:pointer;margin-left:auto;">' +
+            '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>' +
+          '</button>' +
+        '</div>' +
+        '<div style="position:relative;width:100%;aspect-ratio:16/9;background:#000;">' +
+          '<video src="' + videoSrc + '" autoplay controls playsinline style="width:100%;height:100%;object-fit:contain;display:block;"></video>' +
+        '</div>' +
+      '</div>';
+
+    document.body.appendChild(modal);
+    document.body.style.overflow = 'hidden';
+
+    function close() {
+      var v = modal.querySelector('video');
+      if (v) v.pause();
+      modal.remove();
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', onKey);
+    }
+
+    function onKey(e) {
+      if (e.key === 'Escape') close();
+    }
+
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal || e.target.classList.contains('vmodal-close') || e.target.closest('.vmodal-close')) {
+        close();
+      }
+    });
+
+    document.addEventListener('keydown', onKey);
+  }
+
   function setupVideoEmbeds() {
     var PLAY_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5 L8 19 L20 12 Z"/></svg>';
     Array.prototype.forEach.call(document.querySelectorAll('.video-embed'), function (embed) {
       var video = embed.querySelector('video');
-      if (!video || embed.querySelector('.video-play-btn')) return;
+      var modalSrc = embed.getAttribute('data-video-src');
+      var modalTitle = embed.getAttribute('data-video-title');
+      if ((!video && !modalSrc) || embed.querySelector('.video-play-btn')) return;
 
       var btn = document.createElement('button');
       btn.type = 'button';
@@ -146,16 +195,28 @@
       btn.innerHTML = PLAY_SVG;
       embed.appendChild(btn);
 
-      video.removeAttribute('controls');           // our button is the only control until play
+      if (video) video.removeAttribute('controls');
 
-      function start() {
+      function start(e) {
+        if (modalSrc || embed.classList.contains('video-modal-trigger')) {
+          if (e) { e.preventDefault(); e.stopPropagation(); }
+          openVideoModal(modalSrc || (video && video.src), modalTitle);
+          return;
+        }
+        if (!video) return;
         embed.classList.add('playing');
         video.setAttribute('controls', '');
         var p = video.play();
         if (p && p.catch) p.catch(function () {});
       }
+
       btn.addEventListener('click', start);
-      video.addEventListener('play', function () { embed.classList.add('playing'); });
+      if (embed.classList.contains('video-modal-trigger')) {
+        embed.addEventListener('click', start);
+      }
+      if (video) {
+        video.addEventListener('play', function () { embed.classList.add('playing'); });
+      }
 
       // Pulse only while the video is on screen — start it as it scrolls in.
       if ('IntersectionObserver' in window) {
