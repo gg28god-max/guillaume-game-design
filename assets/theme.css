@@ -426,6 +426,15 @@ html.light .li-pill:hover {
 .video-play-btn svg { width: 34px; height: 34px; display: block; }
 .video-play-btn svg path { fill: #0d0d0f; }
 
+.video-embed-sm .video-play-btn {
+  width: 38px;
+  height: 38px;
+}
+.video-embed-sm .video-play-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
 .video-play-btn:hover,
 .video-play-btn:focus-visible {
   background: rgba(255, 255, 255, 0.8);
