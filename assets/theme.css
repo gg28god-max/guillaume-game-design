@@ -267,14 +267,13 @@ html.light .project-card:hover {
    invisible. Light mode uses a deep bronze (~5.9:1, clears WCAG AA).
    Card arrows are excluded: they sit on the dark scrim over artwork, where
    the light amber is correct in both themes.                            */
-/* ── Cross-site navigation pill (Option 1: Primary Solid Gold CTA) ─────── */
+/* ── Cross-site navigation pill (Primary Solid Gold CTA) ─────── */
 .cross-pill {
   font-family: var(--font-mono);
   font-weight: 700 !important;
   background-color: #fcd34d !important;
   border-color: #fcd34d !important;
   color: #0b0c0e !important;
-  box-shadow: 0 0 14px rgba(252, 211, 77, 0.28);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -282,8 +281,7 @@ html.light .project-card:hover {
   background-color: #fbbf24 !important;
   border-color: #fbbf24 !important;
   color: #000000 !important;
-  transform: translateY(-1px) scale(1.02);
-  box-shadow: 0 0 22px rgba(252, 211, 77, 0.5);
+  transform: translateY(-1px);
 }
 
 .cross-pill .cross-arrow {
@@ -297,21 +295,19 @@ html.light .project-card:hover {
 }
 
 .cross-pill:hover .cross-arrow {
-  transform: translate(2px, -2px);
+  transform: translateX(3px);
 }
 
 html.light .cross-pill {
   background-color: #7a5c1e !important;
   border-color: #7a5c1e !important;
   color: #ffffff !important;
-  box-shadow: 0 0 12px rgba(122, 92, 30, 0.25);
 }
 
 html.light .cross-pill:hover {
   background-color: #5c4516 !important;
   border-color: #5c4516 !important;
   color: #ffffff !important;
-  box-shadow: 0 0 18px rgba(122, 92, 30, 0.45);
 }
 
 /* ── Secondary Services pill ───────────────────────────────────────────── */
