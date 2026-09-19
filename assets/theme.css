@@ -288,9 +288,10 @@ html.light .project-card:hover {
   display: inline-block;
   opacity: 1 !important;
   max-width: 16px !important;
+  width: 14px;
+  height: 14px;
   transform: none;
   margin-left: 3px !important;
-  font-weight: 700;
   transition: transform 0.22s ease;
 }
 
