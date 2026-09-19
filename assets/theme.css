@@ -267,26 +267,78 @@ html.light .project-card:hover {
    invisible. Light mode uses a deep bronze (~5.9:1, clears WCAG AA).
    Card arrows are excluded: they sit on the dark scrim over artwork, where
    the light amber is correct in both themes.                            */
+/* ── Cross-site navigation pill (Option 1: Primary Solid Gold CTA) ─────── */
 .cross-pill {
-  color: #fcd34d;
-  border-color: rgba(252, 211, 77, 0.5);
+  font-family: var(--font-mono);
+  font-weight: 700 !important;
+  background-color: #fcd34d !important;
+  border-color: #fcd34d !important;
+  color: #0b0c0e !important;
+  box-shadow: 0 0 14px rgba(252, 211, 77, 0.28);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .cross-pill:hover {
-  background-color: #fcd34d;
-  border-color: #fcd34d;
-  color: #171717;
+  background-color: #fbbf24 !important;
+  border-color: #fbbf24 !important;
+  color: #000000 !important;
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 0 22px rgba(252, 211, 77, 0.5);
+}
+
+.cross-pill .cross-arrow {
+  display: inline-block;
+  opacity: 1 !important;
+  max-width: 16px !important;
+  transform: none;
+  margin-left: 3px !important;
+  font-weight: 700;
+  transition: transform 0.22s ease;
+}
+
+.cross-pill:hover .cross-arrow {
+  transform: translate(2px, -2px);
 }
 
 html.light .cross-pill {
-  color: #7a5c1e;
-  border-color: rgba(122, 92, 30, 0.55);
+  background-color: #7a5c1e !important;
+  border-color: #7a5c1e !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 12px rgba(122, 92, 30, 0.25);
 }
 
 html.light .cross-pill:hover {
-  background-color: #7a5c1e;
-  border-color: #7a5c1e;
-  color: #ffffff;
+  background-color: #5c4516 !important;
+  border-color: #5c4516 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 18px rgba(122, 92, 30, 0.45);
+}
+
+/* ── Secondary Services pill ───────────────────────────────────────────── */
+.services-pill {
+  font-family: var(--font-mono);
+  color: #a1a1aa !important;
+  border: 1px solid rgba(161, 161, 170, 0.35) !important;
+  background-color: transparent;
+  transition: all 0.22s ease;
+}
+
+.services-pill:hover {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.6) !important;
+  background-color: rgba(255, 255, 255, 0.06);
+  transform: translateY(-1px);
+}
+
+html.light .services-pill {
+  color: #52525b !important;
+  border-color: rgba(82, 82, 91, 0.35) !important;
+}
+
+html.light .services-pill:hover {
+  color: #18181b !important;
+  border-color: rgba(24, 24, 27, 0.6) !important;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 /* Brand link hover in the nav */
