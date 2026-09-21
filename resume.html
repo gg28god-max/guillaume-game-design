@@ -16,17 +16,15 @@
       extend: {
         fontFamily: {
           sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-          display: ['"Bebas Neue"', '"Oswald"', '"Plus Jakarta Sans"', 'sans-serif'],
-          mono: ['"JetBrains Mono"', 'monospace']
+          display: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          mono: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
         }
       }
     }
   };
 </script>
 <style>
-    * { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
-    .font-mono { font-family: 'JetBrains Mono', monospace; }
-    .font-display { font-family: 'Bebas Neue', 'Oswald', 'Plus Jakarta Sans', sans-serif; }
+    *, code, pre, .font-mono, .font-display { font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important; }
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: #0a0a0a; }
     ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
