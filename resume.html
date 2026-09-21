@@ -31,24 +31,45 @@
     ::-webkit-scrollbar-track { background: #0a0a0a; }
     ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
     
+    .timeline-container {
+      padding-left: 28px;
+    }
+    @media (min-width: 640px) {
+      .timeline-container {
+        padding-left: 36px;
+      }
+    }
     .timeline-line {
       position: absolute;
       top: 24px;
       bottom: 24px;
-      left: 12px;
+      left: 0px;
       width: 2px;
-      background: linear-gradient(to bottom, #f59e0b 0%, #334155 100%);
-      transform: translateX(-50%);
+      background: #f59e0b;
+    }
+    html.light .timeline-line {
+      background: #d97706;
     }
     .timeline-dot {
       position: absolute;
-      left: 12px;
-      top: 26px;
+      left: -28px;
+      top: 28px;
+      width: 22px;
+      height: 22px;
       transform: translate(-50%, -50%);
       z-index: 10;
+      border-radius: 9999px;
+      background-color: #f59e0b;
+      border: 5px solid #14161b;
     }
-    html.light .timeline-line {
-      background: linear-gradient(to bottom, #d97706 0%, #cbd5e1 100%);
+    @media (min-width: 640px) {
+      .timeline-dot {
+        left: -36px;
+      }
+    }
+    html.light .timeline-dot {
+      background-color: #d97706;
+      border-color: #ffffff;
     }
 
     @media print {
@@ -255,12 +276,12 @@
           <span class="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">// STUDIO &amp; PRODUCTION RECORD</span>
         </div>
 
-        <div class="relative space-y-6 pl-7 sm:pl-8">
+        <div class="relative space-y-6 timeline-container">
           <div class="timeline-line"></div>
 
           <!-- Experience Card 1: Freelance -->
           <div class="relative bg-[#181a20] border border-[#2e323d] rounded-2xl p-5 space-y-3 transition-colors">
-            <div class="timeline-dot w-3.5 h-3.5 rounded-full bg-amber-400 border-2 border-[#14161b] shadow-sm"></div>
+            <div class="timeline-dot"></div>
             <div class="flex flex-wrap items-start justify-between gap-2 border-b border-[#2e323d] pb-3">
               <div>
                 <h4 class="text-base font-bold text-white">Freelance Concept Artist &amp; Visual Developer</h4>
@@ -280,7 +301,7 @@
 
           <!-- Experience Card 2: Little Guy Games -->
           <div class="relative bg-[#181a20] border border-[#2e323d] rounded-2xl p-5 space-y-3 transition-colors">
-            <div class="timeline-dot w-3.5 h-3.5 rounded-full bg-amber-400 border-2 border-[#14161b] shadow-sm"></div>
+            <div class="timeline-dot"></div>
             <div class="flex flex-wrap items-start justify-between gap-2 border-b border-[#2e323d] pb-3">
               <div>
                 <h4 class="text-base font-bold text-white">Little Guy Games</h4>
@@ -319,7 +340,7 @@
 
           <!-- Experience Card 3: Cosmic Games Studio -->
           <div class="relative bg-[#181a20] border border-[#2e323d] rounded-2xl p-5 space-y-3 transition-colors">
-            <div class="timeline-dot w-3.5 h-3.5 rounded-full bg-neutral-500 border-2 border-[#14161b] shadow-sm"></div>
+            <div class="timeline-dot"></div>
             <div class="flex flex-wrap items-start justify-between gap-2 border-b border-[#2e323d] pb-3">
               <div>
                 <h4 class="text-base font-bold text-white">Cosmic Games Studio</h4>
@@ -349,7 +370,7 @@
 
           <!-- Experience Card 4: Telus Digital -->
           <div class="relative bg-[#181a20] border border-[#2e323d] rounded-2xl p-5 space-y-3 transition-colors">
-            <div class="timeline-dot w-3.5 h-3.5 rounded-full bg-neutral-500 border-2 border-[#14161b] shadow-sm"></div>
+            <div class="timeline-dot"></div>
             <div class="flex flex-wrap items-start justify-between gap-2 border-b border-[#2e323d] pb-3">
               <div>
                 <h4 class="text-base font-bold text-white">Telus Digital</h4>
