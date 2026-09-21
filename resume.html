@@ -35,9 +35,17 @@
       position: absolute;
       top: 24px;
       bottom: 24px;
-      left: 17px;
+      left: 12px;
       width: 2px;
       background: linear-gradient(to bottom, #f59e0b 0%, #334155 100%);
+      transform: translateX(-50%);
+    }
+    .timeline-dot {
+      position: absolute;
+      left: 12px;
+      top: 26px;
+      transform: translate(-50%, -50%);
+      z-index: 10;
     }
     html.light .timeline-line {
       background: linear-gradient(to bottom, #d97706 0%, #cbd5e1 100%);
@@ -247,12 +255,12 @@
           <span class="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">// STUDIO &amp; PRODUCTION RECORD</span>
         </div>
 
-        <div class="relative space-y-6 pl-4 sm:pl-6">
+        <div class="relative space-y-6 pl-7 sm:pl-8">
           <div class="timeline-line"></div>
 
           <!-- Experience Card 1: Freelance -->
           <div class="relative bg-[#181a20] border border-[#2e323d] rounded-2xl p-5 space-y-3 transition-colors">
-            <div class="absolute -left-[23px] sm:-left-[31px] top-6 w-3 h-3 rounded-full bg-amber-400 border-2 border-[#14161b]"></div>
+            <div class="timeline-dot w-3.5 h-3.5 rounded-full bg-amber-400 border-2 border-[#14161b] shadow-sm"></div>
             <div class="flex flex-wrap items-start justify-between gap-2 border-b border-[#2e323d] pb-3">
               <div>
                 <h4 class="text-base font-bold text-white">Freelance Concept Artist &amp; Visual Developer</h4>
@@ -272,7 +280,7 @@
 
           <!-- Experience Card 2: Little Guy Games -->
           <div class="relative bg-[#181a20] border border-[#2e323d] rounded-2xl p-5 space-y-3 transition-colors">
-            <div class="absolute -left-[23px] sm:-left-[31px] top-6 w-3 h-3 rounded-full bg-amber-400 border-2 border-[#14161b]"></div>
+            <div class="timeline-dot w-3.5 h-3.5 rounded-full bg-amber-400 border-2 border-[#14161b] shadow-sm"></div>
             <div class="flex flex-wrap items-start justify-between gap-2 border-b border-[#2e323d] pb-3">
               <div>
                 <h4 class="text-base font-bold text-white">Little Guy Games</h4>
@@ -311,7 +319,7 @@
 
           <!-- Experience Card 3: Cosmic Games Studio -->
           <div class="relative bg-[#181a20] border border-[#2e323d] rounded-2xl p-5 space-y-3 transition-colors">
-            <div class="absolute -left-[23px] sm:-left-[31px] top-6 w-3 h-3 rounded-full bg-neutral-600 border-2 border-[#14161b]"></div>
+            <div class="timeline-dot w-3.5 h-3.5 rounded-full bg-neutral-500 border-2 border-[#14161b] shadow-sm"></div>
             <div class="flex flex-wrap items-start justify-between gap-2 border-b border-[#2e323d] pb-3">
               <div>
                 <h4 class="text-base font-bold text-white">Cosmic Games Studio</h4>
@@ -341,7 +349,7 @@
 
           <!-- Experience Card 4: Telus Digital -->
           <div class="relative bg-[#181a20] border border-[#2e323d] rounded-2xl p-5 space-y-3 transition-colors">
-            <div class="absolute -left-[23px] sm:-left-[31px] top-6 w-3 h-3 rounded-full bg-neutral-600 border-2 border-[#14161b]"></div>
+            <div class="timeline-dot w-3.5 h-3.5 rounded-full bg-neutral-500 border-2 border-[#14161b] shadow-sm"></div>
             <div class="flex flex-wrap items-start justify-between gap-2 border-b border-[#2e323d] pb-3">
               <div>
                 <h4 class="text-base font-bold text-white">Telus Digital</h4>
