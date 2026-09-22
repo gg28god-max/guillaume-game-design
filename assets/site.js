@@ -24,7 +24,13 @@
 
     document.querySelectorAll('.i18n').forEach(function (el) {
       var val = el.getAttribute('data-' + key);
-      if (val !== null) el.textContent = val;
+      if (val !== null) {
+        if (val.indexOf('<') !== -1 || val.indexOf('&') !== -1) {
+          el.innerHTML = val;
+        } else {
+          el.textContent = val;
+        }
+      }
     });
 
     document.querySelectorAll('img[data-alt-en]').forEach(function (el) {
