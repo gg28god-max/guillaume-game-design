@@ -95,65 +95,180 @@
       border-color: #ffffff;
     }
 
-    /* ---- LIGHT THEME STYLES (Screen html.light) ---- */
+    /* ---- LIGHT THEME STYLES (Optional Outer Site Toggle) ---- */
     html.light body {
       background-color: #f8fafc !important;
       color: #1e293b !important;
     }
 
-    html.light .bg-\[\#14161b\] {
+    /* ========================================================
+       PERMANENT WHITE-PAPER LIGHT STYLES FOR RESUME PAGES
+       The website background, navigation, and hero header stay in
+       sleek dark mode, while the resume page cards (.resume-page-card)
+       are PERMANENTLY presented in light mode as crisp physical
+       white paper sheets — optimized for recruiter scannability.
+       There is no dark version of the resume sheets.
+       ======================================================== */
+    .resume-page-card {
       background-color: #ffffff !important;
-      border-color: #e2e8f0 !important;
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05) !important;
+      color: #1e293b !important;
+      border: 1px solid #cbd5e1 !important;
+      border-radius: 1.5rem !important;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+      position: relative;
     }
 
-    html.light .bg-\[\#181a20\] {
+    /* Inner cards (Freelance, Little Guy Games, Cosmic Games, Telus, Education, etc.) */
+    .resume-page-card .inner-card,
+    .resume-page-card .core-focus-box,
+    .resume-page-card .contact-card,
+    .resume-page-card .page2-closing-banner {
+      background-color: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+    }
+
+    /* Borders, Separators and Dividers inside the Resume */
+    .resume-page-card .border-\[\#2e323d\],
+    .resume-page-card .section-header-row,
+    .resume-page-card .header-split,
+    .resume-page-card .page2-header-bar,
+    .resume-page-card .border-b,
+    .resume-page-card .border-t {
+      border-color: #e2e8f0 !important;
+    }
+
+    /* Background overrides for any dark classes inside the resume card */
+    .resume-page-card .bg-\[\#14161b\],
+    .resume-page-card .bg-\[\#181a20\] {
       background-color: #f8fafc !important;
       border-color: #e2e8f0 !important;
     }
 
-    html.light .border-\[\#2e323d\] {
-      border-color: #e2e8f0 !important;
-    }
-
-    html.light .bg-\[\#1e222d\] {
+    .resume-page-card .bg-\[\#1e222d\],
+    .resume-page-card .bg-\[\#222530\] {
       background-color: #f1f5f9 !important;
       border-color: #cbd5e1 !important;
     }
 
-    html.light .bg-\[\#222530\] {
-      background-color: #f1f5f9 !important;
-      color: #334155 !important;
-    }
-
-    html.light .text-white {
+    /* Typography: Deep Slate Ink on White Paper */
+    .resume-page-card h1,
+    .resume-page-card h2,
+    .resume-page-card h3,
+    .resume-page-card h4,
+    .resume-page-card .header-name,
+    .resume-page-card .section-title,
+    .resume-page-card .role-title,
+    .resume-page-card .page2-title,
+    .resume-page-card .text-white,
+    .resume-page-card strong {
       color: #0f172a !important;
     }
 
-    html.light .text-neutral-200 {
+    .resume-page-card .lead-subtitle {
       color: #1e293b !important;
     }
 
-    html.light .text-neutral-300 {
+    /* Body Text & Bullets */
+    .resume-page-card p,
+    .resume-page-card li,
+    .resume-page-card .body-text,
+    .resume-page-card .text-neutral-200,
+    .resume-page-card .text-neutral-300 {
       color: #334155 !important;
     }
 
-    html.light .text-neutral-400 {
+    /* Sub-labels, Metadata & Accents */
+    .resume-page-card .text-neutral-400,
+    .resume-page-card .meta-text,
+    .resume-page-card .text-neutral-500,
+    .resume-page-card .sub-label {
       color: #64748b !important;
     }
 
-    html.light .text-neutral-500 {
+    .resume-page-card .text-neutral-700 {
       color: #94a3b8 !important;
     }
 
-    html.light .text-amber-400,
-    html.light .text-amber-300 {
+    /* High-contrast Warm Amber / Orange Accents */
+    .resume-page-card .text-amber-400,
+    .resume-page-card .text-amber-300,
+    .resume-page-card .page2-badge {
+      color: #b45309 !important;
+      font-weight: 700 !important;
+    }
+
+    /* Bilingual Pill */
+    .resume-page-card .inline-flex.bg-\[\#1e222d\] {
+      background-color: #f1f5f9 !important;
+      border-color: #cbd5e1 !important;
+      color: #b45309 !important;
+    }
+
+    /* Skill Pills, Job Tags, Date Badges */
+    .resume-page-card .skill-pill,
+    .resume-page-card .job-tag,
+    .resume-page-card .date-pill {
+      background-color: #f1f5f9 !important;
+      color: #1e293b !important;
+      border: 1px solid #cbd5e1 !important;
+      font-weight: 600 !important;
+    }
+
+    /* Timeline & List Indicators */
+    .resume-page-card .timeline-line {
+      background-color: #d97706 !important;
+    }
+
+    .resume-page-card .timeline-dot {
+      background-color: #d97706 !important;
+      border: 2px solid #ffffff !important;
+    }
+
+    .resume-page-card .bullet-dot {
+      background-color: #d97706 !important;
+    }
+
+    /* Contact Card & Live Portfolio Button */
+    .resume-page-card .contact-card {
+      background-color: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+      box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.05) !important;
+    }
+
+    .resume-page-card .contact-card a.bg-amber-500 {
+      background-color: #f59e0b !important;
+      color: #0f172a !important;
+    }
+    .resume-page-card .contact-card a.bg-amber-500:hover {
+      background-color: #d97706 !important;
+    }
+    .resume-page-card .contact-card a.bg-amber-500 p {
+      color: #0f172a !important;
+    }
+
+    .resume-page-card .contact-card a[href^="mailto"] {
+      color: #0f172a !important;
+    }
+    .resume-page-card .contact-card a[href^="mailto"]:hover {
+      color: #b45309 !important;
+    }
+
+    .resume-page-card .contact-card svg.text-amber-400 {
       color: #d97706 !important;
     }
 
-    html.light .bg-amber-400 {
-      background-color: #d97706 !important;
+    /* Page 2 Availability Banner */
+    .resume-page-card .page2-closing-banner {
+      background-color: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
     }
+    .resume-page-card .page2-closing-banner a {
+      color: #b45309 !important;
+    }
+    .resume-page-card .page2-closing-banner .bg-emerald-400 {
+      background-color: #059669 !important;
+    }
+
 
     /* ---- RECRUITER-FRIENDLY LIGHT PRINT / PDF STYLES ---- */
     @media print {
@@ -664,7 +779,7 @@
   <!-- ========================================== -->
   <!-- PAGE 1: HEADER, FOCUS, EXPERIENCE (TOP) & EDUCATION -->
   <!-- ========================================== -->
-  <section class="resume-page-card resume-page-1 bg-[#14161b] border border-[#2e323d] rounded-3xl p-6 sm:p-10 shadow-2xl space-y-6">
+  <section class="resume-page-card resume-page-1 bg-white border border-slate-300 rounded-3xl p-6 sm:p-10 shadow-2xl space-y-6">
     
     <!-- HEADER BLOCK -->
     <div class="header-split flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-[#2e323d]">
@@ -922,7 +1037,7 @@
   <!-- ========================================== -->
   <!-- PAGE 2: EXPERIENCE (CONTINUED) & EDUCATION & CREDENTIALS -->
   <!-- ========================================== -->
-  <section class="resume-page-card resume-page-2 bg-[#14161b] border border-[#2e323d] rounded-3xl p-6 sm:p-10 shadow-2xl space-y-6">
+  <section class="resume-page-card resume-page-2 bg-white border border-slate-300 rounded-3xl p-6 sm:p-10 shadow-2xl space-y-6">
     
     <!-- PAGE 2 TOP HEADER BAR -->
     <div class="page2-header-bar flex items-center justify-between pb-3.5 border-b border-[#2e323d]">
