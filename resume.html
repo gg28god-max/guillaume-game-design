@@ -1,47 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>(function(){try{var t=localStorage.getItem('theme')||'dark';var l=localStorage.getItem('lang')||'en';if(t==='light')document.documentElement.classList.add('light');document.documentElement.setAttribute('lang',l);document.documentElement.setAttribute('data-lang',l);}catch(e){}})();</script>
+<script>(function(){try{var p=new URLSearchParams(window.location.search);var l=p.get('lang')||localStorage.getItem('lang')||'en';var t=p.get('theme')||localStorage.getItem('theme')||'dark';if(t==='light')document.documentElement.classList.add('light');document.documentElement.setAttribute('lang',l);document.documentElement.setAttribute('data-lang',l);}catch(e){}})();</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title data-en="Concept Art Resume — Guillaume Goder" data-fr="CV Art Conceptuel — Guillaume Goder">Concept Art Resume — Guillaume Goder</title>
 <meta content="Resume of Guillaume Goder — Concept Artist &amp; Visual Development Lead specializing in game visual development, 3D pipelines, and world-building." data-en="Resume of Guillaume Goder — Concept Artist &amp; Visual Development Lead specializing in game visual development, 3D pipelines, and world-building." data-fr="CV de Guillaume Goder — Artiste conceptuel et Lead Visual Development spécialisé dans le développement visuel de jeux, pipelines 3D et world-building." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Oswald:wght@500;600;700&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
     theme: {
       extend: {
         fontFamily: {
-          sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-          display: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-          mono: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
+          sans: ['Inter', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          display: ['Inter', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'monospace']
         }
       }
     }
   };
 </script>
 <style>
-    *, code, pre, .font-mono, .font-display { font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important; }
+    *, code, pre, .font-mono, .font-display { 
+      font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important; 
+    }
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: #0a0a0a; }
     ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
-    
+
+    /* Language Toggle Rules */
+    html[lang="fr"] .lang-en, html[data-lang="fr"] .lang-en { display: none !important; }
+    html[lang="en"] .lang-fr, html[data-lang="en"] .lang-fr { display: none !important; }
+    html:not([lang="fr"]):not([data-lang="fr"]) .lang-fr { display: none !important; }
+
+    /* Tag Consistency (Figma Auto Layout standard) */
+    .skill-pill, .job-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px !important;
+      font-size: 12px !important;
+      line-height: 1.25 !important;
+      font-weight: 500 !important;
+      border-radius: 9999px !important;
+    }
+    .tags-wrapper {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 8px !important;
+    }
+
+    /* Screen Timeline Layout */
     .timeline-container {
+      position: relative;
       padding-left: 28px;
     }
     @media (min-width: 640px) {
       .timeline-container {
-        padding-left: 36px;
+        padding-left: 32px;
       }
     }
     .timeline-line {
       position: absolute;
-      top: 24px;
-      bottom: 24px;
-      left: 0px;
+      top: 20px;
+      bottom: 20px;
+      left: 6px;
       width: 2px;
       background: #f59e0b;
     }
@@ -50,8 +75,8 @@
     }
     .timeline-dot {
       position: absolute;
-      left: -28px;
-      top: 32px;
+      left: -22px;
+      top: 26px;
       width: 10px;
       height: 10px;
       transform: translate(-50%, -50%);
@@ -62,7 +87,7 @@
     }
     @media (min-width: 640px) {
       .timeline-dot {
-        left: -36px;
+        left: -26px;
       }
     }
     html.light .timeline-dot {
@@ -70,7 +95,7 @@
       border-color: #ffffff;
     }
 
-    /* ---- LIGHT THEME STYLES (html.light) ---- */
+    /* ---- LIGHT THEME STYLES (Screen html.light) ---- */
     html.light body {
       background-color: #f8fafc !important;
       color: #1e293b !important;
@@ -130,25 +155,17 @@
       background-color: #d97706 !important;
     }
 
-    html.light .timeline-line {
-      background-color: #d97706 !important;
-    }
-
-    html.light .timeline-dot {
-      background-color: #d97706 !important;
-      border-color: #ffffff !important;
-    }
-
     /* ---- RECRUITER-FRIENDLY LIGHT PRINT / PDF STYLES ---- */
     @media print {
       @page {
         size: letter portrait;
-        margin: 6mm 8mm 6mm 8mm;
+        margin: 4mm 7mm;
       }
 
       * {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
+        box-sizing: border-box !important;
       }
 
       nav, footer, .no-print, button, .site-toggles {
@@ -158,8 +175,8 @@
       body {
         background-color: #ffffff !important;
         color: #1e293b !important;
-        font-size: 10px !important;
-        line-height: 1.5 !important;
+        font-size: 11.5px !important;
+        line-height: 1.36 !important;
         margin: 0 !important;
         padding: 0 !important;
       }
@@ -171,39 +188,74 @@
         width: 100% !important;
       }
 
-      /* Main Resume Container Card in Print */
-      .bg-\[\#14161b\] {
+      /* Explicit 2-Page Print Architecture */
+      .resume-page-1 {
+        page-break-after: always !important;
+        break-after: page !important;
+        margin-bottom: 0 !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+
+      .resume-page-2 {
+        page-break-before: always !important;
+        break-before: page !important;
+        margin-top: 0 !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+
+      .resume-page-card {
         background-color: #ffffff !important;
         border: 1px solid #cbd5e1 !important;
-        border-radius: 1.25rem !important;
-        padding: 0.75rem 0.95rem !important;
+        border-radius: 0.85rem !important;
+        padding: 0.45rem 0.75rem !important;
         box-shadow: none !important;
-      }
-
-      /* Header row layout */
-      .header-split,
-      .flex-col.lg\:flex-row {
+        width: 100% !important;
+        min-height: 262mm !important;
+        box-sizing: border-box !important;
         display: flex !important;
-        flex-direction: row !important;
-        align-items: flex-start !important;
-        justify-content: space-between !important;
-        gap: 0.75rem !important;
-        padding-bottom: 0.5rem !important;
-        margin-bottom: 0.5rem !important;
-        border-bottom: 1px solid #cbd5e1 !important;
+        flex-direction: column !important;
       }
 
-      h1,
-      .header-split h1 {
+      /* Typography Scale & Hierarchy */
+      h1, .header-name {
         color: #0f172a !important;
-        font-size: 1.95rem !important;
-        line-height: 1.05 !important;
+        font-size: 23px !important;
+        line-height: 1.1 !important;
+        font-weight: 900 !important;
         margin: 0 !important;
       }
 
-      .text-white {
+      h2, .lead-subtitle {
         color: #0f172a !important;
-        font-size: inherit !important;
+        font-size: 12.5px !important;
+        line-height: 1.2 !important;
+        font-weight: 700 !important;
+        margin: 0 !important;
+      }
+
+      h3, .section-title {
+        color: #0f172a !important;
+        font-size: 14.5px !important;
+        line-height: 1.2 !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.04em !important;
+        margin: 0 !important;
+      }
+
+      h4, .role-title {
+        color: #0f172a !important;
+        font-size: 12.5px !important;
+        line-height: 1.2 !important;
+        font-weight: 700 !important;
+        margin: 0 !important;
+      }
+
+      p, li, .body-text {
+        color: #334155 !important;
+        font-size: 11.5px !important;
+        line-height: 1.36 !important;
       }
 
       strong {
@@ -212,37 +264,9 @@
         font-size: inherit !important;
       }
 
-      .text-neutral-200,
-      h2, h3, h4 {
-        color: #0f172a !important;
-      }
-
-      h2 {
-        font-size: 1.2rem !important;
-        line-height: 1.25 !important;
-      }
-
-      h3 {
-        font-size: 0.92rem !important;
-        line-height: 1.25 !important;
-        font-weight: 800 !important;
-      }
-
-      h4 {
-        font-size: 1rem !important;
-        line-height: 1.3 !important;
-        font-weight: 700 !important;
-      }
-
-      .text-neutral-300,
-      p, li {
-        color: #334155 !important;
-        font-size: 10px !important;
-        line-height: 1.5 !important;
-      }
-
-      .text-neutral-400,
-      .text-neutral-500 {
+      .meta-text, .date-badge, .contact-meta {
+        font-size: 10.5px !important;
+        line-height: 1.2 !important;
         color: #64748b !important;
       }
 
@@ -251,160 +275,242 @@
         color: #b45309 !important;
       }
 
+      /* Header row layout */
+      .header-split {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        justify-content: space-between !important;
+        gap: 0.65rem !important;
+        padding-bottom: 0.25rem !important;
+        margin-bottom: 0.25rem !important;
+        border-bottom: 1px solid #cbd5e1 !important;
+      }
+
       .contact-card {
         background-color: #f8fafc !important;
         border: 1px solid #cbd5e1 !important;
-        padding: 0.45rem 0.65rem !important;
-        min-width: 210px !important;
+        border-radius: 0.55rem !important;
+        padding: 0.25rem 0.5rem !important;
+        min-width: 195px !important;
       }
-
-      .contact-card .space-y-3\.5 > * + * {
-        margin-top: 0.25rem !important;
+      .contact-card a, .contact-card span {
+        font-size: 10px !important;
+        color: #334155 !important;
       }
 
       /* Core Focus Banner */
       .core-focus-box {
         background-color: #f8fafc !important;
         border: 1px solid #cbd5e1 !important;
-        padding: 0.55rem 0.75rem !important;
-        margin-bottom: 0.65rem !important;
+        border-radius: 0.55rem !important;
+        padding: 0.3rem 0.55rem !important;
+        margin-bottom: 0.3rem !important;
       }
       .core-focus-box p {
-        font-size: 10px !important;
-        line-height: 1.52 !important;
+        font-size: 11.5px !important;
+        line-height: 1.36 !important;
+        color: #334155 !important;
       }
 
-      /* Force 2-Column Grid in Print */
-      .grid-container,
-      .grid.grid-cols-1.lg\:grid-cols-12 {
+      /* 2-Column Grid in Print: Page 1 gives left column extra width to compact bullets */
+      .resume-grid {
         display: grid !important;
-        grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
-        gap: 0.7rem !important;
+        grid-template-columns: 1.4fr 1fr !important;
+        gap: 0.65rem !important;
       }
 
-      .col-left,
-      .lg\:col-span-7 {
-        grid-column: span 7 / span 7 !important;
+      .grid-col-left {
+        grid-column: 1 !important;
       }
 
-      .col-right,
-      .lg\:col-span-5 {
-        grid-column: span 5 / span 5 !important;
+      .grid-col-right {
+        grid-column: 2 !important;
       }
 
-      /* Column Section Headers Alignment Across Columns */
-      .lg\:col-span-7 > div:first-child,
-      .lg\:col-span-5 > div:first-child,
-      .col-left > div:first-child,
-      .col-right > div:first-child {
+      /* Section Header Row */
+      .section-header-row {
         display: flex !important;
         flex-direction: row !important;
         align-items: flex-end !important;
         justify-content: space-between !important;
-        min-height: 1.8rem !important;
-        padding-bottom: 0.22rem !important;
+        min-height: 1.25rem !important;
+        padding-bottom: 0.12rem !important;
         border-bottom: 1px solid #cbd5e1 !important;
+        margin-bottom: 0.3rem !important;
       }
-
-      .lg\:col-span-7 h3,
-      .lg\:col-span-5 h3 {
-        font-size: 0.92rem !important;
-        white-space: nowrap !important;
-        letter-spacing: 0.05em !important;
-        line-height: 1.2 !important;
-        margin: 0 !important;
-        color: #0f172a !important;
-      }
-
-      .lg\:col-span-7 h3 + span,
-      .lg\:col-span-5 h3 + span {
+      .section-header-row .sub-label {
         font-size: 9px !important;
         white-space: nowrap !important;
-        opacity: 0.75 !important;
         color: #64748b !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.08em !important;
       }
 
-      /* Prevent cards from splitting internally */
-      .break-inside-avoid,
-      .bg-\[\#181a20\],
-      .timeline-card,
-      .skill-card,
-      .edu-card,
-      .timeline-container > div,
-      li {
+      /* Inner Cards in Print */
+      .inner-card {
+        background-color: #f8fafc !important;
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 0.55rem !important;
+        padding: 0.3rem 0.5rem !important;
         break-inside: avoid !important;
         page-break-inside: avoid !important;
       }
 
-      /* Inner Cards in Print */
-      .bg-\[\#181a20\],
-      .timeline-card,
-      .skill-card,
-      .edu-card {
-        background-color: #f8fafc !important;
-        border: 1px solid #cbd5e1 !important;
-        padding: 0.5rem 0.7rem !important;
-      }
-
-      /* Badges & Tags in Print - Standardized 9px font size */
-      .bg-\[\#222530\],
-      .bg-\[\#1e222d\],
-      .contact-card span,
-      .edu-card span,
-      .skill-card span {
+      /* Badges & Tags: Standardized 4px 10px, 10.5px font */
+      .skill-pill,
+      .job-tag,
+      .date-pill {
         background-color: #e2e8f0 !important;
         color: #0f172a !important;
-        border-color: #cbd5e1 !important;
-        padding: 0.1rem 0.35rem !important;
-        font-size: 9px !important;
-      }
-
-      .space-y-6 > * + * {
-        margin-top: 0.5rem !important;
-      }
-
-      .space-y-4 > * + * {
-        margin-top: 0.45rem !important;
-      }
-
-      .space-y-3 > * + * {
-        margin-top: 0.3rem !important;
-      }
-
-      .space-y-2\.5 > * + * {
-        margin-top: 0.22rem !important;
-      }
-
-      /* List items in experience cards with standardized 10px font size & clean line height */
-      ul.space-y-2\.5 {
-        margin-top: 0.25rem !important;
-      }
-      ul.space-y-2\.5 > li {
+        border: 1px solid #cbd5e1 !important;
+        padding: 1.5px 6px !important;
         font-size: 10px !important;
-        line-height: 1.5 !important;
-        margin-bottom: 0.2rem !important;
-        color: #334155 !important;
+        border-radius: 9999px !important;
+        line-height: 1.15 !important;
+        font-weight: 600 !important;
+      }
+      .tags-wrapper {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 3.5px !important;
       }
 
-      /* Timeline line & dot in Print */
+      /* Spacing Rules: 4-5px between roles / cards */
+      .role-gap {
+        margin-top: 4px !important;
+      }
+
+      /* Bullet list items with 1.5px spacing and 1.34 line-height */
+      ul.bullet-list {
+        margin-top: 2px !important;
+        padding-left: 0 !important;
+        list-style: none !important;
+      }
+      ul.bullet-list > li {
+        font-size: 11px !important;
+        line-height: 1.34 !important;
+        margin-bottom: 1.5px !important;
+        color: #334155 !important;
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 4px !important;
+      }
+      ul.bullet-list > li:last-child {
+        margin-bottom: 0 !important;
+      }
+      .bullet-dot {
+        width: 3px !important;
+        height: 3px !important;
+        border-radius: 9999px !important;
+        background-color: #d97706 !important;
+        margin-top: 5px !important;
+        flex-shrink: 0 !important;
+      }
+
+      /* Timeline line & dot in Print - Flush & Aligned */
       .timeline-container {
-        padding-left: 20px !important;
+        position: relative !important;
+        padding-left: 12px !important;
       }
       .timeline-line {
-        left: 4px !important;
-        top: 10px !important;
-        bottom: 10px !important;
+        position: absolute !important;
+        left: 3px !important;
+        top: 6px !important;
+        bottom: 6px !important;
         width: 2px !important;
         background-color: #d97706 !important;
       }
-
       .timeline-dot {
-        left: -20px !important;
-        top: 18px !important;
-        width: 8px !important;
-        height: 8px !important;
+        position: absolute !important;
+        left: -12px !important;
+        top: 13px !important;
+        width: 6px !important;
+        height: 6px !important;
         background-color: #d97706 !important;
-        border-color: #ffffff !important;
+        border: 2px solid #ffffff !important;
+        border-radius: 9999px !important;
+        transform: translate(-50%, -50%) !important;
+        z-index: 10 !important;
+      }
+
+      /* Page 2 Specific Spacing & Vertical Fill */
+      .resume-page-2 {
+        padding: 0.85rem 1.15rem !important;
+      }
+      .resume-page-2 .page2-header-bar {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding-bottom: 0.65rem !important;
+        margin-bottom: 1rem !important;
+        border-bottom: 1px solid #cbd5e1 !important;
+      }
+      .resume-page-2 .page2-header-bar .page2-title {
+        font-size: 13.5px !important;
+        font-weight: 800 !important;
+        color: #0f172a !important;
+        letter-spacing: 0.05em !important;
+      }
+      .resume-page-2 .page2-header-bar .page2-badge {
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        color: #d97706 !important;
+        letter-spacing: 0.1em !important;
+      }
+      .resume-page-2 .section-header-row {
+        margin-bottom: 0.85rem !important;
+        padding-bottom: 0.35rem !important;
+      }
+      .resume-page-2 .section-title {
+        font-size: 17px !important;
+      }
+      .resume-page-2 .role-gap {
+        margin-top: 16px !important;
+      }
+      .resume-page-2 .inner-card {
+        padding: 0.85rem 1.05rem !important;
+        border-radius: 0.85rem !important;
+      }
+      .resume-page-2 p,
+      .resume-page-2 li,
+      .resume-page-2 .body-text {
+        font-size: 13px !important;
+        line-height: 1.55 !important;
+      }
+      .resume-page-2 ul.bullet-list {
+        margin-top: 6px !important;
+      }
+      .resume-page-2 ul.bullet-list > li {
+        margin-bottom: 5px !important;
+        font-size: 13px !important;
+        line-height: 1.55 !important;
+      }
+      .resume-page-2 .skill-pill {
+        padding: 4px 10px !important;
+        font-size: 11.5px !important;
+      }
+      .resume-page-2 .tags-wrapper {
+        gap: 7px !important;
+      }
+      .resume-page-2 .inner-card h4.role-title {
+        font-size: 14px !important;
+        margin-bottom: 6px !important;
+      }
+      .page2-closing-banner {
+        margin-top: 14px !important;
+        padding: 0.5rem 0.85rem !important;
+        background-color: #f8fafc !important;
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 0.65rem !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+      }
+      .page2-closing-banner span,
+      .page2-closing-banner a {
+        font-size: 11px !important;
       }
     }
 </style>
@@ -501,10 +607,10 @@
 </nav>
 
 <!-- MAIN RESUME CONTENT -->
-<main class="pt-24 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+<main class="pt-24 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-8">
   
   <!-- Resume Nav Switcher & Action Bar -->
-  <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 no-print border-b border-[#2e323d] pb-6">
+  <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4 no-print border-b border-[#2e323d] pb-6">
     <!-- Dual Resume Selector Pills -->
     <div class="inline-flex items-center gap-1 bg-[#181a20] border border-[#2e323d] rounded-full p-1 shadow-inner">
       <a href="resume.html" class="px-4 py-1.5 rounded-full text-xs font-mono font-bold tracking-wider uppercase bg-amber-500 text-neutral-950 shadow-md transition-all">
@@ -516,13 +622,20 @@
     </div>
 
     <!-- Quick Actions -->
-    <div class="flex items-center gap-3 w-full sm:w-auto justify-end">
+    <div class="flex flex-wrap items-center gap-3 w-full sm:w-auto justify-end">
       <button type="button" onclick="copyEmailAddress()" id="copy-email-btn" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#2e323d] bg-[#181a20] hover:bg-neutral-800 text-xs font-mono tracking-wider uppercase text-neutral-200 transition-all cursor-pointer shadow-sm">
         <svg class="w-3.5 h-3.5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
         </svg>
         <span id="copy-email-text" class="i18n" data-en="Copy Email" data-fr="Copier l'email">Copy Email</span>
       </button>
+
+      <a href="resume/Concept%2BArt%2BResume%2B%E2%80%94%2BEnglish.pdf" download="Guillaume_Goder_Concept_Art_Resume.pdf" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#2e323d] bg-[#181a20] hover:bg-neutral-800 text-xs font-mono tracking-wider uppercase text-neutral-200 transition-all shadow-sm">
+        <svg class="w-3.5 h-3.5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+        <span class="i18n" data-en="Direct PDF" data-fr="PDF Direct">Direct PDF</span>
+      </a>
 
       <button type="button" onclick="window.print()" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500 hover:bg-amber-400 text-neutral-950 font-bold text-xs font-mono tracking-wider uppercase transition-all shadow-md cursor-pointer">
         <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
@@ -533,22 +646,24 @@
     </div>
   </div>
 
-  <!-- RESUME CARD CONTAINER -->
-  <div class="bg-[#14161b] border border-[#2e323d] rounded-3xl p-6 sm:p-10 shadow-2xl space-y-10">
+  <!-- ========================================== -->
+  <!-- PAGE 1: HEADER, FOCUS, EXPERIENCE (TOP) & EDUCATION -->
+  <!-- ========================================== -->
+  <section class="resume-page-card resume-page-1 bg-[#14161b] border border-[#2e323d] rounded-3xl p-6 sm:p-10 shadow-2xl space-y-6">
     
     <!-- HEADER BLOCK -->
-    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8 pb-8 border-b border-[#2e323d]">
-      <div class="space-y-3 max-w-2xl">
-        <p class="text-[11px] font-mono tracking-[0.3em] uppercase text-amber-400 font-bold">
+    <div class="header-split flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-[#2e323d]">
+      <div class="space-y-2.5 max-w-2xl">
+        <p class="text-[11px] font-mono tracking-[0.28em] uppercase text-amber-400 font-bold">
           <span class="i18n" data-en="ENTERTAINMENT ART • VISUAL DEVELOPMENT • GAME" data-fr="ART DU DIVERTISSEMENT • DÉVELOPPEMENT VISUEL • JEU">ENTERTAINMENT ART • VISUAL DEVELOPMENT • GAME</span>
         </p>
-        <h1 class="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-white leading-none font-display">
+        <h1 class="header-name text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-none font-display">
           Guillaume Goder
         </h1>
-        <h2 class="text-xl sm:text-2xl font-bold text-neutral-200 tracking-tight">
+        <h2 class="lead-subtitle text-lg sm:text-xl font-bold text-neutral-200 tracking-tight">
           <span class="i18n" data-en="Concept Artist &amp; Visual Development Lead" data-fr="Artiste Conceptuel &amp; Lead Développement Visuel">Concept Artist &amp; Visual Development Lead</span>
         </h2>
-        <p class="text-sm text-neutral-400 font-medium">
+        <p class="body-text text-xs sm:text-sm text-neutral-400 font-medium">
           <span class="i18n" data-en="World-Building, Characters &amp; 3D Pipeline Handoff" data-fr="World-Building, Personnages &amp; Handoff Pipeline 3D">World-Building, Characters &amp; 3D Pipeline Handoff</span>
         </p>
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1e222d] border border-[#2e323d] text-xs text-amber-400 font-mono font-medium">
@@ -557,25 +672,25 @@
       </div>
 
       <!-- Live Portfolio & Contact Card -->
-      <div class="bg-[#181a20] border border-[#2e323d] rounded-2xl p-6 space-y-5 min-w-[290px] shadow-lg shrink-0">
-        <a href="https://game.guillaumedesign.ca/" target="_blank" rel="noopener" class="group block bg-amber-500 hover:bg-amber-400 transition-colors text-neutral-950 p-3.5 rounded-xl text-center">
-          <p class="text-[9px] font-mono tracking-[0.2em] font-bold uppercase opacity-80"><span class="i18n" data-en="LIVE PORTFOLIO" data-fr="PORTFOLIO EN LIGNE">LIVE PORTFOLIO</span></p>
+      <div class="contact-card bg-[#181a20] border border-[#2e323d] rounded-2xl p-5 space-y-3.5 min-w-[260px] shadow-lg shrink-0">
+        <a href="https://game.guillaumedesign.ca/" target="_blank" rel="noopener" class="group block bg-amber-500 hover:bg-amber-400 transition-colors text-neutral-950 p-2.5 rounded-xl text-center">
+          <p class="text-[9px] font-mono tracking-[0.2em] font-bold uppercase opacity-90"><span class="i18n" data-en="LIVE PORTFOLIO" data-fr="PORTFOLIO EN LIGNE">LIVE PORTFOLIO</span></p>
           <p class="text-xs font-mono font-bold flex items-center justify-center gap-1 mt-0.5">
             guillaumedesign.ca
             <span class="group-hover:translate-x-0.5 transition-transform">↗</span>
           </p>
         </a>
-        <div class="space-y-3.5 text-xs font-mono text-neutral-300 pt-1">
-          <div class="flex items-center gap-3">
-            <svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        <div class="space-y-2 text-xs font-mono text-neutral-300">
+          <div class="flex items-center gap-2.5">
+            <svg class="w-3.5 h-3.5 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             <a href="mailto:gg28.god@gmail.com" class="hover:text-amber-300 transition-colors">gg28.god@gmail.com</a>
           </div>
-          <div class="flex items-center gap-3">
-            <svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          <div class="flex items-center gap-2.5">
+            <svg class="w-3.5 h-3.5 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
             <span>437-234-2614</span>
           </div>
-          <div class="flex items-center gap-3">
-            <svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <div class="flex items-center gap-2.5">
+            <svg class="w-3.5 h-3.5 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             <span>Montréal, QC, Canada</span>
           </div>
         </div>
@@ -583,258 +698,315 @@
     </div>
 
     <!-- CORE FOCUS SUMMARY -->
-    <div class="bg-[#181a20] border border-[#2e323d] rounded-2xl p-6 relative overflow-hidden">
-      <p class="text-[10px] font-mono tracking-[0.25em] uppercase text-amber-400 font-bold mb-2">
+    <div class="core-focus-box inner-card bg-[#181a20] border border-[#2e323d] rounded-2xl p-5 relative overflow-hidden">
+      <p class="text-[10px] font-mono tracking-[0.25em] uppercase text-amber-400 font-bold mb-1.5">
         <span class="i18n" data-en="CORE FOCUS • VISUAL DEVELOPMENT LEAD" data-fr="FOCUS PRINCIPAL • LEAD DÉVELOPPEMENT VISUEL">CORE FOCUS • VISUAL DEVELOPMENT LEAD</span>
       </p>
-      <p class="text-sm sm:text-base text-neutral-300 leading-relaxed font-normal">
+      <p class="body-text text-sm sm:text-base text-neutral-300 leading-relaxed font-normal">
         <strong class="text-white font-bold">Concept Artist &amp; Visual Development Lead</strong> with <span class="text-amber-400 font-bold">5+ years of experience</span> crafting characters, environments, and keyart for <strong class="text-white">VR, PC, and console games</strong>. Specialist in end-to-end production pipelines — from initial thumbnailing and value studies to <strong class="text-white">3D blockouts, PBR texturing, and technical handoff sheets</strong> for downstream 3D/Tech Art teams. Versatile across stylized and realistic aesthetic directions.
       </p>
     </div>
 
-    <!-- 2-COLUMN MAIN CONTENT GRID -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <!-- 2-COLUMN MAIN CONTENT GRID (PAGE 1) -->
+    <div class="resume-grid grid grid-cols-1 lg:grid-cols-12 gap-8">
       
-      <!-- LEFT COLUMN: PROFESSIONAL EXPERIENCE -->
-      <div class="lg:col-span-7 space-y-6">
-        <div class="flex items-center justify-between border-b border-[#2e323d] pb-3">
-          <h3 class="text-lg font-bold uppercase tracking-wider text-white">
+      <!-- LEFT COLUMN: PROFESSIONAL EXPERIENCE (TOP 2 ROLES) -->
+      <div class="grid-col-left lg:col-span-7 space-y-4">
+        <div class="section-header-row flex items-center justify-between border-b border-[#2e323d] pb-2.5">
+          <h3 class="section-title text-base sm:text-lg font-bold uppercase tracking-wider text-white">
             <span class="i18n" data-en="Professional Experience" data-fr="Expérience Professionnelle">Professional Experience</span>
           </h3>
-          <span class="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">// STUDIO &amp; PRODUCTION RECORD</span>
+          <span class="sub-label text-[10px] font-mono text-neutral-500 uppercase tracking-widest">// STUDIO &amp; PRODUCTION RECORD</span>
         </div>
 
-        <div class="relative space-y-6 timeline-container">
+        <div class="relative space-y-4 timeline-container">
           <div class="timeline-line"></div>
 
           <!-- Experience Card 1: Freelance -->
-          <div class="relative bg-[#181a20] border border-[#2e323d] rounded-2xl p-5 space-y-3 transition-colors">
+          <div class="inner-card relative bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 sm:p-5 space-y-2.5 transition-colors">
             <div class="timeline-dot"></div>
-            <div class="flex flex-wrap items-start justify-between gap-2 border-b border-[#2e323d] pb-3">
+            <div class="flex flex-wrap items-start justify-between gap-2 border-b border-[#2e323d] pb-2.5">
               <div>
-                <h4 class="text-base font-bold text-white">Freelance Concept Artist &amp; Visual Developer</h4>
-                <p class="text-xs text-amber-400 font-mono font-medium">Independent Consultant <span class="text-neutral-500">• Montréal, QC</span></p>
+                <h4 class="role-title text-base font-bold text-white">Freelance Concept Artist &amp; Visual Developer</h4>
+                <p class="meta-text text-xs text-amber-400 font-mono font-medium">Independent Consultant <span class="text-neutral-500">• Montréal, QC</span></p>
               </div>
-              <span class="px-2.5 py-1 rounded-md bg-[#222530] text-neutral-300 font-mono text-[10px] font-bold uppercase">2025 – Present</span>
+              <span class="job-tag date-pill px-2.5 py-1 rounded-md bg-[#222530] text-neutral-300 font-mono text-[10px] font-bold uppercase">2025 – Present</span>
             </div>
-            <div class="flex flex-wrap gap-1.5 pt-1">
-              <span class="px-2 py-0.5 rounded bg-[#222530] text-[10px] font-mono text-neutral-300">Keyart Illustration</span>
-              <span class="px-2 py-0.5 rounded bg-[#222530] text-[10px] font-mono text-neutral-300">Character Turnarounds</span>
-              <span class="px-2 py-0.5 rounded bg-[#222530] text-[10px] font-mono text-neutral-300">Sci-Fi &amp; Fantasy</span>
+            <div class="tags-wrapper flex flex-wrap gap-1.5 pt-0.5">
+              <span class="skill-pill px-2 py-0.5 rounded bg-[#222530] text-[11px] font-mono text-neutral-300">Keyart Illustration</span>
+              <span class="skill-pill px-2 py-0.5 rounded bg-[#222530] text-[11px] font-mono text-neutral-300">Character Turnarounds</span>
+              <span class="skill-pill px-2 py-0.5 rounded bg-[#222530] text-[11px] font-mono text-neutral-300">Sci-Fi &amp; Fantasy</span>
             </div>
-            <p class="text-xs sm:text-sm text-neutral-300 leading-relaxed font-normal">
+            <p class="body-text text-xs sm:text-sm text-neutral-300 leading-relaxed font-normal">
               Executing moodboards, environment keyframes, and character turnarounds for indie and mid-size studio clients across hard-surface sci-fi and fantasy genres.
             </p>
           </div>
 
           <!-- Experience Card 2: Little Guy Games -->
-          <div class="relative bg-[#181a20] border border-[#2e323d] rounded-2xl p-5 space-y-3 transition-colors">
+          <div class="inner-card role-gap relative bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 sm:p-5 space-y-3 transition-colors">
             <div class="timeline-dot"></div>
-            <div class="flex flex-wrap items-start justify-between gap-2 border-b border-[#2e323d] pb-3">
+            <div class="flex flex-wrap items-start justify-between gap-2 border-b border-[#2e323d] pb-2.5">
               <div>
-                <h4 class="text-base font-bold text-white">Little Guy Games</h4>
-                <p class="text-xs text-amber-400 font-mono font-medium">Lead Concept Artist <span class="text-neutral-500">(Visual Development &amp; Production Pipeline)</span></p>
+                <h4 class="role-title text-base font-bold text-white">Little Guy Games</h4>
+                <p class="meta-text text-xs text-amber-400 font-mono font-medium">Lead Concept Artist <span class="text-neutral-500">(Visual Development &amp; Production Pipeline)</span></p>
               </div>
-              <span class="px-2.5 py-1 rounded-md bg-[#222530] text-neutral-300 font-mono text-[10px] font-bold uppercase">Nov 2021 – Aug 2025</span>
+              <span class="job-tag date-pill px-2.5 py-1 rounded-md bg-[#222530] text-neutral-300 font-mono text-[10px] font-bold uppercase">Nov 2021 – Aug 2025</span>
             </div>
-            <div class="flex flex-wrap items-center gap-1.5 text-[10px] font-mono text-neutral-400 pt-0.5">
-              <span class="text-amber-400 font-bold uppercase">SHIPPED PROJECTS:</span>
-              <span class="px-2 py-0.5 rounded bg-[#222530] text-neutral-200 font-semibold">Home Run Derby VR (Meta Quest)</span>
-              <span class="px-2 py-0.5 rounded bg-[#222530] text-neutral-200 font-semibold">Wings of Wanitu</span>
+            <div class="tags-wrapper flex flex-wrap items-center gap-1.5 text-[10px] font-mono text-neutral-400 pt-0.5">
+              <span class="text-amber-400 font-bold uppercase text-[11px]">SHIPPED PROJECTS:</span>
+              <span class="skill-pill px-2 py-0.5 rounded bg-[#222530] text-neutral-200 font-semibold text-[11px]">Home Run Derby VR (Meta Quest)</span>
+              <span class="skill-pill px-2 py-0.5 rounded bg-[#222530] text-neutral-200 font-semibold text-[11px]">Wings of Wanitu</span>
             </div>
-            <ul class="space-y-2.5 text-xs sm:text-sm text-neutral-300 leading-relaxed font-normal">
+            <ul class="bullet-list space-y-2 text-xs sm:text-sm text-neutral-300 leading-relaxed font-normal">
               <li class="flex items-start gap-2.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
+                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
                 <span>Led <strong class="text-white">visual development and art direction for 2 VR titles</strong>, establishing core visual language, moodboards, color scripts, and blue-sky concept art from brief to final IP.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
+                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
                 <span>Produced <strong class="text-amber-300">30+ production-ready character and environment assets</strong> with detailed orthographic views, material callouts, and functional breakdown notes for 3D teams.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
+                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
                 <span>Accelerated 3D asset creation by executing <strong class="text-white">3D base blockouts in ZBrush and Blender</strong>, overpainting lighting and material responses for rapid 3D art team handoff.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
+                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
                 <span>Delivered hero key art, promotional illustrations, and marketing assets, maintaining art fidelity across internal pitch decks and public storefronts.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
+                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
                 <span>Conducted daily paintovers and art reviews with 3D modelers and tech artists, <strong class="text-white">resolving proportion, silhouette, and engine lighting discrepancies</strong> early in sprint.</span>
               </li>
             </ul>
           </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: EDUCATION & CREDENTIALS -->
+      <div class="grid-col-right lg:col-span-5 space-y-4">
+        <div class="section-header-row flex items-center justify-between border-b border-[#2e323d] pb-2.5">
+          <h3 class="section-title text-base sm:text-lg font-bold uppercase tracking-wider text-white">
+            <span class="i18n" data-en="Education &amp; Credentials" data-fr="Éducation &amp; Certifications">Education &amp; Credentials</span>
+          </h3>
+          <span class="sub-label text-[10px] font-mono text-neutral-500 uppercase tracking-widest">// ACCREDITATION</span>
+        </div>
+
+        <div class="space-y-3.5">
+          <!-- Academic Degree -->
+          <div class="inner-card bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 flex items-center justify-between gap-3">
+            <div>
+              <p class="text-[10px] font-mono text-amber-400 uppercase font-bold tracking-wider">ACADEMIC DEGREE</p>
+              <h4 class="role-title text-sm font-bold text-white">Bachelor of Design in Illustration</h4>
+              <p class="meta-text text-xs text-neutral-400 font-mono">OCAD University</p>
+            </div>
+            <span class="meta-text text-xs font-mono text-neutral-500 font-medium shrink-0">2015 – 2020</span>
+          </div>
+
+          <!-- Cert 1: Google UX -->
+          <div class="inner-card role-gap bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 flex items-center justify-between gap-3">
+            <div>
+              <p class="text-[10px] font-mono text-amber-400 uppercase font-bold tracking-wider">INDUSTRY CERTIFICATION</p>
+              <h4 class="role-title text-sm font-bold text-white">Google UX Design Professional Certificate</h4>
+              <p class="meta-text text-xs text-neutral-400 font-mono">Google / Coursera</p>
+            </div>
+            <span class="meta-text text-xs font-mono text-neutral-500 font-medium shrink-0">2025</span>
+          </div>
+
+          <!-- Cert 2: Epic Games UX -->
+          <div class="inner-card role-gap bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 flex items-center justify-between gap-3">
+            <div>
+              <p class="text-[10px] font-mono text-amber-400 uppercase font-bold tracking-wider">INDUSTRY CERTIFICATION</p>
+              <h4 class="role-title text-sm font-bold text-white">User Experience in Game Design</h4>
+              <p class="meta-text text-xs text-neutral-400 font-mono">Epic Games / Coursera</p>
+            </div>
+            <span class="meta-text text-xs font-mono text-neutral-500 font-medium shrink-0">May 2023</span>
+          </div>
+
+          <!-- Cert 3: Epic Games UI -->
+          <div class="inner-card role-gap bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 flex items-center justify-between gap-3">
+            <div>
+              <p class="text-[10px] font-mono text-amber-400 uppercase font-bold tracking-wider">INDUSTRY CERTIFICATION</p>
+              <h4 class="role-title text-sm font-bold text-white">User Interface in Game Design</h4>
+              <p class="meta-text text-xs text-neutral-400 font-mono">Epic Games / Coursera</p>
+            </div>
+            <span class="meta-text text-xs font-mono text-neutral-500 font-medium shrink-0">May 2023</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- PAGE 2: EXPERIENCE (CONTINUED) & PIPELINE & SKILLS -->
+  <!-- ========================================== -->
+  <section class="resume-page-card resume-page-2 bg-[#14161b] border border-[#2e323d] rounded-3xl p-6 sm:p-10 shadow-2xl space-y-6">
+    
+    <!-- PAGE 2 TOP HEADER BAR -->
+    <div class="page2-header-bar flex items-center justify-between pb-3.5 border-b border-[#2e323d]">
+      <div class="flex items-center gap-3">
+        <span class="page2-title text-sm font-bold tracking-wide uppercase text-white font-display">Guillaume Goder</span>
+        <span class="text-xs text-neutral-500">•</span>
+        <span class="text-xs text-neutral-400 font-medium">Concept Artist &amp; Visual Development Lead</span>
+      </div>
+      <span class="page2-badge text-[11px] font-mono font-bold tracking-widest text-amber-400 uppercase">
+        <span class="i18n" data-en="PAGE 2 // PRODUCTION RECORD &amp; SKILLS" data-fr="PAGE 2 // PARCOURS PRODUCTION &amp; COMPÉTENCES">PAGE 2 // PRODUCTION RECORD &amp; SKILLS</span>
+      </span>
+    </div>
+
+    <!-- 2-COLUMN MAIN CONTENT GRID (PAGE 2) -->
+    <div class="resume-grid grid grid-cols-1 lg:grid-cols-12 gap-8">
+      
+      <!-- LEFT COLUMN: EXPERIENCE CONTINUED (COSMIC GAMES & TELUS DIGITAL) -->
+      <div class="grid-col-left lg:col-span-7 space-y-4">
+        <div class="section-header-row flex items-center justify-between border-b border-[#2e323d] pb-2.5">
+          <h3 class="section-title text-base sm:text-lg font-bold uppercase tracking-wider text-white">
+            <span class="i18n" data-en="Experience Continued" data-fr="Expérience (Suite)">Experience Continued</span>
+          </h3>
+          <span class="sub-label text-[10px] font-mono text-neutral-500 uppercase tracking-widest">// STUDIO &amp; PRODUCTION RECORD</span>
+        </div>
+
+        <div class="relative space-y-4 timeline-container">
+          <div class="timeline-line"></div>
 
           <!-- Experience Card 3: Cosmic Games Studio -->
-          <div class="relative bg-[#181a20] border border-[#2e323d] rounded-2xl p-5 space-y-3 transition-colors">
+          <div class="inner-card relative bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 sm:p-5 space-y-3 transition-colors">
             <div class="timeline-dot"></div>
-            <div class="flex flex-wrap items-start justify-between gap-2 border-b border-[#2e323d] pb-3">
+            <div class="flex flex-wrap items-start justify-between gap-2 border-b border-[#2e323d] pb-2.5">
               <div>
-                <h4 class="text-base font-bold text-white">Cosmic Games Studio</h4>
-                <p class="text-xs text-amber-400 font-mono font-medium">Lead Concept Artist</p>
+                <h4 class="role-title text-base font-bold text-white">Cosmic Games Studio</h4>
+                <p class="meta-text text-xs text-amber-400 font-mono font-medium">Lead Concept Artist</p>
               </div>
-              <span class="px-2.5 py-1 rounded-md bg-[#222530] text-neutral-300 font-mono text-[10px] font-bold uppercase">Oct 2019 – Nov 2020</span>
+              <span class="job-tag date-pill px-2.5 py-1 rounded-md bg-[#222530] text-neutral-300 font-mono text-[10px] font-bold uppercase">Oct 2019 – Nov 2020</span>
             </div>
-            <div class="flex flex-wrap items-center gap-1.5 text-[10px] font-mono text-neutral-400 pt-0.5">
-              <span class="text-amber-400 font-bold uppercase">PROJECT:</span>
-              <span class="px-2 py-0.5 rounded bg-[#222530] text-neutral-200 font-semibold">STARQUEST (Stylized Sci-Fi RPG)</span>
+            <div class="tags-wrapper flex flex-wrap items-center gap-1.5 text-[10px] font-mono text-neutral-400 pt-0.5">
+              <span class="text-amber-400 font-bold uppercase text-[11px]">PROJECT:</span>
+              <span class="skill-pill px-2 py-0.5 rounded bg-[#222530] text-neutral-200 font-semibold text-[11px]">STARQUEST (Stylized Sci-Fi RPG)</span>
             </div>
-            <ul class="space-y-2.5 text-xs sm:text-sm text-neutral-300 leading-relaxed font-normal">
+            <ul class="bullet-list space-y-2 text-xs sm:text-sm text-neutral-300 leading-relaxed font-normal">
               <li class="flex items-start gap-2.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
+                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
                 <span>Spearheaded <strong class="text-white">visual world-building for Starquest's sci-fi universe</strong>, creating atmospheric environment paintings, thumbnail explorations, and keyframes.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
+                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
                 <span>Designed hero and NPC characters from initial silhouette thumbnails to final render sheets, delivering expression guides and orthographic turnarounds.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
+                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
                 <span>Engine-integrated 2D/3D environment assets using <strong class="text-white">PBR workflows</strong>, setting up material responses and scene staging in <strong class="text-amber-300">Unreal Engine 5</strong>.</span>
               </li>
             </ul>
           </div>
 
           <!-- Experience Card 4: Telus Digital -->
-          <div class="relative bg-[#181a20] border border-[#2e323d] rounded-2xl p-5 space-y-3 transition-colors">
+          <div class="inner-card role-gap relative bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 sm:p-5 space-y-2.5 transition-colors">
             <div class="timeline-dot"></div>
-            <div class="flex flex-wrap items-start justify-between gap-2 border-b border-[#2e323d] pb-3">
+            <div class="flex flex-wrap items-start justify-between gap-2 border-b border-[#2e323d] pb-2.5">
               <div>
-                <h4 class="text-base font-bold text-white">Telus Digital</h4>
-                <p class="text-xs text-amber-400 font-mono font-medium">Visual Designer &amp; Illustrator</p>
+                <h4 class="role-title text-base font-bold text-white">Telus Digital</h4>
+                <p class="meta-text text-xs text-amber-400 font-mono font-medium">Visual Designer &amp; Illustrator</p>
               </div>
-              <span class="px-2.5 py-1 rounded-md bg-[#222530] text-neutral-300 font-mono text-[10px] font-bold uppercase">Jan 2019 – Apr 2019</span>
+              <span class="job-tag date-pill px-2.5 py-1 rounded-md bg-[#222530] text-neutral-300 font-mono text-[10px] font-bold uppercase">Jan 2019 – Apr 2019</span>
             </div>
-            <p class="text-xs sm:text-sm text-neutral-300 leading-relaxed font-normal">
+            <p class="body-text text-xs sm:text-sm text-neutral-300 leading-relaxed font-normal">
               Produced high-impact promotional illustrations and brand visual assets, adhering to strict composition, color harmony, and delivery deadlines.
             </p>
           </div>
         </div>
       </div>
 
-      <!-- RIGHT COLUMN: SKILLS, TOOLSET & EDUCATION -->
-      <div class="lg:col-span-5 space-y-6">
-        <div class="flex items-center justify-between border-b border-[#2e323d] pb-3">
-          <h3 class="text-lg font-bold uppercase tracking-wider text-white">
+      <!-- RIGHT COLUMN: PIPELINE & SKILLS (MOVED TO PAGE 2) -->
+      <div class="grid-col-right lg:col-span-5 space-y-4">
+        <div class="section-header-row flex items-center justify-between border-b border-[#2e323d] pb-2.5">
+          <h3 class="section-title text-base sm:text-lg font-bold uppercase tracking-wider text-white">
             <span class="i18n" data-en="Pipeline &amp; Skills" data-fr="Pipeline &amp; Compétences">Pipeline &amp; Skills</span>
           </h3>
-          <span class="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">// TOOLSET</span>
+          <span class="sub-label text-[10px] font-mono text-neutral-500 uppercase tracking-widest">// TOOLSET</span>
         </div>
 
         <!-- Skill Block 1: 2D VisDev -->
-        <div class="bg-[#181a20] border border-[#2e323d] rounded-2xl p-5 space-y-3">
-          <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-amber-400 ">
+        <div class="inner-card bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 sm:p-5 space-y-2.5">
+          <h4 class="role-title text-xs font-mono font-bold uppercase tracking-wider text-amber-400">
             <span>2D Visual Development</span>
           </h4>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="px-2.5 py-1 rounded-md bg-[#222530] text-xs text-neutral-200 font-medium">Worldbuilding</span>
-            <span class="px-2.5 py-1 rounded-md bg-[#222530] text-xs text-neutral-200 font-medium">Silhouette Exploration</span>
-            <span class="px-2.5 py-1 rounded-md bg-[#222530] text-xs text-neutral-200 font-medium">Value Studies</span>
-            <span class="px-2.5 py-1 rounded-md bg-[#222530] text-xs text-neutral-200 font-medium">Color Scripts</span>
-            <span class="px-2.5 py-1 rounded-md bg-[#222530] text-xs text-neutral-200 font-medium">Keyart Illustration</span>
-            <span class="px-2.5 py-1 rounded-md bg-[#222530] text-xs text-neutral-200 font-medium">Orthographic Turnarounds</span>
-            <span class="px-2.5 py-1 rounded-md bg-[#222530] text-xs text-neutral-200 font-medium">Callout Sheets</span>
+          <div class="tags-wrapper flex flex-wrap gap-2">
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium">Worldbuilding</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium">Silhouette Exploration</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium">Value Studies</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium">Color Scripts</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium">Keyart Illustration</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium">Orthographic Turnarounds</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium">Callout Sheets</span>
           </div>
         </div>
 
         <!-- Skill Block 2: 3D Concept & Pipeline -->
-        <div class="bg-[#181a20] border border-[#2e323d] rounded-2xl p-5 space-y-3">
-          <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-amber-400 ">
+        <div class="inner-card role-gap bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 sm:p-5 space-y-2.5">
+          <h4 class="role-title text-xs font-mono font-bold uppercase tracking-wider text-amber-400">
             <span>3D Concept &amp; Pipeline</span>
           </h4>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="px-2.5 py-1 rounded-md bg-[#222530] text-xs text-neutral-200 font-medium">3D Blockouts</span>
-            <span class="px-2.5 py-1 rounded-md bg-[#222530] text-xs text-neutral-200 font-medium">Digital Sculpting</span>
-            <span class="px-2.5 py-1 rounded-md bg-[#222530] text-xs text-neutral-200 font-medium">PBR Texturing</span>
-            <span class="px-2.5 py-1 rounded-md bg-[#222530] text-xs text-neutral-200 font-medium">Engine Staging</span>
-            <span class="px-2.5 py-1 rounded-md bg-[#222530] text-xs text-neutral-200 font-medium">Paintovers</span>
-            <span class="px-2.5 py-1 rounded-md bg-[#222530] text-xs text-neutral-200 font-medium">Material Callouts</span>
-            <span class="px-2.5 py-1 rounded-md bg-[#222530] text-xs text-neutral-200 font-medium">3D Modeler Handoff</span>
+          <div class="tags-wrapper flex flex-wrap gap-2">
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium">3D Blockouts</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium">Digital Sculpting</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium">PBR Texturing</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium">Engine Staging</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium">Paintovers</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium">Material Callouts</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium">3D Modeler Handoff</span>
           </div>
         </div>
 
         <!-- Skill Block 3: Artistic Styles -->
-        <div class="bg-[#181a20] border border-[#2e323d] rounded-2xl p-5 space-y-3">
-          <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-amber-400 ">
+        <div class="inner-card role-gap bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 sm:p-5 space-y-2.5">
+          <h4 class="role-title text-xs font-mono font-bold uppercase tracking-wider text-amber-400">
             <span>Artistic Styles</span>
           </h4>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="px-2.5 py-1 rounded-md bg-[#222530] text-xs text-neutral-200 font-medium">Hard-Surface Sci-Fi</span>
-            <span class="px-2.5 py-1 rounded-md bg-[#222530] text-xs text-neutral-200 font-medium">Stylized Fantasy</span>
-            <span class="px-2.5 py-1 rounded-md bg-[#222530] text-xs text-neutral-200 font-medium">PBR Realism</span>
-            <span class="px-2.5 py-1 rounded-md bg-[#222530] text-xs text-neutral-200 font-medium">World-Building</span>
+          <div class="tags-wrapper flex flex-wrap gap-2">
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium">Hard-Surface Sci-Fi</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium">Stylized Fantasy</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium">PBR Realism</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium">World-Building</span>
           </div>
         </div>
 
         <!-- Skill Block 4: Software & Tech -->
-        <div class="bg-[#181a20] border border-[#2e323d] rounded-2xl p-5 space-y-3">
-          <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-amber-400 ">
+        <div class="inner-card role-gap bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 sm:p-5 space-y-2.5">
+          <h4 class="role-title text-xs font-mono font-bold uppercase tracking-wider text-amber-400">
             <span>Software &amp; Tech</span>
           </h4>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="px-2.5 py-1 rounded-md bg-[#222530] text-xs font-mono text-neutral-200">Photoshop</span>
-            <span class="px-2.5 py-1 rounded-md bg-[#222530] text-xs font-mono text-neutral-200">ZBrush</span>
-            <span class="px-2.5 py-1 rounded-md bg-[#222530] text-xs font-mono text-neutral-200">Blender</span>
-            <span class="px-2.5 py-1 rounded-md bg-[#222530] text-xs font-mono text-neutral-200">Substance 3D Painter</span>
-            <span class="px-2.5 py-1 rounded-md bg-[#222530] text-xs font-mono text-neutral-200">Unreal Engine 5</span>
-            <span class="px-2.5 py-1 rounded-md bg-[#222530] text-xs font-mono text-neutral-200">Figma</span>
-            <span class="px-2.5 py-1 rounded-md bg-[#222530] text-xs font-mono text-neutral-200">Git / GitHub</span>
-          </div>
-        </div>
-
-        <!-- EDUCATION & CREDENTIALS -->
-        <div class="pt-4 space-y-4">
-          <div class="flex items-center justify-between border-b border-[#2e323d] pb-3">
-            <h3 class="text-lg font-bold uppercase tracking-wider text-white ">
-              
-              <span class="i18n" data-en="Education &amp; Credentials" data-fr="Éducation &amp; Certifications">Education &amp; Credentials</span>
-            </h3>
-            <span class="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">// ACCREDITATION</span>
-          </div>
-
-          <div class="space-y-3">
-            <div class="bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 flex items-center justify-between gap-4">
-              <div>
-                <p class="text-[10px] font-mono text-amber-400 uppercase font-bold">ACADEMIC DEGREE</p>
-                <p class="text-sm font-bold text-white">Bachelor of Design in Illustration</p>
-                <p class="text-xs text-neutral-400 font-mono">OCAD University</p>
-              </div>
-              <span class="text-xs font-mono text-neutral-500 font-medium shrink-0">2015 – 2020</span>
-            </div>
-
-            <div class="bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 flex items-center justify-between gap-4">
-              <div>
-                <p class="text-[10px] font-mono text-amber-400 uppercase font-bold">INDUSTRY CERTIFICATION</p>
-                <p class="text-sm font-bold text-white">Google UX Design Professional Certificate</p>
-                <p class="text-xs text-neutral-400 font-mono">Google / Coursera</p>
-              </div>
-              <span class="text-xs font-mono text-neutral-500 font-medium shrink-0">2025</span>
-            </div>
-
-            <div class="bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 flex items-center justify-between gap-4">
-              <div>
-                <p class="text-[10px] font-mono text-amber-400 uppercase font-bold">INDUSTRY CERTIFICATION</p>
-                <p class="text-sm font-bold text-white">User Experience in Game Design</p>
-                <p class="text-xs text-neutral-400 font-mono">Epic Games / Coursera</p>
-              </div>
-              <span class="text-xs font-mono text-neutral-500 font-medium shrink-0">May 2023</span>
-            </div>
-
-            <div class="bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 flex items-center justify-between gap-4">
-              <div>
-                <p class="text-[10px] font-mono text-amber-400 uppercase font-bold">INDUSTRY CERTIFICATION</p>
-                <p class="text-sm font-bold text-white">User Interface in Game Design</p>
-                <p class="text-xs text-neutral-400 font-mono">Epic Games / Coursera</p>
-              </div>
-              <span class="text-xs font-mono text-neutral-500 font-medium shrink-0">May 2023</span>
-            </div>
+          <div class="tags-wrapper flex flex-wrap gap-2">
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs font-mono text-neutral-200">Photoshop</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs font-mono text-neutral-200">ZBrush</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs font-mono text-neutral-200">Blender</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs font-mono text-neutral-200">Substance 3D Painter</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs font-mono text-neutral-200">Unreal Engine 5</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs font-mono text-neutral-200">Figma</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs font-mono text-neutral-200">Git / GitHub</span>
           </div>
         </div>
 
       </div>
     </div>
-  </div>
+
+    <!-- PAGE 2 CLOSING AVAILABILITY & RECRUITER CONTACT BANNER -->
+    <div class="page2-closing-banner inner-card flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-4 bg-[#181a20] border border-[#2e323d] rounded-2xl">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+        <span class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider">
+          <span class="i18n" data-en="AVAILABLE FOR:" data-fr="DISPONIBLE POUR :">AVAILABLE FOR:</span>
+        </span>
+        <span class="text-xs font-semibold text-white">
+          <span class="i18n" data-en="Lead / Senior Concept Artist &amp; Visual Development Roles (VR / PC / Console)" data-fr="Rôles de Lead / Senior Concept Artist &amp; Visual Development (VR / PC / Console)">Lead / Senior Concept Artist &amp; Visual Development Roles (VR / PC / Console)</span>
+        </span>
+      </div>
+      <div class="flex items-center gap-3 text-xs font-mono text-neutral-400">
+        <span>Montréal, QC <span class="opacity-60">(Remote / Hybrid)</span></span>
+        <span class="opacity-40">•</span>
+        <a href="https://game.guillaumedesign.ca/" target="_blank" rel="noopener" class="text-amber-400 font-bold hover:underline">guillaumedesign.ca ↗</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <!-- FOOTER -->
