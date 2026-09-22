@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" data-lang="en">
 <head>
-  <script>(function(){try{var t=localStorage.getItem('theme')||'dark';var l=localStorage.getItem('lang')||'en';if(t==='light')document.documentElement.classList.add('light');document.documentElement.setAttribute('lang',l);document.documentElement.setAttribute('data-lang',l);}catch(e){}})();</script>
+  <script>(function(){try{var p=new URLSearchParams(window.location.search);var l=p.get('lang')||localStorage.getItem('lang')||'en';var t=p.get('theme')||localStorage.getItem('theme')||'dark';if(t==='light')document.documentElement.classList.add('light');document.documentElement.setAttribute('lang',l);document.documentElement.setAttribute('data-lang',l);}catch(e){}})();</script>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title data-en="Resume — Guillaume Goder | Visual Development &amp; Concept Artist" data-fr="CV — Guillaume Goder | Artiste Développement Visuel &amp; Concept Art">Resume — Guillaume Goder | Visual Development &amp; Concept Artist</title>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head><script>(function(){try{var t=localStorage.getItem('theme')||'dark';var l=localStorage.getItem('lang')||'en';if(t==='light')document.documentElement.classList.add('light');document.documentElement.setAttribute('lang',l);document.documentElement.setAttribute('data-lang',l);}catch(e){}})();</script>
+<head><script>(function(){try{var p=new URLSearchParams(window.location.search);var l=p.get('lang')||localStorage.getItem('lang')||'en';var t=p.get('theme')||localStorage.getItem('theme')||'dark';if(t==='light')document.documentElement.classList.add('light');document.documentElement.setAttribute('lang',l);document.documentElement.setAttribute('data-lang',l);}catch(e){}})();</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title data-en="Tide Hollow — Guillaume Goder" data-fr="Tide Hollow — Guillaume Goder">Tide Hollow — Guillaume Goder</title>

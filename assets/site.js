@@ -4,8 +4,20 @@
 (function () {
   'use strict';
 
-  function getTheme() { return localStorage.getItem('theme') || 'dark'; }
-  function getLang() { return localStorage.getItem('lang') || 'en'; }
+  function getTheme() {
+    try {
+      var p = new URLSearchParams(window.location.search);
+      if (p.has('theme')) return p.get('theme');
+    } catch (e) {}
+    return localStorage.getItem('theme') || 'dark';
+  }
+  function getLang() {
+    try {
+      var p = new URLSearchParams(window.location.search);
+      if (p.has('lang')) return p.get('lang');
+    } catch (e) {}
+    return localStorage.getItem('lang') || 'en';
+  }
 
   function applyTheme(theme) {
     document.documentElement.classList.toggle('light', theme === 'light');
