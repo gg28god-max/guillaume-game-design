@@ -524,6 +524,27 @@ html.light .li-pill:hover {
 
 .li-pill:hover .li-icon { opacity: 0.85; }
 
+/* ── Resume pill (nav) ────────────────────────────────────────────────────
+   Solid white fill background button with black text and icon.            */
+.resume-pill {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #ffffff !important;
+  font-weight: 700 !important;
+}
+
+.resume-pill svg {
+  color: #000000 !important;
+  opacity: 1 !important;
+}
+
+.resume-pill:hover {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #000000 !important;
+  transform: translateY(-1px);
+}
+
 /* ── Phone nav ────────────────────────────────────────────────────────────
    The portfolio pill stays visible at every width, so it is compacted on
    phones to earn its space beside the toggles and the menu button.
@@ -2015,6 +2036,39 @@ html.light .header-blue-gradient {
 [aria-label="Project video overview"] img {
   transform: none !important;
 }
+
+/* ---- Header Resume Pill (White background fill, black text/icon) ---- */
+.resume-pill {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: #ffffff !important;
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+.resume-pill svg {
+  color: #000000 !important;
+  stroke: #000000 !important;
+}
+.resume-pill:hover {
+  background-color: #e5e5e5 !important;
+  border-color: #e5e5e5 !important;
+  color: #000000 !important;
+}
+html.light .resume-pill {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-color: #000000 !important;
+}
+html.light .resume-pill svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+html.light .resume-pill:hover {
+  background-color: #262626 !important;
+  border-color: #262626 !important;
+  color: #ffffff !important;
+}
+
 
 
 
