@@ -27,9 +27,16 @@
     *, code, pre, .font-mono, .font-display { 
       font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important; 
     }
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: #0a0a0a; }
-    ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
+    html, body {
+      scrollbar-width: none !important;
+      -ms-overflow-style: none !important;
+      overflow-y: auto !important;
+    }
+    ::-webkit-scrollbar {
+      width: 0 !important;
+      height: 0 !important;
+      display: none !important;
+    }
 
     /* Language Toggle Rules */
     html[lang="fr"] .lang-en, html[data-lang="fr"] .lang-en { display: none !important; }
