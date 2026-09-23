@@ -121,9 +121,7 @@
     /* Inner cards (Freelance, Little Guy Games, Cosmic Games, Telus, Education, Core Focus, etc.) */
     html body .resume-page-card .inner-card,
     html body .resume-page-card .core-focus-box,
-    html body .resume-page-card .contact-card,
-    html body .resume-page-card div.bg-\[\#181a20\],
-    html body .resume-page-card div.bg-\[\#14161b\] {
+    html body .resume-page-card .contact-card {
       background-color: #f8fafc !important;
       border: 1px solid #e2e8f0 !important;
     }
@@ -132,9 +130,7 @@
     html body .resume-page-card .skill-pill,
     html body .resume-page-card .job-tag,
     html body .resume-page-card .date-pill,
-    html body .resume-page-card span.bg-\[\#222530\],
-    html body .resume-page-card div.bg-\[\#1e222d\],
-    html body .resume-page-card span.bg-\[\#1e222d\] {
+    html body .resume-page-card .bilingual-pill {
       background-color: #f1f5f9 !important;
       color: #0f172a !important;
       border: 1px solid #cbd5e1 !important;
@@ -142,10 +138,10 @@
     }
 
     /* Borders, Dividers, Separators */
-    html body .resume-page-card div.border-\[\#2e323d\],
     html body .resume-page-card .section-header-row,
     html body .resume-page-card .header-split,
     html body .resume-page-card .page2-header-bar,
+    html body .resume-page-card .card-divider,
     html body .resume-page-card .border-b,
     html body .resume-page-card .border-t {
       border-color: #e2e8f0 !important;
@@ -160,7 +156,6 @@
     html body .resume-page-card .section-title,
     html body .resume-page-card .role-title,
     html body .resume-page-card .page2-title,
-    html body .resume-page-card .text-white,
     html body .resume-page-card strong {
       color: #0f172a !important;
     }
@@ -172,27 +167,18 @@
     /* Paragraphs, List Items & Body Text */
     html body .resume-page-card p,
     html body .resume-page-card li,
-    html body .resume-page-card .body-text,
-    html body .resume-page-card .text-neutral-200,
-    html body .resume-page-card .text-neutral-300 {
+    html body .resume-page-card .body-text {
       color: #334155 !important;
     }
 
     /* Sub-labels, Metadata & Accents */
-    html body .resume-page-card .text-neutral-400,
     html body .resume-page-card .meta-text,
-    html body .resume-page-card .text-neutral-500,
     html body .resume-page-card .sub-label {
       color: #64748b !important;
     }
 
-    html body .resume-page-card .text-neutral-700 {
-      color: #94a3b8 !important;
-    }
-
     /* High-contrast Warm Amber / Orange Accents */
-    html body .resume-page-card .text-amber-400,
-    html body .resume-page-card .text-amber-300,
+    html body .resume-page-card .accent-amber,
     html body .resume-page-card .page2-badge {
       color: #b45309 !important;
       font-weight: 700 !important;
@@ -239,13 +225,6 @@
     .resume-page-card .contact-card a[href^="mailto"]:hover {
       color: #b45309 !important;
     }
-
-    .resume-page-card .contact-card svg.text-amber-400 {
-      color: #d97706 !important;
-    }
-
-
-
 
     /* ---- RECRUITER-FRIENDLY LIGHT PRINT / PDF STYLES ---- */
     @media print {
@@ -731,45 +710,45 @@
   <section class="resume-page-card resume-page-1 bg-white border border-slate-300 rounded-3xl p-6 sm:p-10 shadow-2xl space-y-6">
     
     <!-- HEADER BLOCK -->
-    <div class="header-split flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-[#2e323d]">
+    <div class="header-split flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-200">
       <div class="space-y-2.5 max-w-2xl">
-        <p class="text-[11px] font-mono tracking-[0.28em] uppercase text-amber-400 font-bold">
+        <p class="text-[11px] font-mono tracking-[0.28em] uppercase text-amber-700 font-bold">
           <span class="i18n" data-en="ENTERTAINMENT ART • VISUAL DEVELOPMENT • GAME" data-fr="ART DU DIVERTISSEMENT • DÉVELOPPEMENT VISUEL • JEU">ENTERTAINMENT ART • VISUAL DEVELOPMENT • GAME</span>
         </p>
-        <h1 class="header-name text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-none font-display">
+        <h1 class="header-name text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-slate-900 leading-none font-display">
           Guillaume Goder
         </h1>
-        <h2 class="lead-subtitle text-lg sm:text-xl font-bold text-neutral-200 tracking-tight">
+        <h2 class="lead-subtitle text-lg sm:text-xl font-bold text-slate-700 tracking-tight">
           <span class="i18n" data-en="Concept Artist &amp; Visual Development Lead" data-fr="Artiste Conceptuel &amp; Lead Développement Visuel">Concept Artist &amp; Visual Development Lead</span>
         </h2>
-        <p class="body-text text-xs sm:text-sm text-neutral-400 font-medium">
+        <p class="body-text text-xs sm:text-sm text-slate-500 font-medium">
           <span class="i18n" data-en="World-Building, Characters &amp; 3D Pipeline Handoff" data-fr="World-Building, Personnages &amp; Handoff Pipeline 3D">World-Building, Characters &amp; 3D Pipeline Handoff</span>
         </p>
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1e222d] border border-[#2e323d] text-xs text-amber-400 font-mono font-medium">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 border border-slate-200 text-xs text-amber-700 font-bold font-mono font-medium">
           <span class="i18n" data-en="Bilingual: English &amp; French" data-fr="Bilingue : Anglais &amp; Français">Bilingual: English &amp; French</span>
         </div>
       </div>
 
       <!-- Live Portfolio & Contact Card -->
-      <div class="contact-card bg-[#181a20] border border-[#2e323d] rounded-2xl p-5 space-y-3.5 min-w-[260px] shadow-lg shrink-0">
-        <a href="https://game.guillaumedesign.ca/" target="_blank" rel="noopener" class="group block bg-amber-500 hover:bg-amber-400 transition-colors text-neutral-950 p-2.5 rounded-xl text-center">
+      <div class="contact-card bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-3.5 min-w-[260px] shadow-lg shrink-0">
+        <a href="https://game.guillaumedesign.ca/" target="_blank" rel="noopener" class="group block bg-amber-500 hover:bg-amber-600 transition-colors text-neutral-950 p-2.5 rounded-xl text-center">
           <p class="text-[9px] font-mono tracking-[0.2em] font-bold uppercase opacity-90"><span class="i18n" data-en="LIVE PORTFOLIO" data-fr="PORTFOLIO EN LIGNE">LIVE PORTFOLIO</span></p>
           <p class="text-xs font-mono font-bold flex items-center justify-center gap-1 mt-0.5">
             guillaumedesign.ca
             <span class="group-hover:translate-x-0.5 transition-transform">↗</span>
           </p>
         </a>
-        <div class="space-y-2 text-xs font-mono text-neutral-300">
+        <div class="space-y-2 text-xs font-mono text-slate-700">
           <div class="flex items-center gap-2.5">
-            <svg class="w-3.5 h-3.5 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-            <a href="mailto:gg28.god@gmail.com" class="hover:text-amber-300 transition-colors">gg28.god@gmail.com</a>
+            <svg class="w-3.5 h-3.5 text-amber-700 font-bold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <a href="mailto:gg28.god@gmail.com" class="hover:text-amber-700 font-bold transition-colors">gg28.god@gmail.com</a>
           </div>
           <div class="flex items-center gap-2.5">
-            <svg class="w-3.5 h-3.5 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <svg class="w-3.5 h-3.5 text-amber-700 font-bold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
             <span>437-234-2614</span>
           </div>
           <div class="flex items-center gap-2.5">
-            <svg class="w-3.5 h-3.5 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <svg class="w-3.5 h-3.5 text-amber-700 font-bold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             <span>Montréal, QC, Canada</span>
           </div>
         </div>
@@ -777,15 +756,15 @@
     </div>
 
     <!-- CORE FOCUS SUMMARY -->
-    <div class="core-focus-box inner-card bg-[#181a20] border border-[#2e323d] rounded-2xl p-5 relative overflow-hidden">
-      <p class="text-[10px] font-mono tracking-[0.25em] uppercase text-amber-400 font-bold mb-1.5">
+    <div class="core-focus-box inner-card bg-slate-50 border border-slate-200 rounded-2xl p-5 relative overflow-hidden">
+      <p class="text-[10px] font-mono tracking-[0.25em] uppercase text-amber-700 font-bold mb-1.5">
         <span class="i18n" data-en="CORE FOCUS • VISUAL DEVELOPMENT LEAD" data-fr="FOCUS PRINCIPAL • LEAD DÉVELOPPEMENT VISUEL">CORE FOCUS • VISUAL DEVELOPMENT LEAD</span>
       </p>
-      <p class="lang-en body-text text-sm sm:text-base text-neutral-300 leading-relaxed font-normal">
-        <strong class="text-white font-bold">Concept Artist &amp; Visual Development Lead</strong> with <span class="text-amber-400 font-bold">5+ years of experience</span> crafting characters, environments, and keyart for <strong class="text-white">VR, PC, and console games</strong>. Specialist in end-to-end production pipelines — from initial thumbnailing and value studies to <strong class="text-white">3D blockouts, PBR texturing, and technical handoff sheets</strong> for downstream 3D/Tech Art teams. Versatile across stylized and realistic aesthetic directions.
+      <p class="lang-en body-text text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
+        <strong class="text-slate-900 font-bold">Concept Artist &amp; Visual Development Lead</strong> with <span class="text-amber-700 font-bold">5+ years of experience</span> crafting characters, environments, and keyart for <strong class="text-slate-900">VR, PC, and console games</strong>. Specialist in end-to-end production pipelines — from initial thumbnailing and value studies to <strong class="text-slate-900">3D blockouts, PBR texturing, and technical handoff sheets</strong> for downstream 3D/Tech Art teams. Versatile across stylized and realistic aesthetic directions.
       </p>
-      <p class="lang-fr body-text text-sm sm:text-base text-neutral-300 leading-relaxed font-normal">
-        <strong class="text-white font-bold">Artiste Conceptuel &amp; Lead Développement Visuel</strong> cumulant <span class="text-amber-400 font-bold">5+ ans d'expérience</span> en création de personnages, environnements et keyart pour <strong class="text-white">jeux VR, PC et consoles</strong>. Spécialiste des pipelines de production complets — de l'exploration initiale de silhouettes aux <strong class="text-white">blockouts 3D, texturage PBR et fiches techniques</strong> pour les équipes 3D et Tech Art. Polyvalent entre directions stylistiques réalistes et stylisées.
+      <p class="lang-fr body-text text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
+        <strong class="text-slate-900 font-bold">Artiste Conceptuel &amp; Lead Développement Visuel</strong> cumulant <span class="text-amber-700 font-bold">5+ ans d'expérience</span> en création de personnages, environnements et keyart pour <strong class="text-slate-900">jeux VR, PC et consoles</strong>. Spécialiste des pipelines de production complets — de l'exploration initiale de silhouettes aux <strong class="text-slate-900">blockouts 3D, texturage PBR et fiches techniques</strong> pour les équipes 3D et Tech Art. Polyvalent entre directions stylistiques réalistes et stylisées.
       </p>
     </div>
 
@@ -794,115 +773,115 @@
       
       <!-- LEFT COLUMN: PROFESSIONAL EXPERIENCE (TOP 2 ROLES) -->
       <div class="grid-col-left lg:col-span-7 space-y-4">
-        <div class="section-header-row flex items-center justify-between border-b border-[#2e323d] pb-2.5">
-          <h3 class="section-title text-base sm:text-lg font-bold uppercase tracking-wider text-white">
+        <div class="section-header-row flex items-center justify-between border-b border-slate-200 pb-2.5">
+          <h3 class="section-title text-base sm:text-lg font-bold uppercase tracking-wider text-slate-900">
             <span class="i18n" data-en="Professional Experience" data-fr="Expérience Professionnelle">Professional Experience</span>
           </h3>
-          <span class="sub-label text-[10px] font-mono text-neutral-500 uppercase tracking-widest"><span class="i18n" data-en="// STUDIO &amp; PRODUCTION RECORD" data-fr="// PARCOURS STUDIO &amp; PRODUCTION">// STUDIO &amp; PRODUCTION RECORD</span></span>
+          <span class="sub-label text-[10px] font-mono text-slate-400 uppercase tracking-widest"><span class="i18n" data-en="// STUDIO &amp; PRODUCTION RECORD" data-fr="// PARCOURS STUDIO &amp; PRODUCTION">// STUDIO &amp; PRODUCTION RECORD</span></span>
         </div>
 
         <div class="relative space-y-4 timeline-container">
           <div class="timeline-line"></div>
 
           <!-- Experience Card 1: Freelance -->
-          <div class="inner-card relative bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 sm:p-5 space-y-2.5 transition-colors">
+          <div class="inner-card relative bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-5 space-y-2.5 transition-colors">
             <div class="timeline-dot"></div>
-            <div class="flex flex-wrap items-start justify-between gap-2 border-b border-[#2e323d] pb-2.5">
+            <div class="flex flex-wrap items-start justify-between gap-2 border-b border-slate-200 pb-2.5">
               <div>
-                <h4 class="role-title text-base font-bold text-white">
+                <h4 class="role-title text-base font-bold text-slate-900">
                   <span class="i18n" data-en="Freelance Concept Artist &amp; Visual Developer" data-fr="Artiste Conceptuel &amp; Développeur Visuel Freelance">Freelance Concept Artist &amp; Visual Developer</span>
                 </h4>
-                <p class="meta-text text-xs text-amber-400 font-mono font-medium">
-                  <span class="i18n" data-en="Independent Consultant" data-fr="Consultant Indépendant">Independent Consultant</span> <span class="text-neutral-500">• Montréal, QC</span>
+                <p class="meta-text text-xs text-amber-700 font-bold font-mono font-medium">
+                  <span class="i18n" data-en="Independent Consultant" data-fr="Consultant Indépendant">Independent Consultant</span> <span class="text-slate-400">• Montréal, QC</span>
                 </p>
               </div>
-              <span class="job-tag date-pill px-2.5 py-1 rounded-md bg-[#222530] text-neutral-300 font-mono text-[10px] font-bold uppercase">
+              <span class="job-tag date-pill px-2.5 py-1 rounded-md bg-slate-100 border border-slate-300 text-slate-800 font-mono text-[10px] font-bold uppercase">
                 <span class="i18n" data-en="2025 – Present" data-fr="2025 – Présent">2025 – Present</span>
               </span>
             </div>
             <div class="tags-wrapper flex flex-wrap gap-1.5 pt-0.5">
-              <span class="skill-pill px-2 py-0.5 rounded bg-[#222530] text-[11px] font-mono text-neutral-300"><span class="i18n" data-en="Keyart Illustration" data-fr="Illustration Keyart">Keyart Illustration</span></span>
-              <span class="skill-pill px-2 py-0.5 rounded bg-[#222530] text-[11px] font-mono text-neutral-300"><span class="i18n" data-en="Character Turnarounds" data-fr="Turnarounds Personnages">Character Turnarounds</span></span>
-              <span class="skill-pill px-2 py-0.5 rounded bg-[#222530] text-[11px] font-mono text-neutral-300">Sci-Fi &amp; Fantasy</span>
+              <span class="skill-pill px-2 py-0.5 rounded bg-slate-100 border border-slate-300 text-slate-800 text-[11px] font-mono text-slate-700"><span class="i18n" data-en="Keyart Illustration" data-fr="Illustration Keyart">Keyart Illustration</span></span>
+              <span class="skill-pill px-2 py-0.5 rounded bg-slate-100 border border-slate-300 text-slate-800 text-[11px] font-mono text-slate-700"><span class="i18n" data-en="Character Turnarounds" data-fr="Turnarounds Personnages">Character Turnarounds</span></span>
+              <span class="skill-pill px-2 py-0.5 rounded bg-slate-100 border border-slate-300 text-slate-800 text-[11px] font-mono text-slate-700">Sci-Fi &amp; Fantasy</span>
             </div>
-            <p class="lang-en body-text text-xs sm:text-sm text-neutral-300 leading-relaxed font-normal">
+            <p class="lang-en body-text text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
               Executing moodboards, environment keyframes, and character turnarounds for indie and mid-size studio clients across hard-surface sci-fi and fantasy genres.
             </p>
-            <p class="lang-fr body-text text-xs sm:text-sm text-neutral-300 leading-relaxed font-normal">
+            <p class="lang-fr body-text text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
               Réalisation de moodboards, keyframes d'environnement et turnarounds de personnages pour des studios indépendants et AA, couvrant les genres hard-surface sci-fi et fantasy.
             </p>
           </div>
 
           <!-- Experience Card 2: Little Guy Games -->
-          <div class="inner-card role-gap relative bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 sm:p-5 space-y-3 transition-colors">
+          <div class="inner-card role-gap relative bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-5 space-y-3 transition-colors">
             <div class="timeline-dot"></div>
-            <div class="flex flex-wrap items-start justify-between gap-2 border-b border-[#2e323d] pb-2.5">
+            <div class="flex flex-wrap items-start justify-between gap-2 border-b border-slate-200 pb-2.5">
               <div>
-                <h4 class="role-title text-base font-bold text-white">Little Guy Games</h4>
-                <p class="meta-text text-xs text-amber-400 font-mono font-medium">
+                <h4 class="role-title text-base font-bold text-slate-900">Little Guy Games</h4>
+                <p class="meta-text text-xs text-amber-700 font-bold font-mono font-medium">
                   <span class="i18n" data-en="Lead Concept Artist" data-fr="Lead Concept Artist">Lead Concept Artist</span> 
-                  <span class="text-neutral-500">
+                  <span class="text-slate-400">
                     <span class="i18n" data-en="(Visual Development &amp; Production Pipeline)" data-fr="(Développement Visuel &amp; Pipeline de Production)">(Visual Development &amp; Production Pipeline)</span>
                   </span>
                 </p>
               </div>
-              <span class="job-tag date-pill px-2.5 py-1 rounded-md bg-[#222530] text-neutral-300 font-mono text-[10px] font-bold uppercase">
+              <span class="job-tag date-pill px-2.5 py-1 rounded-md bg-slate-100 border border-slate-300 text-slate-800 font-mono text-[10px] font-bold uppercase">
                 <span class="i18n" data-en="Nov 2021 – Aug 2025" data-fr="Nov 2021 – Août 2025">Nov 2021 – Aug 2025</span>
               </span>
             </div>
-            <div class="tags-wrapper flex flex-wrap items-center gap-1.5 text-[10px] font-mono text-neutral-400 pt-0.5">
-              <span class="text-amber-400 font-bold uppercase text-[11px]">
+            <div class="tags-wrapper flex flex-wrap items-center gap-1.5 text-[10px] font-mono text-slate-500 pt-0.5">
+              <span class="text-amber-700 font-bold uppercase text-[11px]">
                 <span class="i18n" data-en="SHIPPED PROJECTS:" data-fr="PROJETS PUBLIÉS :">SHIPPED PROJECTS:</span>
               </span>
-              <span class="skill-pill px-2 py-0.5 rounded bg-[#222530] text-neutral-200 font-semibold text-[11px]">Home Run Derby VR (Meta Quest)</span>
-              <span class="skill-pill px-2 py-0.5 rounded bg-[#222530] text-neutral-200 font-semibold text-[11px]">Wings of Wanitu</span>
+              <span class="skill-pill px-2 py-0.5 rounded bg-slate-100 border border-slate-300 text-slate-800 font-semibold text-[11px]">Home Run Derby VR (Meta Quest)</span>
+              <span class="skill-pill px-2 py-0.5 rounded bg-slate-100 border border-slate-300 text-slate-800 font-semibold text-[11px]">Wings of Wanitu</span>
             </div>
 
             <!-- English bullets -->
-            <ul class="lang-en bullet-list space-y-2 text-xs sm:text-sm text-neutral-300 leading-relaxed font-normal">
+            <ul class="lang-en bullet-list space-y-2 text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
               <li class="flex items-start gap-2.5">
-                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
-                <span>Led <strong class="text-white">visual development and art direction for 2 VR titles</strong>, establishing core visual language, moodboards, color scripts, and blue-sky concept art from brief to final IP.</span>
+                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                <span>Led <strong class="text-slate-900">visual development and art direction for 2 VR titles</strong>, establishing core visual language, moodboards, color scripts, and blue-sky concept art from brief to final IP.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
-                <span>Produced <strong class="text-amber-300">30+ production-ready character and environment assets</strong> with detailed orthographic views, material callouts, and functional breakdown notes for 3D teams.</span>
+                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                <span>Produced <strong class="text-amber-700 font-bold">30+ production-ready character and environment assets</strong> with detailed orthographic views, material callouts, and functional breakdown notes for 3D teams.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
-                <span>Accelerated 3D asset creation by executing <strong class="text-white">3D base blockouts in ZBrush and Blender</strong>, overpainting lighting and material responses for rapid 3D art team handoff.</span>
+                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                <span>Accelerated 3D asset creation by executing <strong class="text-slate-900">3D base blockouts in ZBrush and Blender</strong>, overpainting lighting and material responses for rapid 3D art team handoff.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
+                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
                 <span>Delivered hero key art, promotional illustrations, and marketing assets, maintaining art fidelity across internal pitch decks and public storefronts.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
-                <span>Conducted daily paintovers and art reviews with 3D modelers and tech artists, <strong class="text-white">resolving proportion, silhouette, and engine lighting discrepancies</strong> early in sprint.</span>
+                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                <span>Conducted daily paintovers and art reviews with 3D modelers and tech artists, <strong class="text-slate-900">resolving proportion, silhouette, and engine lighting discrepancies</strong> early in sprint.</span>
               </li>
             </ul>
 
             <!-- French bullets -->
-            <ul class="lang-fr bullet-list space-y-2 text-xs sm:text-sm text-neutral-300 leading-relaxed font-normal">
+            <ul class="lang-fr bullet-list space-y-2 text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
               <li class="flex items-start gap-2.5">
-                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
-                <span>Direction du <strong class="text-white">développement visuel et direction artistique pour 2 titres VR</strong>, définissant l'univers graphique, moodboards, color scripts et concept art blue-sky.</span>
+                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                <span>Direction du <strong class="text-slate-900">développement visuel et direction artistique pour 2 titres VR</strong>, définissant l'univers graphique, moodboards, color scripts et concept art blue-sky.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
-                <span>Production de <strong class="text-amber-300">30+ assets de personnages et d'environnements prêts pour la production</strong> avec vues orthographiques, callouts matières et notes techniques.</span>
+                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                <span>Production de <strong class="text-amber-700 font-bold">30+ assets de personnages et d'environnements prêts pour la production</strong> avec vues orthographiques, callouts matières et notes techniques.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
-                <span>Accélération du pipeline 3D via des <strong class="text-white">blockouts 3D sous ZBrush et Blender</strong> avec paintovers d'éclairage et de textures pour un transfert rapide aux équipes 3D.</span>
+                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                <span>Accélération du pipeline 3D via des <strong class="text-slate-900">blockouts 3D sous ZBrush et Blender</strong> avec paintovers d'éclairage et de textures pour un transfert rapide aux équipes 3D.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
+                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
                 <span>Création du hero key art, d'illustrations promotionnelles et d'assets marketing garantissant l'intégrité visuelle des pitchs internes aux stores publics.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
-                <span>Revues artistiques et paintovers quotidiens avec les modeleurs 3D et artistes techniques, <strong class="text-white">résolvant les écarts de proportions et d'éclairage moteur</strong> en amont des sprints.</span>
+                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                <span>Revues artistiques et paintovers quotidiens avec les modeleurs 3D et artistes techniques, <strong class="text-slate-900">résolvant les écarts de proportions et d'éclairage moteur</strong> en amont des sprints.</span>
               </li>
             </ul>
           </div>
@@ -911,71 +890,71 @@
 
       <!-- RIGHT COLUMN: PIPELINE & SKILLS -->
       <div class="grid-col-right lg:col-span-5 space-y-4">
-        <div class="section-header-row flex items-center justify-between border-b border-[#2e323d] pb-2.5">
-          <h3 class="section-title text-base sm:text-lg font-bold uppercase tracking-wider text-white">
+        <div class="section-header-row flex items-center justify-between border-b border-slate-200 pb-2.5">
+          <h3 class="section-title text-base sm:text-lg font-bold uppercase tracking-wider text-slate-900">
             <span class="i18n" data-en="Pipeline &amp; Skills" data-fr="Pipeline &amp; Compétences">Pipeline &amp; Skills</span>
           </h3>
-          <span class="sub-label text-[10px] font-mono text-neutral-500 uppercase tracking-widest"><span class="i18n" data-en="// TOOLSET" data-fr="// OUTILS">// TOOLSET</span></span>
+          <span class="sub-label text-[10px] font-mono text-slate-400 uppercase tracking-widest"><span class="i18n" data-en="// TOOLSET" data-fr="// OUTILS">// TOOLSET</span></span>
         </div>
 
         <!-- Skill Block 1: 2D VisDev -->
-        <div class="inner-card bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 sm:p-5 space-y-2.5">
-          <h4 class="role-title text-xs font-mono font-bold uppercase tracking-wider text-amber-400">
+        <div class="inner-card bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-5 space-y-2.5">
+          <h4 class="role-title text-xs font-mono font-bold uppercase tracking-wider text-amber-700 font-bold">
             <span class="i18n" data-en="2D Visual Development" data-fr="Développement Visuel 2D">2D Visual Development</span>
           </h4>
           <div class="tags-wrapper flex flex-wrap gap-2">
-            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium">Worldbuilding</span>
-            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium"><span class="i18n" data-en="Silhouette Exploration" data-fr="Exploration de Silhouettes">Silhouette Exploration</span></span>
-            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium"><span class="i18n" data-en="Value Studies" data-fr="Études de Valeurs">Value Studies</span></span>
-            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium">Color Scripts</span>
-            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium"><span class="i18n" data-en="Keyart Illustration" data-fr="Illustration Keyart">Keyart Illustration</span></span>
-            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium"><span class="i18n" data-en="Orthographic Turnarounds" data-fr="Turnarounds Orthographiques">Orthographic Turnarounds</span></span>
-            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium"><span class="i18n" data-en="Callout Sheets" data-fr="Fiches Techniques">Callout Sheets</span></span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs text-slate-700 font-medium">Worldbuilding</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs text-slate-700 font-medium"><span class="i18n" data-en="Silhouette Exploration" data-fr="Exploration de Silhouettes">Silhouette Exploration</span></span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs text-slate-700 font-medium"><span class="i18n" data-en="Value Studies" data-fr="Études de Valeurs">Value Studies</span></span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs text-slate-700 font-medium">Color Scripts</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs text-slate-700 font-medium"><span class="i18n" data-en="Keyart Illustration" data-fr="Illustration Keyart">Keyart Illustration</span></span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs text-slate-700 font-medium"><span class="i18n" data-en="Orthographic Turnarounds" data-fr="Turnarounds Orthographiques">Orthographic Turnarounds</span></span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs text-slate-700 font-medium"><span class="i18n" data-en="Callout Sheets" data-fr="Fiches Techniques">Callout Sheets</span></span>
           </div>
         </div>
 
         <!-- Skill Block 2: 3D Concept & Pipeline -->
-        <div class="inner-card role-gap bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 sm:p-5 space-y-2.5">
-          <h4 class="role-title text-xs font-mono font-bold uppercase tracking-wider text-amber-400">
+        <div class="inner-card role-gap bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-5 space-y-2.5">
+          <h4 class="role-title text-xs font-mono font-bold uppercase tracking-wider text-amber-700 font-bold">
             <span class="i18n" data-en="3D Concept &amp; Pipeline" data-fr="Concept 3D &amp; Pipeline">3D Concept &amp; Pipeline</span>
           </h4>
           <div class="tags-wrapper flex flex-wrap gap-2">
-            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium"><span class="i18n" data-en="3D Blockouts" data-fr="Blockouts 3D">3D Blockouts</span></span>
-            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium"><span class="i18n" data-en="Digital Sculpting" data-fr="Sculpture Numérique">Digital Sculpting</span></span>
-            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium"><span class="i18n" data-en="PBR Texturing" data-fr="Texturage PBR">PBR Texturing</span></span>
-            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium"><span class="i18n" data-en="Engine Staging" data-fr="Mise en Scène Moteur">Engine Staging</span></span>
-            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium">Paintovers</span>
-            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium"><span class="i18n" data-en="Material Callouts" data-fr="Callouts de Matériaux">Material Callouts</span></span>
-            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium"><span class="i18n" data-en="3D Modeler Handoff" data-fr="Transfert Modeleur 3D">3D Modeler Handoff</span></span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs text-slate-700 font-medium"><span class="i18n" data-en="3D Blockouts" data-fr="Blockouts 3D">3D Blockouts</span></span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs text-slate-700 font-medium"><span class="i18n" data-en="Digital Sculpting" data-fr="Sculpture Numérique">Digital Sculpting</span></span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs text-slate-700 font-medium"><span class="i18n" data-en="PBR Texturing" data-fr="Texturage PBR">PBR Texturing</span></span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs text-slate-700 font-medium"><span class="i18n" data-en="Engine Staging" data-fr="Mise en Scène Moteur">Engine Staging</span></span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs text-slate-700 font-medium">Paintovers</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs text-slate-700 font-medium"><span class="i18n" data-en="Material Callouts" data-fr="Callouts de Matériaux">Material Callouts</span></span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs text-slate-700 font-medium"><span class="i18n" data-en="3D Modeler Handoff" data-fr="Transfert Modeleur 3D">3D Modeler Handoff</span></span>
           </div>
         </div>
 
         <!-- Skill Block 3: Artistic Styles -->
-        <div class="inner-card role-gap bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 sm:p-5 space-y-2.5">
-          <h4 class="role-title text-xs font-mono font-bold uppercase tracking-wider text-amber-400">
+        <div class="inner-card role-gap bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-5 space-y-2.5">
+          <h4 class="role-title text-xs font-mono font-bold uppercase tracking-wider text-amber-700 font-bold">
             <span class="i18n" data-en="Artistic Styles" data-fr="Styles Artistiques">Artistic Styles</span>
           </h4>
           <div class="tags-wrapper flex flex-wrap gap-2">
-            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium"><span class="i18n" data-en="Hard-Surface Sci-Fi" data-fr="Sci-Fi Hard-Surface">Hard-Surface Sci-Fi</span></span>
-            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium"><span class="i18n" data-en="Stylized Fantasy" data-fr="Fantasy Stylisée">Stylized Fantasy</span></span>
-            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium"><span class="i18n" data-en="PBR Realism" data-fr="Réalisme PBR">PBR Realism</span></span>
-            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs text-neutral-200 font-medium">World-Building</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs text-slate-700 font-medium"><span class="i18n" data-en="Hard-Surface Sci-Fi" data-fr="Sci-Fi Hard-Surface">Hard-Surface Sci-Fi</span></span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs text-slate-700 font-medium"><span class="i18n" data-en="Stylized Fantasy" data-fr="Fantasy Stylisée">Stylized Fantasy</span></span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs text-slate-700 font-medium"><span class="i18n" data-en="PBR Realism" data-fr="Réalisme PBR">PBR Realism</span></span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs text-slate-700 font-medium">World-Building</span>
           </div>
         </div>
 
         <!-- Skill Block 4: Software & Tech -->
-        <div class="inner-card role-gap bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 sm:p-5 space-y-2.5">
-          <h4 class="role-title text-xs font-mono font-bold uppercase tracking-wider text-amber-400">
+        <div class="inner-card role-gap bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-5 space-y-2.5">
+          <h4 class="role-title text-xs font-mono font-bold uppercase tracking-wider text-amber-700 font-bold">
             <span class="i18n" data-en="Software &amp; Tech" data-fr="Logiciels &amp; Tech">Software &amp; Tech</span>
           </h4>
           <div class="tags-wrapper flex flex-wrap gap-2">
-            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs font-mono text-neutral-200">Photoshop</span>
-            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs font-mono text-neutral-200">ZBrush</span>
-            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs font-mono text-neutral-200">Blender</span>
-            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs font-mono text-neutral-200">Substance 3D Painter</span>
-            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs font-mono text-neutral-200">Unreal Engine 5</span>
-            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs font-mono text-neutral-200">Figma</span>
-            <span class="skill-pill px-2.5 py-1 rounded-full bg-[#222530] text-xs font-mono text-neutral-200">Git / GitHub</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs font-mono text-slate-700">Photoshop</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs font-mono text-slate-700">ZBrush</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs font-mono text-slate-700">Blender</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs font-mono text-slate-700">Substance 3D Painter</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs font-mono text-slate-700">Unreal Engine 5</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs font-mono text-slate-700">Figma</span>
+            <span class="skill-pill px-2.5 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs font-mono text-slate-700">Git / GitHub</span>
           </div>
         </div>
 
@@ -989,15 +968,15 @@
   <section class="resume-page-card resume-page-2 bg-white border border-slate-300 rounded-3xl p-6 sm:p-10 shadow-2xl space-y-6">
     
     <!-- PAGE 2 TOP HEADER BAR -->
-    <div class="page2-header-bar flex items-center justify-between pb-3.5 border-b border-[#2e323d]">
+    <div class="page2-header-bar flex items-center justify-between pb-3.5 border-b border-slate-200">
       <div class="flex items-center gap-3">
-        <span class="page2-title text-sm font-bold tracking-wide uppercase text-white font-display">Guillaume Goder</span>
-        <span class="text-xs text-neutral-500">•</span>
-        <span class="text-xs text-neutral-400 font-medium">
+        <span class="page2-title text-sm font-bold tracking-wide uppercase text-slate-900 font-display">Guillaume Goder</span>
+        <span class="text-xs text-slate-400">•</span>
+        <span class="text-xs text-slate-500 font-medium">
           <span class="i18n" data-en="Concept Artist &amp; Visual Development Lead" data-fr="Artiste Conceptuel &amp; Lead Développement Visuel">Concept Artist &amp; Visual Development Lead</span>
         </span>
       </div>
-      <span class="page2-badge text-[11px] font-mono font-bold tracking-widest text-amber-400 uppercase">
+      <span class="page2-badge text-[11px] font-mono font-bold tracking-widest text-amber-700 font-bold uppercase">
         <span class="i18n" data-en="PAGE 2 // PRODUCTION RECORD &amp; CREDENTIALS" data-fr="PAGE 2 // PARCOURS PRODUCTION &amp; FORMATION">PAGE 2 // PRODUCTION RECORD &amp; CREDENTIALS</span>
       </span>
     </div>
@@ -1007,84 +986,84 @@
       
       <!-- LEFT COLUMN: EXPERIENCE CONTINUED (COSMIC GAMES & TELUS DIGITAL) -->
       <div class="grid-col-left lg:col-span-7 space-y-4">
-        <div class="section-header-row flex items-center justify-between border-b border-[#2e323d] pb-2.5">
-          <h3 class="section-title text-base sm:text-lg font-bold uppercase tracking-wider text-white">
+        <div class="section-header-row flex items-center justify-between border-b border-slate-200 pb-2.5">
+          <h3 class="section-title text-base sm:text-lg font-bold uppercase tracking-wider text-slate-900">
             <span class="i18n" data-en="Experience Continued" data-fr="Expérience (Suite)">Experience Continued</span>
           </h3>
-          <span class="sub-label text-[10px] font-mono text-neutral-500 uppercase tracking-widest"><span class="i18n" data-en="// STUDIO &amp; PRODUCTION RECORD" data-fr="// PARCOURS STUDIO &amp; PRODUCTION">// STUDIO &amp; PRODUCTION RECORD</span></span>
+          <span class="sub-label text-[10px] font-mono text-slate-400 uppercase tracking-widest"><span class="i18n" data-en="// STUDIO &amp; PRODUCTION RECORD" data-fr="// PARCOURS STUDIO &amp; PRODUCTION">// STUDIO &amp; PRODUCTION RECORD</span></span>
         </div>
 
         <div class="relative space-y-4 timeline-container">
           <div class="timeline-line"></div>
 
           <!-- Experience Card 3: Cosmic Games Studio -->
-          <div class="inner-card relative bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 sm:p-5 space-y-3 transition-colors">
+          <div class="inner-card relative bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-5 space-y-3 transition-colors">
             <div class="timeline-dot"></div>
-            <div class="flex flex-wrap items-start justify-between gap-2 border-b border-[#2e323d] pb-2.5">
+            <div class="flex flex-wrap items-start justify-between gap-2 border-b border-slate-200 pb-2.5">
               <div>
-                <h4 class="role-title text-base font-bold text-white">Cosmic Games Studio</h4>
-                <p class="meta-text text-xs text-amber-400 font-mono font-medium"><span class="i18n" data-en="Lead Concept Artist" data-fr="Lead Concept Artist">Lead Concept Artist</span></p>
+                <h4 class="role-title text-base font-bold text-slate-900">Cosmic Games Studio</h4>
+                <p class="meta-text text-xs text-amber-700 font-bold font-mono font-medium"><span class="i18n" data-en="Lead Concept Artist" data-fr="Lead Concept Artist">Lead Concept Artist</span></p>
               </div>
-              <span class="job-tag date-pill px-2.5 py-1 rounded-md bg-[#222530] text-neutral-300 font-mono text-[10px] font-bold uppercase">
+              <span class="job-tag date-pill px-2.5 py-1 rounded-md bg-slate-100 border border-slate-300 text-slate-800 font-mono text-[10px] font-bold uppercase">
                 <span class="i18n" data-en="Oct 2019 – Nov 2020" data-fr="Oct 2019 – Nov 2020">Oct 2019 – Nov 2020</span>
               </span>
             </div>
-            <div class="tags-wrapper flex flex-wrap items-center gap-1.5 text-[10px] font-mono text-neutral-400 pt-0.5">
-              <span class="text-amber-400 font-bold uppercase text-[11px]"><span class="i18n" data-en="PROJECT:" data-fr="PROJET :">PROJECT:</span></span>
-              <span class="skill-pill px-2 py-0.5 rounded bg-[#222530] text-neutral-200 font-semibold text-[11px]"><span class="i18n" data-en="STARQUEST (Stylized Sci-Fi RPG)" data-fr="STARQUEST (RPG Sci-Fi Stylisé)">STARQUEST (Stylized Sci-Fi RPG)</span></span>
+            <div class="tags-wrapper flex flex-wrap items-center gap-1.5 text-[10px] font-mono text-slate-500 pt-0.5">
+              <span class="text-amber-700 font-bold uppercase text-[11px]"><span class="i18n" data-en="PROJECT:" data-fr="PROJET :">PROJECT:</span></span>
+              <span class="skill-pill px-2 py-0.5 rounded bg-slate-100 border border-slate-300 text-slate-800 font-semibold text-[11px]"><span class="i18n" data-en="STARQUEST (Stylized Sci-Fi RPG)" data-fr="STARQUEST (RPG Sci-Fi Stylisé)">STARQUEST (Stylized Sci-Fi RPG)</span></span>
             </div>
 
             <!-- English bullets -->
-            <ul class="lang-en bullet-list space-y-2 text-xs sm:text-sm text-neutral-300 leading-relaxed font-normal">
+            <ul class="lang-en bullet-list space-y-2 text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
               <li class="flex items-start gap-2.5">
-                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
-                <span>Spearheaded <strong class="text-white">visual world-building for Starquest's sci-fi universe</strong>, creating atmospheric environment paintings, thumbnail explorations, and keyframes.</span>
+                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                <span>Spearheaded <strong class="text-slate-900">visual world-building for Starquest's sci-fi universe</strong>, creating atmospheric environment paintings, thumbnail explorations, and keyframes.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
+                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
                 <span>Designed hero and NPC characters from initial silhouette thumbnails to final render sheets, delivering expression guides and orthographic turnarounds.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
-                <span>Engine-integrated 2D/3D environment assets using <strong class="text-white">PBR workflows</strong>, setting up material responses and scene staging in <strong class="text-amber-300">Unreal Engine 5</strong>.</span>
+                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                <span>Engine-integrated 2D/3D environment assets using <strong class="text-slate-900">PBR workflows</strong>, setting up material responses and scene staging in <strong class="text-amber-700 font-bold">Unreal Engine 5</strong>.</span>
               </li>
             </ul>
 
             <!-- French bullets -->
-            <ul class="lang-fr bullet-list space-y-2 text-xs sm:text-sm text-neutral-300 leading-relaxed font-normal">
+            <ul class="lang-fr bullet-list space-y-2 text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
               <li class="flex items-start gap-2.5">
-                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
-                <span>Direction du <strong class="text-white">world-building visuel pour l'univers sci-fi de Starquest</strong>, produisant des peintures d'environnement immersives, vignettes et keyframes.</span>
+                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                <span>Direction du <strong class="text-slate-900">world-building visuel pour l'univers sci-fi de Starquest</strong>, produisant des peintures d'environnement immersives, vignettes et keyframes.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
+                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
                 <span>Conception des personnages principaux et PNJ des premières silhouettes aux planches de rendu finales, avec guides d'expression et turnarounds orthographiques.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0"></span>
-                <span>Intégration moteur des assets 2D/3D via des <strong class="text-white">workflows PBR</strong>, configuration des matériaux et mise en scène sous <strong class="text-amber-300">Unreal Engine 5</strong>.</span>
+                <span class="bullet-dot w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0"></span>
+                <span>Intégration moteur des assets 2D/3D via des <strong class="text-slate-900">workflows PBR</strong>, configuration des matériaux et mise en scène sous <strong class="text-amber-700 font-bold">Unreal Engine 5</strong>.</span>
               </li>
             </ul>
           </div>
 
           <!-- Experience Card 4: Telus Digital -->
-          <div class="inner-card role-gap relative bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 sm:p-5 space-y-2.5 transition-colors">
+          <div class="inner-card role-gap relative bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-5 space-y-2.5 transition-colors">
             <div class="timeline-dot"></div>
-            <div class="flex flex-wrap items-start justify-between gap-2 border-b border-[#2e323d] pb-2.5">
+            <div class="flex flex-wrap items-start justify-between gap-2 border-b border-slate-200 pb-2.5">
               <div>
-                <h4 class="role-title text-base font-bold text-white">Telus Digital</h4>
-                <p class="meta-text text-xs text-amber-400 font-mono font-medium">
+                <h4 class="role-title text-base font-bold text-slate-900">Telus Digital</h4>
+                <p class="meta-text text-xs text-amber-700 font-bold font-mono font-medium">
                   <span class="i18n" data-en="Visual Designer &amp; Illustrator" data-fr="Designer Visuel &amp; Illustrateur">Visual Designer &amp; Illustrator</span>
                 </p>
               </div>
-              <span class="job-tag date-pill px-2.5 py-1 rounded-md bg-[#222530] text-neutral-300 font-mono text-[10px] font-bold uppercase">
+              <span class="job-tag date-pill px-2.5 py-1 rounded-md bg-slate-100 border border-slate-300 text-slate-800 font-mono text-[10px] font-bold uppercase">
                 <span class="i18n" data-en="Jan 2019 – Apr 2019" data-fr="Jan 2019 – Avr 2019">Jan 2019 – Apr 2019</span>
               </span>
             </div>
-            <p class="lang-en body-text text-xs sm:text-sm text-neutral-300 leading-relaxed font-normal">
+            <p class="lang-en body-text text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
               Produced high-impact promotional illustrations and brand visual assets, adhering to strict composition, color harmony, and delivery deadlines.
             </p>
-            <p class="lang-fr body-text text-xs sm:text-sm text-neutral-300 leading-relaxed font-normal">
+            <p class="lang-fr body-text text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
               Création d'illustrations promotionnelles à fort impact et d'assets visuels de marque, respectant les normes de composition, d'harmonie des couleurs et de délais serrés.
             </p>
           </div>
@@ -1093,72 +1072,72 @@
 
       <!-- RIGHT COLUMN: EDUCATION & CREDENTIALS -->
       <div class="grid-col-right lg:col-span-5 space-y-4">
-        <div class="section-header-row flex items-center justify-between border-b border-[#2e323d] pb-2.5">
-          <h3 class="section-title text-base sm:text-lg font-bold uppercase tracking-wider text-white">
+        <div class="section-header-row flex items-center justify-between border-b border-slate-200 pb-2.5">
+          <h3 class="section-title text-base sm:text-lg font-bold uppercase tracking-wider text-slate-900">
             <span class="i18n" data-en="Education &amp; Credentials" data-fr="Éducation &amp; Certifications">Education &amp; Credentials</span>
           </h3>
-          <span class="sub-label text-[10px] font-mono text-neutral-500 uppercase tracking-widest"><span class="i18n" data-en="// ACCREDITATION" data-fr="// ACCRÉDITATION">// ACCREDITATION</span></span>
+          <span class="sub-label text-[10px] font-mono text-slate-400 uppercase tracking-widest"><span class="i18n" data-en="// ACCREDITATION" data-fr="// ACCRÉDITATION">// ACCREDITATION</span></span>
         </div>
 
         <div class="space-y-3.5">
           <!-- Academic Degree -->
-          <div class="inner-card bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 flex items-center justify-between gap-3">
+          <div class="inner-card bg-slate-50 border border-slate-200 rounded-2xl p-4 flex items-center justify-between gap-3">
             <div>
-              <p class="text-[10px] font-mono text-amber-400 uppercase font-bold tracking-wider">
+              <p class="text-[10px] font-mono text-amber-700 font-bold uppercase font-bold tracking-wider">
                 <span class="i18n" data-en="ACADEMIC DEGREE" data-fr="DIPLÔME ACADÉMIQUE">ACADEMIC DEGREE</span>
               </p>
-              <h4 class="role-title text-sm font-bold text-white">
+              <h4 class="role-title text-sm font-bold text-slate-900">
                 <span class="i18n" data-en="Bachelor of Design in Illustration" data-fr="Baccalauréat en Design en Illustration">Bachelor of Design in Illustration</span>
               </h4>
-              <p class="meta-text text-xs text-neutral-400 font-mono">
+              <p class="meta-text text-xs text-slate-500 font-mono">
                 <span class="i18n" data-en="OCAD University" data-fr="Université OCAD">OCAD University</span>
               </p>
             </div>
-            <span class="meta-text text-xs font-mono text-neutral-500 font-medium shrink-0">2015 – 2020</span>
+            <span class="meta-text text-xs font-mono text-slate-400 font-medium shrink-0">2015 – 2020</span>
           </div>
 
           <!-- Cert 1: Google UX -->
-          <div class="inner-card role-gap bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 flex items-center justify-between gap-3">
+          <div class="inner-card role-gap bg-slate-50 border border-slate-200 rounded-2xl p-4 flex items-center justify-between gap-3">
             <div>
-              <p class="text-[10px] font-mono text-amber-400 uppercase font-bold tracking-wider">
+              <p class="text-[10px] font-mono text-amber-700 font-bold uppercase font-bold tracking-wider">
                 <span class="i18n" data-en="INDUSTRY CERTIFICATION" data-fr="CERTIFICATION INDUSTRIE">INDUSTRY CERTIFICATION</span>
               </p>
-              <h4 class="role-title text-sm font-bold text-white">
+              <h4 class="role-title text-sm font-bold text-slate-900">
                 <span class="i18n" data-en="Google UX Design Professional Certificate" data-fr="Certificat Professionnel Google UX Design">Google UX Design Professional Certificate</span>
               </h4>
-              <p class="meta-text text-xs text-neutral-400 font-mono">Google / Coursera</p>
+              <p class="meta-text text-xs text-slate-500 font-mono">Google / Coursera</p>
             </div>
-            <span class="meta-text text-xs font-mono text-neutral-500 font-medium shrink-0">2025</span>
+            <span class="meta-text text-xs font-mono text-slate-400 font-medium shrink-0">2025</span>
           </div>
 
           <!-- Cert 2: Epic Games UX -->
-          <div class="inner-card role-gap bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 flex items-center justify-between gap-3">
+          <div class="inner-card role-gap bg-slate-50 border border-slate-200 rounded-2xl p-4 flex items-center justify-between gap-3">
             <div>
-              <p class="text-[10px] font-mono text-amber-400 uppercase font-bold tracking-wider">
+              <p class="text-[10px] font-mono text-amber-700 font-bold uppercase font-bold tracking-wider">
                 <span class="i18n" data-en="INDUSTRY CERTIFICATION" data-fr="CERTIFICATION INDUSTRIE">INDUSTRY CERTIFICATION</span>
               </p>
-              <h4 class="role-title text-sm font-bold text-white">
+              <h4 class="role-title text-sm font-bold text-slate-900">
                 <span class="i18n" data-en="User Experience in Game Design" data-fr="Expérience Utilisateur en Game Design (UX)">User Experience in Game Design</span>
               </h4>
-              <p class="meta-text text-xs text-neutral-400 font-mono">Epic Games / Coursera</p>
+              <p class="meta-text text-xs text-slate-500 font-mono">Epic Games / Coursera</p>
             </div>
-            <span class="meta-text text-xs font-mono text-neutral-500 font-medium shrink-0">
+            <span class="meta-text text-xs font-mono text-slate-400 font-medium shrink-0">
               <span class="i18n" data-en="May 2023" data-fr="Mai 2023">May 2023</span>
             </span>
           </div>
 
           <!-- Cert 3: Epic Games UI -->
-          <div class="inner-card role-gap bg-[#181a20] border border-[#2e323d] rounded-2xl p-4 flex items-center justify-between gap-3">
+          <div class="inner-card role-gap bg-slate-50 border border-slate-200 rounded-2xl p-4 flex items-center justify-between gap-3">
             <div>
-              <p class="text-[10px] font-mono text-amber-400 uppercase font-bold tracking-wider">
+              <p class="text-[10px] font-mono text-amber-700 font-bold uppercase font-bold tracking-wider">
                 <span class="i18n" data-en="INDUSTRY CERTIFICATION" data-fr="CERTIFICATION INDUSTRIE">INDUSTRY CERTIFICATION</span>
               </p>
-              <h4 class="role-title text-sm font-bold text-white">
+              <h4 class="role-title text-sm font-bold text-slate-900">
                 <span class="i18n" data-en="User Interface in Game Design" data-fr="Interface Utilisateur en Game Design (UI)">User Interface in Game Design</span>
               </h4>
-              <p class="meta-text text-xs text-neutral-400 font-mono">Epic Games / Coursera</p>
+              <p class="meta-text text-xs text-slate-500 font-mono">Epic Games / Coursera</p>
             </div>
-            <span class="meta-text text-xs font-mono text-neutral-500 font-medium shrink-0">
+            <span class="meta-text text-xs font-mono text-slate-400 font-medium shrink-0">
               <span class="i18n" data-en="May 2023" data-fr="Mai 2023">May 2023</span>
             </span>
           </div>
