@@ -67,9 +67,9 @@
     justify-content: center;
     gap: 0.5rem;
     padding: 0.85rem 1.75rem;
-    background-color: #ffffff !important;
-    color: #0a0a0a !important;
-    border: 1px solid #ffffff !important;
+    background-color: #141620 !important;
+    color: #a1a1aa !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
     border-radius: 16px;
     font-family: inherit;
     font-weight: 700;
@@ -77,43 +77,48 @@
     letter-spacing: 0.18em;
     text-transform: uppercase;
     text-decoration: none !important;
-    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
     box-shadow: none !important;
     cursor: pointer;
     white-space: nowrap;
+    transform: none !important;
   }
   .project-link-btn:hover {
-    background-color: #e5e5e5 !important;
-    border-color: #e5e5e5 !important;
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
     color: #0a0a0a !important;
-    transform: scale(1.02);
+    transform: none !important;
     box-shadow: none !important;
   }
   .project-link-btn .btn-arrow {
     display: inline-block;
-    transition: transform 0.3s ease;
-    color: #0a0a0a;
+    color: #a1a1aa;
     opacity: 1;
-    transform: none;
+    transform: none !important;
     max-width: none;
+    transition: color 0.25s ease;
   }
   .project-link-btn:hover .btn-arrow {
-    transform: translateX(4px);
+    color: #0a0a0a;
+    transform: none !important;
   }
   html.light .project-link-btn {
-    background-color: #ffffff !important;
-    color: #0a0a0a !important;
-    border-color: #d4d4d8 !important;
+    background-color: #f4f4f5 !important;
+    color: #71717a !important;
+    border: 1px solid #e4e4e7 !important;
     box-shadow: none !important;
   }
   html.light .project-link-btn:hover {
-    background-color: #f4f4f5 !important;
-    border-color: #a1a1aa !important;
+    background-color: #ffffff !important;
+    border-color: #18181b !important;
     color: #0a0a0a !important;
-    transform: scale(1.02);
+    transform: none !important;
     box-shadow: none !important;
   }
   html.light .project-link-btn .btn-arrow {
+    color: #71717a;
+  }
+  html.light .project-link-btn:hover .btn-arrow {
     color: #0a0a0a;
   }
 </style>
@@ -261,7 +266,7 @@
     </div>
     <div class="mt-6 flex justify-end">
       <a href="tide-hollow.html" class="project-link-btn">
-        <span class="i18n" data-en="Learn more about" data-fr="En savoir plus sur">Learn more about</span>
+        <span class="i18n" data-en="Learn more about my process for this project" data-fr="En savoir plus sur ma démarche pour ce projet">Learn more about my process for this project</span>
         <svg class="btn-arrow w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
@@ -292,7 +297,7 @@
     </div>
     <div class="mt-6 flex justify-end">
       <a href="outpost-red.html" class="project-link-btn">
-        <span class="i18n" data-en="Learn more about" data-fr="En savoir plus sur">Learn more about</span>
+        <span class="i18n" data-en="Learn more about my process for this project" data-fr="En savoir plus sur ma démarche pour ce projet">Learn more about my process for this project</span>
         <svg class="btn-arrow w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
@@ -350,7 +355,7 @@
     </div>
     <div class="mt-6 flex justify-end">
       <a href="wings-of-wanitu.html" class="project-link-btn">
-        <span class="i18n" data-en="Learn more about" data-fr="En savoir plus sur">Learn more about</span>
+        <span class="i18n" data-en="Learn more about my process for this project" data-fr="En savoir plus sur ma démarche pour ce projet">Learn more about my process for this project</span>
         <svg class="btn-arrow w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
@@ -399,7 +404,7 @@
     </div>
     <div class="mt-6 flex justify-end">
       <a href="home-run-derby-vr.html" class="project-link-btn">
-        <span class="i18n" data-en="Learn more about" data-fr="En savoir plus sur">Learn more about</span>
+        <span class="i18n" data-en="Learn more about my process for this project" data-fr="En savoir plus sur ma démarche pour ce projet">Learn more about my process for this project</span>
         <svg class="btn-arrow w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
@@ -487,7 +492,7 @@
     </div>
     <div class="mt-6 flex justify-end">
       <a href="starquest.html" class="project-link-btn">
-        <span class="i18n" data-en="Learn more about" data-fr="En savoir plus sur">Learn more about</span>
+        <span class="i18n" data-en="Learn more about my process for this project" data-fr="En savoir plus sur ma démarche pour ce projet">Learn more about my process for this project</span>
         <svg class="btn-arrow w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
@@ -524,7 +529,7 @@
     </div>
     <div class="mt-6 flex justify-end">
       <a href="diverse-creative-studies.html" class="project-link-btn">
-        <span class="i18n" data-en="Learn more about" data-fr="En savoir plus sur">Learn more about</span>
+        <span class="i18n" data-en="Learn more about my process for this project" data-fr="En savoir plus sur ma démarche pour ce projet">Learn more about my process for this project</span>
         <svg class="btn-arrow w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
