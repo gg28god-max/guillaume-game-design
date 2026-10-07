@@ -60,6 +60,51 @@
   .gallery-card:hover img {
     transform: scale(1.025);
   }
+
+  .project-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.25rem;
+    background: #141620;
+    color: #f3f4f6;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  }
+  .project-link-btn:hover {
+    background: #1a1d2b;
+    border-color: rgba(252, 211, 77, 0.5);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.6), 0 0 16px rgba(252, 211, 77, 0.15);
+  }
+  .project-link-btn .btn-arrow {
+    transition: transform 0.3s ease;
+    color: #fcd34d;
+  }
+  .project-link-btn:hover .btn-arrow {
+    transform: translateX(3px);
+  }
+  html.light .project-link-btn {
+    background: #ffffff;
+    color: #111827;
+    border-color: #e5e5e7;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+  html.light .project-link-btn:hover {
+    background: #fafafa;
+    border-color: #d97706;
+    color: #000000;
+  }
+  html.light .project-link-btn .btn-arrow {
+    color: #d97706;
+  }
 </style>
 <link href="assets/theme.css" rel="stylesheet"/><script defer="" src="assets/site.js"></script>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
@@ -203,6 +248,12 @@
         <img alt="Tide Hollow — Water World Concept Art" loading="lazy" src="Tide%20Hollow/thumbnail-Tide%20Hollow.webp"/>
       </div>
     </div>
+    <div class="mt-6 flex justify-end">
+      <a href="tide-hollow.html" class="project-link-btn">
+        <span class="i18n" data-en="View Project" data-fr="Voir le projet">View Project</span>
+        <svg class="btn-arrow w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
   </section>
 
   <!-- 2. OUTPOST RED -->
@@ -227,6 +278,12 @@
       <div class="gallery-card overflow-hidden">
         <img alt="Outpost Red — Contaminated Crew Member Character Design" loading="lazy" src="Outpost%20Red/VEHICLE%2BDESIGN%20%283%29.jpg"/>
       </div>
+    </div>
+    <div class="mt-6 flex justify-end">
+      <a href="outpost-red.html" class="project-link-btn">
+        <span class="i18n" data-en="View Project" data-fr="Voir le projet">View Project</span>
+        <svg class="btn-arrow w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
   </section>
 
@@ -280,6 +337,12 @@
         <img alt="Wings of Icaria — Floating Islands Environment Illustration" loading="lazy" src="Wings%20of%20Wanitu/wings%2Billustration%2Bbackground%2B2.webp"/>
       </div>
     </div>
+    <div class="mt-6 flex justify-end">
+      <a href="wings-of-wanitu.html" class="project-link-btn">
+        <span class="i18n" data-en="View Project" data-fr="Voir le projet">View Project</span>
+        <svg class="btn-arrow w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
   </section>
 
   <!-- 4. HOMERUN DERBY VR -->
@@ -322,6 +385,12 @@
       <div class="gallery-card overflow-hidden">
         <img alt="Home Run Derby VR — Season 3 UI System" loading="lazy" src="Home%20Run%20Derby%20Vr/Season%2B3%2Bui.webp"/>
       </div>
+    </div>
+    <div class="mt-6 flex justify-end">
+      <a href="home-run-derby-vr.html" class="project-link-btn">
+        <span class="i18n" data-en="View Project" data-fr="Voir le projet">View Project</span>
+        <svg class="btn-arrow w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
   </section>
 
@@ -405,6 +474,12 @@
         <img alt="Starquest — Promotional Key Visual" loading="lazy" src="Starquest/thumbnail.webp"/>
       </div>
     </div>
+    <div class="mt-6 flex justify-end">
+      <a href="starquest.html" class="project-link-btn">
+        <span class="i18n" data-en="View Project" data-fr="Voir le projet">View Project</span>
+        <svg class="btn-arrow w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
   </section>
 
   <!-- 6. DIVERSE CREATIVE STUDIES -->
@@ -435,6 +510,12 @@
       <div class="gallery-card overflow-hidden">
         <img alt="Diverse Creative Studies — Kalta Creature Raptor Mount Study" loading="lazy" src="Diverse%20Creative%20Studies/dino%2Bcreature%2Bconcept%2Bart.webp"/>
       </div>
+    </div>
+    <div class="mt-6 flex justify-end">
+      <a href="diverse-creative-studies.html" class="project-link-btn">
+        <span class="i18n" data-en="View Project" data-fr="Voir le projet">View Project</span>
+        <svg class="btn-arrow w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
   </section>
 
