@@ -487,14 +487,9 @@
      ========================================================================== */
   function setupGalleryLightbox() {
     // Only run lightbox on project case studies, art galleries, and resume pages.
-    // Explicitly bypass index.html and pages with project navigation cards.
-    var path = (window.location.pathname || '').toLowerCase();
-    var isHome = path.endsWith('index.html') ||
-                 path === '' ||
-                 path === '/' ||
-                 path.endsWith('/') ||
-                 document.querySelector('.project-card') !== null;
-    if (isHome) return;
+    // Explicitly bypass pages with project navigation cards.
+    var isProjectIndex = document.querySelector('.project-card') !== null;
+    if (isProjectIndex) return;
 
     var galleryItems = [];
     var currentIndex = 0;
