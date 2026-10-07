@@ -4,8 +4,8 @@
 <head><script>(function(){try{var p=new URLSearchParams(window.location.search);var l=p.get('lang')||localStorage.getItem('lang')||'en';var t=p.get('theme')||localStorage.getItem('theme')||'dark';if(t==='light')document.documentElement.classList.add('light');document.documentElement.setAttribute('lang',l);document.documentElement.setAttribute('data-lang',l);}catch(e){}})();</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title data-en="Guillaume Goder — Concept Artist &amp; UI/UX Designer" data-fr="Guillaume Goder — Artiste conceptuel et designer UI/UX">Guillaume Goder — Concept Artist &amp; UI/UX Designer</title>
-<meta content="Portfolio of Guillaume Goder, Concept Artist and UI/UX Designer specializing in game UI, concept art, and immersive VR interfaces. Based in Montréal, Canada." data-en="Portfolio of Guillaume Goder, Concept Artist and UI/UX Designer specializing in game UI, concept art, and immersive VR interfaces. Based in Montréal, Canada." data-fr="Portfolio de Guillaume Goder, artiste conceptuel et designer UI/UX spécialisé en UI de jeu, art conceptuel et interfaces VR immersives. Basé à Montréal, Canada." name="description"/>
+<title data-en="Concept Art — Guillaume Goder" data-fr="Art Conceptuel — Guillaume Goder">Concept Art — Guillaume Goder</title>
+<meta content="Concept Art Portfolio by Guillaume Goder — environment, vehicle, mech, prop and creature design for games and entertainment." data-en="Concept Art Portfolio by Guillaume Goder — environment, vehicle, mech, prop and creature design for games and entertainment." data-fr="Portfolio d'Art Conceptuel par Guillaume Goder — environnements, véhicules, méchas, props et créatures pour le jeu vidéo." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Oswald:wght@500;600;700&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/>
@@ -24,114 +24,99 @@
   };
 </script>
 <style>
-    * { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
-    .font-mono { font-family: 'JetBrains Mono', monospace; }
-    .font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: #0a0a0a; }
-    ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
-    .project-card img { transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-    .project-card:hover img { transform: scale(1.05); }
-    .card-overlay { transition: background-color 0.35s ease; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.15) 50%, transparent 100%); }
-    .project-card:hover .card-overlay { background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.05) 100%); }
-    .card-meta { transition: transform 0.35s ease; }
-    .project-card:hover .card-meta { transform: translateY(-4px); }
-    .card-arrow { transition: transform 0.35s ease, opacity 0.35s ease; opacity: 0.55; transform: translateX(0); }
-    .project-card:hover .card-arrow { opacity: 1; transform: translateX(4px); }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-    .hero-text { animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both; }
-    .hero-sub { animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both; }
+  * { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+  .font-mono { font-family: 'JetBrains Mono', monospace; }
+  .font-display { font-family: 'Bebas Neue', 'Oswald', sans-serif; }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: #0a0a0a; }
+  ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
 
-    /* === WORD-BY-WORD LEFT-TO-RIGHT KINETIC DE-BLURRING === */
-    @keyframes wordKineticDeBlur {
-      0% {
-        opacity: 0;
-        filter: blur(12px);
-        transform: translate3d(-6px, 12px, 0) scale(0.95);
-      }
-      60% {
-        opacity: 0.85;
-        filter: blur(2px);
-      }
-      100% {
-        opacity: 1;
-        filter: blur(0px);
-        transform: translate3d(0, 0, 0) scale(1);
-      }
+  .gallery-card {
+    position: relative;
+    overflow: hidden;
+    background: #0d0f12;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+  }
+  @media (min-width: 768px) {
+    .gallery-card {
+      border-radius: 1.25rem;
     }
+  }
+  .gallery-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8);
+    border-color: rgba(251, 191, 36, 0.3);
+  }
+  .gallery-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: zoom-in;
+  }
+  .gallery-card:hover img {
+    transform: scale(1.025);
+  }
 
-    .word-reveal {
-      display: inline-block;
-      animation: wordKineticDeBlur 0.45s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-      will-change: filter, opacity, transform;
-    }
-
-    .hero-btn-kinetic {
-      animation: wordKineticDeBlur 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-      will-change: filter, opacity, transform;
-    }
-
-    /* Silky-Smooth Card Deck Overlap & Spring Fan-Out */
-    .project-card {
-      will-change: transform, opacity, filter, box-shadow;
-      transition: transform 1.35s cubic-bezier(0.19, 1, 0.22, 1),
-                  box-shadow 1.35s cubic-bezier(0.19, 1, 0.22, 1),
-                  filter 1.35s cubic-bezier(0.19, 1, 0.22, 1),
-                  opacity 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-    }
-
-    /* Stacked/Overlapping State */
-    .cards-deck-stacked .project-card {
-      transform: translate3d(var(--stack-x, 0px), var(--stack-y, 0px), 0px) rotate(var(--stack-rot, 0deg)) scale(var(--stack-scale, 0.88));
-      box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.1);
-      z-index: var(--stack-z, 1);
-      filter: brightness(var(--stack-bright, 1));
-      pointer-events: none;
-    }
-
-    /* ── Clip-Mask Text Reveal ── */
-    .clip-reveal {
-      overflow: hidden;
-      display: block;
-    }
-    .clip-reveal .clip-inner {
-      display: block;
-      transform: translateY(110%);
-      transition: transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: transform;
-    }
-    .clip-reveal.is-visible .clip-inner {
-      transform: translateY(0);
-    }
-    .clip-d1 .clip-inner { transition-delay: 0.08s; }
-    .clip-d2 .clip-inner { transition-delay: 0.18s; }
-    .clip-d3 .clip-inner { transition-delay: 0.28s; }
-    .clip-d4 .clip-inner { transition-delay: 0.38s; }
-
-    /* Scroll-reveal fade-up for below-the-fold */
-    .sr {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: opacity, transform;
-    }
-    .sr.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .clip-reveal .clip-inner {
-        transform: none !important;
-        transition: none !important;
-      }
-      .sr {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-    }
-  </style>
+  .project-link-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.75rem;
+    background-color: #ffffff !important;
+    color: #0a0a0a !important;
+    border: 1px solid #ffffff !important;
+    border-radius: 16px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    box-shadow: none !important;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .project-link-btn:hover {
+    background-color: #e5e5e5 !important;
+    border-color: #e5e5e5 !important;
+    color: #0a0a0a !important;
+    transform: scale(1.02);
+    box-shadow: none !important;
+  }
+  .project-link-btn .btn-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    color: #0a0a0a;
+    opacity: 1;
+    transform: none;
+    max-width: none;
+  }
+  .project-link-btn:hover .btn-arrow {
+    transform: translateX(4px);
+  }
+  html.light .project-link-btn {
+    background-color: #ffffff !important;
+    color: #0a0a0a !important;
+    border-color: #d4d4d8 !important;
+    box-shadow: none !important;
+  }
+  html.light .project-link-btn:hover {
+    background-color: #f4f4f5 !important;
+    border-color: #a1a1aa !important;
+    color: #0a0a0a !important;
+    transform: scale(1.02);
+    box-shadow: none !important;
+  }
+  html.light .project-link-btn .btn-arrow {
+    color: #0a0a0a;
+  }
+</style>
 <link href="assets/theme.css" rel="stylesheet"/><script defer="" src="assets/site.js"></script>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png"/>
@@ -140,16 +125,16 @@
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Guillaume Goder"/>
 <meta property="og:locale" content="en_CA"/>
-<meta property="og:title" content="Guillaume Goder — Concept Artist &amp; UI/UX Designer"/>
-<meta property="og:description" content="Portfolio of Guillaume Goder, Concept Artist and UI/UX Designer specializing in game UI, concept art, and immersive VR interfaces. Based in Montréal, Canada."/>
+<meta property="og:title" content="Concept Art — Guillaume Goder"/>
+<meta property="og:description" content="Concept Art Portfolio by Guillaume Goder — environment, vehicle, mech, prop and creature design for games and entertainment."/>
 <meta property="og:url" content="https://game.guillaumedesign.ca/"/>
 <meta property="og:image" content="https://game.guillaumedesign.ca/og-image.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:image:alt" content="Guillaume Goder — Concept Artist and UI/UX Designer"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Guillaume Goder — Concept Artist &amp; UI/UX Designer"/>
-<meta name="twitter:description" content="Portfolio of Guillaume Goder, Concept Artist and UI/UX Designer specializing in game UI, concept art, and immersive VR interfaces. Based in Montréal, Canada."/>
+<meta name="twitter:title" content="Concept Art — Guillaume Goder"/>
+<meta name="twitter:description" content="Concept Art Portfolio by Guillaume Goder — environment, vehicle, mech, prop and creature design for games and entertainment."/>
 <meta name="twitter:image" content="https://game.guillaumedesign.ca/og-image.png"/>
 </head>
 <body class="bg-[#0b0c0e] text-neutral-100 min-h-screen">
@@ -161,7 +146,7 @@
 </a>
 <div class="hidden xl:flex items-center gap-5">
 <div class="relative group">
-<a class="text-[11px] tracking-[0.15em] uppercase text-neutral-100 flex items-center gap-1" href="index.html">
+<a class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors flex items-center gap-1" href="index.html">
             <span class="i18n" data-en="Projects" data-fr="Projets">Projects</span> <svg class="w-3 h-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </a>
 <div class="absolute top-full left-0 mt-3 w-60 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-2xl dropdown-surface">
@@ -173,7 +158,7 @@
 <a class="flex items-center justify-between px-5 py-3 text-[11px] text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all" href="diverse-creative-studies.html"><span class="i18n" data-en="Diverse Creative Studies" data-fr="Diverse Creative Studies">Diverse Creative Studies</span> <span class="text-neutral-700"><span class="i18n" data-en="2020" data-fr="2020">2020</span></span></a>
 </div>
 </div>
-<a class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors" href="concept-art.html"><span class="i18n" data-en="Concept Art" data-fr="Art conceptuel">Concept Art</span></a>
+<a class="text-[11px] tracking-[0.15em] uppercase text-neutral-100 transition-colors" href="concept-art.html"><span class="i18n" data-en="Concept Art" data-fr="Art conceptuel">Concept Art</span></a>
 <a class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors" href="illustrations.html"><span class="i18n" data-en="Illustrations" data-fr="Illustrations">Illustrations</span></a>
 <a class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors" href="paintings.html"><span class="i18n" data-en="Paintings" data-fr="Peintures">Paintings</span></a>
 <a class="text-[11px] tracking-[0.15em] uppercase text-neutral-400 hover:text-neutral-100 transition-colors" href="about.html"><span class="i18n" data-en="About" data-fr="À propos">About</span></a>
@@ -235,127 +220,333 @@
   </div>
 </div>
 </nav>
-<!-- HERO -->
-<section class="pt-28 md:pt-32 pb-8 px-6 lg:px-8 max-w-7xl mx-auto">
-<div class="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-<div class="hero-text">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#12141a] border border-[#262a36] text-[10px] font-mono tracking-[0.2em] uppercase text-neutral-400 mb-5">
-  <span class="i18n" data-en="Guillaume Goder · Montréal, Canada" data-fr="Guillaume Goder · Montréal, Canada">Guillaume Goder · Montréal, Canada</span>
-</div>
-<h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-display tracking-tight text-neutral-100 leading-[1.08] word-animate-target" style="text-wrap:balance">
-  <span class="i18n" data-en="Concept Art &amp; Visual Development for Games." data-fr="Art conceptuel et développement visuel pour les jeux.">Concept Art &amp; Visual Development for Games.</span>
-</h1>
-<p class="hero-sub text-neutral-400 text-sm sm:text-base leading-relaxed font-normal mt-5 max-w-2xl word-animate-target">
-  <span class="i18n" data-en="Character, creature, vehicle, and environment design that brings these worlds to life." data-fr="Design de personnages, créatures, véhicules et environnements qui donnent vie à ces mondes.">Character, creature, vehicle, and environment design that brings these worlds to life.</span>
-</p>
-<div class="mt-7">
-  <a href="hire-me.html" class="hero-explore-btn hero-btn-kinetic">
-    <span class="i18n" data-en="Explore Services &amp; Rates" data-fr="Explorer les services &amp; tarifs">Explore Services &amp; Rates</span>
-    <svg class="btn-arrow" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-  </a>
-</div>
-</div>
-</section>
-<!-- PROJECTS GRID -->
-<section class="px-6 lg:px-8 pb-32 max-w-7xl mx-auto">
-<div class="flex items-center justify-between mb-10 border-t border-[#2e323d] pt-8">
-<h2 class="text-xs font-mono tracking-[0.25em] uppercase text-neutral-400 font-semibold flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-[1px] bg-amber-400 shrink-0 inline-block"></span><span class="i18n" data-en="SELECTED WORK" data-fr="TRAVAUX SÉLECTIONNÉS">SELECTED WORK</span></h2>
-<span class="text-[11px] font-mono tracking-[0.2em] uppercase text-neutral-500"><span class="i18n" data-en="06 Projects" data-fr="06 Projets">06 Projects</span></span>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8" id="projects-grid">
-<!-- Tide Hollow -->
-<a class="project-card group relative overflow-hidden block" href="tide-hollow.html" style="aspect-ratio:4/3; background:#0a0a0a;">
-<img alt="Tide Hollow — 3D Asset Creation" class="w-full h-full object-cover" loading="lazy" src="thumbs/tide-hollow.webp"/>
-<div class="card-overlay absolute inset-0">
-<div class="absolute bottom-0 left-0 right-0 p-6 card-meta">
-<p class="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mb-1.5"><span class="i18n" data-en="Concept Art · 3D Asset Creation · UE5 · 2025" data-fr="Art conceptuel · Création d'actifs 3D · UE5 · 2025">Concept Art · 3D Asset Creation · UE5 · 2025</span></p>
-<div class="flex items-center justify-between">
-<h3 class="card-title text-xl sm:text-2xl font-display"><span class="i18n" data-en="Tide Hollow" data-fr="Tide Hollow">Tide Hollow</span></h3>
-<span class="card-arrow text-amber-300 text-lg"><span class="i18n" data-en="→" data-fr="→">→</span></span>
-</div>
-</div>
-</div>
-</a>
-<!-- Outpost Red -->
-<a class="project-card group relative overflow-hidden block" href="outpost-red.html" style="aspect-ratio:4/3; background:#0a0a0a;">
-<img alt="Outpost Red — Game UI Interface" class="w-full h-full object-cover" style="object-position: right center;" loading="lazy" src="thumbs/outpost-red.webp"/>
-<div class="card-overlay absolute inset-0">
-<div class="absolute bottom-0 left-0 right-0 p-6 card-meta">
-<p class="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mb-1.5"><span class="i18n" data-en="Concept Art · 3D Assets Creation · Unreal Engine · 2025" data-fr="Art conceptuel · Création d'assets 3D · Unreal Engine · 2025">Concept Art · 3D Assets Creation · Unreal Engine · 2025</span></p>
-<div class="flex items-center justify-between">
-<h3 class="card-title text-xl sm:text-2xl font-display"><span class="i18n" data-en="Outpost Red" data-fr="Outpost Red">Outpost Red</span></h3>
-<span class="card-arrow text-amber-300 text-lg"><span class="i18n" data-en="→" data-fr="→">→</span></span>
-</div>
-</div>
-</div>
-</a>
-<!-- Wings of Icaria -->
-<a class="project-card group relative overflow-hidden block" href="wings-of-wanitu.html" style="aspect-ratio:4/3; background:#0a0a0a;">
-<img alt="Wings of Icaria — VR UI Design" class="w-full h-full object-cover" loading="lazy" src="thumbs/wings-of-wanitu.webp"/>
-<div class="card-overlay absolute inset-0">
-<div class="absolute bottom-0 left-0 right-0 p-6 card-meta">
-<p class="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mb-1.5"><span class="i18n" data-en="VR UI · Spatial Interfaces · 2025" data-fr="UI VR · Interfaces spatiales · 2025">VR UI · Spatial Interfaces · 2025</span></p>
-<div class="flex items-center justify-between">
-<h3 class="card-title text-xl sm:text-2xl font-display"><span class="i18n" data-en="Wings of Icaria" data-fr="Wings of Icaria">Wings of Icaria</span></h3>
-<span class="card-arrow text-amber-300 text-lg"><span class="i18n" data-en="→" data-fr="→">→</span></span>
-</div>
-</div>
-</div>
-</a>
-<!-- Home Run Derby VR -->
-<a class="project-card group relative overflow-hidden block" href="home-run-derby-vr.html" style="aspect-ratio:4/3; background:#0a0a0a;">
-<img alt="Home Run Derby VR — Sports VR UI" class="w-full h-full object-cover" loading="lazy" src="thumbs/home-run-derby-vr.webp"/>
-<div class="card-overlay absolute inset-0">
-<div class="absolute bottom-0 left-0 right-0 p-6 card-meta">
-<p class="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mb-1.5"><span class="i18n" data-en="Sports · VR Design · 2023" data-fr="Sport · Design VR · 2023">Sports · VR Design · 2023</span></p>
-<div class="flex items-center justify-between">
-<h3 class="card-title text-xl sm:text-2xl font-display"><span class="i18n" data-en="Home Run Derby VR" data-fr="Home Run Derby VR">Home Run Derby VR</span></h3>
-<span class="card-arrow text-amber-300 text-lg"><span class="i18n" data-en="→" data-fr="→">→</span></span>
-</div>
-</div>
-</div>
-</a>
-<!-- Starquest -->
-<a class="project-card group relative overflow-hidden block" href="starquest.html" style="aspect-ratio:4/3; background:#0a0a0a;">
-<img alt="Starquest — Sci-Fi Concept Art" class="w-full h-full object-cover" loading="lazy" src="thumbs/starquest.webp"/>
-<div class="card-overlay absolute inset-0">
-<div class="absolute bottom-0 left-0 right-0 p-6 card-meta">
-<p class="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mb-1.5"><span class="i18n" data-en="Hard-Surface · Organic Design · 2020" data-fr="Hard-surface · Design organique · 2020">Hard-Surface · Organic Design · 2020</span></p>
-<div class="flex items-center justify-between">
-<h3 class="card-title text-xl sm:text-2xl font-display"><span class="i18n" data-en="Starquest" data-fr="Starquest">Starquest</span></h3>
-<span class="card-arrow text-amber-300 text-lg"><span class="i18n" data-en="→" data-fr="→">→</span></span>
-</div>
-</div>
-</div>
-</a>
-<!-- Diverse Creative Studies -->
-<a class="project-card group relative overflow-hidden block" href="diverse-creative-studies.html" style="aspect-ratio:4/3; background:#0a0a0a;">
-<img alt="Diverse Creative Studies — The Barracuda submarine vehicle design" class="w-full h-full object-cover" loading="lazy" src="thumbs/diverse-creative-studies.webp"/>
-<div class="card-overlay absolute inset-0">
-<div class="absolute bottom-0 left-0 right-0 p-6 card-meta">
-<p class="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mb-1.5"><span class="i18n" data-en="Concept Art Showcase · 2020" data-fr="Vitrine d'art conceptuel · 2020">Concept Art Showcase · 2020</span></p>
-<div class="flex items-center justify-between">
-<h3 class="card-title text-xl sm:text-2xl font-display"><span class="i18n" data-en="Diverse Creative Studies" data-fr="Diverse Creative Studies">Diverse Creative Studies</span></h3>
-<span class="card-arrow text-amber-300 text-lg"><span class="i18n" data-en="→" data-fr="→">→</span></span>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="mt-14 flex flex-col sm:flex-row items-center sm:justify-end gap-4 sm:gap-6">
-  <a href="https://uiux.guillaumedesign.ca/" class="site-cta-btn cta-white w-full sm:w-auto">
-    <span class="i18n" data-en="Explore UI / UX Portfolio" data-fr="Explorer le portfolio UI / UX">Explore UI / UX Portfolio</span>
-    <svg class="btn-arrow w-4 h-4 text-neutral-950" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </a>
-  <a href="illustrations.html" class="hero-card-btn group w-full sm:w-auto">
-    <div>
-      <span class="card-btn-eyebrow"><span class="i18n" data-en="EXPLORE GALLERY" data-fr="EXPLORER LA GALERIE">EXPLORE GALLERY</span></span>
-      <span class="card-btn-title"><span class="i18n" data-en="Explore Illustrations Gallery" data-fr="Galerie d'illustrations">Explore Illustrations Gallery</span></span>
+
+<!-- MAIN CONTENT -->
+<main class="pt-24 pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-20 md:space-y-28">
+
+  <!-- 1. TIDE HOLLOW -->
+  <section id="tide-hollow" class="scroll-mt-24">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white">
+      <span class="i18n" data-en="Tide Hollow" data-fr="Tide Hollow">Tide Hollow</span>
+    </h2>
+    <div class="border-b border-[#2e323d] my-4"></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+      <div class="gallery-card overflow-hidden md:col-span-2">
+        <img alt="Tide Hollow — Water World Concept Art" loading="lazy" src="Tide%20Hollow/thumbnail-Tide%20Hollow.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Tide Hollow — Environment Overview" loading="lazy" src="Tide%20Hollow/tide-hollow-hero.jpg"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Tide Hollow — Final Product All Design" loading="lazy" src="Tide%20Hollow/Final-product-All-Design.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Tide Hollow — Final Product All Design 2" loading="lazy" src="Tide%20Hollow/Final-product-All-Design-2.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Tide Hollow — Final Product All Design 3" loading="lazy" src="Tide%20Hollow/Final-product-All-Design-3.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Tide Hollow — Structural Variety & Scale" loading="lazy" src="Tide%20Hollow/Structural-variety-scale.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Tide Hollow — Compact Silt Pod" loading="lazy" src="Tide%20Hollow/Compact-Silt-Pod.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Tide Hollow — Interior Configuration" loading="lazy" src="Tide%20Hollow/Interior-configurqtion.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Tide Hollow — The Tide Fisher" loading="lazy" src="Tide%20Hollow/The-tide-fisher.webp"/>
+      </div>
     </div>
-    <span class="card-btn-arrow" aria-hidden="true">&gt;</span>
-  </a>
-</div>
-</section>
+    <div class="mt-6 flex justify-end">
+      <a href="tide-hollow.html" class="project-link-btn">
+        <span class="i18n" data-en="Learn more about" data-fr="En savoir plus sur">Learn more about</span>
+        <svg class="btn-arrow w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- 2. OUTPOST RED -->
+  <section id="outpost-red" class="scroll-mt-24">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white">
+      <span class="i18n" data-en="Outpost Red" data-fr="Outpost Red">Outpost Red</span>
+    </h2>
+    <div class="border-b border-[#2e323d] my-4"></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+      <div class="gallery-card overflow-hidden md:col-span-2">
+        <img alt="Outpost Red — Base Overview" loading="lazy" src="Outpost%20Red/outpost-base.jpg"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Outpost Red — Vehicle Design Silhouettes" loading="lazy" src="Outpost%20Red/VEHICLE%2BDESIGN.png"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Outpost Red — Rover 3D Orthographic Renders" loading="lazy" src="Outpost%20Red/VEHICLE%2BDESIGN%20%281%29.jpg"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Outpost Red — Rover Traversing Martian Terrain" loading="lazy" src="Outpost%20Red/VEHICLE%2BDESIGN%20%282%29.jpg"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Outpost Red — Contaminated Crew Member Character Design" loading="lazy" src="Outpost%20Red/VEHICLE%2BDESIGN%20%283%29.jpg"/>
+      </div>
+    </div>
+    <div class="mt-6 flex justify-end">
+      <a href="outpost-red.html" class="project-link-btn">
+        <span class="i18n" data-en="Learn more about" data-fr="En savoir plus sur">Learn more about</span>
+        <svg class="btn-arrow w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- 3. WINGS OF ICARIA -->
+  <section id="wings-of-icaria" class="scroll-mt-24">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white">
+      <span class="i18n" data-en="Wings of Icaria" data-fr="Wings of Icaria">Wings of Icaria</span>
+    </h2>
+    <div class="border-b border-[#2e323d] my-4"></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+      <div class="gallery-card overflow-hidden md:col-span-2">
+        <img alt="Wings of Icaria — Floating Islands Environment Illustration" loading="lazy" src="Wings%20of%20Wanitu/wings%2Billustration%2Bbackground%2B2.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Wings of Icaria — Deadzone Lurker Concept Art" loading="lazy" src="Wings%20of%20Wanitu/wings-of-wanitu-hero.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Wings of Icaria — Lurkers Morphology" loading="lazy" src="Wings%20of%20Wanitu/enemie%2Bdesign%2Blurkers%2B1.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Wings of Icaria — Lurkers Design Concepts" loading="lazy" src="Wings%20of%20Wanitu/Lurkers%2BDesign%2Bconcepts%2B1.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Wings of Icaria — Deadzone Lurkers Concept Design" loading="lazy" src="Wings%20of%20Wanitu/Deadzone%2BLurkers%2Bconcept%2Bdesign%2B1.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Wings of Icaria — Lurkers Deadzone Behaviour Sheet" loading="lazy" src="Wings%20of%20Wanitu/Lurkers%2BDeadzone%2BBehaviour%2B1.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Wings of Icaria — Lurkers Deadzone Color Pass" loading="lazy" src="Wings%20of%20Wanitu/lurkers%2Bcolor%2Bpass%2Bdead%2Bzone%2B1.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Wings of Icaria — Bug Lurker 3D Concept Render" loading="lazy" src="Wings%20of%20Wanitu/Bug%2BLurker%2Bconcept%2Brender%2B1.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Wings of Icaria — Interceptor Design Concept" loading="lazy" src="Wings%20of%20Wanitu/Interceptor%2BDesign%2Bconcept%2B1.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Wings of Icaria — Interceptor Enemy Behaviour" loading="lazy" src="Wings%20of%20Wanitu/Interceptor%2Benemy%2Bbehaviour%2B1.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Wings of Icaria — Interceptor Enemy Color Pass" loading="lazy" src="Wings%20of%20Wanitu/Interceptor%2Benemy%2Bcolor%2Bpass%2B1.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Wings of Icaria — Fighter Hunter Type Concept Visualization" loading="lazy" src="Wings%20of%20Wanitu/Fighter%2Bhunter%2Btype%2Bconcept%2Bvisualization%2B1.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Wings of Icaria — Hunters Fighter Type Behaviour Sheet" loading="lazy" src="Wings%20of%20Wanitu/Hunters%2Bfighter%2Btype%2BBehaviour%2B1.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Wings of Icaria — Fighter Enemy Final Color Pass" loading="lazy" src="Wings%20of%20Wanitu/Fighter%2Benemy%2Bcolor%2Bpass.webp"/>
+      </div>
+    </div>
+    <div class="mt-6 flex justify-end">
+      <a href="wings-of-wanitu.html" class="project-link-btn">
+        <span class="i18n" data-en="Learn more about" data-fr="En savoir plus sur">Learn more about</span>
+        <svg class="btn-arrow w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- 4. HOMERUN DERBY VR -->
+  <section id="homerun-derby-vr" class="scroll-mt-24">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white">
+      <span class="i18n" data-en="HomeRun Derby VR" data-fr="HomeRun Derby VR">HomeRun Derby VR</span>
+    </h2>
+    <div class="border-b border-[#2e323d] my-4"></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+      <div class="gallery-card overflow-hidden md:col-span-2">
+        <img alt="Home Run Derby VR — Licensed MLB Sports Simulation Artwork" loading="lazy" src="Home%20Run%20Derby%20Vr/home-run-derby-hero.jpg"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Home Run Derby VR — Target UI Elements & Multipliers" loading="lazy" src="Home%20Run%20Derby%20Vr/Target-UI.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Home Run Derby VR — Buttons, Toggles & Fields" loading="lazy" src="Home%20Run%20Derby%20Vr/Buttons.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Home Run Derby VR — Typography & Color Palette" loading="lazy" src="Home%20Run%20Derby%20Vr/Typo%2Band%2BColors.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Home Run Derby VR — Titles, Logos & Font Specimen" loading="lazy" src="Home%20Run%20Derby%20Vr/Font.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Home Run Derby VR — First Time User Interface" loading="lazy" src="Home%20Run%20Derby%20Vr/FTUI.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Home Run Derby VR — FTUI Spatial Design" loading="lazy" src="Home%20Run%20Derby%20Vr/ftui%2BDESIGN.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Home Run Derby VR — Tournament UI Lobby" loading="lazy" src="Home%20Run%20Derby%20Vr/Touirnament%2Bui.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Home Run Derby VR — Tournament Finals Championship Bracket" loading="lazy" src="Home%20Run%20Derby%20Vr/Frame%2B493.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Home Run Derby VR — Progression for Profile Player Icon" loading="lazy" src="Home%20Run%20Derby%20Vr/Progression%2Bfor%2BProfile%2BPlayer%2Bicon.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Home Run Derby VR — Season 3 UI System" loading="lazy" src="Home%20Run%20Derby%20Vr/Season%2B3%2Bui.webp"/>
+      </div>
+    </div>
+    <div class="mt-6 flex justify-end">
+      <a href="home-run-derby-vr.html" class="project-link-btn">
+        <span class="i18n" data-en="Learn more about" data-fr="En savoir plus sur">Learn more about</span>
+        <svg class="btn-arrow w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- 5. STARQUEST -->
+  <section id="starquest" class="scroll-mt-24">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white">
+      <span class="i18n" data-en="Starquest" data-fr="Starquest">Starquest</span>
+    </h2>
+    <div class="border-b border-[#2e323d] my-4"></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+      <div class="gallery-card overflow-hidden md:col-span-2">
+        <img alt="Starquest — Hero Key Visual" loading="lazy" src="Starquest/starquest-hero.jpg"/>
+      </div>
+      <div class="gallery-card overflow-hidden md:col-span-2">
+        <img alt="Starquest — Destroyer Ship Capital Class Vessel" loading="lazy" src="Starquest/Destroyer%2Bship.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Starquest — Hangar Design & Ship Customizer" loading="lazy" src="Starquest/Starquest%2Breformate%2B2026.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Starquest — Orbital Satellite Platform" loading="lazy" src="Starquest/Satelite.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Starquest — Basic Turret with Shooting Drone" loading="lazy" src="Starquest/basic%2Bturret%2Bwith%2Bshooting%2Bdrone.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Starquest — Vessel Silhouette Ideation Pass" loading="lazy" src="Starquest/Screen%2BShot%2B2020-05-25%2Bat%2B9.43.23%2BAM%2B(2).webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Starquest — Starquest Hull Silhouette Concept Sheet" loading="lazy" src="Starquest/Untitled-1.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Starquest — Pilot Space Helmet Pressure Suit Concept" loading="lazy" src="Starquest/Pilot%2BSpace%2BHelmet.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Starquest — Heavy Kinetic Concept Gun" loading="lazy" src="Starquest/concept%2Bgun%2Bfor%2Bhunger%2B222.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Starquest — Autonomous Ground Robotic Unit" loading="lazy" src="Starquest/robot%2Bfor%2Bcarpet.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Starquest — Engine Exhaust & Projectile Trail Design" loading="lazy" src="Starquest/Trail%2Bdesign.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Starquest — Chapter 2 Mapping Out World Building" loading="lazy" src="Starquest/Chapter%2B2%2BMapping%2Bout%2Bworld%2Bbuilding.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Starquest — Chapter 3 & 4 Warzone World Building" loading="lazy" src="Starquest/Chapter%2B3%2B%26%2B4%2Bworld%2Bbuilding.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Starquest — Clouds Visual Story Through Encampment" loading="lazy" src="Starquest/Clouds%2Bvisual%2Bstory%2Bthroug%2Bout%2Bencampment.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Starquest — Out of Bounds Perimeter Boundary" loading="lazy" src="Starquest/Out%2Bof%2BBound.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Starquest — Space Debris in Cloud Formations" loading="lazy" src="Starquest/space%2Bdebris%2Bin%2Bcloudspsd.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Starquest — Off Limit Out of Bound Wall System" loading="lazy" src="Starquest/off%2Blimit%2Bout%2Bof%2Bbound%2Bwall%2Bno.1.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Starquest — Planetary Rock Formation Concept" loading="lazy" src="Starquest/rocks%2Bformation%2Bno.%2B1%2Bconcept.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Starquest — Orbital Space Debris Field" loading="lazy" src="Starquest/Space%2BDebris.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Starquest — Debris Prop Sheet" loading="lazy" src="Starquest/DebrisSheet.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Starquest — Alien Hands & Mechanical Debris" loading="lazy" src="Starquest/Hands%2Bdebris.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Starquest — Robotic Chassis Debris" loading="lazy" src="Starquest/Robot%2Bdebris.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Starquest — Alien Eyes & Sensory Organ Concept Sheet" loading="lazy" src="Starquest/Eyes%2BDesign.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Starquest — Promotional Key Visual" loading="lazy" src="Starquest/thumbnail.webp"/>
+      </div>
+    </div>
+    <div class="mt-6 flex justify-end">
+      <a href="starquest.html" class="project-link-btn">
+        <span class="i18n" data-en="Learn more about" data-fr="En savoir plus sur">Learn more about</span>
+        <svg class="btn-arrow w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- 6. DIVERSE CREATIVE STUDIES -->
+  <section id="diverse-creative-studies" class="scroll-mt-24">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white">
+      <span class="i18n" data-en="Diverse Creative Studies" data-fr="Diverse Creative Studies">Diverse Creative Studies</span>
+    </h2>
+    <div class="border-b border-[#2e323d] my-4"></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+      <div class="gallery-card overflow-hidden md:col-span-2">
+        <img alt="Diverse Creative Studies — The Barracuda Submersible Blueprints & Renders" loading="lazy" src="Diverse%20Creative%20Studies/barracuda-hero.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Diverse Creative Studies — Big Papa Mecha Orthographics" loading="lazy" src="Diverse%20Creative%20Studies/Big%2BPapa%2BMecha.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Diverse Creative Studies — Phantom Mecha 74 Sensor Wireframes" loading="lazy" src="Diverse%20Creative%20Studies/Mech%2Bdesign%2Bbush%2Bconcept%2Bart%2Bfor%2Bportfolio.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Diverse Creative Studies — Kuzok's Second in Command Costume Iterations" loading="lazy" src="Diverse%20Creative%20Studies/Kuzok's%2Bsecond%2Bin%2Bcommand%2Bcharacter%2Bdesign%2Bconcept%2Bart%2Bfix.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Diverse Creative Studies — Kuzok's Second in Command Custer Wings Study" loading="lazy" src="Diverse%20Creative%20Studies/Custer%2Bwings%2Bconcept%2Bart.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Diverse Creative Studies — Oghiga Vaziazrar Dark Elf Huntress Concept Art" loading="lazy" src="Diverse%20Creative%20Studies/concept%2Bart%2Bfantasy%2Barcher%2B%2B(original)%2Bcopy%2B5.webp"/>
+      </div>
+      <div class="gallery-card overflow-hidden">
+        <img alt="Diverse Creative Studies — Kalta Creature Raptor Mount Study" loading="lazy" src="Diverse%20Creative%20Studies/dino%2Bcreature%2Bconcept%2Bart.webp"/>
+      </div>
+    </div>
+    <div class="mt-6 flex justify-end">
+      <a href="diverse-creative-studies.html" class="project-link-btn">
+        <span class="i18n" data-en="Learn more about" data-fr="En savoir plus sur">Learn more about</span>
+        <svg class="btn-arrow w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- NAVIGATION LINKS BOTTOM -->
+  <div class="mt-20 mb-8 max-w-7xl mx-auto flex flex-col sm:flex-row items-center sm:justify-end gap-4 sm:gap-6">
+    <a href="https://uiux.guillaumedesign.ca/" class="site-cta-btn cta-white w-full sm:w-auto">
+      <span class="i18n" data-en="Explore UI / UX Portfolio" data-fr="Explorer le portfolio UI / UX">Explore UI / UX Portfolio</span>
+      <svg class="btn-arrow w-4 h-4 text-neutral-950" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="illustrations.html" class="hero-card-btn group w-full sm:w-auto">
+      <div>
+        <span class="card-btn-eyebrow"><span class="i18n" data-en="EXPLORE GALLERY" data-fr="EXPLORER LA GALERIE">EXPLORE GALLERY</span></span>
+        <span class="card-btn-title"><span class="i18n" data-en="Explore Illustrations Gallery" data-fr="Galerie d'illustrations">Explore Illustrations Gallery</span></span>
+      </div>
+      <span class="card-btn-arrow" aria-hidden="true">&gt;</span>
+    </a>
+  </div>
+
+</main>
+
 <!-- FOOTER -->
 <footer class="border-t border-[#2e323d] py-12">
 <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -369,119 +560,5 @@
 </div>
 </div>
 </footer>
-
-<script>
-  (function() {
-    // 1. WORD-BY-WORD LEFT-TO-RIGHT WRAPPER
-    function applyWordByWordSpans() {
-      const targets = document.querySelectorAll('.word-animate-target .i18n, .word-animate-target');
-      targets.forEach(container => {
-        const childNodes = Array.from(container.childNodes);
-        childNodes.forEach(node => {
-          if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim().length > 0) {
-            const words = node.nodeValue.split(/(\s+)/);
-            const fragment = document.createDocumentFragment();
-            
-            words.forEach(word => {
-              if (word.trim().length === 0) {
-                fragment.appendChild(document.createTextNode(word));
-              } else {
-                const span = document.createElement('span');
-                span.className = 'word-reveal';
-                span.textContent = word;
-                fragment.appendChild(span);
-              }
-            });
-            
-            node.parentNode.replaceChild(fragment, node);
-          }
-        });
-      });
-    }
-
-    applyWordByWordSpans();
-
-    function setWordDelays(startDelay, step) {
-      const words = document.querySelectorAll('.word-reveal');
-      let currentDelay = startDelay;
-      words.forEach((w) => {
-        w.style.animationDelay = `${currentDelay.toFixed(3)}s`;
-        currentDelay += step;
-      });
-
-      // Set CTA button delay to appear quickly alongside title
-      const btn = document.querySelector('.hero-btn-kinetic');
-      if (btn) {
-        btn.style.animationDelay = '0.08s';
-      }
-      return currentDelay;
-    }
-
-    setWordDelays(0.05, 0.038);
-
-    // 2. CARD DECK OVERLAP & SMOOTH BLOSSOM
-    const grid = document.getElementById('projects-grid');
-    if (!grid) return;
-    const cards = Array.from(grid.querySelectorAll('.project-card'));
-
-    const stackConfigs = [
-      { rot: -3.8, scale: 0.90, bright: 0.98, yOffset: -8, z: 6 },
-      { rot: 3.2, scale: 0.88, bright: 0.90, yOffset: -4, z: 5 },
-      { rot: -1.8, scale: 0.86, bright: 0.84, yOffset: 0, z: 4 },
-      { rot: 2.2, scale: 0.84, bright: 0.78, yOffset: 4, z: 3 },
-      { rot: -0.8, scale: 0.82, bright: 0.72, yOffset: 8, z: 2 },
-      { rot: 1.2, scale: 0.80, bright: 0.66, yOffset: 12, z: 1 }
-    ];
-
-    function calculateStackOffsets() {
-      const gridRect = grid.getBoundingClientRect();
-      const targetCenterX = gridRect.left + gridRect.width / 2;
-      const firstCardRect = cards[0].getBoundingClientRect();
-      const targetCenterY = gridRect.top + firstCardRect.height * 0.55;
-
-      cards.forEach((card, i) => {
-        const config = stackConfigs[i] || { rot: 0, scale: 0.85, bright: 0.9, yOffset: 0, z: 1 };
-        const cardRect = card.getBoundingClientRect();
-        const cardCenterX = cardRect.left + cardRect.width / 2;
-        const cardCenterY = cardRect.top + cardRect.height / 2;
-
-        const deltaX = Math.round(targetCenterX - cardCenterX);
-        const deltaY = Math.round((targetCenterY + config.yOffset) - cardCenterY);
-
-        card.style.setProperty('--stack-x', `${deltaX}px`);
-        card.style.setProperty('--stack-y', `${deltaY}px`);
-        card.style.setProperty('--stack-rot', `${config.rot}deg`);
-        card.style.setProperty('--stack-scale', `${config.scale}`);
-        card.style.setProperty('--stack-bright', `${config.bright}`);
-        card.style.setProperty('--stack-z', `${config.z}`);
-      });
-    }
-
-    let isStacked = true;
-
-    function spreadCards() {
-      grid.classList.remove('cards-deck-stacked');
-      isStacked = false;
-      cards.forEach((card, i) => {
-        card.style.transitionDelay = `${i * 0.045}s`;
-      });
-    }
-
-    // Initialize: stack on load, then blossom out
-    window.addEventListener('load', () => {
-      calculateStackOffsets();
-      grid.classList.add('cards-deck-stacked');
-      setTimeout(() => {
-        spreadCards();
-      }, 500);
-    });
-
-    window.addEventListener('resize', () => {
-      if (isStacked) calculateStackOffsets();
-    });
-
-  })();
-</script>
-
 </body>
 </html>
