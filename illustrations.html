@@ -29,20 +29,38 @@
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: #0a0a0a; }
     ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
-    .masonry { columns: 3; column-gap: 3px; }
-    @media (max-width: 900px) { .masonry { columns: 2; } }
-    @media (max-width: 500px) { .masonry { columns: 1; } }
-    .featured-grid { margin-bottom: 3px; }
+    .masonry { columns: 3; column-gap: 16px; }
+    @media (max-width: 900px) { .masonry { columns: 2; column-gap: 12px; } }
+    @media (max-width: 500px) { .masonry { columns: 1; column-gap: 0; } }
+    .featured-grid { margin-bottom: 16px; }
       /* Justified rows: flex-grow is the image's aspect ratio, so widths are
          proportional to it and every image in a row shares the same height. */
-      .feat-row { display: flex; gap: 3px; margin-bottom: 3px; }
+      .feat-row { display: flex; gap: 16px; margin-bottom: 16px; }
       .feat-row .masonry-item { min-width: 0; margin-bottom: 0; }
       .feat-row .masonry-item img { width: 100%; height: auto; display: block; }
-      @media (max-width: 768px) { .feat-row { flex-direction: column; } }
-      .masonry-item { break-inside: avoid; margin-bottom: 3px; display: block; position: relative; overflow: hidden; }
+      @media (max-width: 768px) { .feat-row { flex-direction: column; gap: 12px; margin-bottom: 12px; } }
+      .masonry-item {
+        break-inside: avoid;
+        margin-bottom: 16px;
+        display: block;
+        position: relative;
+        overflow: hidden;
+        border-radius: 1rem;
+        background: #0d0f12;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+      }
+      @media (min-width: 768px) {
+        .masonry-item { border-radius: 1.25rem; }
+      }
+      .masonry-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8);
+        border-color: rgba(251, 191, 36, 0.3);
+      }
     .masonry-item img { display: block; width: 100%; transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); cursor: zoom-in; }
     .masonry-item:hover img { transform: scale(1.03); }
-    .masonry-item .hover-label { position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 14px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+    .masonry-item .hover-label { position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 14px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); opacity: 0; transition: opacity 0.3s; pointer-events: none; border-bottom-left-radius: inherit; border-bottom-right-radius: inherit; }
     .masonry-item:hover .hover-label { opacity: 1; }
     #lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,0.96); display: flex; align-items: center; justify-content: center; padding: 1rem; }
     #lightbox img { max-width: 100%; max-height: 90vh; object-fit: contain; }
