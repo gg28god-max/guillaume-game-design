@@ -64,44 +64,54 @@
   .project-link-btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
-    padding: 0.7rem 1.4rem;
-    background: #ffffff !important;
+    padding: 0.85rem 1.75rem;
+    background-color: #ffffff !important;
     color: #0a0a0a !important;
     border: 1px solid #ffffff !important;
-    border-radius: 9999px;
-    font-size: 0.75rem;
+    border-radius: 16px;
+    font-family: inherit;
     font-weight: 700;
-    letter-spacing: 0.12em;
+    font-size: 11px;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
     text-decoration: none !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    box-shadow: none !important;
+    cursor: pointer;
+    white-space: nowrap;
   }
   .project-link-btn:hover {
-    background: #f1f5f9 !important;
-    border-color: #e2e8f0 !important;
-    color: #000000 !important;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(255, 255, 255, 0.18), 0 4px 12px rgba(0, 0, 0, 0.3);
+    background-color: #e5e5e5 !important;
+    border-color: #e5e5e5 !important;
+    color: #0a0a0a !important;
+    transform: scale(1.02);
+    box-shadow: none !important;
   }
   .project-link-btn .btn-arrow {
+    display: inline-block;
     transition: transform 0.3s ease;
     color: #0a0a0a;
+    opacity: 1;
+    transform: none;
+    max-width: none;
   }
   .project-link-btn:hover .btn-arrow {
-    transform: translateX(3px);
+    transform: translateX(4px);
   }
   html.light .project-link-btn {
-    background: #ffffff !important;
+    background-color: #ffffff !important;
     color: #0a0a0a !important;
-    border: 1px solid #d4d4d8 !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-color: #d4d4d8 !important;
+    box-shadow: none !important;
   }
   html.light .project-link-btn:hover {
-    background: #f4f4f5 !important;
+    background-color: #f4f4f5 !important;
     border-color: #a1a1aa !important;
-    color: #000000 !important;
+    color: #0a0a0a !important;
+    transform: scale(1.02);
+    box-shadow: none !important;
   }
   html.light .project-link-btn .btn-arrow {
     color: #0a0a0a;
