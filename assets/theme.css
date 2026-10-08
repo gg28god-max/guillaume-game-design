@@ -1857,7 +1857,7 @@ html.light .cross-link-card:hover .cross-link-cta {
   color: #ffffff !important;
 }
 
-/* Card button styling — replaces yellow pill button (matches Next Project card style) */
+/* Card button styling — vibrant yellow CTA button */
 .hero-card-btn {
   display: inline-flex;
   align-items: center;
@@ -1866,21 +1866,21 @@ html.light .cross-link-card:hover .cross-link-cta {
   height: 64px;
   padding: 0 22px;
   border-radius: 16px;
-  background-color: #141620;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: #fcd34d;
+  border: 1px solid #fcd34d;
   text-decoration: none !important;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 8px 24px -4px rgba(252, 211, 77, 0.28);
   cursor: pointer;
   max-width: 100%;
   box-sizing: border-box;
 }
 
 .hero-card-btn:hover {
-  background-color: #1a1d2b;
-  border-color: rgba(252, 211, 77, 0.45);
+  background-color: #fbbf24;
+  border-color: #fbbf24;
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.55), 0 0 18px rgba(252, 211, 77, 0.12);
+  box-shadow: 0 12px 28px -4px rgba(252, 211, 77, 0.4), 0 0 18px rgba(252, 211, 77, 0.2);
 }
 
 .hero-card-btn .card-btn-eyebrow {
@@ -1889,7 +1889,7 @@ html.light .cross-link-card:hover .cross-link-cta {
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #9ca3af;
+  color: rgba(10, 10, 10, 0.65);
   margin-bottom: 2px;
   display: block;
 }
@@ -1898,20 +1898,20 @@ html.light .cross-link-card:hover .cross-link-cta {
   font-family: inherit;
   font-size: 16px;
   font-weight: 700;
-  color: #f3f4f6;
+  color: #0a0a0a;
   transition: color 0.25s ease;
   line-height: 1.25;
   display: block;
 }
 
 .hero-card-btn:hover .card-btn-title {
-  color: #ffffff;
+  color: #000000;
 }
 
 .hero-card-btn .card-btn-arrow {
   font-size: 18px;
   font-weight: 700;
-  color: #fcd34d;
+  color: #0a0a0a;
   transition: transform 0.3s ease;
   display: inline-block;
   flex-shrink: 0;
@@ -1923,22 +1923,22 @@ html.light .cross-link-card:hover .cross-link-cta {
 }
 
 html.light .hero-card-btn {
-  background-color: #ffffff;
-  border-color: #e5e5e5;
-  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.08);
+  background-color: #fcd34d;
+  border-color: #fcd34d;
+  box-shadow: 0 8px 20px -4px rgba(252, 211, 77, 0.22);
 }
 html.light .hero-card-btn:hover {
-  background-color: #fafafa;
-  border-color: #d97706;
+  background-color: #fbbf24;
+  border-color: #fbbf24;
 }
 html.light .hero-card-btn .card-btn-eyebrow {
-  color: #6b7280;
+  color: rgba(10, 10, 10, 0.65);
 }
 html.light .hero-card-btn .card-btn-title {
-  color: #111827;
+  color: #0a0a0a;
 }
 html.light .hero-card-btn .card-btn-arrow {
-  color: #d97706;
+  color: #0a0a0a;
 }
 
 /* ---- Case Study Header Background Accent Gradients ---- */
