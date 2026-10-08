@@ -987,12 +987,16 @@
     if (!page || page === '' || page === 'index.html') {
       page = 'concept-art.html';
     }
+    if (page.indexOf('service-') === 0) {
+      page = 'hire-me.html';
+    }
 
     var sectionPages = {
       'concept-art.html': true,
       'illustrations.html': true,
       'paintings.html': true,
-      'about.html': true
+      'about.html': true,
+      'hire-me.html': true
     };
 
     if (!sectionPages[page]) return;
