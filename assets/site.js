@@ -981,9 +981,39 @@
     if (!galleryItems.length) return;
   }
 
+  function setupActiveNav() {
+    var path = window.location.pathname.toLowerCase();
+    var page = path.substring(path.lastIndexOf('/') + 1).split('?')[0].split('#')[0];
+    if (!page || page === '' || page === 'index.html') {
+      page = 'concept-art.html';
+    }
+
+    var sectionPages = {
+      'concept-art.html': true,
+      'illustrations.html': true,
+      'paintings.html': true,
+      'about.html': true
+    };
+
+    if (!sectionPages[page]) return;
+
+    var links = document.querySelectorAll('nav a, #mobile-menu a, .game-mobile-menu a');
+    links.forEach(function (link) {
+      var href = link.getAttribute('href');
+      if (!href) return;
+      var cleanHref = href.toLowerCase().split('?')[0].split('#')[0];
+      if (cleanHref === page) {
+        link.classList.add('nav-link-active');
+      } else if (sectionPages[cleanHref]) {
+        link.classList.remove('nav-link-active');
+      }
+    });
+  }
+
   function init() {
     applyTheme(getTheme());
     applyLang(getLang());
+    setupActiveNav();
     revealCards();
     pressFeedback();
     setupVideoEmbeds();
